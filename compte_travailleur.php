@@ -1,0 +1,389 @@
+<?php
+// Démarre la session
+session_start();
+
+include 'conn/conn.php';
+
+// $_SESSION['users_id'] = true;
+
+
+// Vérifier si l'utilisateur est déjà connecté
+if (isset($_SESSION['users_id']) && $_SESSION['users_id']) {
+
+//   Rediriger l'utilisateur vers la page d'accueil
+  header('Location: index.php');
+  exit();
+
+} 
+
+// Inclusion du fichier de connexion à la BDD
+
+
+// Déclaration d'un tableau pour stocker les erreurs
+$erreurs = ''; // Initialisez un tableau pour stocker les erreurs
+
+// Vérification si le bouton valider est cliqué
+if (isset($_POST['valider'])) {
+    // Récupération des données du formulaire
+    // Déclaration des variables 
+    $nom = $mail = $phone = $competences = $images = $ville = $categorie = $passe = $cpasse = '';
+
+    $id = uniqid();
+
+    // Vérification du nom
+    if (empty($_POST['nom'])) {
+        $erreurs = "Le nom est obligatoire";
+    } else {
+        $nom = htmlspecialchars($_POST['nom'], ENT_QUOTES, 'UTF-8'); // Échapper les caractères spéciaux
+    }
+
+    // Vérification du mail
+    if (empty($_POST['mail'])) {
+        $erreurs = "email est obligatoire";
+    } elseif (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
+        $erreurs = "L'email n'est pas valide";
+    } else {
+        $mail = $_POST['mail'];
+
+        // Préparer la requête SQL pour vérifier si l'e-mail est déjà utilisé
+        $query = $db->prepare("SELECT * FROM users WHERE mail = :mail");
+        $query->bindParam(':mail', $mail);
+        $query->execute();
+
+        // Vérifier si des résultats ont été trouvés
+        if ($query->rowCount() > 0) {
+            $erreurs = "L'e-mail est déjà utilisé";
+        }
+    }
+
+    // Vérification du téléphone  
+    if (empty($_POST['phone'])) {
+        $erreurs = "Le téléphone est obligatoire";
+    } else {
+        $phone = $_POST['phone'];
+    }
+
+    // Vérification de la ville
+    if (empty($_POST['ville'])) {
+        $erreurs = "La ville est obligatoire";
+    } else {
+        $ville = htmlspecialchars($_POST['ville']);
+    }
+    // Vérification du nom de boutique
+    if (empty($_POST['competences'])) {
+        $erreurs = "Le nom de la boutique est obligatoire";
+    } else {
+        $competences = htmlspecialchars($_POST['competences']);
+    }
+
+
+
+    // Vérification de la ville
+    if (empty($_POST['categorie'])) {
+        $erreurs = "La ville est obligatoire";
+    } else {
+        $categorie = htmlspecialchars($_POST['categorie']);
+    }
+
+    // Vérification de la ville
+    if (empty($_FILES['images'])) {
+        $erreurs = "Choisisser une photo de profil";
+    } else {
+        // Récupérer les données du formulaire
+        $images = $_FILES['images'];
+        // Vérifier qu'un fichier est uploadé
+        if ($images['error'] == 0) {
+
+            // Récupérer le nom et le chemin temporaire
+            $fileName = $images['name'];
+            $tmpName = $images['tmp_name'];
+
+            // Ajouter l'identifiant unique au nom du fichier
+            $uniqueFileName = $id . '_' . $fileName;
+
+            // Déplacer le fichier dans le répertoire audio
+            $targetFile = 'upload/' . $uniqueFileName;
+            move_uploaded_file($tmpName, $targetFile);
+        }
+    }
+
+    // Vérification du mot de passe
+    if (empty($_POST['passe'])) {
+        $erreurs = "Le mot de passe est obligatoire";
+    } else {
+        $passe = $_POST['passe'];
+    }
+
+    // Vérification de la confirmation du mot de passe
+    if (empty($_POST['cpasse'])) {
+        $erreurs = "La confirmation du mot de passe est obligatoire";
+    } else {
+        $cpasse = $_POST['cpasse'];
+    }
+
+    // Vérification de la correspondance des mots de passe
+    if ($passe !== $cpasse) {
+        $erreurs = "Les mots de passe ne correspondent pas !";
+    }
+
+    // Si aucune erreur n'est détectée, procédez à l'insertion
+    if (empty($erreurs)) {
+        // Hachage du mot de passe
+        $passe = password_hash($passe, PASSWORD_DEFAULT);
+
+        // Préparation de la requête SQL
+        $sql = "INSERT INTO users (nom, mail, phone, competences, ville, categorie ,images, passe) 
+              VALUES (:nom, :mail, :phone, :competences, :ville, :categorie, :images, :passe)";
+
+        // Préparation de la requête 
+        $stmt = $db->prepare($sql);
+
+        // Association des paramètres
+        $stmt->bindParam(':nom', $nom);
+        $stmt->bindParam(':mail', $mail);
+        $stmt->bindParam(':phone', $phone);
+        $stmt->bindParam(':competences', $competences);
+        $stmt->bindParam(':ville', $ville);
+        $stmt->bindParam(':categorie', $categorie);
+        $stmt->bindParam(':images', $uniqueFileName);
+        $stmt->bindParam(':passe', $passe);
+
+        // Exécution de la requête
+        $stmt->execute();
+
+        // Redirection vers une page de confirmation
+        header('Location: connexion.php');
+        exit;
+    }
+}
+
+?>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/inscription.css">
+    <link rel="stylesheet" href="../css/navbare.css">
+
+</head>
+
+<body>
+    <nav>
+        <a class="logo" href="/index.php"><span>Work</span><span>Flexers</span></a>
+
+        <div class="box1">
+            <a href="/index.php">Accueil</a>
+            <a href="/page/Offres_d'emploi.php">Offres d'emploi</a>
+            <a href="#">Entreprise</a>
+            <a href="/page/voir_profil.php">Explorer les profils</a>
+        </div>
+
+        <div class="box2">
+            <form action="post">
+                <input type="search" name="search" id="search">
+                <label for="submit"><i class="fa-solid fa-magnifying-glass fa-xs"></i></label>
+                <input type="submit" name="submit" id="submit" value="submit">
+            </form>
+        </div>
+
+        <div class="box3">
+            <a class="inscription" href="/inscription.php">Inscription</a>
+            <a class="connexion" href="/connexion.php">Connexion</a>
+        </div>
+    </nav>
+
+    <section class="section1">
+        <div>
+            <span>1</span>
+            <p>Trouver rapidement les meilleurs talents qui correspondent à vos besoins</p>
+        </div>
+        <div>
+            <span>2</span>
+            <p>Un processus de recrutement freelance facile et sans prise de tête</p>
+        </div>
+        <div>
+            <span>3</span>
+            <p>Des profils hautement qualifiés et adaptables à vos projets</p>
+        </div>
+    </section>
+
+    <section class="section2">
+
+        <div class="formulaire1  ">
+            <img src="/image/undraw_mobile_login_re_9ntv.svg" alt="">
+            <form method="post" action="" enctype="multipart/form-data">
+                <h3>Inscription</h3>
+                <?php if (isset($erreurs)) : ?>
+                    <div class="erreur"><?php echo $erreurs; ?></div>
+                <?php endif; ?>
+
+                <div class="container_form">
+                    <div class="container">
+                        <div class="box1">
+                            <label for="nom">Nom et Prenom</label>
+                            <input type="text" name="nom" id="nom">
+                        </div>
+
+                        <div class="box1">
+                            <label for="mail">adress-mail</label>
+                            <input type="email" name="mail" id="mail">
+                        </div>
+
+                        <div class="box1">
+                            <label for="phone">Téléphone</label>
+                            <input type="number" name="phone" id="phone">
+                        </div>
+
+                        <div class="box1">
+                            <label for="ville">Ville</label>
+                            <input type="text" name="ville" id="ville">
+                        </div>
+
+                        <div class="box1">
+                            <p>Photo de profile</p>
+                            <div class="ab">
+                                <label class="label" for="images"> <img src="/image/galerie.jpg" alt=""></label>
+                                <input type="file" name="images" id="images">
+                                <img id="imagePreview" src="" alt="view">
+
+                                <script>
+                                    // Récupérer l'élément input type file
+                                    const inputImage = document.getElementById('images');
+
+                                    // Écouter le changement de fichier sélectionné
+                                    inputImage.addEventListener('change', () => {
+
+                                        // Récupérer le premier fichier sélectionné
+                                        const file = inputImage.files[0];
+
+                                        // Afficher l'aperçu dans l'élément img
+                                        const previewImg = document.getElementById('imagePreview');
+                                        previewImg.src = URL.createObjectURL(file);
+
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="container">
+                        <div class="box1">
+                            <label for="competences">Dommaine de compétences</label>
+                            <input type="text" name="competences" id="competences">
+                        </div>
+
+                        <div class="box1">
+                            <label for="categorie">Categorie</label>
+                            <select id="categorie" name="categorie">
+                                <option value="">Sélectionnez une catégorie</option>
+                                <option value="Informatique">Informatique et tech</option>
+                                <option value="design">Design et création</option>
+                                <option value="Rédaction">Rédaction et traduction</option>
+                                <option value="marketing">Marketing et communication</option>
+                                <option value="business">Conseil et gestion d'entreprise</option>
+                                <option value="Juridique">Juridique</option>
+                                <option value="Ingénierie">Ingénierie et architecture</option>
+                            </select>
+                        </div>
+
+
+
+                        <div class="box1">
+                            <label for="passe">Mot de passe</label>
+                            <input type="password" name="passe" id="passe">
+                            <div class="view">
+                            </div>
+                        </div>
+                        <div class="box1">
+                            <label for="cpasse">Confirmer le mot de passe</label>
+                            <input type="password" name="cpasse" id="cpasse">
+                            <div class="view">
+                                <p>Afficher le mot de passe</p>
+                                <input type="checkbox" id="voirCPasse" onclick="showPassword()">
+                            </div>
+
+                            <script>
+                                function showPassword() {
+                                    var x = document.getElementById("passe");
+                                    var y = document.getElementById("cpasse");
+                                    if (x.type === "password") {
+                                        x.type = "text";
+                                    } else {
+                                        x.type = "password";
+                                    }
+
+                                    if (y.type === "password") {
+                                        y.type = "text";
+                                    } else {
+                                        y.type = "password";
+                                    }
+                                }
+                            </script>
+
+                        <input type="submit" name="valider" value="valider" id="valider">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script>
+        const input = document.querySelector("#phone");
+        const iti = window.intlTelInput(input, {
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+            separateDialCode: true,
+            autoHideDialCode: false,
+            initialCountry: "auto",
+            geoIpLookup: function(callback) {
+                fetch("https://ipapi.co/json")
+                    .then(function(res) {
+                        return res.json();
+                    })
+                    .then(function(data) {
+                        callback(data.country_code);
+                    })
+                    .catch(function() {
+                        callback("us");
+                    });
+            }
+        });
+
+
+
+        // Masquer la liste au clic sur le champ de téléphone
+        input.addEventListener('click', function() {
+            iti.closeDropdown();
+        });
+
+        // Masquer au clic en dehors du champ de téléphone
+        document.addEventListener('click', function(e) {
+            if (!input.contains(e.target) && !iti.container.contains(e.target)) {
+                iti.closeDropdown();
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+    border-bottom: 1px solid rgb(215, 215, 215);
+    background-color: #0066FF;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    list-style: none;
+    text-decoration: none;
+    margin-top: -1000;
+}
+
+nav .logo img{
+    width: 140px;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+.box1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .box1 a{
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    display: block;
+    margin: 0 10px ;
+    transition: all 0.5s ease-out;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size:14px ;
+    text-decoration: none;
+}
+
+nav .box1 a:hover{
+    background-color: #002233;
+}
+
+nav #box2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav #box2 #submit{
+    display: none;
+}
+
+nav #box2 input{
+    height: 40px;
+    width: 300px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid rgba(47, 45, 45, 0.332);
+    padding: 10px ;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s;
+}
+nav #box2 input:hover{
+border: 2px solid #002233;
+box-shadow: 0 0 4px 4px #002233;
+
+}
+nav #box2 form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav #box2 form .bo-{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 40px;
+    width: 60px;
+}
+nav #box2 form #label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%,-50%);
+    background-color: #002233;
+    height: 40px;
+    padding: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom: 1px solid rgba(47, 45, 45, 0.332);
+    border-top: 1px solid rgba(47, 45, 45, 0.332);
+    border-right: 1px solid rgba(47, 45, 45, 0.332);
+}
+nav #box2 form #label img{
+    height: 40px;
+    width: 40px;
+}
+
+nav .box3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .box4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .box4 .infos_users{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 200px;
+    position: relative;
+}
+
+nav .box4 .infos_users p{
+    margin-left: 5px;
+    text-align: center;
+}
+
+nav  .box_info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #ffff;
+    position: absolute;
+    top: 120px;
+    z-index: 20;
+    right: -100%;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+    border: 1px solid rgba(64, 64, 64, 0.299);
+}
+
+nav  .box_info table{
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+nav  .box_info table th{
+    padding: 10px 20px;
+    text-align: left;
+    width: 140px;
+    min-width: 130px;
+
+}
+nav  .box_info table td{
+    padding: 10px 20px;
+    text-align: left;
+    width: 160px;
+    min-width: 180px;
+    max-width: 180px;
+    word-wrap: break-word;
+}
+
+nav  .box_info a{
+    padding: 7px 13px;
+    color: #ffff;
+    background-color: #0066FF;
+    border-radius: 8px;
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+nav .box4 p{
+    color: #ffff;
+    font-size: 18px;
+    margin-right: 10px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+nav .box4 img{
+   height: 60px;
+   width: 60px;
+   object-fit: cover;
+   border-radius: 50%;
+}
+nav .box_info img{
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+ }
+nav .box4 .liens{
+    font-size: 16px;
+    display: block;
+    margin: 10px;
+    color: white;
+    transition: all 0.5s ease-out;
+    padding: 7px 15px;
+    border-radius:10px ;
+    background-color: #002233;
+    text-decoration: none;
+ }
+
+nav .box3 a {
+    font-size: 18px;
+    display: block;
+    margin: 10px;
+    color: white;
+    transition: all 0.5s ease-out;
+    text-decoration: none;
+}
+nav .box3 a:hover {
+    background-color: #002233;
+}
+nav .box4 .liens:hover {
+    background-color: #F39C12;
+}
+nav .box3 :nth-child(2){
+    padding: 10px 20px;
+    border-radius:10px ;
+    color: white;
+    background-color: #F39C12;
+
+}
+nav .box3 :nth-child(1){
+    padding: 10px 20px;
+    border-radius:10px ;
+    color: white;
+}
+
+
+/* modification de la premiere section */
+.section1 {
+    height: 40px;
+    background-color: #002233;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 80px;
+    z-index: 10;
+    flex-wrap: wrap;
+  }
+  .section1 span {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-style: dotted;
+  }
+  
+  .section1 p {
+    color: white;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .section1 div {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }

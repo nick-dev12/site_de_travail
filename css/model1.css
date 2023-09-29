@@ -1,0 +1,445 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Nunito&display=swap");
+
+*{
+  margin:0 ;
+  padding: 0%;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+  background: radial-gradient(circle, rgba(226,226,230,1) 0%, rgba(220,220,233,1) 35%, rgba(255,255,255,1) 100%);
+}
+
+/* modification de la premiere section */
+.section1 {
+  height: 40px;
+  background-color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  top: 80px;
+  z-index: 10;
+}
+.section1 span {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-style: dotted;
+}
+
+.section1 p {
+  color: white;
+  font-size: 13px;
+  margin-left: 10px;
+}
+.section1 div {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+
+
+
+
+
+
+.section2{
+  width: 100%;
+}
+
+.section2 .container_box1{
+  position: fixed;
+  top: 120px;
+  background-color: #2c3e50;
+  width: 280px;
+  left: 0;
+  height: 100vh;
+}
+.section2 .container_box1 .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  border-right: 2px solid rgba(139, 139, 139, 0.379);
+}
+.section2 .container_box1 .box1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+  margin-top: -120px;
+}
+.section2 .container_box1 .box1 img {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(139, 139, 139, 0.379);
+  box-shadow: 2px 2px 8px 1px #000000;
+}
+.section2 .container_box1 .box1 span {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.379);
+  display: block;
+  margin: 10px 0;
+}
+.section2 .container_box1 .box1 h2 {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  margin-top: -2px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.section2 .container_box1 .box3 table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.section2 .container_box1 .box3 table td {
+  width: 40px;
+  padding: 10px 0;
+  color: #ffffff;
+  font-size: 20px;
+  border-bottom: 2px solid #ffffff50;
+  transition: all 0.3s;
+}
+.section2 .container_box1 .box3 table td:hover{
+  background-color: #2c3e50;
+
+}
+.section2 .container_box1 .box3 table td a{
+  color: #ffffff;
+  text-decoration: none;
+}
+.section2 .container_box1 .box3 i {
+  display: inline-block;
+  margin-right: 40px;
+  width: 40px;
+  font-size: 23px;
+  color: #ffffff;
+}
+.section2 .container_box1 .box2 h3 {
+  color: #f39c12;
+  margin-bottom: 20px;
+  z-index: 2;
+  font-size: 20px;
+  background-color: #ffffff;
+  display: block;
+  padding: 7px 17px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+.section2 .container_box2{
+  margin-left:300px ;
+  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.section2 .container_box2 .box1{
+  margin-top: 20px;
+  padding: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.077);
+}
+
+.section2 .container_box2 .box2{
+  width: 794px; /* Largeur pour A4 en pixels */
+  height: 1123px; /* Hauteur pour A4 en pixels */
+  border: 2px  solid rgba(0, 0, 0, 0.143) ;
+  border-radius: 7px;
+  background-color: #ffffff;
+  display: flex;
+  margin: 50px;
+overflow: hidden;
+}
+.section2 .container_box2 .box2 .parte1{
+  height: 100%;
+  width: 35%;
+  background-color: rgb(56, 56, 56);
+}
+.section2 .container_box2 .box2 .parte1 .pte1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 230px;
+}
+.section2 .container_box2 .box2 .parte1 .pte1 img{
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+}
+.section2 .container_box2 .box2 .parte1 .pte2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section2 .container_box2 .box2 .parte1 .pte2 h2{
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  margin-top: -7px;
+  background-color: #ffffff;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  border-top-right-radius: 10px ;
+  border-bottom-right-radius: 10px ;
+}
+.section2 .container_box2 .box2 .parte1 .pte2 h4{
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  margin-top: -15px;
+  background-color: #ffffff;
+  padding: 5px 0;
+  color: orange;
+  border-top-right-radius: 10px ;
+  border-bottom-right-radius: 10px ;
+}
+.section2 .container_box2 .box2 .parte1 .pte2 table{
+  border-collapse: collapse;
+  width: 100%;
+}
+.section2 .container_box2 .box2 .parte1 .pte2 table .inc{
+  width: 20%;
+}
+.section2 .container_box2 .box2 .parte1 .pte2 table .inc img{
+  width: 25px;
+}
+.section2 .container_box2 .box2 .parte1 .pte2 table td{
+  padding: 5px 10px ;
+  word-wrap: break-word;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+
+
+.section2 .container_box2 .box2 .parte1 .pte3{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section2 .container_box2 .box2 .parte1 .pte3 h2{
+  width: 100%;
+  padding:5px 10px ;
+  margin-top: 20px;
+  font-size: 20px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  padding: 6px 25px;
+  border-top-right-radius: 10px ;
+  border-bottom-right-radius: 10px ;
+  display: flex;
+  align-items: center;
+}
+.section2 .container_box2 .box2 .parte1 .pte3 h2 img{
+  width: 25px;
+}
+.section2 .container_box2 .box2 .parte1 .pte3 p{
+  width: 100%;
+  word-wrap: break-word;
+  color: #ffffff;
+  padding:5px 20px;
+  font-size: 14px;
+}
+.section2 .container_box2 .box2 .parte1 .pte3 table{
+  border-collapse: collapse;
+  width: 100%;
+}
+.section2 .container_box2 .box2 .parte1 .pte3 table .niv{
+  font-style: italic;
+  font-size: 13px;
+}
+.section2 .container_box2 .box2 .parte1 .pte3 table td{
+  padding: 5px 15px ;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.section2 .container_box2 .box2 .parte1 .pte3 table .inc{
+  width: 20%;
+}
+.section2 .container_box2 .box2 .parte1 .pte3 table .inc img{
+  width: 25px;
+}
+.section2 .container_box2 .box2 .parte1 .pte3 .reseaux{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+.section2 .container_box2 .box2 .parte2{
+  height: 100%;
+  width:70%;
+  background-color: rgb(255, 255, 255);
+}
+.section2 .container_box2 .box2 .parte2 .pat1 {
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+.section2 .container_box2 .box2 .parte2 .pat1 h1 {
+  width: 80%;
+  padding: 5px 0;
+  border-bottom:2px solid #2c3e5068;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.section2 .container_box2 .box2 .parte2 .pat2 {
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section2 .container_box2 .box2 .parte2 .pat2 p {
+  width: 90%;
+  padding: 10px 10px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.section2 .container_box2 .box2 .parte2 .exp{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.section2 .container_box2 .box2 .parte2 .exp .til1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.section2 .container_box2 .box2 .parte2 .exp .til1 h1{
+  width: 80%;
+  padding: 5px 0;
+  border-bottom:2px solid #2c3e5068;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+.section2 .container_box2 .box2 .parte2 .exp .mes_exp{
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 10px 5px 0 0;
+}
+.section2 .container_box2 .box2 .parte2 .exp .mes_exp .exp1{
+  height: 8px;
+  width: 8px;
+  background-color: black;
+  border-radius: 50%;
+  margin-right: 20px;
+
+}
+.section2 .container_box2 .box2 .parte2 .exp .mes_exp .exp2{
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.section2 .container_box2 .box2 .parte2 .exp .mes_exp .exp2 em{
+  font-size: 12px;
+}
+.section2 .container_box2 .box2 .parte2 .exp .mes_exp .exp3{
+  width: 330px;
+}
+.section2 .container_box2 .box2 .parte2 .exp .mes_exp .exp3 h2{
+  font-size: 16px;
+  color: orange;
+}
+.section2 .container_box2 .box2 .parte2 .exp .mes_exp .exp3 h4{
+  font-size: 15px;
+}
+.section2 .container_box2 .box2 .parte2 .exp .mes_exp .exp3 p{
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+
+
+
+.section2 .container_box2 .box2 .parte2 .outils{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  margin: 20px 20px 10px 0;
+ 
+}
+.section2 .container_box2 .box2 .parte2 .outils .out1{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.section2 .container_box2 .box2 .parte2 .outils h1{
+  width: 80%;
+  padding: 5px 0;
+  border-bottom:2px solid #2c3e5068;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.section2 .container_box2 .box2 .parte2 .outils .out2{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section2 .container_box2 .box2 .parte2 .outils .out2 table{
+  width: 80%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+.section2 .container_box2 .box2 .parte2 .outils .out2 table td{
+  width: 50%;
+  font-size: 13px;
+  padding: 5px 0;
+}
