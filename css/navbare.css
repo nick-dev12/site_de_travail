@@ -200,11 +200,11 @@ nav .box4 .liens{
     font-size: 16px;
     display: block;
     margin: 10px;
-    color: white;
+    color: rgb(0, 0, 0);
     transition: all 0.5s ease-out;
     padding: 7px 15px;
     border-radius:10px ;
-    background-color: #002233;
+    background-color: #ffffff;
     text-decoration: none;
  }
 
@@ -215,9 +215,11 @@ nav .box3 a {
     color: white;
     transition: all 0.5s ease-out;
     text-decoration: none;
+    background-color: #002233;
 }
 nav .box3 a:hover {
-    background-color: #002233;
+    background-color: #ffffff;
+    color: #002233;
 }
 nav .box4 .liens:hover {
     background-color: #F39C12;

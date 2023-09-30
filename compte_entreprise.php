@@ -182,49 +182,11 @@ if (isset($_POST['valider'])) {
 </head>
 
 <body>
-    <nav>
-        <a class="logo" href="/index.php"><span>Work</span><span>Flexers</span></a>
-
-        <div class="box1">
-            <a href="/index.php">Accueil</a>
-            <a href="/page/Offres_d'emploi.php">Offres d'emploi</a>
-            <a href="#">Entreprise</a>
-            <a href="/page/voir_profil.php">Explorer les profils</a>
-        </div>
-
-        <div class="box2">
-            <form action="post">
-                <input type="search" name="search" id="search">
-                <label for="submit"><i class="fa-solid fa-magnifying-glass fa-xs"></i></label>
-                <input type="submit" name="submit" id="submit" value="submit">
-            </form>
-        </div>
-
-        <div class="box3">
-            <a class="inscription" href="/inscription.php">Inscription</a>
-            <a class="connexion" href="/connexion.php">Connexion</a>
-        </div>
-    </nav>
-
-    <section class="section1">
-        <div>
-            <span>1</span>
-            <p>Trouver rapidement les meilleurs talents qui correspondent à vos besoins</p>
-        </div>
-        <div>
-            <span>2</span>
-            <p>Un processus de recrutement freelance facile et sans prise de tête</p>
-        </div>
-        <div>
-            <span>3</span>
-            <p>Des profils hautement qualifiés et adaptables à vos projets</p>
-        </div>
-    </section>
+<?php  include('navbare.php')?>
 
     <section class="section2">
-
+        <img class="img" src="/image/work.jpeg" alt="">
         <div class="formulaire1  ">
-            <img src="/image/undraw_mobile_login_re_9ntv.svg" alt="">
             <form method="post" action="" enctype="multipart/form-data">
                 <h3>Inscription</h3>
                 <?php if (isset($erreurs)) : ?>
@@ -256,9 +218,13 @@ if (isset($_POST['valider'])) {
                         <div class="box1">
                             <p>Photo de profile</p>
                             <div class="ab">
-                                <label class="label" for="images"> <img src="/image/galerie.jpg" alt=""></label>
+                               <div>
+                               <label class="label" for="images"> <img src="/image/galerie.jpg" alt=""></label>
                                 <input type="file" name="images" id="images">
-                                <img id="imagePreview" src="" alt="view">
+                               </div>
+                               <div class="im" >
+                               <img id="imagePreview" src="" alt="view">
+                               </div>
 
                                 <script>
                                     // Récupérer l'élément input type file
