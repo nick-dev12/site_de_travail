@@ -231,7 +231,7 @@ session_start();
 
     <section class="slider">
 
-        <div class="owl-carousel">
+        <div class=" slider1  owl-carousel">
 
             <div class="item">
                 <img src="/image/bouste.jpeg" alt="">
@@ -266,12 +266,38 @@ session_start();
 
     </script>
 
+<section class="explore">
+    <div class="t1" >
+        <h1>explorer les profiles qui vous conviennent</h1>
+    </div>
 
+    <div class="profil" >
+        <div class="owl-slider owl-carousel " >
+            <div class="item">
+                <img src="/image/entreprise.jpg" alt="">
+                <h3>nick jomas effe</h3>
+                <p> developper web</p>
+            </div>
+
+            <div class="item">
+                <img src="/image/duré.jpg" alt="">
+                <h3>nick jomas effe</h3>
+                <p> developper web</p>
+            </div>
+
+            <div class="item">
+                <img src="/image/bg_bggenerator_com.jpg" alt="">
+                <h3>nick jomas effe</h3>
+                <p> developper web</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <?php include('footer.php') ?>
 
 
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -310,14 +336,26 @@ Sign up at https://greensock.com/club or try them for free on CodePen or CodeSan
         $(document).ready(function () {
 
 
-            $('.owl-carousel').owlCarousel({
+            $('.slider1 ').owlCarousel({
                 items: 1,
                 loop: true,
                 autoplay: true,
                 autoplayTimeout: 5000,
                 stagePadding: 10,
-                smartSpeed: 450,
-                margin: 10,
+                smartSpeed: 900,
+                nav: true,
+            });
+
+
+            $('.owl-slider').owlCarousel({
+                items: 3,
+                loop: true,
+                autoplay: true,
+                animateOut: 'slideOutDown',
+                animateIn: 'flipInX',
+                autoplayTimeout: 5000,
+                stagePadding: 10,
+                smartSpeed: 600,
                 nav: true,
             });
 
