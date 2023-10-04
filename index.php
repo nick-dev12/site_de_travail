@@ -35,7 +35,7 @@ session_start();
 
 
     <!-- menu carousel slider -->
-    <div class="slider-area owl-carousel">
+    <div class="slider-area owl-carousel" data-aos="zoom-in">
         <div class="slider-item">
             <img src="/image/HR-technology-fotolia.jpg" alt="">
             <div class="box">

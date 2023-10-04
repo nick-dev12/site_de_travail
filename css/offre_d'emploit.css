@@ -303,6 +303,15 @@ body{
      width: 100%;
      margin-bottom: 90px;
  }
+ .produit_vedete .box1 h1{
+    margin: auto 0;
+ }
+ .produit_vedete .box1 .affiche{
+    height: 100px;
+ }
+ .produit_vedete .box1 .affich img{
+    height: 100px;
+ }
  .produit_vedete .box1 span{
      height: 1px;
      background-color: black;

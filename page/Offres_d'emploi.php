@@ -16,6 +16,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="../css/offre_d'emploit.css">
     <link rel="stylesheet" href="/css/owl.carousel.css">
     <link rel="stylesheet" href="/css/owl.carousel.min.css">
@@ -26,7 +27,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
 
     <?php include('../navbare.php') ?>
 
-    <section class="section2">
+    <section class="section2" data-aos="zoom-in">
         <div class="slider">
             <div class="box">
                 <div class="img owl-carousel boot">
@@ -53,10 +54,15 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
 
 
     <section class="produit_vedete">
-        <div class="box1">
-            <span></span>
+        <div class="box1" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
+
             <h1>Ingénierie et architecture</h1>
-            <span></span>
             <div class="affiche">
                 <img src="/image/ingenieur.jpeg" alt="">
             </div>
@@ -67,12 +73,12 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
             <span><i class="fa-solid fa-chevron-right"></i></span>
         </div>
 
-        <article data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-easing="ease-in-out"
+        <article data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
             data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom"
             class="articles owl-carousel carousel1">
             <?php if (empty($offreIngenierie)): ?>
 
-                <h1 class="message">Aucun profil disponible pour cette categorie</h1>
+                <h1 class="message">Aucune offre d'emploi n'est disponible pour cette catégorie.</h1>
 
             <?php else: ?>
                 <?php foreach ($offreIngenierie as $ingenieurs): ?>
@@ -83,21 +89,20 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <img src="../image/coeurs.png" alt="">
                         </p>
 
-                            <div class="box_vendu">
-                                <div class="vendu">
+                        <div class="box_vendu">
+                            <div class="vendu">
 
-                                        <p>
-                                            <?php echo ($ingenieurse['poste']); ?>
-                                        </p>
-                                </div>
-
+                                <p>
+                                    <?php echo ($ingenieurse['poste']); ?>
+                                </p>
                             </div>
-                        
+
+                        </div>
+
                         <p id="nom">
                             <?php echo $ingenieurs['date']; ?>
                         </p>
-
-                        <a href="/page/profile_travailleur.php?id=<?php echo $ingenieurs['offre_id']; ?>">
+                        <a href="../entreprise/voir_offre.php?id=<?= $marketing['offre_id']; ?>">
                             <i class="fa-solid fa-eye"></i>Voir l'offre
                         </a>
                     </div>
@@ -113,7 +118,13 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
 
 
     <section class="produit_vedete">
-        <div class="box1">
+        <div class="box1" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
             <span></span>
             <h1> Design et création</h1>
             <span></span>
@@ -128,10 +139,16 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
             <span><i class="fa-solid fa-chevron-right"></i></span>
         </div>
 
-        <article class="articles owl-carousel carousel2">
+        <article class="articles owl-carousel carousel2" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
             <?php if (empty($offreDesing)): ?>
 
-                <h1 class="message">Aucun profil disponible pour cette categorie</h1>
+                <h1 class="message">Aucune offre d'emploi n'est disponible pour cette catégorie.</h1>
 
             <?php else: ?>
 
@@ -156,9 +173,9 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                         <?php echo $Designs['date']; ?>
                     </p>
 
-                    <a href="/page/profile_travailleur.php?id=<?php echo $Designs['offre_id']; ?>">
-                        <i class="fa-solid fa-eye"></i>Voir l'offre
-                    </a>
+                    <a href="../entreprise/voir_offre.php?id=<?= $marketing['offre_id']; ?>">
+                            <i class="fa-solid fa-eye"></i>Voir l'offre
+                        </a>
                     </div>
 
                 <?php endforeach ?>
@@ -179,7 +196,13 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
 
 
     <section class="produit_vedete">
-        <div class="box1">
+        <div class="box1" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
             <span></span>
             <h1>Rédaction et traduction</h1>
             <span></span>
@@ -193,10 +216,16 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
             <span><i class="fa-solid fa-chevron-right"></i></span>
         </div>
 
-        <article class="articles owl-carousel carousel3">
+        <article class="articles owl-carousel carousel3" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
             <?php if (empty($offreRedaction)): ?>
 
-                <h1 class="message">Aucun profil disponible pour cette categorie</h1>
+                <h1 class="message">Aucune offre d'emploi n'est disponible pour cette catégorie.</h1>
 
             <?php else: ?>
 
@@ -222,7 +251,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <?php echo $Redaction['date']; ?>
                         </p>
 
-                        <a href="/page/profile_travailleur.php?id=<?php echo $Redaction['offre_id']; ?>">
+                        <a href="../entreprise/voir_offre.php?id=<?= $marketing['offre_id']; ?>">
                             <i class="fa-solid fa-eye"></i>Voir l'offre
                         </a>
                     </div>
@@ -242,7 +271,13 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
 
 
     <section class="produit_vedete">
-        <div class="box1">
+        <div class="box1" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
             <span></span>
             <h1>Marketing et communication</h1>
             <span></span>
@@ -256,10 +291,16 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
             <span><i class="fa-solid fa-chevron-right"></i></span>
         </div>
 
-        <article class="articles owl-carousel carousel4">
+        <article class="articles owl-carousel carousel4" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
             <?php if (empty($offreMarcketing)): ?>
 
-                <h1 class="message">Aucun profil disponible pour cette categorie</h1>
+                <h1 class="message">Aucune offre d'emploi n'est disponible pour cette catégorie.</h1>
 
             <?php else: ?>
 
@@ -305,7 +346,13 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
 
 
     <section class="produit_vedete">
-        <div class="box1">
+        <div class="box1" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
             <span></span>
             <h1>Conseil et gestion d'entreprise</h1>
             <span></span>
@@ -319,10 +366,17 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
             <span><i class="fa-solid fa-chevron-right"></i></span>
         </div>
 
-        <article class="articles owl-carousel carousel5">
+        <article class="articles owl-carousel carousel5" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
             <?php if (empty($offreBusiness)): ?>
 
-                <h1 class="message">Aucun profil disponible pour cette categorie</h1>
+                <h1 class="message">Aucune offre d'emploi n'est disponible pour cette catégorie.</h1>
+                </h1>
 
             <?php else: ?>
 
@@ -330,7 +384,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
 
                     <div class="carousel">
                         <img src="../upload/<?php echo $business['images'] ?>" alt="">
-                        <p class="p" >
+                        <p class="p">
                             <?php echo $business['entreprise']; ?>
                             <img src="../image/coeurs.png" alt="">
                         </p>
@@ -348,8 +402,8 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <?php echo $business['date']; ?>
                         </p>
 
-                        <a href="/page/profile_travailleur.php?id=<?php echo $business['offre_id']; ?>">
-                            <i class="fa-solid fa-eye"></i>Profil
+                        <a href="../entreprise/voir_offre.php?id=<?= $marketing['offre_id']; ?>">
+                            <i class="fa-solid fa-eye"></i>Voir l'offre
                         </a>
                     </div>
 
@@ -369,7 +423,13 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
 
 
     <section class="produit_vedete">
-        <div class="box1">
+        <div class="box1" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
             <span></span>
             <h1>Juridique</h1>
             <span></span>
@@ -383,10 +443,16 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
             <span><i class="fa-solid fa-chevron-right"></i></span>
         </div>
 
-        <article class="articles owl-carousel carousel6">
+        <article class="articles owl-carousel carousel6" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
             <?php if (empty($offreJuridique)): ?>
 
-                <h1 class="message">Aucun profil disponible pour cette categorie</h1>
+                <h1 class="message">Aucune offre d'emploi n'est disponible pour cette catégorie.</h1>
 
             <?php else: ?>
 
@@ -411,7 +477,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <?php echo $Juridique['date']; ?>
                         </p>
 
-                        <a href="/page/profile_travailleur.php?id=<?php echo $Juridique['offre_id']; ?>">
+                        <a href="../entreprise/voir_offre.php?id=<?= $marketing['offre_id']; ?>">
                             <i class="fa-solid fa-eye"></i>Voir l'offre
                         </a>
                     </div>
@@ -431,7 +497,13 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
 
 
     <section class="produit_vedete">
-        <div class="box1">
+        <div class="box1" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
             <span></span>
             <h1>Informatique et tech </h1>
             <span></span>
@@ -446,10 +518,16 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
             <span><i class="fa-solid fa-chevron-right"></i></span>
         </div>
 
-        <article class="articles owl-carousel carousel7">
+        <article class="articles owl-carousel carousel7" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" 
+     data-aos-delay="0" 
+     data-aos-duration="500" 
+     data-aos-easing="ease-in-out"        
+     data-aos-mirror="true" 
+     data-aos-once="false">
             <?php if (empty($offreInformatique)): ?>
 
-                <h1 class="message">Aucune offre d'emploi n'est disponible pour cette catégorie</h1>
+                <h1 class="message">Aucune offre d'emploi n'est disponible pour cette catégorie.</h1>
 
             <?php else: ?>
 
@@ -457,7 +535,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
 
                     <div class="carousel">
                         <img src="../upload/<?php echo $Informatique['images'] ?>" alt="">
-                        <p class="p" >
+                        <p class="p">
                             <?php echo $Informatique['competences']; ?>
                             <img src="../image/coeurs.png" alt="">
                         </p>
@@ -474,8 +552,8 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <?php echo $Informatique['date']; ?>
                         </p>
 
-                        <a href="/page/profile_travailleur.php?id=<?php echo $Informatique['id']; ?>">
-                            <i class="fa-solid fa-eye"></i>Profil
+                        <a href="../entreprise/voir_offre.php?id=<?= $marketing['offre_id']; ?>">
+                            <i class="fa-solid fa-eye"></i>Voir l'offre
                         </a>
                     </div>
 
