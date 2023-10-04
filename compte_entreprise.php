@@ -184,6 +184,7 @@ if (isset($_POST['valider'])) {
 <body>
 <?php  include('navbare.php')?>
 
+
     <section class="section2">
         <img class="img" src="/image/work.jpeg" alt="">
         <div class="formulaire1  ">

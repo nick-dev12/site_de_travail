@@ -75,7 +75,6 @@ z-index: -1;
 /* .section2 .formulaire1 form :nth-child(2) {
     display: block;
 } */
-
 .section2 .formulaire1 form .box1 {
     display: flex;
     flex-direction: column;

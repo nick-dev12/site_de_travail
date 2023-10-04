@@ -80,8 +80,8 @@ if (isset($_SESSION['users_id'])) {
         <?php else: ?>
 
             <div class="box3">
-                <a href="../inscription.php">Inscription</a>
-                <a href="../connexion.php">Connexion</a>
+                <a href="/inscription.php">Inscription</a>
+                <a href="/connection_compte.php">Connexion</a>
             </div>
 
         <?php endif ?>
