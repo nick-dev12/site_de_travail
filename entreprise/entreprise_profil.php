@@ -8,7 +8,8 @@ include('../conn/conn.php');
 
 
 
-include_once('app/controller/controllerEntreprise.php')
+include_once('app/controller/controllerEntreprise.php');
+include_once('app/controller/controllerDescription.php');
 ?>
 
 
@@ -80,12 +81,37 @@ include_once('app/controller/controllerEntreprise.php')
     <section class="section3">
 
     <?php if (isset($_SESSION['success_message'])) : ?>
-          <div class="erreur"><?php echo $_SESSION['success_message'] ; ?></div>
+          <div class="success">
+            <?php echo $_SESSION['success_message'] ; ?>
+            <?php unset($_SESSION['success_message']); ?>
+        </div>
           <?php else: ?>
             <?php if(isset($_SESSION['error_message'])): ?>
-            <div class="erreur"><?php echo  $_SESSION['error_message']; ?></div>
+            <div class="erreur">
+                <?php echo  $_SESSION['error_message']; ?>
+                <?php unset($_SESSION['error_message']); ?>
+            </div>
+            
             <?php endif; ?>
         <?php endif; ?>
+
+        <script>
+            let success =document.querySelector('.success')
+            setTimeout( ()=>{
+                success.classList.add('visible')
+            },200)
+             setTimeout( ()=>{
+                success.classList.remove('visible')
+            },6000)
+
+             let erreur =document.querySelector('.erreur')
+            setTimeout( ()=>{
+                erreur.classList.add('visible')
+            },200)
+             setTimeout( ()=>{
+                erreur.classList.remove('visible')
+            },6000)
+        </script>
         <div class="container_box3">
             <div class="box1">
                 <h2>Description !</h2>
@@ -104,8 +130,12 @@ include_once('app/controller/controllerEntreprise.php')
                 <form method="post" action="">
                     <div>
                         <textarea name="descriptions" id="summernote" cols="30" rows="10"></textarea>
-                        <input type="submit" value="ajouter">
                     </div>
+                    <div class="div" >
+                    <label for="site">Avez vous un site web ?</label>
+                        <input type="text" name="liens" id="site">
+                    </div>
+                    <input type="submit" name="ajouter" value="ajouter" id="ajouter">
                 </form>
             </div>
 
@@ -116,7 +146,7 @@ include_once('app/controller/controllerEntreprise.php')
                 btn1.addEventListener('click', () => {
 
                     if (form_desc.style.height === '0px') {
-                        form_desc.style.height = '300px'
+                        form_desc.style.height = '350px'
                     } else {
                         form_desc.style.height = '0px'
                     }
@@ -180,6 +210,19 @@ include_once('app/controller/controllerEntreprise.php')
                     <input type="submit" name="publier" value="publier" id="valider">
                 </form>
             </div>
+
+            <script>
+                let btn2 = document.querySelector('.btn2')
+        let form_off = document.querySelector('.form_off')
+
+        btn2.addEventListener('click', () => {
+            if (form_off.style.height === '0px') {
+                form_off.style.height = '1300px'
+            } else {
+                form_off.style.height = '0px'
+            }
+        })
+            </script>
         </div>
 
 
@@ -276,16 +319,7 @@ include_once('app/controller/controllerEntreprise.php')
             });
         });
 
-        let btn2 = document.querySelector('.btn2')
-        let form_off = document.querySelector('.form_off')
 
-        btn2.addEventListener('click', () => {
-            if (form_off.style.height === '0px') {
-                form_off.style.height = '1300px'
-            } else {
-                form_off.style.height = '0px'
-            }
-        })
     </script>
 
 
