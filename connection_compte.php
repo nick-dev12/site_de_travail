@@ -45,7 +45,7 @@ if (isset($_SESSION['users_id']) && $_SESSION['users_id']) {
             </div>
 
             <div>
-                <a href="/compte_travailleur.php">
+                <a href="/connexion.php">
                     <button> compte de travailleur</button>
                     <img src="/image/travail.png" alt="">
                 </a>

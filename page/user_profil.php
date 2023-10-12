@@ -126,12 +126,12 @@ include_once('../controller/controller_projet_users.php');
             </div>
             <div class="box3">
                 <table>
-                   
-                        <tr>
-                            <td><i class="fa-solid fa-briefcase"></i></td>
-                            <td> <a href="cv_users.php">mon cv</a></td>
-                        </tr>
-                    
+
+                    <tr>
+                        <td><i class="fa-solid fa-briefcase"></i></td>
+                        <td> <a href="cv_users.php">mon cv</a></td>
+                    </tr>
+
                     <tr>
                         <td><i class="fa-solid fa-clipboard"></i></td>
                         <td>mon experience</td>
@@ -244,8 +244,8 @@ include_once('../controller/controller_projet_users.php');
 
                             <textarea name="nouvelleDescription" id="summernote" cols="30" rows="10"
                                 placeholder="Ajoute une description ici">
-                                                                                                        <?php echo htmlspecialchars($descriptions['description'], ENT_QUOTES, 'UTF-8'); ?>
-                                                                                                        </textarea>
+                                     <?php echo htmlspecialchars($descriptions['description'], ENT_QUOTES, 'UTF-8'); ?>  
+                                    </textarea>
                             <input type="submit" value="Modifier" name="Modifier" id="ajoute">
                         </form>
                     </div>
@@ -311,13 +311,13 @@ include_once('../controller/controller_projet_users.php');
                         </table>
                         <table>
                             <tr>
-                                <td class="date" >
+                                <td class="date">
                                     <em>
                                         <?php echo $metiers['date1']; ?>
                                     </em>
                                 </td>
 
-                                <td class="date" >
+                                <td class="date">
                                     <em>
                                         <?php echo $metiers['date2']; ?>
                                     </em>
@@ -350,44 +350,44 @@ include_once('../controller/controller_projet_users.php');
                         <input type="text" name="metier" id="metier">
                     </div>
 
-                    <div class="boxmetier" id="dat" >
+                    <div class="boxmetier" id="dat">
                         <div>
-                        <label for="date1">date de debut</label>
-                        <div class="input-group date">
-                                <input id="datee" name="date1" type="text" class="form-control" value="12-02-2012"
-                                    width 200>
+                            <label for="date1">date de debut</label>
+                            <div class="input-group date">
+                                <input id="datee" name="date1" type="text" class="form-control" value="12-02-2012" width
+                                    200>
                             </div>
                         </div>
                         <div>
-                        <label for="date2">date de fin</label>
-                        <div class="input-group date">
+                            <label for="date2">date de fin</label>
+                            <div class="input-group date">
                                 <input id="datees" name="date2" type="text" class="form-control" value="12-02-2012"
                                     width 200>
                             </div>
                         </div>
 
                         <script>
-                $(document).ready(function () {
-                    $('#datee').datepicker({
-                        format: 'dd/mm/yyyy', // Format de la date
-                        autoclose: true, // Fermer automatiquement le sélecteur après la sélection
-                        todayHighlight: true, // Mettre en surbrillance la date actuelle
-                        startDate: '01/01/2000', // Date de début
-                        endDate: '31/12/2030', // Date de fin
-                        language: 'fr' // Langue (français)
-                    });
-                });
-                $(document).ready(function () {
-                    $('#datees').datepicker({
-                        format: 'dd/mm/yyyy', // Format de la date
-                        autoclose: true, // Fermer automatiquement le sélecteur après la sélection
-                        todayHighlight: true, // Mettre en surbrillance la date actuelle
-                        startDate: '01/01/2000', // Date de début
-                        endDate: '31/12/2030', // Date de fin
-                        language: 'fr' // Langue (français)
-                    });
-                });
-            </script>
+                            $(document).ready(function () {
+                                $('#datee').datepicker({
+                                    format: 'dd/mm/yyyy', // Format de la date
+                                    autoclose: true, // Fermer automatiquement le sélecteur après la sélection
+                                    todayHighlight: true, // Mettre en surbrillance la date actuelle
+                                    startDate: '01/01/2000', // Date de début
+                                    endDate: '31/12/2030', // Date de fin
+                                    language: 'fr' // Langue (français)
+                                });
+                            });
+                            $(document).ready(function () {
+                                $('#datees').datepicker({
+                                    format: 'dd/mm/yyyy', // Format de la date
+                                    autoclose: true, // Fermer automatiquement le sélecteur après la sélection
+                                    todayHighlight: true, // Mettre en surbrillance la date actuelle
+                                    startDate: '01/01/2000', // Date de début
+                                    endDate: '31/12/2030', // Date de fin
+                                    language: 'fr' // Langue (français)
+                                });
+                            });
+                        </script>
                     </div>
 
                     <div class="boxmetier">

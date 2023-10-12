@@ -15,9 +15,31 @@ if (isset($_POST['ajouter'])) {
 
     if (empty($_SESSION['error_message'])) {
         if (postDescription($db, $entreprise_id, $descriptions, $liens)) {
-            $_SESSION['success_message'] = ' description ajouter avec succes !!';
+            $_SESSION['success_message'] = ' Description ajouter avec succes !!';
             header('Location: entreprise_profil.php');
         }
     }
+}
+
+$afficheDescriptionentreprise=getDescriptionEntreprise ($db,$_SESSION['compte_entreprise']);
+
+if (isset($_POST['modifier'])) {
+
+    $descriptions=$liens='';
+
+    if (empty($_POST['descriptions'])) {
+        $_SESSION['error_message'] = 'Le champ DESCRIPTION ne dois pas etre vide !!!';
+    }else{
+        $descriptions=$_POST['descriptions'];
+    }
+   
+        $liens=$_POST['liens'];
+        if (empty( $_SESSION['error_message'])) {
+            if (updatDescristion($db,$descriptions,$liens)) {
+                $_SESSION['success_message'] = ' Description modifier avec succes !!';
+                header('Location: entreprise_profil.php');
+            }
+        }
+
 }
 ?>
