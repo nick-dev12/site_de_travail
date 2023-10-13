@@ -26,7 +26,7 @@ $erreurs = ''; // Initialisez un tableau pour stocker les erreurs
 if (isset($_POST['valider'])) {
     // Récupération des données du formulaire
     // Déclaration des variables 
-    $nom = $mail = $phone = $competences = $images = $ville = $categorie = $passe = $cpasse = '';
+    $nom = $mail = $phone = $competences=$profession = $images = $ville = $categorie = $passe = $cpasse = '';
 
     $id = uniqid();
 
@@ -71,9 +71,15 @@ if (isset($_POST['valider'])) {
     }
     // Vérification du nom de boutique
     if (empty($_POST['competences'])) {
-        $erreurs = "Le nom de la boutique est obligatoire";
+        $erreurs = "ce champ ne dois pas etre vide";
     } else {
         $competences = htmlspecialchars($_POST['competences']);
+    }
+
+    if (empty($_POST['profession'])) {
+        $erreurs = "Veuiller selectionner un profession!!";
+    } else {
+        $profession = htmlspecialchars($_POST['profession']);
     }
 
 
@@ -132,8 +138,8 @@ if (isset($_POST['valider'])) {
         $passe = password_hash($passe, PASSWORD_DEFAULT);
 
         // Préparation de la requête SQL
-        $sql = "INSERT INTO users (nom, mail, phone, competences, ville, categorie ,images, passe) 
-              VALUES (:nom, :mail, :phone, :competences, :ville, :categorie, :images, :passe)";
+        $sql = "INSERT INTO users (nom, mail, phone, competences,profession, ville, categorie ,images, passe) 
+              VALUES (:nom, :mail, :phone, :competences,:profession, :ville, :categorie, :images, :passe)";
 
         // Préparation de la requête 
         $stmt = $db->prepare($sql);
@@ -143,6 +149,7 @@ if (isset($_POST['valider'])) {
         $stmt->bindParam(':mail', $mail);
         $stmt->bindParam(':phone', $phone);
         $stmt->bindParam(':competences', $competences);
+        $stmt->bindParam(':profession', $profession);
         $stmt->bindParam(':ville', $ville);
         $stmt->bindParam(':categorie', $categorie);
         $stmt->bindParam(':images', $uniqueFileName);
@@ -254,13 +261,22 @@ if (isset($_POST['valider'])) {
 
 
                     <div class="container">
+
                         <div class="box1">
                             <label for="competences">Dommaine de compétences</label>
                             <input type="text" name="competences" id="competences">
                         </div>
 
                         <div class="box1">
-                            <label for="categorie">Categorie</label>
+                            <label for="profession">Profession</label>
+                            <select name="profession" id="profession">
+                                <option value="Etudiant">Etudiant</option>
+                                <option value="Professionnel">Professionnel</option>
+                            </select>
+                        </div>
+
+                        <div class="box1">
+                            <label for="categorie">Secteur d'activité</label>
                             <select id="categorie" name="categorie">
                                 <option value="">Sélectionnez une catégorie</option>
                                 <option value="Informatique">Informatique et tech</option>

@@ -124,4 +124,19 @@ function getOffreInformatique($db){
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+
+/**
+ * Summary of getOffresEmploit
+ * @param mixed $db
+ * @param mixed $offre_id
+ * @return mixed
+ */
+function getOffresEmploit($db,$offre_id){
+    $sql= "SELECT * FROM offre_emploi WHERE offre_id=:offre_id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':offre_id',$offre_id, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
 ?>

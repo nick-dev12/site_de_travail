@@ -1,3 +1,18 @@
+<?php
+session_start();
+if(isset($_GET['id'])){
+    $offre_id = $_GET['id'] ;
+}else{
+    header('Location: ../page/Offres_d\'emploi.php');
+}
+
+include_once('app/controller/controllerOffre_emploi.php');
+include_once('app/controller/controllerEntreprise.php');
+include_once('app/controller/controllerDescription.php');
+
+$Offres =getOffres($db, $offre_id );
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,46 +27,11 @@
         <link rel="stylesheet" href="../css/owl.carousel.css">
         <link rel="stylesheet" href="../css/owl.carousel.min.css">
     <link rel="stylesheet" href="../css/voir_offre.css">
+    <link rel="stylesheet" href="../css/navbare.css">
 </head>
 <body>
-    <nav>
-        <a class="logo" href="#"><span>Work</span><span>Flexers</span></a>
-
-        <div class="box1">
-            <a href="#">Accueil</a>
-            <a href="/page/Offres_d'emploi.html">Offres d'emploi</a>
-            <a href="#">Entreprise</a>
-            <a href="/page/voir_profil.html">Explorer les profils</a>
-        </div>
-
-        <div class="box2">
-            <form action="post">
-                <input type="search" name="search" id="search">
-                <label for="submit"><i class="fa-solid fa-magnifying-glass fa-xs"></i></label>
-                <input type="submit" name="submit" id="submit" value="submit">
-            </form>
-        </div>
-
-        <div class="box3">
-            <a href="../inscription.php">Inscription</a>
-            <a href="../connexion.php">Connexion</a>
-        </div>
-    </nav>
-
-    <section class="section1">
-        <div>
-            <span>1</span>
-            <p>Trouver rapidement les meilleurs talents qui correspondent à vos besoins</p>
-        </div>
-        <div>
-            <span>2</span>
-            <p>Un processus de recrutement freelance facile et sans prise de tête</p>
-        </div>
-        <div>
-            <span>3</span>
-            <p>Des profils hautement qualifiés et adaptables à vos projets</p>
-        </div>
-    </section>
+    
+<?php include('../navbare.php') ?>
 
     
     <section class="section2">
@@ -61,20 +41,29 @@
             <table>
                 <tr>
                     <th>NOM</th>
-                    <td>Web-geniuses</td>
+                    <td><?= $getEntreprise['entreprise'] ?></td>
                 </tr>
                 <tr>
                     <th>site internet</th>
-                    <td><a href="">www/webgeniuses.com</a></td>
+                    <?php if($afficheDescriptionentreprise):?>
+                        <td><a href="<?= $afficheDescriptionentreprise['liens'] ?>"><?= $afficheDescriptionentreprise['liens'] ?></a></td>
+                    <?php else: ?>
+                        <td>Aucun lien pour cette entreprise</td>
+                    <?php endif; ?>
                 </tr>
                 <tr>
                     <th>secteur d'activiter</th>
-                    <td>informatique genicil maintenance logiciel </td>
+                    <td><?= $getEntreprise['categorie'] ?></td>
                 </tr>
 
                 <tr>
                     <th>description de l'Entreprise</th>
-                    <td>nous somme une Entreprise specialiser sur la creation et le montage de site internetpour les particulier comme des Entreprise </td>
+                    <?php if($afficheDescriptionentreprise):?>
+                    <td><?= $afficheDescriptionentreprise['descriptions'] ?></td>
+                    <?php else: ?>
+                        <td>Aucune description pour cette entreprise</td>
+                    <?php endif; ?>
+
                 </tr>
             </table>
         </div>
@@ -83,28 +72,18 @@
 
 
     <section class="section3">
+    <?php if($Offres): ?>
         <div class="box1">
             <h1>detaille de l'offre</h1>
-            <h2>poste disponible : <span>developpeur web</span></h2>
+            <h2>poste disponible : <span><?= $Offres['poste'] ?></span></h2>
+
             <h3>Mission et responsabiliter</h3>
-            <ul>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-            </ul>
+
+            <?= $Offres['mission'] ?>
 
             <h3>profil rechercher (caliter et competance) </h3>
-            <ul>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-            </ul>
+
+            <?= $Offres['profil'] ?>
 
             <h1 class="suplement">Info suplementaire</h1>
 
@@ -112,38 +91,39 @@
             <table>
                 <tr>
                     <th>Métier :</th>
-                    <td>Transport, logistique</td>
+                    <td> <?= $Offres['metier'] ?></td>
                 </tr>
                 <tr>
                     <th>Type de contrat :</th>
-                    <td>CDD - Stage</td>
+                    <td> <?= $Offres['contrat'] ?></td>
                 </tr>
                 <tr>
                     <th>Région :</th>
-                    <td>Dakar</td>
+                    <td> <?= $Offres['localite'] ?></td>
                 </tr>
 
                 <tr>
                     <th>Ville :</th>
-                    <td>Dakar</td>
+                    <td><?=$getEntreprise['ville']?></td>
                 </tr>
 
                 <tr>
                     <th>Niveau d'expérience :</th>
-                    <td>Débutant < 2 ans</td>
+                    <td> <?= $Offres['experience'] ?></td>
                 </tr>
                 <tr>
                     <th>Niveau d'études :</th>
-                    <td>Bac+3</td>
+                    <td> <?= $Offres['etudes'] ?></td>
                 </tr>
                 <tr>
                     <th>Langues exigées :</th>
-                    <td>Anglais›Intermédiaire , Français›Courant</td>
+                    <td> <?= $Offres['langues'] ?></td>
                 </tr>
             </table>
 
             <a href="">postuler ici</a>
         </div>
+        <?php endif;?>
     </section>
 
 

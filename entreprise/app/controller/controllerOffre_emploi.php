@@ -80,5 +80,9 @@ $offreJuridique = getOffreJuridique($db);
 $offreBusiness = getOffrebusiness($db);
 $offreRedaction = getOffreRédaction($db);
 $offreDesing = getOffreDesign($db);
-$offreIngenierie = getOffreIngenieur($db)
+$offreIngenierie = getOffreIngenieur($db);
+
+if(isset($_GET['id'])){
+    $afficheOffres=getOffresEmploit($db,$_GET['id']);
+}
 ?>

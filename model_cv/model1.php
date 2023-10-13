@@ -150,9 +150,27 @@ include_once('../controller/controller_projet_users.php');
                             </table>
                         </div>
                     </div>
+                   
 
                     <div class="pte3" >
-                        <h2>loisir <img src="../image/loisir.png" alt=""></h2>
+                        <h2>Diplome <img src="../image/diplome.png" alt=""></h2>
+                        <div>
+                            <p>diplome de droit publique</p>
+                            <p>diplome de droit publique</p>
+                            <p>diplome de droit publique</p>
+                        </div>
+                    </div>
+                    <div class="pte3" >
+                        <h2>Sertificat <img src="../image/diplome.png" alt=""></h2>
+                        <div>
+                            <p>diplome de droit publique</p>
+                            <p>diplome de droit publique</p>
+                            <p>diplome de droit publique</p>
+                        </div>
+                    </div>
+
+                    <div class="pte3" >
+                        <h2>Centre d'interet <img src="../image/loisir.png" alt=""></h2>
                         <div>
                             <table>
                                 <tr>
@@ -164,15 +182,6 @@ include_once('../controller/controller_projet_users.php');
                                     <td>mail</td>
                                 </tr>
                             </table>
-                        </div>
-                    </div>
-
-                    <div class="pte3" >
-                        <h2>diplome / sertificat <img src="../image/diplome.png" alt=""></h2>
-                        <div>
-                            <p>diplome de droit publique</p>
-                            <p>diplome de droit publique</p>
-                            <p>diplome de droit publique</p>
                         </div>
                     </div>
 

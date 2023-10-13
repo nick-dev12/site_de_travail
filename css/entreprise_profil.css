@@ -232,6 +232,9 @@ body{
     align-items: center;
     justify-content: center;
 }
+.section3 .container_box1 .form_off form label{
+    color: #3451c6;
+}
 .section3 .container_box1 .form_off form .box{
     display: flex;
    flex-direction: column;
@@ -418,13 +421,13 @@ body{
     border-radius: 7px;
 }
 .section3 .container_box3 .box1 {
-    max-height: 300px;
     width: 80%;
     padding: 20px 40px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: start;
+
 }
 
 .section3 .container_box3 .box1 p{

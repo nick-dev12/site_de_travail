@@ -186,9 +186,9 @@ include_once('app/controller/controllerDescription.php');
             <div class="box2">
                 <button class="btn2">Ajouter une offre</button>
             </div>
-
             <div class="form_off">
                 <form method="post" action="">
+                     
                     <div class="box">
                         <label for="poste">Poste disponible</label>
                         <input type="text" name="poste" id="poste">

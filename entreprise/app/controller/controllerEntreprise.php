@@ -1,6 +1,13 @@
 <?php
 require_once ('..//entreprise/app/model/entreprise.php');
 
+if(isset($_SESSION['compte_entreprise'])){
+    $getEntreprise = getEntreprise($db,$_SESSION['compte_entreprise']);
+    
+    $selecteOffre = selectOffre ($db,$getEntreprise['id']);
+    
+    $afficheOffreEmplois = getOffresEmplois($db, $getEntreprise['id']);
+    }
 
 if(isset($_POST['publier'])){
 
@@ -80,12 +87,7 @@ if(empty($_SESSION['error_message'])){
 
 
 }
-if(isset($_SESSION['compte_entreprise'])){
-$getEntreprise = getEntreprise($db,$_SESSION['compte_entreprise']);
 
-$selecteOffre = selectOffre ($db,$getEntreprise['id']);
 
-$afficheOffreEmplois = getOffresEmplois($db, $getEntreprise['id']);
-}
 
 ?>

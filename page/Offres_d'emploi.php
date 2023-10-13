@@ -102,7 +102,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                         <p id="nom">
                             <?php echo $ingenieurs['date']; ?>
                         </p>
-                        <a href="../entreprise/voir_offre.php?id=<?= $marketing['offre_id']; ?>">
+                        <a href="../entreprise/voir_offre.php?id=<?= $ingenieurs['offre_id']; ?>">
                             <i class="fa-solid fa-eye"></i>Voir l'offre
                         </a>
                     </div>
@@ -161,19 +161,21 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <img src="../image/coeurs.png" alt="">
                         </p>
 
-                        <p>
-                            <?php echo ($Designs['poste']); ?>
-                        </p>
+                        <div class="box_vendu">
+                            <div class="vendu">
 
-                    </div>
+                                <p>
+                                    <?php echo ($Designs['poste']); ?>
+                                </p>
+                            </div>
 
-                    </div>
+                        </div>
 
                     <p id="nom">
                         <?php echo $Designs['date']; ?>
                     </p>
 
-                    <a href="../entreprise/voir_offre.php?id=<?= $marketing['offre_id']; ?>">
+                    <a href="../entreprise/voir_offre.php?id=<?= $Designs['offre_id']; ?>">
                             <i class="fa-solid fa-eye"></i>Voir l'offre
                         </a>
                     </div>
@@ -251,7 +253,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <?php echo $Redaction['date']; ?>
                         </p>
 
-                        <a href="../entreprise/voir_offre.php?id=<?= $marketing['offre_id']; ?>">
+                        <a href="../entreprise/voir_offre.php?id=<?= $Redaction['offre_id']; ?>">
                             <i class="fa-solid fa-eye"></i>Voir l'offre
                         </a>
                     </div>
@@ -402,7 +404,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <?php echo $business['date']; ?>
                         </p>
 
-                        <a href="../entreprise/voir_offre.php?id=<?= $marketing['offre_id']; ?>">
+                        <a href="../entreprise/voir_offre.php?id=<?= $business['offre_id']; ?>">
                             <i class="fa-solid fa-eye"></i>Voir l'offre
                         </a>
                     </div>
@@ -477,7 +479,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <?php echo $Juridique['date']; ?>
                         </p>
 
-                        <a href="../entreprise/voir_offre.php?id=<?= $marketing['offre_id']; ?>">
+                        <a href="../entreprise/voir_offre.php?id=<?= $Juridique['offre_id']; ?>">
                             <i class="fa-solid fa-eye"></i>Voir l'offre
                         </a>
                     </div>
@@ -552,7 +554,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <?php echo $Informatique['date']; ?>
                         </p>
 
-                        <a href="../entreprise/voir_offre.php?id=<?= $marketing['offre_id']; ?>">
+                        <a href="../entreprise/voir_offre.php?id=<?= $Informatique['offre_id']; ?>">
                             <i class="fa-solid fa-eye"></i>Voir l'offre
                         </a>
                     </div>

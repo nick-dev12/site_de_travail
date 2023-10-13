@@ -19,7 +19,7 @@ $erreurs = ''; // Initialisez un tableau pour stocker les erreurs
 if (isset($_POST['valider'])) {
     // Récupération des données du formulaire
     // Déclaration des variables 
-    $nom = $mail = $phone = $taille = $entreprise = $images = $ville = $categorie = $passe = $cpasse = '';
+    $nom = $mail = $phone =$types = $taille = $entreprise = $images = $ville = $categorie = $passe = $cpasse = '';
 
     $id = uniqid();
 
@@ -29,7 +29,12 @@ if (isset($_POST['valider'])) {
     } else {
         $nom = htmlspecialchars($_POST['nom'], ENT_QUOTES, 'UTF-8'); // Échapper les caractères spéciaux
     }
-
+    // Vérification du nom de boutique
+    if (empty($_POST['entreprise'])) {
+        $erreurs = "Le nom de l'entreprise est obligatoire";
+    } else {
+        $entreprise = ($_POST['entreprise']);
+    }
     // Vérification du mail
     if (empty($_POST['mail'])) {
         $erreurs = "email est obligatoire";
@@ -56,12 +61,13 @@ if (isset($_POST['valider'])) {
         $phone = $_POST['phone'];
     }
 
-    // Vérification de la ville
-    if (empty($_POST['ville'])) {
-        $erreurs = "La ville est obligatoire";
+    // Vérification du téléphone  
+    if (empty($_POST['types'])) {
+        $erreurs = "Le téléphone est obligatoire";
     } else {
-        $ville = htmlspecialchars($_POST['ville']);
+        $types = $_POST['types'];
     }
+    
     // Vérification du nom de boutique
     if (empty($_POST['taille'])) {
         $erreurs = "La taille de l'entreprise est obligatoire";
@@ -69,21 +75,29 @@ if (isset($_POST['valider'])) {
         $taille = htmlspecialchars($_POST['taille']);
     }
 
-    // Vérification du nom de boutique
-    if (empty($_POST['entreprise'])) {
-        $erreurs = "Le nom de l'entreprise est obligatoire";
-    } else {
-        $entreprise = htmlspecialchars($_POST['entreprise']);
-    }
-
-
-
     // Vérification de la ville
     if (empty($_POST['categorie'])) {
-        $erreurs = "La ville est obligatoire";
+        $erreurs = "La catergorie est obligatoire";
     } else {
         $categorie = htmlspecialchars($_POST['categorie']);
     }
+
+    // Vérification de la ville
+    if (empty($_POST['ville'])) {
+        $erreurs = "La ville est obligatoire";
+    } else {
+        $ville = htmlspecialchars($_POST['ville']);
+    }
+
+    // $nom = $_POST['nom'];
+    // $entreprise = $_POST['entreprise'];
+    // $mail = $_POST['mail'];
+    // $phone = $_POST['phone'];
+    // $taille = $_POST['taille'];
+    // $categorie = $_POST['categorie'];
+    // $ville = $_POST['ville'];
+    // $passe = $_POST['passe'];
+    // $cpasse = $_POST['cpasse'];
 
     // Vérification de la ville
     if (empty($_FILES['images'])) {
@@ -131,24 +145,22 @@ if (isset($_POST['valider'])) {
         // Hachage du mot de passe
         $passe = password_hash($passe, PASSWORD_DEFAULT);
 
-        // Préparation de la requête SQL
-        $sql = "INSERT INTO compte_entreprise (nom, mail, phone, taille, entreprise, ville, categorie ,images, passe) 
-              VALUES (:nom, :mail, :phone, :taille, :ville, :entreprise, :categorie, :images, :passe)";
+       
+        // Requête SQL pour l'insertion des données
+        $sql = "INSERT INTO compte_entreprise (nom, mail, phone,types, taille, entreprise, ville, categorie, images, passe) 
+                VALUES (:nom, :mail, :phone,:types, :taille, :entreprise, :ville, :categorie, :images, :passe)";
 
-        // Préparation de la requête 
         $stmt = $db->prepare($sql);
-
-        // Association des paramètres
         $stmt->bindParam(':nom', $nom);
         $stmt->bindParam(':mail', $mail);
         $stmt->bindParam(':phone', $phone);
+        $stmt->bindParam(':types', $types);
         $stmt->bindParam(':taille', $taille);
-        $stmt->bindParam(':ville', $ville);
         $stmt->bindParam(':entreprise', $entreprise);
+        $stmt->bindParam(':ville', $ville);
         $stmt->bindParam(':categorie', $categorie);
         $stmt->bindParam(':images', $uniqueFileName);
         $stmt->bindParam(':passe', $passe);
-
         // Exécution de la requête
         $stmt->execute();
 
@@ -174,7 +186,9 @@ if (isset($_POST['valider'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/inscription.css">
     <link rel="stylesheet" href="../css/navbare.css">
@@ -182,7 +196,7 @@ if (isset($_POST['valider'])) {
 </head>
 
 <body>
-<?php  include('navbare.php')?>
+    <?php include('navbare.php') ?>
 
 
     <section class="section2">
@@ -190,8 +204,10 @@ if (isset($_POST['valider'])) {
         <div class="formulaire1  ">
             <form method="post" action="" enctype="multipart/form-data">
                 <h3>Inscription</h3>
-                <?php if (isset($erreurs)) : ?>
-                    <div class="erreur"><?php echo $erreurs; ?></div>
+                <?php if (isset($erreurs)): ?>
+                    <div class="erreur">
+                        <?php echo $erreurs; ?>
+                    </div>
                 <?php endif; ?>
                 <div class="container_form">
 
@@ -217,32 +233,21 @@ if (isset($_POST['valider'])) {
                         </div>
 
                         <div class="box1">
+                            <label for="type">Type d'entreprise ou d'active</label>
+                            <input type="text" name="types" id="type">
+                        </div>
+
+                        <div class="box1">
                             <p>Photo de profile</p>
                             <div class="ab">
-                               <div>
-                               <label class="label" for="images"> <img src="/image/galerie.jpg" alt=""></label>
-                                <input type="file" name="images" id="images">
-                               </div>
-                               <div class="im" >
-                               <img id="imagePreview" src="" alt="view">
-                               </div>
+                                <div>
+                                    <label class="label" for="images"> <img src="/image/galerie.jpg" alt=""></label>
+                                    <input type="file" name="images" id="images">
+                                </div>
+                                <div class="im">
+                                    <img id="imagePreview" src="" alt="view">
+                                </div>
 
-                                <script>
-                                    // Récupérer l'élément input type file
-                                    const inputImage = document.getElementById('images');
-
-                                    // Écouter le changement de fichier sélectionné
-                                    inputImage.addEventListener('change', () => {
-
-                                        // Récupérer le premier fichier sélectionné
-                                        const file = inputImage.files[0];
-
-                                        // Afficher l'aperçu dans l'élément img
-                                        const previewImg = document.getElementById('imagePreview');
-                                        previewImg.src = URL.createObjectURL(file);
-
-                                    });
-                                </script>
                             </div>
                         </div>
 
@@ -250,10 +255,6 @@ if (isset($_POST['valider'])) {
 
 
                     <div class="container">
-                        <div class="box1">
-                            <label for="ville">Ville</label>
-                            <input type="text" name="ville" id="ville">
-                        </div>
 
                         <div class="box1">
                             <label for="taille">Taille de l'entreprise</label>
@@ -267,7 +268,7 @@ if (isset($_POST['valider'])) {
                         </div>
 
                         <div class="box1">
-                            <label for="categorie">Categorie</label>
+                            <label for="categorie">Secteur d'activité</label>
                             <select id="categorie" name="categorie">
                                 <option value="">Sélectionnez une catégorie</option>
                                 <option value="Informatique">Informatique et tech</option>
@@ -278,6 +279,11 @@ if (isset($_POST['valider'])) {
                                 <option value="Juridique">Juridique</option>
                                 <option value="Ingénierie">Ingénierie et architecture</option>
                             </select>
+                        </div>
+
+                        <div class="box1">
+                            <label for="ville">Ville</label>
+                            <input type="text" name="ville" id="ville">
                         </div>
 
 
@@ -293,23 +299,6 @@ if (isset($_POST['valider'])) {
                                 <input type="checkbox" id="voirCPasse" onclick="showPassword()">
                             </div>
 
-                            <script>
-                                function showPassword() {
-                                    var x = document.getElementById("passe");
-                                    var y = document.getElementById("cpasse");
-                                    if (x.type === "password") {
-                                        x.type = "text";
-                                    } else {
-                                        x.type = "password";
-                                    }
-
-                                    if (y.type === "password") {
-                                        y.type = "text";
-                                    } else {
-                                        y.type = "password";
-                                    }
-                                }
-                            </script>
                         </div>
 
                         <input type="submit" name="valider" value="valider" id="valider">
@@ -330,15 +319,15 @@ if (isset($_POST['valider'])) {
             separateDialCode: true,
             autoHideDialCode: false,
             initialCountry: "auto",
-            geoIpLookup: function(callback) {
+            geoIpLookup: function (callback) {
                 fetch("https://ipapi.co/json")
-                    .then(function(res) {
+                    .then(function (res) {
                         return res.json();
                     })
-                    .then(function(data) {
+                    .then(function (data) {
                         callback(data.country_code);
                     })
-                    .catch(function() {
+                    .catch(function () {
                         callback("us");
                     });
             }
@@ -347,15 +336,49 @@ if (isset($_POST['valider'])) {
 
 
         // Masquer la liste au clic sur le champ de téléphone
-        input.addEventListener('click', function() {
+        input.addEventListener('click', function () {
             iti.closeDropdown();
         });
 
         // Masquer au clic en dehors du champ de téléphone
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (!input.contains(e.target) && !iti.container.contains(e.target)) {
                 iti.closeDropdown();
             }
+        });
+    </script>
+
+    <script>
+        function showPassword() {
+            var x = document.getElementById("passe");
+            var y = document.getElementById("cpasse");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+
+            if (y.type === "password") {
+                y.type = "text";
+            } else {
+                y.type = "password";
+            }
+        }
+    </script>
+    <script>
+        // Récupérer l'élément input type file
+        const inputImage = document.getElementById('images');
+
+        // Écouter le changement de fichier sélectionné
+        inputImage.addEventListener('change', () => {
+
+            // Récupérer le premier fichier sélectionné
+            const file = inputImage.files[0];
+
+            // Afficher l'aperçu dans l'élément img
+            const previewImg = document.getElementById('imagePreview');
+            previewImg.src = URL.createObjectURL(file);
+
         });
     </script>
 </body>

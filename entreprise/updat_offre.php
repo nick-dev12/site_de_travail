@@ -8,6 +8,8 @@ if(isset($_GET['id'])){
 }
 
 include_once('app/controller/controllerOffre_emploi.php');
+include_once('app/controller/controllerEntreprise.php');
+include_once('app/controller/controllerDescription.php');
 
 $Offres =getOffres($db, $offre_id );
 ?>
@@ -28,11 +30,13 @@ $Offres =getOffres($db, $offre_id );
     <link href="../style/bootstrap.3.4.1.css" rel="stylesheet">
     <link rel="stylesheet" href="../style/summernote@0.8.18.css">
     <title>offre d'emploi</title>
-    <link rel="stylesheet" href="../css/voir_offre.css">
     <link rel="stylesheet" href="../css/navbare.css">
+    <link rel="stylesheet" href="../css/voir_offre.css">
+    
 </head>
 <body>
-<?php include('navbare.php') ?>
+
+<?php include('../navbare.php') ?>
 
 
 
@@ -43,20 +47,29 @@ $Offres =getOffres($db, $offre_id );
             <table>
                 <tr>
                     <th>NOM</th>
-                    <td>Web-geniuses</td>
+                    <td><?= $getEntreprise['entreprise'] ?></td>
                 </tr>
                 <tr>
                     <th>site internet</th>
-                    <td><a href="">www/webgeniuses.com</a></td>
+                    <?php if($afficheDescriptionentreprise):?>
+                        <td><a href="<?= $afficheDescriptionentreprise['liens'] ?>"><?= $afficheDescriptionentreprise['liens'] ?></a></td>
+                    <?php else: ?>
+                        <td>Aucun lien pour cette entreprise</td>
+                    <?php endif; ?>
                 </tr>
                 <tr>
                     <th>secteur d'activiter</th>
-                    <td>informatique genicil maintenance logiciel </td>
+                    <td><?= $getEntreprise['categorie'] ?></td>
                 </tr>
 
                 <tr>
                     <th>description de l'Entreprise</th>
-                    <td>nous somme une Entreprise specialiser sur la creation et le montage de site internetpour les particulier comme des Entreprise </td>
+                    <?php if($afficheDescriptionentreprise):?>
+                    <td><?= $afficheDescriptionentreprise['descriptions'] ?></td>
+                    <?php else: ?>
+                        <td>Aucune description pour cette entreprise</td>
+                    <?php endif; ?>
+
                 </tr>
             </table>
         </div>
@@ -69,25 +82,14 @@ $Offres =getOffres($db, $offre_id );
         <div class="box1">
             <h1>detaille de l'offre</h1>
             <h2>poste disponible : <span><?= $Offres['poste'] ?></span></h2>
+
             <h3>Mission et responsabiliter</h3>
-            <ul>
-                <li>dois maitriser les langages de programation tel que html css js php ukguigiugigigigigigigigigigigi,b,j ioifv ohot tr6e5 uggu</li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-            </ul>
+
+            <?= $Offres['mission'] ?>
 
             <h3>profil rechercher (caliter et competance) </h3>
-            <ul>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-                <li>dois maitriser les langages de programation tel que html css js php </li>
-            </ul>
+
+            <?= $Offres['profil'] ?>
 
             <h1 class="suplement">Info suplementaire</h1>
 
@@ -95,40 +97,42 @@ $Offres =getOffres($db, $offre_id );
             <table>
                 <tr>
                     <th>Métier :</th>
-                    <td>Transport, logistique</td>
+                    <td> <?= $Offres['metier'] ?></td>
                 </tr>
                 <tr>
                     <th>Type de contrat :</th>
-                    <td>CDD - Stage</td>
+                    <td> <?= $Offres['contrat'] ?></td>
                 </tr>
                 <tr>
                     <th>Région :</th>
-                    <td>Dakar</td>
+                    <td> <?= $Offres['localite'] ?></td>
                 </tr>
 
                 <tr>
                     <th>Ville :</th>
-                    <td>Dakar</td>
+                    <td><?=$getEntreprise['ville']?></td>
                 </tr>
 
                 <tr>
                     <th>Niveau d'expérience :</th>
-                    <td>Débutant < 2 ans</td>
+                    <td> <?= $Offres['experience'] ?></td>
                 </tr>
                 <tr>
                     <th>Niveau d'études :</th>
-                    <td>Bac+3</td>
+                    <td> <?= $Offres['etudes'] ?></td>
                 </tr>
                 <tr>
                     <th>Langues exigées :</th>
-                    <td>Anglais›Intermédiaire , Français›Courant</td>
+                    <td> <?= $Offres['langues'] ?></td>
                 </tr>
             </table>
 
             <button class="btn2" > modifier l'offre </button>
+            
+        </div>
 
-
-
+        <div class="container-b" >
+            <img class="img1" src="../image/croix.png" alt="">
             <div class="form_off">
                 <form method="post" action="">
                     <div class="box">
@@ -172,56 +176,8 @@ $Offres =getOffres($db, $offre_id );
                     <input type="submit" name="modifier" value="modifier" id="valider">
                 </form>
             </div>
-        </div>
+            </div>
 
-
-        <script>
-             $(document).ready(function () {
-            $('#mission').summernote({
-                placeholder: 'ajoute une description!!',
-                tabsize: 6,
-                height: 120,
-                toolbar: [
-                    ['style', ['style']],
-                    ['font', ['bold', 'underline', 'clear']],
-                    ['color', ['color']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['table', ['table']],
-                    ['insert', ['link', 'picture', 'video']],
-                    ['view', ['fullscreen', 'codeview', 'help']]
-                ]
-            });
-        });
-
-        $(document).ready(function () {
-            $('#profil').summernote({
-                placeholder: 'ajoute une description!!',
-                tabsize: 6,
-                height: 120,
-                toolbar: [
-                    ['style', ['style']],
-                    ['font', ['bold', 'underline', 'clear']],
-                    ['color', ['color']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['table', ['table']],
-                    ['insert', ['link', 'picture', 'video']],
-                    ['view', ['fullscreen', 'codeview', 'help']]
-                ]
-            });
-        });
-
-        
-        let btn2 = document.querySelector('.btn2')
-        let form_off = document.querySelector('.form_off')
-
-        btn2.addEventListener('click', () => {
-            if (form_off.style.height === '0px') {
-                form_off.style.height = '1400px'
-            } else {
-                form_off.style.height = '0px'
-            }
-        })
-    </script>
         <?php endif; ?>
 
 
@@ -476,6 +432,57 @@ $Offres =getOffres($db, $offre_id );
 
       <script src="../script/bootstrap3.4.1.js"></script>
     <script src="../script/summernote@0.8.18.js"></script>
+    <script>
+             $(document).ready(function () {
+            $('#mission').summernote({
+                placeholder: 'ajoute une description!!',
+                tabsize: 6,
+                height: 120,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+        });
+
+        $(document).ready(function () {
+            $('#profil').summernote({
+                placeholder: 'ajoute une description!!',
+                tabsize: 6,
+                height: 120,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+        });
+
+       
+    </script>
+
+    <script>
+        let img1 =document.querySelector('.img1')
+        let containe =document.querySelector('.container-b')
+        let btn2 = document.querySelector('.btn2')
+
+        img1.addEventListener('click', ()=>{
+            containe.classList.remove('active')
+        })
+        btn2.addEventListener('click', ()=>{
+            containe.classList.add('active')
+        })
+        
+    </script>
 
 </body>
 </html>
