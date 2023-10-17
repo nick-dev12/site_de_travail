@@ -27,6 +27,11 @@ if (isset($_POST['ajouteer1'])) {
 }
 
 
-$afficheDiplome = getDiplomes($db, $_SESSION['users_id'])
+
+if (isset($_GET['id'])) {
+    $afficheDiplome = getDiplomes($db,$_GET['id'] );
+    }else{
+        $afficheDiplome = getDiplomes($db, $_SESSION['users_id']);
+    }
 
 ?>

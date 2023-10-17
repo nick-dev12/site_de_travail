@@ -86,4 +86,6 @@ if(isset($_GET['id'])){
     $afficheOffres=getOffresEmploit($db,$_GET['id']);
 
 }
+
+
 ?>

@@ -31,5 +31,10 @@ if (empty($erreurs)) {
 }
 
 
-$afficheOutil = getOutil($db,$_SESSION['users_id'])
+
+if (isset($_GET['id'])) {
+    $afficheOutil = getOutil($db,$_GET['id']);
+     }else{
+        $afficheOutil = getOutil($db,$_SESSION['users_id']);
+     }
 ?>

@@ -43,6 +43,11 @@ if (isset($_GET['supprime'])) {
 }
 
 // Récupération des compétences de l'utilisateur
-$competencesUtilisateur = getCompetences($db, $_SESSION['users_id']);
+
+if (isset($_GET['id'])) {
+    $competencesUtilisateur = getCompetences($db, $_GET['id']);
+}else{
+    $competencesUtilisateur = getCompetences($db, $_SESSION['users_id']);
+}
 
  ?>

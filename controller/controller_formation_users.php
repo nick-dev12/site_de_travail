@@ -51,8 +51,13 @@ if (isset($_POST['ajouter2'])) {
     }
 }
 
+if (isset($_GET['id'])) {
+   $formationUsers = getFormation($db, $_GET['id']);
+    }else{
+        $formationUsers = getFormation($db, $_SESSION['users_id']);
+    }
 
-$formationUsers = getFormation($db, $_SESSION['users_id']);
+
 
 // Traitement de la suppression
 if (isset($_GET['supprimes'])) {

@@ -10,6 +10,8 @@ if(isset($_POST['postuler'])){
 
     $Offres =getOffres($db, $offre_id );
 
+    $poste = $Offres['poste'];
+
     $entreprise_id=$Offres['entreprise_id'];
 
     $users_id = $_POST['id_users'];
@@ -24,13 +26,21 @@ if(isset($_POST['postuler'])){
 
     $profession = $_POST['profession_users'];
 
-    if (postCandidature($db,$entreprise_id,$offre_id,$users_id,$nom,$mail,$phone,$competences,$profession)) {
+    if (postCandidature($db,$entreprise_id,$poste,$offre_id,$users_id,$nom,$mail,$phone,$competences,$profession)) {
         $_SESSION['success_message']='Postulation reussi !!';
         header('Location: ../page/user_profil.php');
         exit();
     }
     
 }
+if (isset($_SESSION['compte_entreprise'])) {
+    $getALLpostulation= getALLPostulation($db,$_SESSION['compte_entreprise']);
+    
+    // $offre_id = $getALLpostulation['offre_id'];
+
+    // $affichePostulant=affichePostulant($db,$offre_id);
+}
+
 
 if (isset($_SESSION['users_id'])) {
     $getPostulation=getPostulation($db,$_SESSION['users_id'],$_GET['id']);

@@ -66,7 +66,7 @@ include_once('app/controller/controllerDescription.php');
                     </tr>
                     <tr>
                         <td id="td"><img src="../image/candidat.png" alt=""></td>
-                        <td>candidat</td>
+                        <td><a href="../page/candidature.php">Candidats</a></td>
                     </tr>
                     <tr>
                         <td id="td"><img src="../image/stat.png" alt=""></td>
@@ -139,7 +139,7 @@ include_once('app/controller/controllerDescription.php');
                             <label for="site">Avez vous un site web ?(facultatif*)</label>
                             <input type="text" name="liens" id="site" value="<?= $afficheDescriptionentreprise['liens']?>">
                         </div>
-                        <input type="submit" name="modifier" value="Modifier" id="ajouter">
+                        <input type="submit" name="modifiers" value="Modifier" id="ajouter">
                     </form>
                 </div>
             <?php else: ?>

@@ -27,7 +27,7 @@ if (isset($_SESSION['compte_entreprise'])) {
 
 
 
-if (isset($_POST['modifier'])) {
+if (isset($_POST['modifiers'])) {
 
     $descriptions=$liens='';
 
@@ -38,6 +38,7 @@ if (isset($_POST['modifier'])) {
     }
    
         $liens=$_POST['liens'];
+
         if (empty( $_SESSION['error_message'])) {
             if (updatDescristion($db,$descriptions,$liens)) {
                 $_SESSION['success_message'] = ' Description modifier avec succes !!';

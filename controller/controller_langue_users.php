@@ -29,6 +29,10 @@ if (empty($erreurs)) {
 }
 
 
-$afficheLangue = getLangue($db, $_SESSION['users_id']);
+if (isset($_GET['id'])) {
+    $afficheLangue = getLangue($db, $_GET['id']);
+     }else{
+        $afficheLangue = getLangue($db, $_SESSION['users_id']);
+     }
 
 ?>

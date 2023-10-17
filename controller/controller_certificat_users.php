@@ -2,6 +2,7 @@
 require_once('../model/certificat_users.php');
 
 
+
 if (isset($_POST['ajouteer2'])) {
 
     $certificat = '';
@@ -24,7 +25,11 @@ if (isset($_POST['ajouteer2'])) {
     }
 }
 
+if (isset($_GET['id'])) {
+    $afficheCertificat = getCertificat($db,$_GET['id'] );
+}else{
+    $afficheCertificat = getCertificat($db, $_SESSION['users_id']);
+}
 
-$afficheCertificat = getCertificat($db, $_SESSION['users_id'])
 
 ?>

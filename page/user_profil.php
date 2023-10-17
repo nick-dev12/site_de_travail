@@ -2,17 +2,10 @@
 session_start();
 include '../conn/conn.php';
 
-
-if (isset($_COOKIE['users_id'])) {
-    $users_id = $_COOKIE['users_id'];
-} else {
-    $users_id = '';
-}
-
-
-// Récupérez l'ID du commerçant à partir de la session
+if (isset($_GET['id'])) {
+    // Récupérez l'ID du commerçant à partir de la session
 // Récupérez l'ID de l'utilisateur depuis la variable de session
-$users_id = $_SESSION['users_id'];
+$users_id = $_GET['id'];
 
 // Vous pouvez maintenant utiliser $commercant_id pour récupérer les informations de l'utilisateur depuis la base de données
 // Écrivez votre requête SQL pour récupérer les informations nécessaires
@@ -22,24 +15,9 @@ $stmt->bindParam(':users_id', $users_id);
 $stmt->execute();
 $users = $stmt->fetch(PDO::FETCH_ASSOC);
 
-
-// $sql = "SELECT metier FROM metier_users WHERE users_id = :users_id";
-// $users_metier = $db->prepare($sql);
-// $users_metier->bindParam(':users_id', $users_id);
-// $users_metier->execute();
-
-
 $erreurs = '';
 
 $message = '';
-
-
-
-
-// Récupérez l'ID du commerçant à partir de la session
-// Récupérez l'ID de l'utilisateur depuis la variable de session
-
-// Récupérer l'id du métier à supprimer (via lien ou formulaire par exemple)
 
 
 include_once('../controller/controller_description_users.php');
@@ -51,6 +29,58 @@ include_once('../controller/controller_certificat_users.php');
 include_once('../controller/controller_outil_users.php');
 include_once('../controller/controller_langue_users.php');
 include_once('../controller/controller_projet_users.php');
+}else{
+
+    if (isset($_COOKIE['users_id'])) {
+        $users_id = $_COOKIE['users_id'];
+    } else {
+        $users_id = '';
+    }
+    
+    
+    // Récupérez l'ID du commerçant à partir de la session
+    // Récupérez l'ID de l'utilisateur depuis la variable de session
+    $users_id = $_SESSION['users_id'];
+    
+    // Vous pouvez maintenant utiliser $commercant_id pour récupérer les informations de l'utilisateur depuis la base de données
+    // Écrivez votre requête SQL pour récupérer les informations nécessaires
+    $conn = "SELECT * FROM users WHERE id = :users_id";
+    $stmt = $db->prepare($conn);
+    $stmt->bindParam(':users_id', $users_id);
+    $stmt->execute();
+    $users = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    
+    // $sql = "SELECT metier FROM metier_users WHERE users_id = :users_id";
+    // $users_metier = $db->prepare($sql);
+    // $users_metier->bindParam(':users_id', $users_id);
+    // $users_metier->execute();
+    
+    
+    $erreurs = '';
+    
+    $message = '';
+    
+    
+    
+    
+    // Récupérez l'ID du commerçant à partir de la session
+    // Récupérez l'ID de l'utilisateur depuis la variable de session
+    
+    // Récupérer l'id du métier à supprimer (via lien ou formulaire par exemple)
+    
+    
+    include_once('../controller/controller_description_users.php');
+    include_once('../controller/controller_metier_users.php');
+    include_once('../controller/controller_competence_users.php');
+    include_once('../controller/controller_formation_users.php');
+    include_once('../controller/controller_diplome_users.php');
+    include_once('../controller/controller_certificat_users.php');
+    include_once('../controller/controller_outil_users.php');
+    include_once('../controller/controller_langue_users.php');
+    include_once('../controller/controller_projet_users.php');
+}
+
 ?>
 
 
@@ -190,11 +220,15 @@ include_once('../controller/controller_projet_users.php');
 
 
 
-        <?php if (empty($competencesUtilisateur)): ?>
-            <div class="container_box0">
+        <?php if (empty($competencesUtilisateur)):?>
+            <?php if(isset($_SESSION['users_id'])): ?>
+     <div class="container_box0">
                 <h1> <span>Alerte :</span> <strong>veuiller ajouter au moins une competence pour etre visible par les
                         recruteur</strong></h1>
             </div>
+    <?php else:?>
+        <?php endif; ?>
+           
         <?php endif; ?>
 
 
@@ -219,7 +253,11 @@ include_once('../controller/controller_projet_users.php');
                 // Vérifier si la description de l'utilisateur est vide
                 if (empty($descriptions['description'])):
                     ?>
-                    <button class="buton">Ajouter une description</button>
+                    <?php if(isset($_SESSION['users_id'])): ?>
+                        <button class="buton">Ajouter une description</button>
+                        <?php else:?>
+                            <?php endif; ?>
+                    
 
                     <div class="form_box">
                         <form method="post" action="" enctype="multipart/form-data">
@@ -231,13 +269,18 @@ include_once('../controller/controller_projet_users.php');
                             <?php endif; ?>
                             <textarea name="description" id="summernote" cols="30" rows="10"
                                 placeholder="Ajoute une description ici"></textarea>
+
                             <input type="submit" value="ajouter" name="ajouter" id="ajoute">
+
                         </form>
                     </div>
 
                 <?php else: ?>
-
-                    <button class="buton buttons">Modifier la description</button>
+                    <?php if(isset($_SESSION['users_id'])): ?>
+                        <button class="buton buttons">Modifier la description</button>
+                        <?php else:?>
+                            <?php endif; ?>
+                    
 
                     <div class="form_box texte">
                         <form method="post" action="" enctype="multipart/form-data">
@@ -303,9 +346,13 @@ include_once('../controller/controller_projet_users.php');
                                     </p>
                                 </th>
                                 <td>
-                                    <!-- Ajouter un lien de suppression -->
+                                <?php if(isset($_SESSION['users_id'])): ?>
+    <!-- Ajouter un lien de suppression -->
                                     <a class="delete" href="?supprimer=<?php echo $metiers['id']; ?>"><span
                                             class="span">x</span></a>
+    <?php else:?>
+        <?php endif; ?>
+                                    
                                 </td>
                             </tr>
                         </table>
@@ -341,8 +388,11 @@ include_once('../controller/controller_projet_users.php');
                     <?php
                 endforeach;
                 ?>
-
-                <button class="affiche_form">Ajouter une experience</button>
+<?php if(isset($_SESSION['users_id'])): ?>
+    <button class="affiche_form">Ajouter une experience</button>
+                        <?php else:?>
+                            <?php endif; ?>
+                
 
                 <form class="form" action="" method="post">
                     <div class="boxmetier">
@@ -432,7 +482,12 @@ include_once('../controller/controller_projet_users.php');
                     endforeach;
                     ?>
                 </div>
-                <button class="affiche_forms">Ajouter une compétences</button>
+
+                <?php if(isset($_SESSION['users_id'])): ?>
+     <button class="affiche_forms">Ajouter une compétences</button>
+    <?php else:?>
+        <?php endif; ?>
+               
                 <form class="forms" action="" method="post">
                     <input type="text" name="competence" id="competence">
                     <input type="submit" value="Ajouter" name="Ajouter1" id="Ajouter">
@@ -510,15 +565,23 @@ include_once('../controller/controller_projet_users.php');
                                 <?php echo $formations['niveau']; ?>
                             </td>
                             <td class="supr">
-                                <a href="?supprimes=<?php echo $formations['id']; ?>">x</a>
+                            <?php if(isset($_SESSION['users_id'])): ?>
+     <a href="?supprimes=<?php echo $formations['id']; ?>">x</a>
+    <?php else:?>
+        <?php endif; ?>
+                               
                             </td>
                         </tr>
                     </table>
                 <?php endforeach; ?>
             </div>
-
+            
             <div class="fa-formation">
-                <button class="Ajouters">Ajouter une formation</button>
+            <?php if(isset($_SESSION['users_id'])): ?>
+     <button class="Ajouters">Ajouter une formation</button>
+    <?php else:?>
+        <?php endif; ?>
+               
             </div>
 
             <div class="containne">
@@ -647,8 +710,12 @@ include_once('../controller/controller_projet_users.php');
             </div>
 
             <div class="box2">
-                <button class="btn btn1"> ajouter un Diplome</button>
+            <?php if(isset($_SESSION['users_id'])): ?>
+     <button class="btn btn1"> ajouter un Diplome</button>
                 <button class="btn btn2"> ajouter un certificat</button>
+    <?php else:?>
+        <?php endif; ?>
+               
             </div>
 
 
@@ -699,7 +766,11 @@ include_once('../controller/controller_projet_users.php');
 
             <div class="box1">
                 <h1>Projets et realisations</h1>
-                <button class="ajout">Ajouter un projet/realisation</button>
+                <?php if(isset($_SESSION['users_id'])): ?>
+    <button class="ajout">Ajouter un projet/realisation</button>
+    <?php else:?>
+        <?php endif; ?>
+                
             </div>
             <div class="form_projet">
 
@@ -813,7 +884,11 @@ include_once('../controller/controller_projet_users.php');
                 </table>
 
                 <div class="outil">
-                    <button class="btn3"> Ajouter un outil</button>
+                <?php if(isset($_SESSION['users_id'])): ?>
+    <button class="btn3"> Ajouter un outil</button>
+    <?php else:?>
+        <?php endif; ?>
+                    
                 </div>
             </div>
 
@@ -880,7 +955,11 @@ include_once('../controller/controller_projet_users.php');
                     <?php endforeach; ?>
                 </table>
                 <div class="outil">
-                    <button class="btn4"> Ajouter une langue</button>
+                <?php if(isset($_SESSION['users_id'])): ?>
+    <button class="btn4"> Ajouter une langue</button>
+    <?php else:?>
+        <?php endif; ?>
+                    
                 </div>
             </div>
 
@@ -921,9 +1000,8 @@ include_once('../controller/controller_projet_users.php');
 
 
 
-
-
-        <div class="container_box6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
+        <?php if(isset($_SESSION['users_id'])): ?>
+     <div class="container_box6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
             data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
             data-aos-anchor-placement="top-bottom">
             <div class="box1">
@@ -937,6 +1015,10 @@ include_once('../controller/controller_projet_users.php');
                 </form>
             </div>
         </div>
+    <?php else:?>
+        <?php endif; ?>
+
+       
     </section>
 
 

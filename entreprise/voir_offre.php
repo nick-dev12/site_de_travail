@@ -146,7 +146,7 @@ $afficheDescriptionentreprise=getDescriptionEntreprise ($db,$entreprise_id);
                 <?php if(isset($getPostulation['offre_id'])): ?>
                     vous avez deja envoyer votre candidature merci de pacienter une reponse favorable.
                 <?php else: ?>
-                <button type="submit" name="postuler" ><a href="">postuler ici</a></button>
+                <button type="submit" name="postuler" >postuler ici</button>
                 <?php endif; ?>
             </form>
                 <?php endif; ?>

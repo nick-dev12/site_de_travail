@@ -42,6 +42,11 @@ if(isset($_POST['valider'])){
 }
 
 
-$affichePojetUsers = getProjetUsers($db, $_SESSION['users_id']);
+
+if (isset($_GET['id'])) {
+    $affichePojetUsers = getProjetUsers($db, $_GET['id']);
+     }else{
+        $affichePojetUsers = getProjetUsers($db, $_SESSION['users_id']);
+     }
 
 ?>
