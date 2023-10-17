@@ -82,4 +82,6 @@ function selectOffre ($db,$entreprise_id){
 }
 
 
+
+
 ?>

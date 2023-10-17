@@ -9,8 +9,14 @@ if(isset($_GET['id'])){
 include_once('app/controller/controllerOffre_emploi.php');
 include_once('app/controller/controllerEntreprise.php');
 include_once('app/controller/controllerDescription.php');
+include_once('../controller/controller_users.php');
+include_once('../controller/controller_postulation.php');
 
 $Offres =getOffres($db, $offre_id );
+$entreprise_id=$Offres['entreprise_id'];
+$getEntreprise = getEntreprise($db,$entreprise_id);
+$afficheDescriptionentreprise=getDescriptionEntreprise ($db,$entreprise_id);
+
 ?>
 
 <!DOCTYPE html>
@@ -52,8 +58,8 @@ $Offres =getOffres($db, $offre_id );
                     <?php endif; ?>
                 </tr>
                 <tr>
-                    <th>secteur d'activiter</th>
-                    <td><?= $getEntreprise['categorie'] ?></td>
+                    <th>Type d'entreprise</th>
+                    <td><strong><?= $getEntreprise['types'] ?></strong></td>
                 </tr>
 
                 <tr>
@@ -121,107 +127,37 @@ $Offres =getOffres($db, $offre_id );
                 </tr>
             </table>
 
-            <a href="">postuler ici</a>
+            <?php
+            if (isset($_SESSION['users_id'])){
+                $getInfo=getInfoUsers($db,$_SESSION['users_id']);
+            }
+          
+            ?>
+
+            <?php if(isset($_SESSION['users_id'])):?>
+<form action="" method="post">
+                <input type="hidden" name="id_users" id="" value="<?= $getInfo['id'] ?>">
+                <input type="hidden" name="nom_users" id="" value="<?= $getInfo['nom'] ?>">
+                <input type="hidden" name="mail_users" id="" value="<?= $getInfo['mail'] ?>">
+                <input type="hidden" name="phone_users" id="" value="<?= $getInfo['phone'] ?>">
+                <input type="hidden" name="competence_users" id="" value="<?= $getInfo['competences'] ?>">
+                <input type="hidden" name="profession_users" id="" value="<?= $getInfo['profession'] ?>">
+
+                <?php if(isset($getPostulation['offre_id'])): ?>
+                    vous avez deja envoyer votre candidature merci de pacienter une reponse favorable.
+                <?php else: ?>
+                <button type="submit" name="postuler" ><a href="">postuler ici</a></button>
+                <?php endif; ?>
+            </form>
+                <?php endif; ?>
+
+            
+            
         </div>
         <?php endif;?>
     </section>
 
-
-    <!-- <section class="section4">
-        <div class="box1">
-            <h1>voir plus d'offre de cette categorie</h1>
-
-
-            <div class="box2">
-                <span><i class="fa-solid fa-chevron-left"></i></span>
-                <span><i class="fa-solid fa-chevron-right"></i></span>
-            </div>
-    
-            <article class="articles owl-carousel carousel1">
-                <div class="carousel">
-                    <img src="/profils/preview_B0eCXi7.jpeg" alt="">
-                    <p>informaticien de getion des affaires applique <span>1</span></p>
-                    <div class="vendu">
-                        <p>nous recherchons un personnels califier pour povoir nous aider dans </p>
-                    </div>
-                    <p id="nom">12 juillet 2023</p>
-                    <a href="#"><i class="fa-solid fa-eye"></i></span>Profil</a>
-                </div>
-    
-                <div class="carousel">
-                    <img src="/profils/p1.jpeg" alt="">
-                    <p>logistique<span>0</span></p>
-                    <div class="vendu">
-                        <span>html</span>
-                        <span>css</span>
-                        <span>java script</span>
-                        <span>html</span>
-                        <span>css</span>
-                        <span>java script</span>
-                    </div>
-                    <p id="nom">t-shirt hummel</p>
-                    <a href="#"><i class="fa-solid fa-eye"></i></span>Profil</a>
-                </div>
-    
-                <div class="carousel">
-                    <img src="/profils/p2.jpg" alt="">
-                    <p>agronome<span>o</span></p>
-                    <div class="vendu">
-                        <span>css</span>
-                        <span>java script</span>
-                        <span>html</span>
-                        <span>css</span>
-                        <span>java script</span>
-                    </div>
-                    <p id="nom">Nom: Sylivin</p>
-                    <a href="#"><i class="fa-solid fa-eye"></i></span>Profil</a>
-                </div>
-    
-                <div class="carousel">
-                    <img src="/profils/p3.jpeg" alt="">
-                    <p>proffesseur de mathematique<span>0</span></p>
-                    <div class="vendu">
-                        <span>html</span>
-                        <span>css</span>
-                        <span>html</span>
-                        <span>css</span>
-                        <span>java script</span>
-                    </div>
-                    <p id="nom">Nom: pricil</p>
-                    <a href="#"><i class="fa-solid fa-eye"></i></span>Profil</a>
-                </div>
-    
-                <div class="carousel">
-                    <img src="/profils/p4.jpeg" alt="">
-                    <p>architecture<span>0</span></p>
-                    <div class="vendu">
-                        <span>html</span>
-                        <span>css</span>
-                        <span>java script</span>
-                        <span>html</span>
-                    </div>
-                    <p id="nom">Nom: Sylivin</p>
-                    <a href="#"><i class="fa-solid fa-eye"></i></span>Profil</a>
-                </div>
-    
-                <div class="carousel">
-                    <img src="/profils/p5.avif " alt="">
-                    <p>disiner<span>0</span></p>
-                    <div class="vendu">
-                        <span>html</span>
-                        <span>css</span>
-                        <span>java script</span>
-                        <span>html</span>
-                        <span>css</span>
-                        <span>java script</span>
-                    </div>
-                    <p id="nom">Nom: nike</p>
-                    <a href="#"><i class="fa-solid fa-eye"></i></span>Profil</a>
-                </div>
-            </article>
-        </div>
-    </section> -->
-
+   
 
     <section class="produit_vedete">
         <div class="box1">

@@ -120,8 +120,12 @@ function getUsersInformatique($db){
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getCategorieUsers(){
-   
+function getInfoUsers($db,$id){
+    $sql = "SELECT * FROM users WHERE id=:id";
+            $stmt = $db->prepare($sql);
+            $stmt->bindValue(':id',$id,PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 ?>

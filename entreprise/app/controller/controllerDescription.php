@@ -21,7 +21,11 @@ if (isset($_POST['ajouter'])) {
     }
 }
 
-$afficheDescriptionentreprise=getDescriptionEntreprise ($db,$_SESSION['compte_entreprise']);
+if (isset($_SESSION['compte_entreprise'])) {
+    $afficheDescriptionentreprise=getDescriptionEntreprise ($db,$_SESSION['compte_entreprise']);
+}
+
+
 
 if (isset($_POST['modifier'])) {
 

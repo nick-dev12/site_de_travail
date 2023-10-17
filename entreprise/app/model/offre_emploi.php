@@ -16,14 +16,7 @@ function getOffres($db, $offre_id) {
     $stmt->bindValue(':offre_id', $offre_id, PDO::PARAM_INT);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
-    
-        // $sql = "SELECT * FROM offre_emploi t1
-        // JOIN compte_entreprise t2 ON t2.id = t1.entreprise_id
-        //  WHERE entreprise_id = :entreprise_id" ;
-        // $stmt = $db->prepare($sql);
-        // $stmt->bindValue(':entreprise_id', $offre_id, PDO::PARAM_INT);
-        // $stmt->execute();
-        // return $stmt->fetch(PDO::FETCH_ASSOC);
+        
     
 }
 
