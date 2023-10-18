@@ -1,0 +1,248 @@
+*{
+    margin:0 ;
+    
+  }
+  
+  body{
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+}
+
+.section2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 140px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.section2 .box1{
+  width: 80%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 7px 7px 2px rgb(136, 136, 136);
+}
+.section2 .box1 h1{
+  width: 35%;
+  height: 100%;
+  font-weight: bolder;
+  background-color: #002233;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px 10px #d1d1d1;
+}
+.section2 .box1 .container_slider{
+  width: 65%;
+  height: 400px !important;
+  border: none;
+  overflow: hidden;
+  margin-top: 10px;
+
+}
+.section2 .box1 .container_slider img{
+  width: 100%;
+  height:400px;
+  object-fit: cover;
+}
+
+.section2 .box2{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.section2 .box2 p{
+  font-size: 16px;
+  color: #002233cb;
+  border-left: 4px solid orange;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+}
+.section2 .box2 p span{
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:2px dotted #002233 ;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+.section3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+  background-color: #e0e0e0;
+}
+.section3 .box1{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section3 .box1 h2{
+  background-color: #0ba800ef;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 10px 20px; 
+  text-align: center;
+  width: 600px;
+  border-radius: 7px;
+
+}
+.section3 .box1 .container_accept{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.section3 .box1 .accept{
+  width: 300px;
+  border: 1px solid #00223390;
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: #ffffff;
+  margin: 30px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.section3 .box1 .accept img{
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+}
+
+.section3 .box1 .accept .cursor{
+  cursor: not-allowed;
+}
+
+.section3 .box1 .accept h3 span{
+  color: black;
+}
+
+.section3 .box1 .accept h3{
+  width: 100%;
+  font-size: 19px;
+  font-weight: bolder;
+  margin-left: 10px;
+  color: #0066FF;
+}
+
+.section3 .box1 .accept p{
+  width: 700px;
+  margin-left: 15px;
+  overflow: hidden;
+  height: 20px;
+  position: relative;
+}
+.section3 .box1 .accept p span{
+  position: absolute;
+  height: 100%;
+  width: 20px;
+  background-color: #ffffff;
+  color: #000102;
+  left: 265px;
+  font-size: 20px;
+  top: -5px;padding-left: 2px;
+}
+
+.section3 .box1 .accept a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 7px;
+  border-radius: 7px;
+  background-color: #002233;
+  color: #ffffff;
+  font-size: 15px;
+  margin: 0 auto;
+  width: 180px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+}
+.section3 .box1 .accept a img{
+  height: 30px;
+  width: 30px;
+  border: none;
+  margin-right: 5px;
+  transition: all 0.4s ease;
+}
+.section3 .box1 .accept a:hover{
+  background-color: #0066FF;
+  
+}
+.section3 .box1 .accept a:hover img{
+  transform: scale(1.2);
+}
+
+
+.section3 .box1 .accept .h51{
+  position: absolute;
+  width: 400px;
+  padding: 20px 30px;
+  font-size: 20px;
+  background-color: rgb(0, 210, 0);
+  color: #ffffff;
+  font-weight: 600;
+ top: 40px;
+ text-transform: uppercase;
+  transform:rotate(45deg);
+  text-align: center;
+ 
+}
+.section3 .box1 .accept .h52{
+  position: absolute;
+  width: 400px;
+  padding: 20px 30px;
+  font-size: 20px;
+  background-color: rgb(210, 21, 0);
+  color: #ffffff;
+  font-weight: 600;
+ top: 40px;
+ text-transform: uppercase;
+  transform:rotate(45deg);
+  text-align: center;
+ 
+}
+.section3 .box1 .accept .h53{
+  position: absolute;
+  width: 400px;
+  padding: 20px 30px;
+  font-size: 20px;
+  background-color: #002233;
+  color: #ffffff;
+  font-weight: 600;
+ top: 40px;
+ text-transform: uppercase;
+  transform:rotate(45deg);
+  text-align: center;
+ 
+}

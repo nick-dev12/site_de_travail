@@ -151,28 +151,32 @@ include_once('../controller/controller_projet_users.php');
 
             <div class="box2">
                 <h3>
-                    <?php echo $users['competences']; ?>
+                    <?php echo $users['profession']; ?>
                 </h3>
             </div>
             <div class="box3">
                 <table>
 
                     <tr>
-                        <td><i class="fa-solid fa-briefcase"></i></td>
+                        <td id="td" ><img src="../image/MCV.png" alt=""></td>
                         <td> <a href="cv_users.php">mon cv</a></td>
                     </tr>
 
                     <tr>
-                        <td><i class="fa-solid fa-clipboard"></i></td>
+                        <td  id="td"><img src="../image/exp.png" alt=""></td>
                         <td>mon experience</td>
                     </tr>
                     <tr>
-                        <td><i class="fa-solid fa-school"></i></td>
+                        <td  id="td"><img src="../image/mpc.png" alt=""></td>
                         <td>mon parcour</td>
                     </tr>
                     <tr>
-                        <td><i class="fa-solid fa-phone"></i></td>
+                        <td  id="td"><img src="../image/mct.png" alt=""></td>
                         <td>contacte</td>
+                    </tr>
+                    <tr>
+                        <td  id="td"> <a href="../page/mes_demande.php"><img src="../image/mdep.png" alt=""></a></td>
+                        <td><a href="../page/mes_demande.php">Mes demandes d'emploit</a></td>
                     </tr>
                 </table>
             </div>

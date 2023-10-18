@@ -338,4 +338,25 @@ $(document).ready(function () {
     }
 
 
-});
+   
+
+        $('.container_slider').owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            animateOut: 'slideOutDown',
+            animateIn: 'flipInX',
+            stagePadding: 1,
+            smartSpeed: 1000,
+            margin: 0,
+            nav: true,
+            navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
+        });
+       
+        
+        });
+        
+
+
+

@@ -41,8 +41,15 @@ if (isset($_SESSION['compte_entreprise'])) {
     // $affichePostulant=affichePostulant($db,$offre_id);
 }
 
+if (isset($_GET['id'])) {
+    if (isset($_SESSION['users_id'])) {
+        $getPostulation=getPostulation($db,$_SESSION['users_id'],$_GET['id']);
+    }
+}
+
 
 if (isset($_SESSION['users_id'])) {
-    $getPostulation=getPostulation($db,$_SESSION['users_id'],$_GET['id']);
+    
+    $getPostulationUsers=getPostulationUsers($db,$_SESSION['users_id']);
 }
 ?>
