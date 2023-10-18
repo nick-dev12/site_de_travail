@@ -39,11 +39,11 @@ function getALLPostulation($db,$entreprise_id){
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// function affichePostulant($db,$offre_id){
-//     $sql= "SELECT * FROM postulation WHERE offre_id=:offre_id";
-//     $stmt = $db->prepare($sql);
-//     $stmt->bindValue(':offre_id',$offre_id,PDO::PARAM_INT);
-//     $stmt->execute();
-//     return $stmt->fetchAll(PDO::FETCH_ASSOC);
-// }
+function affichePostulant($db,$poste_id){
+    $sql= "SELECT * FROM postulation WHERE poste_id=:poste_id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':poste_id',$poste_id,PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
 ?>

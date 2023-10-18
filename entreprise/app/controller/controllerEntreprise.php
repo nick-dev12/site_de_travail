@@ -1,5 +1,6 @@
 <?php
 require_once ('..//entreprise/app/model/entreprise.php');
+// include('../model/vue_offre.php');
 
 if(isset($_SESSION['compte_entreprise'])){
     $getEntreprise = getEntreprise($db,$_SESSION['compte_entreprise']);
@@ -7,6 +8,7 @@ if(isset($_SESSION['compte_entreprise'])){
     $selecteOffre = selectOffre ($db,$getEntreprise['id']);
     
     $afficheOffreEmplois = getOffresEmplois($db, $getEntreprise['id']);
+  
     }
 
 if(isset($_POST['publier'])){

@@ -2,14 +2,9 @@
 session_start();
 include('../conn/conn.php');
 
-
-
-
-
-
-
 include_once('app/controller/controllerEntreprise.php');
 include_once('app/controller/controllerDescription.php');
+include_once('app/controller/controllerOffre_emploi.php');
 ?>
 
 
@@ -255,7 +250,13 @@ include_once('app/controller/controllerDescription.php');
 
             <div class="box2">
                 <?php foreach ($afficheOffreEmplois as $offres): ?>
+
+                    <?php  $countOffre= countOffre($db,$offres['entreprise_id'], $offres['offre_id']); ?>
                     <div class="carousel">
+                        <div class="vue" >
+                            <img src="../image/vue.png" alt="">
+                            <span><?= $countOffre ?></span>
+                        </div>
                         <img src="../upload/<?= $offres['images'] ?> " alt="">
                         <div class="p">
                             <p>

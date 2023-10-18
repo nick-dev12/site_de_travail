@@ -132,4 +132,17 @@ function getOffresEmploit($db,$offre_id){
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
+
+
+function postVue ($db,$offre_id,$users_id, $entreprise_id,$nom,$mail){
+    $sql = "INSERT INTO vue_offre (offre_id,users_id,entreprise_id,nom,mail) 
+    VALUES (:offre_id,:users_id,:entreprise_id,:nom,:mail)";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':offre_id',$offre_id);
+    $stmt->bindParam(':users_id',$users_id);
+    $stmt->bindParam(':entreprise_id',$entreprise_id);
+    $stmt->bindParam(':nom',$nom);
+    $stmt->bindParam(':mail',$mail);
+    return $stmt->execute();
+}
 ?>

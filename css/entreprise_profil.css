@@ -318,7 +318,25 @@ body{
     margin:20px 20px;
     position: relative;
 }
-
+.section3 .container_box2 .box2  .carousel .vue{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 5px;
+    background-color: #f2f2f245;
+    right: 10px;
+    top: 10px;
+    border-radius: 7px;
+}
+.section3 .container_box2 .box2  .carousel .vue img{
+    height: 20px;
+    width: 20px;
+    border: none;
+}
+.section3 .container_box2 .box2  .carousel .vue span{
+    font-size: 13px;
+}
 
 .section3 .container_box2 .box2  .carousel:hover{
     transform: scale(1.03);
