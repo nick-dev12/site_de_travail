@@ -2,7 +2,29 @@
 include ('../conn/conn.php');
 
 
+/**
+ * Summary of AccepteCandidats
+ * @param mixed $db
+ * @param mixed $statut
+ * @param mixed $poste_id
+ * @return mixed
+ */
 function AccepteCandidats($db,$statut,$poste_id){
+    $sql = "UPDATE postulation SET statut=:statut WHERE poste_id=:poste_id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':statut',$statut);
+    $stmt->bindValue(':poste_id',$poste_id);
+    return $stmt->execute();
+}
+
+/**
+ * Summary of recalerCandidats
+ * @param mixed $db
+ * @param mixed $statut
+ * @param mixed $poste_id
+ * @return mixed
+ */
+function recalerCandidats($db,$statut,$poste_id){
     $sql = "UPDATE postulation SET statut=:statut WHERE poste_id=:poste_id";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':statut',$statut);
@@ -12,12 +34,12 @@ function AccepteCandidats($db,$statut,$poste_id){
 
 
 
-function getAccepteCandidat($db,$entreprise_id){
-    $sql = "SELECT * FROM accepte_candidat WHERE entreprise_id=:entreprise_id";
-    $stmt = $db->prepare($sql);
-    $stmt->bindValue(':entreprise_id',$entreprise_id,PDO::PARAM_INT);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+/**
+ * Summary of getAccepteCandidat
+ * @param mixed $db
+ * @param mixed $entreprise_id
+ * @return mixed
+ */
+
 
 ?>

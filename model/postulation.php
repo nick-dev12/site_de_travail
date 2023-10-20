@@ -59,7 +59,7 @@ function getPostulation($db,$users_id,$offre_id){
  * @return mixed
  */
 function getALLPostulation($db,$entreprise_id){
-    $sql= "SELECT * FROM postulation WHERE entreprise_id=:entreprise_id" ;
+    $sql= "SELECT * FROM postulation WHERE entreprise_id=:entreprise_id ORDER BY (statut = 'accepter') DESC" ;
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':entreprise_id',$entreprise_id,PDO::PARAM_INT);
     $stmt->execute();
