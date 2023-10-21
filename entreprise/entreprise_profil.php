@@ -56,8 +56,8 @@ include_once('app/controller/controllerOffre_emploi.php');
                     </tr>
 
                     <tr>
-                        <td id="td"><img src="../image/entreprise_ic.png" alt=""></td>
-                        <td>mon entreprise</td>
+                        <td id="td"><a href="mon_entreprise.php"><img src="../image/entreprise_ic.png" alt=""></a></td>
+                        <td><a href="mon_entreprise.php">mon entreprise</a></td>
                     </tr>
                     <tr>
                         <td id="td"><img src="../image/candidat.png" alt=""></td>

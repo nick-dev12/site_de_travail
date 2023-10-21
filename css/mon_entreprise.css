@@ -1,15 +1,13 @@
 *{
     margin:0 ;
-    box-sizing: border-box;
-    letter-spacing: 0.5px;
+    
+  }
+  
+  body{
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
 }
 
-body{
-    font-family: 'Nunito', sans-serif;
-    background: radial-gradient(circle, rgba(226,226,230,1) 0%, rgba(220,220,233,1) 35%, rgba(255,255,255,1) 100%);
-background-position: center;
-background-attachment: fixed;
-}
 
 .section2{
     
@@ -220,7 +218,8 @@ background-color: #14c700;
 
 
 
-.section3{
+
+  .section3{
     display: flex;
     align-items: center;
     justify-content: center;

@@ -180,9 +180,8 @@ include_once('../controller/controller_accepte_candidats.php');
     </section>
 
     <section class="section2">
-        <h2>Candidatures traiter </h2>
 
-        <h4>Candidatures accepter</h4>
+        <h4  class="h4" >Candidatures recaler</h4>
         <div class="container">
             <?php foreach ($getALLpostulation as $postulant): ?>
                 <?php if($postulant['statut']=='recaler'):?>
