@@ -81,7 +81,12 @@ function selectOffre ($db,$entreprise_id){
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-
+function AllUsers ($db){
+    $sql = "SELECT * FROM users WHERE categorie = 'Ingénierie' ";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 
 ?>

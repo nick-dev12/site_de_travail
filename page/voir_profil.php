@@ -165,7 +165,7 @@ include_once('../controller/controller_users.php')
                             <?php echo $ingenieurs['nom']; ?>
                         </p>
 
-                        <a href="/page/profile_travailleur.php?id=<?php echo $ingenieurs['id']; ?>">
+                        <a href="/page/user_profil.php?id=<?php echo $ingenieurs['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
                         </a>
                     </div>
@@ -261,7 +261,7 @@ include_once('../controller/controller_users.php')
                             <?php echo $Designs['nom']; ?>
                         </p>
 
-                        <a href="/page/profile_travailleur.php?id=<?php echo $Designs['id']; ?>">
+                        <a href="/page/user_profil.php?id=<?php echo $Designs['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
                         </a>
                     </div>
@@ -356,7 +356,7 @@ include_once('../controller/controller_users.php')
                             <?php echo $Redaction['nom']; ?>
                         </p>
 
-                        <a href="/page/profile_travailleur.php?id=<?php echo $Redaction['id']; ?>">
+                        <a href="/page/user_profil.php?id=<?php echo $Redaction['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
                         </a>
                     </div>
@@ -448,7 +448,7 @@ include_once('../controller/controller_users.php')
                             <?php echo $marketing['nom']; ?>
                         </p>
 
-                        <a href="/page/profile_travailleur.php?id=<?php echo $marketing['id']; ?>">
+                        <a href="/page/user_profil.php?id=<?php echo $marketing['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
                         </a>
                     </div>
@@ -538,7 +538,7 @@ include_once('../controller/controller_users.php')
                             <?php echo $business['nom']; ?>
                         </p>
 
-                        <a href="/page/profile_travailleur.php?id=<?php echo $business['id']; ?>">
+                        <a href="/page/user_profil.php?id=<?php echo $business['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
                         </a>
                     </div>
@@ -630,7 +630,7 @@ include_once('../controller/controller_users.php')
                             <?php echo $Juridique['nom']; ?>
                         </p>
 
-                        <a href="/page/profile_travailleur.php?id=<?php echo $Juridique['id']; ?>">
+                        <a href="/page/user_profil.php?id=<?php echo $Juridique['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
                         </a>
                     </div>
@@ -725,7 +725,7 @@ include_once('../controller/controller_users.php')
                             <?php echo $Informatique['nom']; ?>
                         </p>
 
-                        <a href="/page/profile_travailleur.php?id=<?php echo $Informatique['id']; ?>">
+                        <a href="/page/user_profil.php?id=<?php echo $Informatique['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
                         </a>
                     </div>
