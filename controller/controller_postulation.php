@@ -26,7 +26,9 @@ if(isset($_POST['postuler'])){
 
     $profession = $_POST['profession_users'];
 
-    if (postCandidature($db,$entreprise_id,$poste,$offre_id,$users_id,$nom,$mail,$phone,$competences,$profession)) {
+    $images = $_POST['images_users'];
+
+    if (postCandidature($db,$entreprise_id,$poste,$offre_id,$users_id,$nom,$mail,$phone,$competences,$profession, $images)) {
         $_SESSION['success_message']='Postulation reussi !!';
         header('Location: ../page/user_profil.php');
         exit();

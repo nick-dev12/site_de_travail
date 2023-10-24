@@ -142,15 +142,17 @@ body{
     background-color: rgb(0, 196, 0);
     color: #ffffff;
     font-size: 20px;
-    opacity: 0;
-    transition: all opacity 0.3s ease;
+    border-radius: 7px;
+    transition: all opacity 0.8s ease;
     z-index: 20;
+    opacity: 0;
+    padding: 10px 20px;
 }
 .section3 .success.visible{
     opacity: 1;
 }
 .section3 .erreur{
-    position: fixed;
+    position: absolute;
     top: 130px;
     left: 50%;
     transform: translate(-50%);
@@ -165,6 +167,25 @@ body{
 }
 
 .section3 .erreur.visible{
+    opacity: 1;
+}
+
+.section3 .delete{
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgb(42, 4, 210);
+    color: #ffffff;
+    font-size: 20px;
+    border-radius: 7px;
+    transition: all opacity 0.8s ease;
+    z-index: 20;
+    opacity: 0;
+    padding: 10px 20px;
+}
+
+.section3 .delete.visiblee{
     opacity: 1;
 }
 
@@ -336,6 +357,18 @@ body{
 }
 .section3 .container_box2 .box2  .carousel .vue span{
     font-size: 13px;
+}
+
+.section3 .container_box2 .box2  .carousel .suprimer{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: rgba(255, 0, 0, 0.487);
+    color: #ffffff;
+    width: 100px;
+    height: 20px;
+    border-radius: 7px;
 }
 
 .section3 .container_box2 .box2  .carousel:hover{

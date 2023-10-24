@@ -35,6 +35,8 @@ include_once('../controller/controller_accepte_candidats.php');
         <div class="box1">
             <h1>Bienvenu au centre de gestion des offres postuler !</h1>
             <div class="container_slider owl-carousel ">
+            <img src="../image/gse.png" alt="">
+            <img src="../image/gse2.jpg" alt="">
                 <img src="../image/gestion_off1.jpg" alt="">
                 <img src="../image/gestion_off2.jpg" alt="">
                 <img src="../image/GestionOffre.png" alt="">
@@ -58,7 +60,7 @@ include_once('../controller/controller_accepte_candidats.php');
 
     <section class="section2">
         <h2>Liste des candidatures</h2>
-
+<p><span>!</span>  ici vous retrouverez les candidats qui ont postuler a vos offres publier   </p>
         <div class="container">
             <?php foreach ($getALLpostulation as $postulant): ?>
                 <?php if($postulant['statut']=='accepter'):?>
@@ -85,7 +87,7 @@ include_once('../controller/controller_accepte_candidats.php');
                     <h3> <span>POSTE :</span>
                         <?= $postulant['poste'] ?>
                     </h3>
-                    <img src="/image/entreprise.jpg" alt="">
+                    <img src="../upload/<?= $postulant['images'] ?>" alt="">
                     <ul>
                         <li>
                             <?= $postulant['nom'] ?>
@@ -93,8 +95,9 @@ include_once('../controller/controller_accepte_candidats.php');
                         <li>
                             <?= $postulant['mail'] ?>
                         </li>
-                        <li>mes competences</li>
-                        <li>profession</li>
+                        <li class="dc" >Domaine de competance</li>
+                        <li class="comp" ><?= $postulant['competences'] ?></li>
+                        
                     </ul>
 
                     <div class="container-box_btn">
@@ -231,12 +234,30 @@ include_once('../controller/controller_accepte_candidats.php');
 
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="/js/jquery-2.2.4.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/owl.carousel.js"></script>
     <script src="/js/owl.animate.js"></script>
     <script src="/js/owl.autoplay.js"></script>
-    <script src="/js/slider_users_owl_carousel.js"></script>
+    <script>
+$(document).ready(function () {
+
+    $('.container_slider').owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        animateOut: 'slideOutDown',
+        animateIn: 'flipInX',
+        stagePadding: 1,
+        smartSpeed: 1000,
+        margin: 0,
+        nav: true,
+        navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
+    });
+   
+    
+    });
+    </script>
 </body>
 
 </html>

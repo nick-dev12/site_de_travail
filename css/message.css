@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Nunito&display=swap');
+
+*{
+    margin:0 ;
+    box-sizing: border-box;
+    letter-spacing: 0.5px;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+}
+
+
+
+
+/* section 2 et toute ces modification  */
+
+.section2 {
+    position: fixed;
+    top: 120px;
+    height: 100vh;
+    width: 280px;
+    z-index: 10;
+    background-color: #002233;
+  }
+  
+  .section2 .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    border-right: 2px solid rgba(139, 139, 139, 0.379);
+  }
+  .section2 .box1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+    margin-top: -120px;
+  }
+  .section2 .box1 img {
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(139, 139, 139, 0.379);
+    box-shadow: 0px 0px 8px 1px #ffffff;
+  }
+  .section2 .box1 span {
+    height: 2px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.379);
+    display: block;
+    margin: 10px 0;
+  }
+  .section2 .box1 h2 {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-top: -2px;
+    color: #ffffff;
+  }
+  
+  .section2 .box3 {
+    width: 100%;
+    padding:0 15px;
+  } 
+  .section2 .box3 table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .section2 .box3 table td {
+    width: 40px;
+    padding: 10px 0;
+    color: #ffffff;
+    font-size: 18px;
+    border-bottom: 2px solid #ffffff50;
+    transition: all 0.3s;
+  }
+  .section2 .box3 table td:hover{
+    background-color: #002233;
+  
+  }
+  .section2 .box3 table #td {
+    width: 40px !important;
+    max-width: 40px;
+    padding:0  10px;
+  }
+  .section2 .box3 table #td img{
+    height: 35px;
+  }
+  .section2 .box3 table td a{
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .section2 .box2 h3 {
+    color: #f39c12;
+    margin-bottom: 20px;
+    z-index: 2;
+    font-size: 20px;
+    background-color: #ffffff;
+    display: block;
+    padding: 7px 17px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+
+
+
+
+
+
+
+
+
+/* section 3 et toute ces modification  */
+
+.section3{
+    margin-left: 280px;
+    margin-top: 120px;
+    display: flex;
+   background: radial-gradient(circle, rgba(226,226,230,1) 0%, rgba(220,220,233,1) 35%, rgba(255,255,255,1) 100%);
+   background-position: center;
+   background-attachment: fixed;
+   position: relative;
+   height: 100vh;
+   padding-bottom: 150px;
+   display: flex;
+   justify-content: center;
+
+}
+
+
+
+
+
+
+
+.container_profil{
+    width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_profil .box3{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.container_profil .box3 h2{
+    width: 100%;
+    padding: 3px 20px;
+    background-color: #67dd00;
+    color: #FFFFFF;
+    margin:7px 0;
+    font-size: 20px;
+    border-radius: 20px;
+}
+.container_profil .box3 a{
+    text-decoration: none;
+}
+.container_profil .box3 .info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: -200px;
+    padding:5px 10px;
+    background-color: #ffffff;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.container_profil .box3 .info img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border:2px solid  #67dd00;
+    margin-right: 10px;
+}
+.container_profil .box3 .info .div h4{
+    font-weight: bolder;
+    font-size: 15px;
+    color: #002233c3;
+}
+.container_profil .box3 .info .div p{
+    color: #0066FF;
+    font-weight: 500;
+    font-size: 14px;
+}
+.container_profil .box3 .info .div p .span1{
+    color: #000000;
+    font-weight: 500;
+    font-size: 14.5px; 
+    margin-right: 10px;
+}
+.container_profil .box3 .info .div p .span2{
+    color: #000000;
+    font-weight: bold;
+    font-size: 14.5px; 
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+.container_profil .box2 a{
+    text-decoration: none;
+}
+.container_profil .box2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+.container_profil .box2 h2{
+    width: 100%;
+    padding: 7px 20px;
+    background-color: #002233;
+    color: #FFFFFF;
+    margin:10px 0;
+    font-size: 20px;
+    border-radius: 20px;
+}
+.container_profil .box2 .info{
+    width: 400px;
+    display: flex;
+    align-items: center;
+    margin-left: -200px;
+    padding:5px 10px;
+    background-color: #ffffff;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.container_profil .box2 .info img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border:2px solid  #002233;
+    margin-right: 20px;
+}
+
+.container_profil .box2 .info .div h4{
+    font-weight: bolder;
+    font-size: 15px;
+}
+.container_profil .box2 .info .div p{
+    color: #0066FF;
+    font-weight: 500;
+    font-size: 14px;
+}

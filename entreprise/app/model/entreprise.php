@@ -1,6 +1,6 @@
 <?php
 
-include('./conn/conn.php');
+include(__DIR__. '/conn/conn.php');
 
 /**
  * Summary of getEntreprise

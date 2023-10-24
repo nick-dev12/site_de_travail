@@ -20,10 +20,7 @@ session_start();
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="../css/navbare.css">
-    <link rel="stylesheet" href="/css/owl.theme.default.css">
-    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="/css/owl.carousel.css">
-    <link rel="stylesheet" href="/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/animate.css">
     <link rel="stylesheet" href="/css/animate.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -322,7 +319,6 @@ Sign up at https://greensock.com/club or try them for free on CodePen or CodeSan
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="/js/jquery-2.2.4.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/owl.carousel.js"></script>
     <script src="/js/owl.animate.js"></script>
@@ -397,7 +393,7 @@ Sign up at https://greensock.com/club or try them for free on CodePen or CodeSan
                 navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
             });
 
-            var carousel2 = $('.carousel2').owlCarousel();
+            var carousel2 = $('.carousel1').owlCarousel();
             $('.owl-next2').click(function () {
                 carousel2.trigger('next.owl.carousel');
             })

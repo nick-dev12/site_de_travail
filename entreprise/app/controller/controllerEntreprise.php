@@ -1,10 +1,12 @@
 <?php
-require_once('..//entreprise/app/model/entreprise.php');
+// require_once('..//entreprise/app/model/entreprise.php');
+require_once(__DIR__ . '/../model/entreprise.php');
 
 // include('../model/vue_offre.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
 require '../vendor/autoload.php';
 
 if (isset($_SESSION['compte_entreprise'])) {
@@ -85,7 +87,6 @@ if (isset($_POST['publier'])) {
 
     if (empty($_SESSION['error_message'])) {
         if (postOffres($db, $entreprise_id, $poste, $mission, $profil, $metier, $contrat, $etudes, $experience, $localite, $langues, $categorie, $date)) {
-            $_SESSION['success_message'] = 'Offre d\'emploi publiée avec succès';
 
             // Créez l'instance PHPMailer
             $mail = new PHPMailer(true);
@@ -102,14 +103,85 @@ if (isset($_POST['publier'])) {
 
                 // Contenu de l'e-mail
                 $sujet = 'Nouvelle offre d\'emploi correspondant à vos critères';
-                $message = "Cher candidat, une nouvelle offre d'emploi correspondant à vos critères a été publiée. Voici les détails de l'offre...";
+                $message = "<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+                <style>
+                *{
+                  padding: 0;
+                  margin: 0%;
+                }
+              
+                .container{
+                  width: 100%;
+                  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                  flex-direction: column;
+                }
+                .container .box1{
+                    width: 60%;
+                    margin: 20px auto;
+                    position: relative;
+                    height: 240px;
+                    background-image: url(/image/WF__2_.png);
+                    background-color: blue;
+                    background-position: center;
+                    background-size: cover;
+                    border-radius: 7px;
+                
+                  }
+                .container .box2 h1{
+                  margin: 0 auto;
+                  width: 90%;
+                  background-color: black;
+                  color: #ffffff;
+                  text-align: center;
+                }
+                .container .box2{
+                  margin: 0 auto;
+                  padding:20px 40px;
+                }
+                .container .box2 h2{
+                text-align: start;
+                padding:20px 40px;
+                  color: blue;
+                  text-transform: uppercase;
+                  width: 50%;
+                  margin: 0 auto;
+                }
+                .container .box2 P{
+                text-align: start;
+                  padding: 20px;
+                  width: 70%;
+                  margin: 0 auto;
+                }
+               </style>
+                </head>
+                <body>
+                
+                <div class='container'>
+                  <div class='box1'>
+                    <img src='/image/WF__2_.png' alt=''>
+                  </div>
+                
+                  <div class='box2'>
+                    <h1>helo nick </h1>
+                    <h2>nouvel offre d'emploit</h2>
+                    <p>un nouvel offre d'emploit est disponible pour toi connecte toi vite discute avec les recuteur postule a l'offre et tante ta chance de pouvoir obtenir le job.</p>
+                  </div>
+                </div>
+                
+                </body>
+                </html>";
 
-                $mail->setFrom('noreply-service@work-flexer.com', 'nick');
+                $mail->setFrom('noreply-service@work-flexer.com', 'work-flexer');
                 $mail->isHTML(true);
                 $mail->Subject = $sujet;
                 $mail->Body = $message;
 
-                
+
                 // Obtenez la liste des candidats (remplacez le champ 'mail' par le champ approprié dans votre base de données)
                 $candidates = AllUsers($db);
 
@@ -120,11 +192,20 @@ if (isset($_POST['publier'])) {
                     $mail->send();
                 }
 
-                echo 'E-mails envoyés avec succès';
+                $_SESSION['success_message'] = 'Offre d\'emploi publiée avec succès';
+                header('Location: updat_offre.php');
+                exit();
+                
             } catch (Exception $e) {
-                echo "Erreur lors de l'envoi de l'e-mail : {$mail->ErrorInfo}";
+                header('Location: updat_offre.php');
+                exit();
             }
         }
     }
+}
+
+
+if(isset($_SESSION['users_id'])){
+
 }
 ?>

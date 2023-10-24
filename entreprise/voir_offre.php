@@ -142,6 +142,7 @@ $afficheDescriptionentreprise=getDescriptionEntreprise ($db,$entreprise_id);
                 <input type="hidden" name="phone_users" id="" value="<?= $getInfo['phone'] ?>">
                 <input type="hidden" name="competence_users" id="" value="<?= $getInfo['competences'] ?>">
                 <input type="hidden" name="profession_users" id="" value="<?= $getInfo['profession'] ?>">
+                <input type="hidden" name="images_users" id="" value="<?= $getInfo['images'] ?>">
 
                 <?php if(isset($getPostulation['offre_id'])): ?>
                     vous avez deja envoyer votre candidature merci de pacienter une reponse favorable.

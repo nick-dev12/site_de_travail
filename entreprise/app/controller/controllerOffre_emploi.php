@@ -117,7 +117,18 @@ if (isset($_GET['id'])) {
 }
 
 if (isset($_SESSION['compte_entreprise'])) {
-   
+   if(isset($_GET['offre_id'])){
+
+    $offre_id= $_GET['offre_id'];
+    if(deleteOffresEmploit($db,$offre_id)){
+        $_SESSION['delete_message']='offre suprimer avec succet';
+        header('Location: ../entreprise/entreprise_profil.php');
+        exit();
+    }
+
 }
+}
+
+
 
 ?>

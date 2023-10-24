@@ -145,4 +145,17 @@ function postVue ($db,$offre_id,$users_id, $entreprise_id,$nom,$mail){
     $stmt->bindParam(':mail',$mail);
     return $stmt->execute();
 }
+
+/**
+ * Summary of deleteOffresEmploit
+ * @param mixed $db
+ * @param mixed $offre_id
+ * @return mixed
+ */
+function deleteOffresEmploit($db,$offre_id){
+    $sql= "DELETE FROM offre_emploi WHERE offre_id=:offre_id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':offre_id',$offre_id, PDO::PARAM_INT);
+    return  $stmt->execute();
+}
 ?>

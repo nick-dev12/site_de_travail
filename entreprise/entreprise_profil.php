@@ -71,6 +71,10 @@ include_once('app/controller/controllerOffre_emploi.php');
                         <td id="td"><img src="../image/contacts-48.png" alt=""></td>
                         <td>contacte</td>
                     </tr>
+                    <tr>
+                        <td id="td"><a href="message.php"><img src="../image/modifier.png" alt=""></a></td>
+                        <td> <a href="message.php">Message</a></td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -90,8 +94,17 @@ include_once('app/controller/controllerOffre_emploi.php');
                     <?php echo $_SESSION['error_message']; ?>
                     <?php unset($_SESSION['error_message']); ?>
                 </div>
+                <?php else: ?>
 
+                    <?php if (isset($_SESSION['delete_message'])): ?>
+                <div class="delete">
+                    <?php echo  $_SESSION['delete_message']; ?>
+                    <?php unset( $_SESSION['delete_message']); ?>
+                </div>
+
+                <?php endif; ?>
             <?php endif; ?>
+           
         <?php endif; ?>
 
         <script>
@@ -101,7 +114,7 @@ include_once('app/controller/controllerOffre_emploi.php');
             }, 200)
             setTimeout(() => {
                 success.classList.remove('visible')
-            }, 6000)
+            }, 8000)
 
             let erreur = document.querySelector('.erreur')
             setTimeout(() => {
@@ -109,7 +122,15 @@ include_once('app/controller/controllerOffre_emploi.php');
             }, 200)
             setTimeout(() => {
                 erreur.classList.remove('visible')
-            }, 6000)
+            }, 8000)
+
+            let delet = document.querySelector('.delete')
+            setTimeout(() => {
+                delet.classList.add('visiblee')
+            }, 200)
+            setTimeout(() => {
+                delet.classList.remove('visiblee')
+            }, 8000)
         </script>
         <div class="container_box3">
             <div class="box1">
@@ -257,6 +278,9 @@ include_once('app/controller/controllerOffre_emploi.php');
                             <img src="../image/vue.png" alt="">
                             <span><?= $countOffre ?></span>
                         </div>
+
+                        <a class="suprimer" href="?offre_id=<?= $offres['offre_id']; ?>"> Suprimer</a>
+
                         <img src="../upload/<?= $offres['images'] ?> " alt="">
                         <div class="p">
                             <p>

@@ -110,12 +110,30 @@ include_once('../controller/controller_postulation.php');
 
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="/js/jquery-2.2.4.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/owl.carousel.js"></script>
     <script src="/js/owl.animate.js"></script>
     <script src="/js/owl.autoplay.js"></script>
-    <script src="/js/slider_users_owl_carousel.js"></script>
+ <script>
+    $(document).ready(function () {
+
+$('.container_slider').owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    animateOut: 'slideOutDown',
+    animateIn: 'flipInX',
+    stagePadding: 1,
+    smartSpeed: 1000,
+    margin: 0,
+    nav: true,
+    navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
+});
+
+
+});
+ </script>
 
 
 

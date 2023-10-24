@@ -16,9 +16,9 @@ include ('../conn/conn.php');
  * @param mixed $profession
  * @return mixed
  */
-function postCandidature($db,$entreprise_id,$poste,$offre_id,$users_id,$nom,$mail,$phone,$competences,$profession){
-    $sql="INSERT INTO postulation (entreprise_id,poste,offre_id,users_id,nom,mail,phone,competences,profession) 
-    VALUES (:entreprise_id,:poste,:offre_id,:users_id,:nom,:mail,:phone,:competences,:profession)";
+function postCandidature($db,$entreprise_id,$poste,$offre_id,$users_id,$nom,$mail,$phone,$competences,$profession, $images){
+    $sql="INSERT INTO postulation (entreprise_id,poste,offre_id,users_id,nom,mail,phone,competences,profession,images) 
+    VALUES (:entreprise_id,:poste,:offre_id,:users_id,:nom,:mail,:phone,:competences,:profession,:images)";
     $stmt= $db->prepare($sql);
     $stmt->bindParam(':entreprise_id',$entreprise_id);
     $stmt->bindParam(':poste',$poste);
@@ -29,6 +29,7 @@ function postCandidature($db,$entreprise_id,$poste,$offre_id,$users_id,$nom,$mai
     $stmt->bindParam(':phone',$phone);
     $stmt->bindParam(':competences',$competences);
     $stmt->bindParam(':profession',$profession);
+    $stmt->bindParam(':images',$images);
     return $stmt->execute();
 }
 
