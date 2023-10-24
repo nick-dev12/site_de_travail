@@ -33,12 +33,7 @@ function getUsers($db, $categorie){
  * @return mixed
  */
 function getUsersIngenieur($db){
-    // $sql = "SELECT * FROM users WHERE categorie = 'Ingénierie'";
-    $sql = "SELECT u.*, GROUP_CONCAT(cu.id) as competencees 
-    FROM users u
-    JOIN competence_users cu ON cu.users_id = u.id
-    WHERE u.categorie = 'Ingénierie' 
-    GROUP BY u.id";
+    $sql = "SELECT * FROM users WHERE categorie = 'Ingénierie'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -46,12 +41,7 @@ function getUsersIngenieur($db){
 
 
 function getUsersDesign($db){
-    // $sql = "SELECT * FROM users WHERE categorie = 'design'";
-    $sql = "SELECT u.*, GROUP_CONCAT(cu.id) as competencees 
-    FROM users u
-    JOIN competence_users cu ON cu.users_id = u.id
-    WHERE u.categorie = 'design' 
-    GROUP BY u.id";
+    $sql = "SELECT * FROM users WHERE categorie = 'design'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -59,12 +49,7 @@ function getUsersDesign($db){
 
 
 function getUsersRédaction($db){
-    // $sql = "SELECT * FROM users WHERE categorie = 'Rédaction'";
-    $sql = "SELECT u.*, GROUP_CONCAT(cu.id) as competencees 
-    FROM users u
-    JOIN competence_users cu ON cu.users_id = u.id
-    WHERE u.categorie = 'Rédaction' 
-    GROUP BY u.id";
+    $sql = "SELECT * FROM users WHERE categorie = 'Rédaction'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -72,24 +57,14 @@ function getUsersRédaction($db){
 
 
 function getUsersmarketing($db){
-    // $sql = "SELECT * FROM users WHERE categorie = 'marketing'";
-    $sql = "SELECT u.*, GROUP_CONCAT(cu.id) as competencees 
-    FROM users u
-    JOIN competence_users cu ON cu.users_id = u.id
-    WHERE u.categorie = 'marketing' 
-    GROUP BY u.id";
+    $sql = "SELECT * FROM users WHERE categorie = 'marketing'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function getUsersbusiness($db){
-    // $sql = "SELECT * FROM users WHERE categorie = 'business'";
-    $sql = "SELECT u.*, GROUP_CONCAT(cu.id) as competencees 
-    FROM users u
-    JOIN competence_users cu ON cu.users_id = u.id
-    WHERE u.categorie = 'business' 
-    GROUP BY u.id";
+    $sql = "SELECT * FROM users WHERE categorie = 'business'";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -97,11 +72,7 @@ function getUsersbusiness($db){
 
 function getUsersJuridique($db){
     // $sql = "SELECT * FROM users WHERE categorie = 'Juridique'";
-    $sql = "SELECT u.*, GROUP_CONCAT(cu.id) as competencees 
-    FROM users u
-    JOIN competence_users cu ON cu.users_id = u.id
-    WHERE u.categorie = 'Juridique' 
-    GROUP BY u.id";
+    $sql = "SELECT * FROM users WHERE categorie = 'Juridique' ";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -110,11 +81,8 @@ function getUsersJuridique($db){
 
 function getUsersInformatique($db){
     // $sql = "SELECT * FROM users  JOIN competence_users ON users.id = competence_users.users_id   WHERE categorie = 'Informatique'";
-    $sql = "SELECT u.*, GROUP_CONCAT(cu.id) as competencees 
-    FROM users u
-    JOIN competence_users cu ON cu.users_id = u.id
-    WHERE u.categorie = 'Informatique' 
-    GROUP BY u.id";
+    $sql = "SELECT *  
+    FROM users WHERE categorie = 'Informatique' ";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -126,6 +94,31 @@ function getInfoUsers($db,$id){
             $stmt->bindValue(':id',$id,PDO::PARAM_INT);
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+
+function Occuper($db,$statut,$id){
+    $sql = "UPDATE users SET statut=:statut WHERE id=:id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':statut',$statut);
+    $stmt->bindValue(':id',$id);
+    return $stmt->execute();
+}
+
+
+/**
+ * Summary of recalerCandidats
+ * @param mixed $db
+ * @param mixed $statut
+ * @param mixed $poste_id
+ * @return mixed
+ */
+function Disponible($db,$statut,$id){
+    $sql = "UPDATE users  SET statut=:statut WHERE id=:id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':statut',$statut);
+    $stmt->bindValue(':id',$id);
+    return $stmt->execute();
 }
 
 ?>

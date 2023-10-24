@@ -47,7 +47,9 @@ if (isset($_GET['supprime'])) {
 if (isset($_GET['id'])) {
     $competencesUtilisateur = getCompetences($db, $_GET['id']);
 }else{
+   if (isset($_SESSION['users_id'])) {
     $competencesUtilisateur = getCompetences($db, $_SESSION['users_id']);
+   }
 }
 
  ?>

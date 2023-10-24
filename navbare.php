@@ -179,8 +179,14 @@ if (isset($_SESSION['users_id'])) {
                 boxInfo.style.right = '-100%';
                 isOpen = false;
             }
-
         });
+
+        document.addEventListener('click', (e) =>{
+            if ( e.target !== affiche) {
+                boxInfo.style.right = '-100%';
+                isOpen = false;
+            }
+        })
     </script>
 </nav>
 

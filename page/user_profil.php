@@ -4,44 +4,9 @@ include '../conn/conn.php';
 
 if (isset($_GET['id'])) {
     // Récupérez l'ID du commerçant à partir de la session
-// Récupérez l'ID de l'utilisateur depuis la variable de session
-$users_id = $_GET['id'];
-
-// Vous pouvez maintenant utiliser $commercant_id pour récupérer les informations de l'utilisateur depuis la base de données
-// Écrivez votre requête SQL pour récupérer les informations nécessaires
-$conn = "SELECT * FROM users WHERE id = :users_id";
-$stmt = $db->prepare($conn);
-$stmt->bindParam(':users_id', $users_id);
-$stmt->execute();
-$users = $stmt->fetch(PDO::FETCH_ASSOC);
-
-$erreurs = '';
-
-$message = '';
-
-
-include_once('../controller/controller_description_users.php');
-include_once('../controller/controller_metier_users.php');
-include_once('../controller/controller_competence_users.php');
-include_once('../controller/controller_formation_users.php');
-include_once('../controller/controller_diplome_users.php');
-include_once('../controller/controller_certificat_users.php');
-include_once('../controller/controller_outil_users.php');
-include_once('../controller/controller_langue_users.php');
-include_once('../controller/controller_projet_users.php');
-}else{
-
-    if (isset($_COOKIE['users_id'])) {
-        $users_id = $_COOKIE['users_id'];
-    } else {
-        $users_id = '';
-    }
-    
-    
-    // Récupérez l'ID du commerçant à partir de la session
     // Récupérez l'ID de l'utilisateur depuis la variable de session
-    $users_id = $_SESSION['users_id'];
-    
+    $users_id = $_GET['id'];
+
     // Vous pouvez maintenant utiliser $commercant_id pour récupérer les informations de l'utilisateur depuis la base de données
     // Écrivez votre requête SQL pour récupérer les informations nécessaires
     $conn = "SELECT * FROM users WHERE id = :users_id";
@@ -49,27 +14,12 @@ include_once('../controller/controller_projet_users.php');
     $stmt->bindParam(':users_id', $users_id);
     $stmt->execute();
     $users = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    
-    // $sql = "SELECT metier FROM metier_users WHERE users_id = :users_id";
-    // $users_metier = $db->prepare($sql);
-    // $users_metier->bindParam(':users_id', $users_id);
-    // $users_metier->execute();
-    
-    
+
     $erreurs = '';
-    
+
     $message = '';
-    
-    
-    
-    
-    // Récupérez l'ID du commerçant à partir de la session
-    // Récupérez l'ID de l'utilisateur depuis la variable de session
-    
-    // Récupérer l'id du métier à supprimer (via lien ou formulaire par exemple)
-    
-    
+
+
     include_once('../controller/controller_description_users.php');
     include_once('../controller/controller_metier_users.php');
     include_once('../controller/controller_competence_users.php');
@@ -79,6 +29,57 @@ include_once('../controller/controller_projet_users.php');
     include_once('../controller/controller_outil_users.php');
     include_once('../controller/controller_langue_users.php');
     include_once('../controller/controller_projet_users.php');
+} else {
+
+    if (isset($_COOKIE['users_id'])) {
+        $users_id = $_COOKIE['users_id'];
+    } else {
+        $users_id = '';
+    }
+
+
+    // Récupérez l'ID du commerçant à partir de la session
+    // Récupérez l'ID de l'utilisateur depuis la variable de session
+    $users_id = $_SESSION['users_id'];
+
+    // Vous pouvez maintenant utiliser $commercant_id pour récupérer les informations de l'utilisateur depuis la base de données
+    // Écrivez votre requête SQL pour récupérer les informations nécessaires
+    $conn = "SELECT * FROM users WHERE id = :users_id";
+    $stmt = $db->prepare($conn);
+    $stmt->bindParam(':users_id', $users_id);
+    $stmt->execute();
+    $users = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+    // $sql = "SELECT metier FROM metier_users WHERE users_id = :users_id";
+    // $users_metier = $db->prepare($sql);
+    // $users_metier->bindParam(':users_id', $users_id);
+    // $users_metier->execute();
+
+
+    $erreurs = '';
+
+    $message = '';
+
+
+
+
+    // Récupérez l'ID du commerçant à partir de la session
+    // Récupérez l'ID de l'utilisateur depuis la variable de session
+
+    // Récupérer l'id du métier à supprimer (via lien ou formulaire par exemple)
+
+
+    include_once('../controller/controller_description_users.php');
+    include_once('../controller/controller_metier_users.php');
+    include_once('../controller/controller_competence_users.php');
+    include_once('../controller/controller_formation_users.php');
+    include_once('../controller/controller_diplome_users.php');
+    include_once('../controller/controller_certificat_users.php');
+    include_once('../controller/controller_outil_users.php');
+    include_once('../controller/controller_langue_users.php');
+    include_once('../controller/controller_projet_users.php');
+    include_once('../controller/controller_users.php');
 }
 
 ?>
@@ -142,6 +143,44 @@ include_once('../controller/controller_projet_users.php');
     <section class="section2">
         <div class="container">
             <div class="box1">
+                <?php if ($users['statut'] == 'Disponible'):?>
+                <button class="statut occ"><?= $users['statut'] ?></button>
+                <?php else: ?>
+                    <?php if ($users['statut'] == 'Occuper'):?>
+                <button class="statut disp"><?= $users['statut'] ?></button>
+                <?php else: ?>
+                    <button class="statut occ">Statut</button>
+                <?php endif; ?>
+                <?php endif; ?>
+                <div class="div_statut">
+                    <a class="disp" href="?occuper=<?= $users['id'] ?>">Occuper</a>
+                    <a class=" occ" href="?disponible=<?= $users['id'] ?>">Disponible</a>
+                </div>
+
+                <script>
+                    let statut = document.querySelector('.statut')
+                    let div_statut = document.querySelector('.div_statut')
+
+                    statut.addEventListener('click', () => {
+                        if (div_statut.style.left === '-200%') {
+                            div_statut.style.left = '0'
+                        } else {
+                            div_statut.style.left = '-200%'
+                        }
+
+                    })
+
+                    // Ajouter un gestionnaire au clic n'importe où sur la page
+                    document.addEventListener('click', (e) => {
+                        // Vérifier que le clic ne vient pas du bouton
+                        if (e.target !== statut) {
+                            // Masquer la div
+                            div_statut.style.left = '-200%'
+                        }
+                    });
+                </script>
+
+
                 <img class="affiche" src="/upload/<?= $users['images'] ?>" alt="">
                 <span></span>
                 <h2>
@@ -151,31 +190,31 @@ include_once('../controller/controller_projet_users.php');
 
             <div class="box2">
                 <h3>
-                    <?php echo $users['profession']; ?>
+                    <?php echo $users['competences']; ?>
                 </h3>
             </div>
             <div class="box3">
                 <table>
 
                     <tr>
-                        <td id="td" ><img src="../image/MCV.png" alt=""></td>
+                        <td id="td"><img src="../image/MCV.png" alt=""></td>
                         <td> <a href="cv_users.php">mon cv</a></td>
                     </tr>
 
                     <tr>
-                        <td  id="td"><img src="../image/exp.png" alt=""></td>
+                        <td id="td"><img src="../image/exp.png" alt=""></td>
                         <td>mon experience</td>
                     </tr>
                     <tr>
-                        <td  id="td"><img src="../image/mpc.png" alt=""></td>
+                        <td id="td"><img src="../image/mpc.png" alt=""></td>
                         <td>mon parcour</td>
                     </tr>
                     <tr>
-                        <td  id="td"><img src="../image/mct.png" alt=""></td>
+                        <td id="td"><img src="../image/mct.png" alt=""></td>
                         <td>contacte</td>
                     </tr>
                     <tr>
-                        <td  id="td"> <a href="../page/mes_demande.php"><img src="../image/mdep.png" alt=""></a></td>
+                        <td id="td"> <a href="../page/mes_demande.php"><img src="../image/mdep.png" alt=""></a></td>
                         <td><a href="../page/mes_demande.php">Mes demandes d'emploit</a></td>
                     </tr>
                     <tr>
@@ -189,13 +228,50 @@ include_once('../controller/controller_projet_users.php');
 
 
     <section class="section3">
-        <?php if (isset($_SESSION['success_message'])): ?>
+        <?php if (isset($_SESSION['compte_entreprise'])) : ?>
+            <button class="contacte">Contacter ce candidat</button>
+
+            <form action="" class="form_appel">
+                <img class="fermer" src="../image/croix.png" alt="">
+                <label for="message">Ecriver votre message ici</label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                <input type="submit" name="envoie" value="Envoyer">
+            </form>
+
+            <script>
+                let contacte = document.querySelector('.contacte');
+                let form_appel = document.querySelector('.form_appel');
+                let fermer = document.querySelector('.fermer')
+
+                contacte.addEventListener('click', () => {
+                    if (form_appel.style.left = '160%') {
+                        form_appel.style.left = '60%'
+                    } else {
+                        form_appel.style.left = '160%'
+                    }
+
+                    contacte.style.opacity = '0';
+                })
+                fermer.addEventListener('click', () => {
+                    if (form_appel.style.left = '60%') {
+                        form_appel.style.left = '160%'
+                    } else {
+                        form_appel.style.left = '60%'
+                    }
+
+                    contacte.style.opacity = '1';
+                })
+            </script>
+
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['success_message'])) : ?>
             <div class="message">
                 <?php echo $_SESSION['success_message']; ?><i class="fa-solid fa-check fa-2xl"></i>
                 <?php unset($_SESSION['success_message']); ?>
             </div>
-        <?php else: ?>
-            <?php if (isset($_SESSION['error_message'])): ?>
+        <?php else : ?>
+            <?php if (isset($_SESSION['error_message'])) : ?>
                 <div class="erreurs" id="messageErreur">
                     <?php echo $_SESSION['error_message']; ?>
                     <?php unset($_SESSION['error_message']); ?>
@@ -216,85 +292,81 @@ include_once('../controller/controller_projet_users.php');
             var messageErreur = document.getElementById('messageErreur');
 
             // Fonction pour afficher le message avec une transition de fondu
-            setTimeout(function () {
+            setTimeout(function() {
                 messageErreur.classList.add('visible');
             }, 200); // 1000 millisecondes équivalent à 1 seconde
 
             // Fonction pour masquer le message avec une transition de fondu
-            setTimeout(function () {
+            setTimeout(function() {
                 messageErreur.classList.remove('visible');
             }, 6000); // 6000 millisecondes équivalent à 6 secondes
         </script>
 
 
 
-        <?php if (empty($competencesUtilisateur)):?>
-            <?php if(isset($_SESSION['users_id'])): ?>
-     <div class="container_box0">
-                <h1> <span>Alerte :</span> <strong>veuiller ajouter au moins une competence pour etre visible par les
-                        recruteur</strong></h1>
-            </div>
-    <?php else:?>
-        <?php endif; ?>
-           
+        <?php if (empty($competencesUtilisateur)) : ?>
+            <?php if (isset($_SESSION['users_id'])) : ?>
+                <div class="container_box0">
+                    <h1> <span>Alerte :</span> <strong>veuiller ajouter au moins une competence pour etre visible par les
+                            recruteur</strong></h1>
+                </div>
+            <?php else : ?>
+            <?php endif; ?>
+
         <?php endif; ?>
 
 
-        <div class="container_box1" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
-            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-            data-aos-anchor-placement="top-bottom">
+        <div class="container_box1" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
             <div class="box1">
                 <h2>A propos de moi !</h2>
 
                 <div class="description">
                     <?php
                     // Vérifier si la description de l'utilisateur est vide
-                    if (empty($descriptions['description'])):
+                    if (empty($descriptions['description'])) :
 
-                        ?>
-                    <?php else: ?>
+                    ?>
+                    <?php else : ?>
                         <?php echo $descriptions['description']; ?>
                     <?php endif; ?>
 
                 </div>
                 <?php
                 // Vérifier si la description de l'utilisateur est vide
-                if (empty($descriptions['description'])):
-                    ?>
-                    <?php if(isset($_SESSION['users_id'])): ?>
+                if (empty($descriptions['description'])) :
+                ?>
+                    <?php if (isset($_SESSION['users_id'])) : ?>
                         <button class="buton">Ajouter une description</button>
-                        <?php else:?>
-                            <?php endif; ?>
-                    
+                    <?php else : ?>
+                    <?php endif; ?>
+
 
                     <div class="form_box">
                         <form method="post" action="" enctype="multipart/form-data">
 
-                            <?php if (isset($erreurs)): ?>
+                            <?php if (isset($erreurs)) : ?>
                                 <div class="erreur">
                                     <?php echo $erreurs; ?>
                                 </div>
                             <?php endif; ?>
-                            <textarea name="description" id="summernote" cols="30" rows="10"
-                                placeholder="Ajoute une description ici"></textarea>
+                            <textarea name="description" id="summernote" cols="30" rows="10" placeholder="Ajoute une description ici"></textarea>
 
                             <input type="submit" value="ajouter" name="ajouter" id="ajoute">
 
                         </form>
                     </div>
 
-                <?php else: ?>
-                    <?php if(isset($_SESSION['users_id'])): ?>
+                <?php else : ?>
+                    <?php if (isset($_SESSION['users_id'])) : ?>
                         <button class="buton buttons">Modifier la description</button>
-                        <?php else:?>
-                            <?php endif; ?>
-                    
+                    <?php else : ?>
+                    <?php endif; ?>
+
 
                     <div class="form_box texte">
                         <form method="post" action="" enctype="multipart/form-data">
 
-                            <textarea name="nouvelleDescription" id="summernote" cols="30" rows="10"
-                                placeholder="Ajoute une description ici">
+                            <textarea name="nouvelleDescription" id="summernote" cols="30" rows="10" placeholder="Ajoute une description ici">
                                      <?php echo htmlspecialchars($descriptions['description'], ENT_QUOTES, 'UTF-8'); ?>  
                                     </textarea>
                             <input type="submit" value="Modifier" name="Modifier" id="ajoute">
@@ -307,7 +379,7 @@ include_once('../controller/controller_projet_users.php');
                     let buton = document.querySelector('.buton')
                     let form_box = document.querySelector('.form_box')
 
-                    buton.addEventListener('click', function () {
+                    buton.addEventListener('click', function() {
                         if (form_box.style.display === 'none' || form_box.style.display === '') {
                             form_box.style.display = 'block';
                         } else {
@@ -318,7 +390,7 @@ include_once('../controller/controller_projet_users.php');
                     let button = document.querySelector('.buttons')
                     let texte = document.querySelector('.texte')
 
-                    button.addEventListener('click', function () {
+                    button.addEventListener('click', function() {
                         if (tetxe.style.display === 'none' || texte.style.display === '') {
                             texte.style.display = 'block';
                         } else {
@@ -333,18 +405,16 @@ include_once('../controller/controller_projet_users.php');
 
 
 
-        <div class="container_box2" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
-            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-            data-aos-anchor-placement="top-bottom">
+        <div class="container_box2" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
             <div class="box1">
                 <h1>Expertise et compétences</h1>
             </div>
             <div class="box2">
                 <h2>Experience professionnel</h2>
                 <?php
-                foreach ($afficheMetier as $metiers):
+                foreach ($afficheMetier as $metiers) :
 
-                    ?>
+                ?>
                     <div class="metier">
                         <table>
                             <tr>
@@ -354,13 +424,12 @@ include_once('../controller/controller_projet_users.php');
                                     </p>
                                 </th>
                                 <td>
-                                <?php if(isset($_SESSION['users_id'])): ?>
-    <!-- Ajouter un lien de suppression -->
-                                    <a class="delete" href="?supprimer=<?php echo $metiers['id']; ?>"><span
-                                            class="span">x</span></a>
-    <?php else:?>
-        <?php endif; ?>
-                                    
+                                    <?php if (isset($_SESSION['users_id'])) : ?>
+                                        <!-- Ajouter un lien de suppression -->
+                                        <a class="delete" href="?supprimer=<?php echo $metiers['id']; ?>"><span class="span">x</span></a>
+                                    <?php else : ?>
+                                    <?php endif; ?>
+
                                 </td>
                             </tr>
                         </table>
@@ -393,14 +462,14 @@ include_once('../controller/controller_projet_users.php');
                         </table>
 
                     </div>
-                    <?php
+                <?php
                 endforeach;
                 ?>
-<?php if(isset($_SESSION['users_id'])): ?>
-    <button class="affiche_form">Ajouter une experience</button>
-                        <?php else:?>
-                            <?php endif; ?>
-                
+                <?php if (isset($_SESSION['users_id'])) : ?>
+                    <button class="affiche_form">Ajouter une experience</button>
+                <?php else : ?>
+                <?php endif; ?>
+
 
                 <form class="form" action="" method="post">
                     <div class="boxmetier">
@@ -412,20 +481,18 @@ include_once('../controller/controller_projet_users.php');
                         <div>
                             <label for="date1">date de debut</label>
                             <div class="input-group date">
-                                <input id="datee" name="date1" type="text" class="form-control" value="12-02-2012" width
-                                    200>
+                                <input id="datee" name="date1" type="text" class="form-control" value="12-02-2012" width 200>
                             </div>
                         </div>
                         <div>
                             <label for="date2">date de fin</label>
                             <div class="input-group date">
-                                <input id="datees" name="date2" type="text" class="form-control" value="12-02-2012"
-                                    width 200>
+                                <input id="datees" name="date2" type="text" class="form-control" value="12-02-2012" width 200>
                             </div>
                         </div>
 
                         <script>
-                            $(document).ready(function () {
+                            $(document).ready(function() {
                                 $('#datee').datepicker({
                                     format: 'dd/mm/yyyy', // Format de la date
                                     autoclose: true, // Fermer automatiquement le sélecteur après la sélection
@@ -435,7 +502,7 @@ include_once('../controller/controller_projet_users.php');
                                     language: 'fr' // Langue (français)
                                 });
                             });
-                            $(document).ready(function () {
+                            $(document).ready(function() {
                                 $('#datees').datepicker({
                                     format: 'dd/mm/yyyy', // Format de la date
                                     autoclose: true, // Fermer automatiquement le sélecteur après la sélection
@@ -460,7 +527,7 @@ include_once('../controller/controller_projet_users.php');
                     let affiche_form = document.querySelector('.affiche_form')
                     let form = document.querySelector('.form')
 
-                    affiche_form.addEventListener('click', function () {
+                    affiche_form.addEventListener('click', function() {
                         if (form.style.display === 'none' || form.style.display === '') {
                             form.style.display = 'block';
                         } else {
@@ -476,8 +543,8 @@ include_once('../controller/controller_projet_users.php');
 
 
                     <?php
-                    foreach ($competencesUtilisateur as $competence):
-                        ?>
+                    foreach ($competencesUtilisateur as $competence) :
+                    ?>
                         <p>
                             <?php echo $competence['competence']; ?>
                             <a href="?supprime=<?php echo $competence['id']; ?>">x</a>
@@ -486,16 +553,16 @@ include_once('../controller/controller_projet_users.php');
 
 
 
-                        <?php
+                    <?php
                     endforeach;
                     ?>
                 </div>
 
-                <?php if(isset($_SESSION['users_id'])): ?>
-     <button class="affiche_forms">Ajouter une compétences</button>
-    <?php else:?>
-        <?php endif; ?>
-               
+                <?php if (isset($_SESSION['users_id'])) : ?>
+                    <button class="affiche_forms">Ajouter une compétences</button>
+                <?php else : ?>
+                <?php endif; ?>
+
                 <form class="forms" action="" method="post">
                     <input type="text" name="competence" id="competence">
                     <input type="submit" value="Ajouter" name="Ajouter1" id="Ajouter">
@@ -505,7 +572,7 @@ include_once('../controller/controller_projet_users.php');
                     let affiche_forms = document.querySelector('.affiche_forms')
                     let forms = document.querySelector('.forms')
 
-                    affiche_forms.addEventListener('click', function () {
+                    affiche_forms.addEventListener('click', function() {
                         if (forms.style.display === 'none' || forms.style.display === '') {
                             forms.style.display = 'block';
                         } else {
@@ -523,9 +590,7 @@ include_once('../controller/controller_projet_users.php');
 
 
 
-        <div class="container_box3" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
-            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-            data-aos-anchor-placement="top-bottom">
+        <div class="container_box3" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
 
             <div class="box4">
                 <h1>formation</h1>
@@ -550,7 +615,7 @@ include_once('../controller/controller_projet_users.php');
 
                 </table>
 
-                <?php foreach ($formationUsers as $formations): ?>
+                <?php foreach ($formationUsers as $formations) : ?>
                     <table>
 
                         <tr>
@@ -573,23 +638,23 @@ include_once('../controller/controller_projet_users.php');
                                 <?php echo $formations['niveau']; ?>
                             </td>
                             <td class="supr">
-                            <?php if(isset($_SESSION['users_id'])): ?>
-     <a href="?supprimes=<?php echo $formations['id']; ?>">x</a>
-    <?php else:?>
-        <?php endif; ?>
-                               
+                                <?php if (isset($_SESSION['users_id'])) : ?>
+                                    <a href="?supprimes=<?php echo $formations['id']; ?>">x</a>
+                                <?php else : ?>
+                                <?php endif; ?>
+
                             </td>
                         </tr>
                     </table>
                 <?php endforeach; ?>
             </div>
-            
+
             <div class="fa-formation">
-            <?php if(isset($_SESSION['users_id'])): ?>
-     <button class="Ajouters">Ajouter une formation</button>
-    <?php else:?>
-        <?php endif; ?>
-               
+                <?php if (isset($_SESSION['users_id'])) : ?>
+                    <button class="Ajouters">Ajouter une formation</button>
+                <?php else : ?>
+                <?php endif; ?>
+
             </div>
 
             <div class="containne">
@@ -600,15 +665,13 @@ include_once('../controller/controller_projet_users.php');
                         <div class="box1">
                             <label for="annee">Annee du debut </label>
                             <div class="input-group date">
-                                <input id="date1" name="annee" type="text" class="form-control" value="12-02-2012" width
-                                    200>
+                                <input id="date1" name="annee" type="text" class="form-control" value="12-02-2012" width 200>
                             </div>
                         </div>
                         <div class="box1">
                             <label for="annees">Annee de la fin </label>
                             <div class="input-group date">
-                                <input id="date2" name="annees" type="text" class="form-control" value="12-02-2012"
-                                    width 200>
+                                <input id="date2" name="annees" type="text" class="form-control" value="12-02-2012" width 200>
                             </div>
                         </div>
                     </div>
@@ -635,7 +698,7 @@ include_once('../controller/controller_projet_users.php');
                 </form>
             </div>
             <script>
-                $(document).ready(function () {
+                $(document).ready(function() {
                     $('#date1').datepicker({
                         format: 'dd/mm/yyyy', // Format de la date
                         autoclose: true, // Fermer automatiquement le sélecteur après la sélection
@@ -645,7 +708,7 @@ include_once('../controller/controller_projet_users.php');
                         language: 'fr' // Langue (français)
                     });
                 });
-                $(document).ready(function () {
+                $(document).ready(function() {
                     $('#date2').datepicker({
                         format: 'dd/mm/yyyy', // Format de la date
                         autoclose: true, // Fermer automatiquement le sélecteur après la sélection
@@ -661,7 +724,7 @@ include_once('../controller/controller_projet_users.php');
                 let Ajoutes = document.querySelector('.Ajouters')
                 let formee = document.querySelector('.containne')
 
-                Ajoutes.addEventListener('click', function () {
+                Ajoutes.addEventListener('click', function() {
                     if (formee.style.display === 'none' || formee.style.display === '') {
                         formee.style.display = 'block';
                     } else {
@@ -672,9 +735,7 @@ include_once('../controller/controller_projet_users.php');
         </div>
 
 
-        <div class="container_box4" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
-            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-            data-aos-anchor-placement="top-bottom">
+        <div class="container_box4" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
             <div class="box1">
                 <div class="div">
                     <table>
@@ -683,7 +744,7 @@ include_once('../controller/controller_projet_users.php');
                         </tr>
                     </table>
                     <div>
-                        <?php foreach ($afficheDiplome as $diplomes): ?>
+                        <?php foreach ($afficheDiplome as $diplomes) : ?>
 
                             <table>
                                 <tr>
@@ -704,7 +765,7 @@ include_once('../controller/controller_projet_users.php');
                         </tr>
                     </table>
                     <div>
-                        <?php foreach ($afficheCertificat as $certificats): ?>
+                        <?php foreach ($afficheCertificat as $certificats) : ?>
                             <table>
                                 <tr>
                                     <td>
@@ -718,12 +779,12 @@ include_once('../controller/controller_projet_users.php');
             </div>
 
             <div class="box2">
-            <?php if(isset($_SESSION['users_id'])): ?>
-     <button class="btn btn1"> ajouter un Diplome</button>
-                <button class="btn btn2"> ajouter un certificat</button>
-    <?php else:?>
-        <?php endif; ?>
-               
+                <?php if (isset($_SESSION['users_id'])) : ?>
+                    <button class="btn btn1"> ajouter un Diplome</button>
+                    <button class="btn btn2"> ajouter un certificat</button>
+                <?php else : ?>
+                <?php endif; ?>
+
             </div>
 
 
@@ -745,7 +806,7 @@ include_once('../controller/controller_projet_users.php');
                 let btn1 = document.querySelector('.btn1')
                 let box31 = document.querySelector('.box31')
 
-                btn1.addEventListener('click', function () {
+                btn1.addEventListener('click', function() {
                     if (box31.style.display === 'none' || box31.style.display === '') {
                         box31.style.display = 'block';
                     } else {
@@ -756,7 +817,7 @@ include_once('../controller/controller_projet_users.php');
                 let btn2 = document.querySelector('.btn2')
                 let box32 = document.querySelector('.box32')
 
-                btn2.addEventListener('click', function () {
+                btn2.addEventListener('click', function() {
                     if (box32.style.display === 'none' || box32.style.display === '') {
                         box32.style.display = 'block';
                     } else {
@@ -768,17 +829,15 @@ include_once('../controller/controller_projet_users.php');
         </div>
 
 
-        <div class="container_box7" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
-            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-            data-aos-anchor-placement="top-bottom">
+        <div class="container_box7" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
 
             <div class="box1">
                 <h1>Projets et realisations</h1>
-                <?php if(isset($_SESSION['users_id'])): ?>
-    <button class="ajout">Ajouter un projet/realisation</button>
-    <?php else:?>
-        <?php endif; ?>
-                
+                <?php if (isset($_SESSION['users_id'])) : ?>
+                    <button class="ajout">Ajouter un projet/realisation</button>
+                <?php else : ?>
+                <?php endif; ?>
+
             </div>
             <div class="form_projet">
 
@@ -806,8 +865,6 @@ include_once('../controller/controller_projet_users.php');
                             <img id="imagePreview" src="" alt="view">
 
                             <script>
-
-
                                 // Récupérer l'élément input type file
                                 const inputImage = document.getElementById('images');
 
@@ -835,7 +892,7 @@ include_once('../controller/controller_projet_users.php');
                 let ajout = document.querySelector('.ajout')
                 let form_projet = document.querySelector('.form_projet')
 
-                ajout.addEventListener('click', function () {
+                ajout.addEventListener('click', function() {
                     if (form_projet.style.display === 'none' || form_projet.style.display === '') {
                         form_projet.style.display = 'block';
                     } else {
@@ -845,7 +902,7 @@ include_once('../controller/controller_projet_users.php');
             </script>
             <div class="box2">
 
-                <?php foreach ($affichePojetUsers as $projets): ?>
+                <?php foreach ($affichePojetUsers as $projets) : ?>
 
                     <div class="info_projet">
                         <h2>
@@ -869,9 +926,7 @@ include_once('../controller/controller_projet_users.php');
 
 
 
-        <div class="container_box5" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
-            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-            data-aos-anchor-placement="top-bottom">
+        <div class="container_box5" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
             <div class="box1">
                 <h1>maitrise des outils informatiques</h1>
             </div>
@@ -879,7 +934,7 @@ include_once('../controller/controller_projet_users.php');
             <div class="box2">
 
                 <table>
-                    <?php foreach ($afficheOutil as $outils): ?>
+                    <?php foreach ($afficheOutil as $outils) : ?>
                         <tr>
                             <td>
                                 <?php echo $outils['outil'] ?>
@@ -892,11 +947,11 @@ include_once('../controller/controller_projet_users.php');
                 </table>
 
                 <div class="outil">
-                <?php if(isset($_SESSION['users_id'])): ?>
-    <button class="btn3"> Ajouter un outil</button>
-    <?php else:?>
-        <?php endif; ?>
-                    
+                    <?php if (isset($_SESSION['users_id'])) : ?>
+                        <button class="btn3"> Ajouter un outil</button>
+                    <?php else : ?>
+                    <?php endif; ?>
+
                 </div>
             </div>
 
@@ -925,7 +980,7 @@ include_once('../controller/controller_projet_users.php');
                 let btn3 = document.querySelector('.btn3')
                 let box34 = document.querySelector('.box34')
 
-                btn3.addEventListener('click', function () {
+                btn3.addEventListener('click', function() {
                     if (box34.style.display === 'none' || box34.style.display === '') {
                         box34.style.display = 'block';
                     } else {
@@ -942,16 +997,14 @@ include_once('../controller/controller_projet_users.php');
 
 
 
-        <div class="container_box5" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
-            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-            data-aos-anchor-placement="top-bottom">
+        <div class="container_box5" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
             <div class="box1">
                 <h1>maitrise des langues</h1>
             </div>
 
             <div class="box2">
                 <table>
-                    <?php foreach ($afficheLangue as $langues): ?>
+                    <?php foreach ($afficheLangue as $langues) : ?>
                         <tr>
                             <td>
                                 <?php echo $langues['langue']; ?>
@@ -963,11 +1016,11 @@ include_once('../controller/controller_projet_users.php');
                     <?php endforeach; ?>
                 </table>
                 <div class="outil">
-                <?php if(isset($_SESSION['users_id'])): ?>
-    <button class="btn4"> Ajouter une langue</button>
-    <?php else:?>
-        <?php endif; ?>
-                    
+                    <?php if (isset($_SESSION['users_id'])) : ?>
+                        <button class="btn4"> Ajouter une langue</button>
+                    <?php else : ?>
+                    <?php endif; ?>
+
                 </div>
             </div>
 
@@ -996,7 +1049,7 @@ include_once('../controller/controller_projet_users.php');
                 let btn4 = document.querySelector('.btn4')
                 let box35 = document.querySelector('.box35')
 
-                btn4.addEventListener('click', function () {
+                btn4.addEventListener('click', function() {
                     if (box35.style.display === 'none' || box35.style.display === '') {
                         box35.style.display = 'block';
                     } else {
@@ -1008,25 +1061,23 @@ include_once('../controller/controller_projet_users.php');
 
 
 
-        <?php if(isset($_SESSION['users_id'])): ?>
-     <div class="container_box6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
-            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
-            data-aos-anchor-placement="top-bottom">
-            <div class="box1">
-                <h1>Laisser moi un message</h1>
-            </div>
+        <?php if (isset($_SESSION['users_id'])) : ?>
+            <div class="container_box6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+                <div class="box1">
+                    <h1>Laisser moi un message</h1>
+                </div>
 
-            <div class="box2">
-                <form action="" method="post">
-                    <textarea name="message" class="form-control" id="" cols="30" rows="10"></textarea>
-                    <button type="submit">Envoyer</button>
-                </form>
+                <div class="box2">
+                    <form action="" method="post">
+                        <textarea name="message" class="form-control" id="" cols="30" rows="10"></textarea>
+                        <button type="submit">Envoyer</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    <?php else:?>
+        <?php else : ?>
         <?php endif; ?>
 
-       
+
     </section>
 
 
@@ -1061,8 +1112,7 @@ include_once('../controller/controller_projet_users.php');
     </script>
 
     <script>
-
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#summernote').summernote({
                 placeholder: 'ajoute une description!!',
                 tabsize: 6,
@@ -1079,7 +1129,7 @@ include_once('../controller/controller_projet_users.php');
             });
         });
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#description').summernote({
                 placeholder: 'ajoute une description!!',
                 tabsize: 6,
@@ -1096,7 +1146,7 @@ include_once('../controller/controller_projet_users.php');
             });
         });
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#projetdescription').summernote({
                 placeholder: 'ajoute une description!!',
                 tabsize: 6,
