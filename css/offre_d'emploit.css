@@ -12,8 +12,8 @@
 
 body{
     font-family: 'Nunito', sans-serif;
-    background: radial-gradient(circle, rgba(226,226,230,1) 0%, rgba(220,220,233,1) 35%, rgba(255,255,255,1) 100%);
     background-attachment: fixed;
+    background-color: #f2f1f1;
 }
 
 
@@ -229,7 +229,7 @@ body{
      justify-content: center;
      position: relative;
      width: 100%;
-     margin-bottom: 90px;
+     margin-bottom: 50px;
  }
  .produit_vedete .box1 h1{
     margin: auto 0;

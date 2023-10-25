@@ -3,7 +3,7 @@
 <?php if (isset($_SESSION['compte_entreprise'])): ?>
     <div class="message">
         <div class="container_aff" id="message-container">
-            <?php foreach ($afficheMessage1 as $Messages): ?>
+            <?php foreach ($afficheMessage2 as $Messages): ?>
                 <?php $afficheInfoUsers = getInfoUsers($db, $Messages['users_id']) ?>
                 <?php $afficheInfoEntreprise = getEntreprise($db, $Messages['entreprise_id']) ?>
                 <?php if ($Messages['indicatif'] == 'recruteur'): ?>
@@ -44,7 +44,7 @@
             <div class="box3">
                 <form action="" method="post">
                     <textarea name="messages" id="message-input" cols="30" rows="10"></textarea>
-                    <button type="submit" name="envoyer"><img src="../image/send.png" alt=""></button>
+                    <button type="submit" name="envoyer1"><img src="../image/send.png" alt=""></button>
                 </form>
             </div>
         </div>
@@ -56,7 +56,7 @@
 
     <div class="message">
         <div class="container_aff" id="message-container">
-            <?php foreach ($afficheMessage1 as $Messages): ?>
+            <?php foreach ($afficheMessage2 as $Messages): ?>
                 <?php $infoEntreprise = getEntreprise($db, $Messages['entreprise_id']) ?>
                 <?php $afficheInfoUsers = getInfoUsers($db, $Messages['users_id']) ?>
                 <?php if ($Messages['indicatif'] == 'candidat'): ?>
@@ -90,7 +90,7 @@
             <div class="box3">
                 <form action="" method="post">
                     <textarea name="messages" id="message-input" cols="30" rows="10"></textarea>
-                    <button type="submit" name="envoyer"><img src="../image/send.png" alt=""></button>
+                    <button type="submit" name="envoyer1"><img src="../image/send.png" alt=""></button>
                 </form>
             </div>
         </div>

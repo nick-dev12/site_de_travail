@@ -7,6 +7,9 @@ include_once('app/controller/controllerEntreprise.php');
 include_once('app/controller/controllerDescription.php');
 include_once('app/controller/controllerOffre_emploi.php');
 include_once('../controller/controller_postulation.php');
+include_once('../controller/controller_users.php');
+include_once('../controller/controller_message1.php');
+include_once('../controller/controller_appel_offre.php');
 ?>
 
 
@@ -107,14 +110,20 @@ include_once('../controller/controller_postulation.php');
         </div>
 
         <div class="box2">
-            <h2>Autres</h2>
-            <div class="info" >
-                <img src="../image/bg_bggenerator_com.jpg" alt="">
+            <h2>Appel d'offres </h2>
+            <?php foreach($getAllAppel_offre as $appel_offre): ?>
+                <?php $infoUsers =getInfoUsers($db,$appel_offre['users_id']) ?>
+                <a href="message_entreprise2.php?users_id=<?= $appel_offre['users_id']?>&entreprise_id=<?=$appel_offre['entreprise_id']?>">
+            <div class="info">
+            <img src="../upload/<?php echo $infoUsers['images']?>" alt="">
                 <div class="div" >
-                    <h4>oyono effe nick ludvanne</h4>
-                    <p>developeur web</p>
+                <h4><?= $infoUsers['nom']?></h4>
+                    <p> <strong>Competences:</strong> <?= $infoUsers['competences']?></p>
+                    <p><span class="span1" ><strong>Sujet:</strong> Appelle d'offre </span> </p>
                 </div>
             </div>
+        </a>
+            <?php endforeach; ?>
         </div>
     </div>
 

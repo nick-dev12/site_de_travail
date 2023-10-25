@@ -5,43 +5,43 @@ include '../conn/conn.php';
 if (isset($_GET['id'])) {
     // Récupérez l'ID du commerçant à partir de la session
 // Récupérez l'ID de l'utilisateur depuis la variable de session
-$users_id = $_GET['id'];
+    $users_id = $_GET['id'];
 
-// Vous pouvez maintenant utiliser $commercant_id pour récupérer les informations de l'utilisateur depuis la base de données
+    // Vous pouvez maintenant utiliser $commercant_id pour récupérer les informations de l'utilisateur depuis la base de données
 // Écrivez votre requête SQL pour récupérer les informations nécessaires
-$conn = "SELECT * FROM users WHERE id = :users_id";
-$stmt = $db->prepare($conn);
-$stmt->bindParam(':users_id', $users_id);
-$stmt->execute();
-$users = $stmt->fetch(PDO::FETCH_ASSOC);
+    $conn = "SELECT * FROM users WHERE id = :users_id";
+    $stmt = $db->prepare($conn);
+    $stmt->bindParam(':users_id', $users_id);
+    $stmt->execute();
+    $users = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$erreurs = '';
+    $erreurs = '';
 
-$message = '';
+    $message = '';
 
 
-include_once('../controller/controller_description_users.php');
-include_once('../controller/controller_metier_users.php');
-include_once('../controller/controller_competence_users.php');
-include_once('../controller/controller_formation_users.php');
-include_once('../controller/controller_diplome_users.php');
-include_once('../controller/controller_certificat_users.php');
-include_once('../controller/controller_outil_users.php');
-include_once('../controller/controller_langue_users.php');
-include_once('../controller/controller_projet_users.php');
-}else{
+    include_once('../controller/controller_description_users.php');
+    include_once('../controller/controller_metier_users.php');
+    include_once('../controller/controller_competence_users.php');
+    include_once('../controller/controller_formation_users.php');
+    include_once('../controller/controller_diplome_users.php');
+    include_once('../controller/controller_certificat_users.php');
+    include_once('../controller/controller_outil_users.php');
+    include_once('../controller/controller_langue_users.php');
+    include_once('../controller/controller_projet_users.php');
+} else {
 
     if (isset($_COOKIE['users_id'])) {
         $users_id = $_COOKIE['users_id'];
     } else {
         $users_id = '';
     }
-    
-    
+
+
     // Récupérez l'ID du commerçant à partir de la session
     // Récupérez l'ID de l'utilisateur depuis la variable de session
     $users_id = $_SESSION['users_id'];
-    
+
     // Vous pouvez maintenant utiliser $commercant_id pour récupérer les informations de l'utilisateur depuis la base de données
     // Écrivez votre requête SQL pour récupérer les informations nécessaires
     $conn = "SELECT * FROM users WHERE id = :users_id";
@@ -49,27 +49,27 @@ include_once('../controller/controller_projet_users.php');
     $stmt->bindParam(':users_id', $users_id);
     $stmt->execute();
     $users = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    
+
+
     // $sql = "SELECT metier FROM metier_users WHERE users_id = :users_id";
     // $users_metier = $db->prepare($sql);
     // $users_metier->bindParam(':users_id', $users_id);
     // $users_metier->execute();
-    
-    
+
+
     $erreurs = '';
-    
+
     $message = '';
-    
-    
-    
-    
+
+
+
+
     // Récupérez l'ID du commerçant à partir de la session
     // Récupérez l'ID de l'utilisateur depuis la variable de session
-    
+
     // Récupérer l'id du métier à supprimer (via lien ou formulaire par exemple)
-    
-    
+
+
     include_once('../controller/controller_description_users.php');
     include_once('../controller/controller_metier_users.php');
     include_once('../controller/controller_competence_users.php');
@@ -82,8 +82,8 @@ include_once('../controller/controller_projet_users.php');
     include_once('../controller/controller_postulation.php');
     include_once('../entreprise/app/controller/controllerEntreprise.php');
     include_once('../entreprise/app/controller/controllerOffre_emploi.php');
+    include_once('../controller/controller_message1.php');
     include_once('../controller/controller_appel_offre.php');
-    include('../controller/controller_message1.php'); 
 }
 
 ?>
@@ -114,7 +114,7 @@ include_once('../controller/controller_projet_users.php');
     <link rel="stylesheet" href="../style/bootstrap-datepicker1.9.0.css">
 
 
-    <link rel="stylesheet" href="../css/message.css">
+    <link rel="stylesheet" href="../css/message_entreprise.css">
     <link rel="stylesheet" href="../css/navbare.css">
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -126,7 +126,7 @@ include_once('../controller/controller_projet_users.php');
 
 
     <?php include('../navbare.php') ?>
-    
+
 
 
     <section class="section2">
@@ -148,24 +148,24 @@ include_once('../controller/controller_projet_users.php');
                 <table>
 
                     <tr>
-                        <td id="td" ><img src="../image/MCV.png" alt=""></td>
+                        <td id="td"><img src="../image/MCV.png" alt=""></td>
                         <td> <a href="cv_users.php">mon cv</a></td>
                     </tr>
 
                     <tr>
-                        <td  id="td"><img src="../image/exp.png" alt=""></td>
+                        <td id="td"><img src="../image/exp.png" alt=""></td>
                         <td>mon experience</td>
                     </tr>
                     <tr>
-                        <td  id="td"><img src="../image/mpc.png" alt=""></td>
+                        <td id="td"><img src="../image/mpc.png" alt=""></td>
                         <td>mon parcour</td>
                     </tr>
                     <tr>
-                        <td  id="td"><img src="../image/mct.png" alt=""></td>
+                        <td id="td"><img src="../image/mct.png" alt=""></td>
                         <td>contacte</td>
                     </tr>
                     <tr>
-                        <td  id="td"> <a href="../page/mes_demande.php"><img src="../image/mdep.png" alt=""></a></td>
+                        <td id="td"> <a href="../page/mes_demande.php"><img src="../image/mdep.png" alt=""></a></td>
                         <td><a href="../page/mes_demande.php">Mes demandes d'emploit</a></td>
                     </tr>
                     <tr>
@@ -180,49 +180,63 @@ include_once('../controller/controller_projet_users.php');
 
     <section class="section3">
 
-<div class="container_profil">
+        <div class="container_profil">
 
-<div class="box3">
-        <h2>Candidats retenu</h2>
-        <?php foreach ($getPostulationUsers as $postulationUsers): ?>
-            <?php if($postulationUsers['statut']=='accepter'):?>
-                <?php $infoEntreprise = getEntreprise($db,$postulationUsers['entreprise_id']) ?>
-                <?php $afficheOffre =getOffresEmploit($db,$postulationUsers['offre_id']);?>
-                <a href="get_message_users.php?users_id=<?= $postulationUsers['users_id']?>&offres_id=<?= $postulationUsers['offre_id']?>&entreprise_id=<?= $postulationUsers['entreprise_id']?>&statut=<?= $postulationUsers['statut']?>">
-       <div class="info" >
-            <img src="../upload/<?php echo $infoEntreprise['images']?>" alt="">
-            <div class="div" >
-                <h4><?= $infoEntreprise['entreprise']?></h4>
-                <p> <strong>Competences:</strong> <?= $postulationUsers['competences']?></p>
-                <p><span class="span1" ><strong>Offre postuler:</strong> <?=  $afficheOffre['poste']?></span> <span class="span2" ><?= $afficheOffre['contrat']?></span></p>
+            <div class="box3">
+                <h2>Candidats retenu</h2>
+                <?php foreach ($getPostulationUsers as $postulationUsers): ?>
+                    <?php if ($postulationUsers['statut'] == 'accepter'): ?>
+                        <?php $infoEntreprise = getEntreprise($db, $postulationUsers['entreprise_id']) ?>
+                        <?php $afficheOffre = getOffresEmploit($db, $postulationUsers['offre_id']); ?>
+                        <a
+                            href="get_message_users.php?users_id=<?= $postulationUsers['users_id'] ?>&offres_id=<?= $postulationUsers['offre_id'] ?>&entreprise_id=<?= $postulationUsers['entreprise_id'] ?>&statut=<?= $postulationUsers['statut'] ?>">
+                            <div class="info">
+                                <img src="../upload/<?php echo $infoEntreprise['images'] ?>" alt="">
+                                <div class="div">
+                                    <h4>
+                                        <?= $infoEntreprise['entreprise'] ?>
+                                    </h4>
+                                    <p> <strong>Competences:</strong>
+                                        <?= $postulationUsers['competences'] ?>
+                                    </p>
+                                    <p><span class="span1"><strong>Offre postuler:</strong>
+                                            <?= $afficheOffre['poste'] ?>
+                                        </span> <span class="span2">
+                                            <?= $afficheOffre['contrat'] ?>
+                                        </span></p>
+                                </div>
+                            </div>
+                        </a>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="box2">
+                <h2>Appel d'offres</h2>
+                <?php foreach ($getAllAppel_offre as $appel_offre): ?>
+                    <?php $infoEntreprise = getEntreprise($db, $appel_offre['entreprise_id']) ?>
+                    <a
+                        href="get_message_users2.php?users_id=<?= $appel_offre['users_id'] ?>&entreprise_id=<?= $appel_offre['entreprise_id'] ?>">
+                        <div class="info">
+                            <img src="../upload/<?php echo $infoEntreprise['images'] ?>" alt="">
+                            <div class="div">
+                                <h4>
+                                    <?= $infoEntreprise['nom'] ?>
+                                </h4>
+                                <p> <strong>Competences:</strong>
+                                    <?= $infoEntreprise['entreprise'] ?>
+                                </p>
+                                <p><span class="span1"><strong>Sujet:</strong> Appelle d'offre </span> </p>
+                            </div>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
             </div>
         </div>
-       </a>
-        <?php endif;?>
-        <?php endforeach; ?>
-    </div>
-
-    <div class="box2">
-            <h2>Appel d'offres</h2>
-            <?php foreach($getAllAppel_offre as $appel_offre): ?>
-                <?php $infoEntreprise =getEntreprise($db,$appel_offre['entreprise_id']) ?>
-                <a href="get_message_users2.php?users_id=<?= $appel_offre['users_id']?>&entreprise_id=<?=$appel_offre['entreprise_id']?>">
-            <div class="info">
-            <img src="../upload/<?php echo $infoEntreprise['images']?>" alt="">
-                <div class="div" >
-                <h4><?= $infoEntreprise['nom']?></h4>
-                    <p> <strong>Competences:</strong> <?= $infoEntreprise['entreprise']?></p>
-                    <p><span class="span1" ><strong>Sujet:</strong> Appelle d'offre </span> </p>
-                </div>
-            </div>
-        </a>
-            <?php endforeach; ?>
-        </div>
-</div>
 
 
-    </div>
-</section>
+        <?php include('../include/affiche_message1.php') ?>
+    </section>
 
 
     <script>
@@ -260,4 +274,3 @@ include_once('../controller/controller_projet_users.php');
 </body>
 
 </html>
-

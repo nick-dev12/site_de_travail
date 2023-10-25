@@ -29,6 +29,8 @@ include_once('../controller/controller_certificat_users.php');
 include_once('../controller/controller_outil_users.php');
 include_once('../controller/controller_langue_users.php');
 include_once('../controller/controller_projet_users.php');
+include_once('../controller/controller_message1.php');
+include_once('../controller/controller_appel_offre.php');
 }
 
 ?>
@@ -71,22 +73,7 @@ include_once('../controller/controller_projet_users.php');
 
 
     <?php include('../navbare.php') ?>
-
-
-    <section class="section1">
-        <div>
-            <span>1</span>
-            <p>Trouver rapidement les meilleurs talents qui correspondent à vos besoins</p>
-        </div>
-        <div>
-            <span>2</span>
-            <p>Un processus de recrutement freelance facile et sans prise de tête</p>
-        </div>
-        <div>
-            <span>3</span>
-            <p>Des profils hautement qualifiés et adaptables à vos projets</p>
-        </div>
-    </section>
+    
 
 
     <section class="section2">
@@ -129,13 +116,16 @@ include_once('../controller/controller_projet_users.php');
 
     <section class="section3">
 <?php if(isset($_SESSION['compte_entreprise'])): ?>
+    <?php if($getappelOffre): ?>
+        <button class="contacte">Vous avez deja fais une demande a ce candidat</button>
+        <?php else: ?>
     <button class="contacte">Contacter ce candidat</button>
-
-    <form action="" class="form_appel" >
+    
+    <form action="" method="post" class="form_appel" >
         <img class="fermer" src="../image/croix.png" alt="">
         <label for="message">Ecriver votre message ici</label>
         <textarea name="message" id="message" cols="30" rows="10"></textarea>
-       <input type="submit" name="envoie" value="Envoyer">
+       <input type="submit" name="send" value="Envoyer">
     </form>
 
     <script>
@@ -162,7 +152,7 @@ include_once('../controller/controller_projet_users.php');
             contacte.style.opacity= '1';
         })
     </script>
-
+<?php endif; ?>
 <?php endif; ?>
         
        
@@ -184,8 +174,6 @@ include_once('../controller/controller_projet_users.php');
                     <?php endif; ?>
 
                 </div>
-                
-                // Vérifier si la description de l'utilisateur est vide
                 
             </div>
         </div>

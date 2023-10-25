@@ -83,6 +83,7 @@ if (isset($_GET['id'])) {
     include_once('../entreprise/app/controller/controllerEntreprise.php');
     include_once('../entreprise/app/controller/controllerOffre_emploi.php');
     include_once('../controller/controller_message1.php');
+    include_once('../controller/controller_appel_offre.php');
 }
 
 ?>
@@ -211,14 +212,25 @@ if (isset($_GET['id'])) {
             </div>
 
             <div class="box2">
-                <h2>Autres</h2>
-                <div class="info">
-                    <img src="../image/bg_bggenerator_com.jpg" alt="">
-                    <div class="div">
-                        <h4>oyono effe nick ludvanne</h4>
-                        <p>developeur web</p>
-                    </div>
-                </div>
+                <h2>Appel d'offres</h2>
+                <?php foreach ($getAllAppel_offre as $appel_offre): ?>
+                    <?php $infoEntreprise = getEntreprise($db, $appel_offre['entreprise_id']) ?>
+                    <a
+                        href="get_message_users2.php?users_id=<?= $appel_offre['users_id'] ?>&entreprise_id=<?= $appel_offre['entreprise_id'] ?>">
+                        <div class="info">
+                            <img src="../upload/<?php echo $infoEntreprise['images'] ?>" alt="">
+                            <div class="div">
+                                <h4>
+                                    <?= $infoEntreprise['nom'] ?>
+                                </h4>
+                                <p> <strong>Competences:</strong>
+                                    <?= $infoEntreprise['entreprise'] ?>
+                                </p>
+                                <p><span class="span1"><strong>Sujet:</strong> Appelle d'offre </span> </p>
+                            </div>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
             </div>
         </div>
 

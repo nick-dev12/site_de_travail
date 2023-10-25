@@ -134,7 +134,7 @@ include_once('../controller/controller_appel_offre.php');
 
 
 
-    <?php include('../include/affiche_message.php') ?>
+    <?php include('../include/affiche_message1.php') ?>
     </section>
 
 
