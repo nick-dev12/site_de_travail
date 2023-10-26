@@ -1,21 +1,22 @@
 <?php
 
-// Paramètres de connexion
+// Paramètres de connexion 
 $db_host = "localhost";
-$db_name = "work_flexer";
-$db_user = "root"; 
-$db_pass = "";
+$db_name = "ludvanne12_work-flexer"; 
+
+// Identifiants fournis par CPanel
+$db_user = "ludvanne12_workflexer";  
+$db_pass = "Ludvanne12@gmail.com";
 
 try {
   // Connexion à la base avec PDO
   $db = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
-  
-  // Définition du mode d'erreur de PDO pour lever des exceptions  
+
+  // Gestion des erreurs
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
 } catch(PDOException $e) {
-    // Gestion des erreurs
+  echo $e->getMessage();
 }
 
 ?>
