@@ -193,7 +193,7 @@ if (isset($_SESSION['users_id'])) {
 
 
         <div class="box1">
-          <label for="mail">adress-mail/n-telephone</label>
+          <label for="mail">address-mail/n-telephone</label>
           <input type="text" name="mail" id="mail">
         </div>
 

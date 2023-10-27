@@ -96,16 +96,16 @@ include_once('../controller/controller_appel_offre.php');
 
                     <tr>
                         <td id="td" ><img src="../image/MCV.png" alt=""></td>
-                        <td> <a href="cv_users.php">mon cv</a></td>
+                        <td> <a href="cv_users.php">Mon cv</a></td>
                     </tr>
 
                     <tr>
                         <td  id="td"><img src="../image/exp.png" alt=""></td>
-                        <td>mon experience</td>
+                        <td>Mon experience</td>
                     </tr>
                     <tr>
                         <td  id="td"><img src="../image/mpc.png" alt=""></td>
-                        <td>mon parcour</td>
+                        <td>Mon parcours</td>
                     </tr>
                    
                 </table>
@@ -117,13 +117,13 @@ include_once('../controller/controller_appel_offre.php');
     <section class="section3">
 <?php if(isset($_SESSION['compte_entreprise'])): ?>
     <?php if($getappelOffre): ?>
-        <button class="contacte">Vous avez deja fais une demande a ce candidat</button>
+        <button class="contacte"> <strong> Alerte!</strong> Ce candidat a deja ete contacter par votre entreprise</button>
         <?php else: ?>
     <button class="contacte">Contacter ce candidat</button>
     
     <form action="" method="post" class="form_appel" >
         <img class="fermer" src="../image/croix.png" alt="">
-        <label for="message">Ecriver votre message ici</label>
+        <label for="message">Écrivez votre message ici</label>
         <textarea name="message" id="message" cols="30" rows="10"></textarea>
        <input type="submit" name="send" value="Envoyer">
     </form>
@@ -281,13 +281,13 @@ include_once('../controller/controller_appel_offre.php');
 
                     <tr>
                         <th>
-                            Date
+                            Dates
                         </th>
                         <th>
-                            filiere
+                            filières
                         </th>
                         <th>
-                            etablissement
+                            établissements
                         </th>
 
                         <th class="grade">Grade</th>
@@ -333,7 +333,7 @@ include_once('../controller/controller_appel_offre.php');
                 <div class="div">
                     <table>
                         <tr>
-                            <th>Diplome</th>
+                            <th>Diplôme</th>
                         </tr>
                     </table>
                     <div>
@@ -379,7 +379,7 @@ include_once('../controller/controller_appel_offre.php');
             data-aos-anchor-placement="top-bottom">
 
             <div class="box1">
-                <h1>Projets et realisations</h1>
+                <h1>Projets et réalisations</h1>
   
                 
             </div>
@@ -414,7 +414,7 @@ include_once('../controller/controller_appel_offre.php');
             data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
             data-aos-anchor-placement="top-bottom">
             <div class="box1">
-                <h1>maitrise des outils informatiques</h1>
+                <h1>maîtrise des outils informatiques</h1>
             </div>
 
             <div class="box2">
@@ -449,7 +449,7 @@ include_once('../controller/controller_appel_offre.php');
             data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
             data-aos-anchor-placement="top-bottom">
             <div class="box1">
-                <h1>maitrise des langues</h1>
+                <h1>maîtrise des langues</h1>
             </div>
 
             <div class="box2">

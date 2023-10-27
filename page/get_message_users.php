@@ -158,7 +158,7 @@ if (isset($_GET['id'])) {
                     </tr>
                     <tr>
                         <td id="td"><img src="../image/mpc.png" alt=""></td>
-                        <td>mon parcour</td>
+                        <td>mon parcours</td>
                     </tr>
                     <tr>
                         <td id="td"><img src="../image/mct.png" alt=""></td>

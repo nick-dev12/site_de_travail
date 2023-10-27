@@ -168,8 +168,8 @@ if (isset($_POST['publier'])) {
                 
                   <div class='box2'>
                     <h1>helo nick </h1>
-                    <h2>nouvel offre d'emploit</h2>
-                    <p>un nouvel offre d'emploit est disponible pour toi connecte toi vite discute avec les recuteur postule a l'offre et tante ta chance de pouvoir obtenir le job.</p>
+                    <h2>nouvel offre d’emplois</h2>
+                    <p>un nouvel offre d’emplois est disponible pour toi connecte toi vite discute avec les recuteur postule a l'offre et tante ta chance de pouvoir obtenir le job.</p>
                   </div>
                 </div>
                 
@@ -193,7 +193,7 @@ if (isset($_POST['publier'])) {
                 }
 
                 $_SESSION['success_message'] = 'Offre d\'emploi publiée avec succès';
-                header('Location: updat_offre.php');
+                header('Location: entreprise_profil.php');
                 exit();
                 
             } catch (Exception $e) {

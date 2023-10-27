@@ -52,12 +52,12 @@ include_once('app/controller/controllerOffre_emploi.php');
 
                     <tr>
                         <td id="td"><img src="../image/modifier.png" alt=""></td>
-                        <td> <a href="cv_users.php">modifier</a></td>
+                        <td> <a href="cv_users.php">Modifier</a></td>
                     </tr>
 
                     <tr>
                         <td id="td"><a href="mon_entreprise.php"><img src="../image/entreprise_ic.png" alt=""></a></td>
-                        <td><a href="mon_entreprise.php">mon entreprise</a></td>
+                        <td><a href="mon_entreprise.php">Mon entreprise</a></td>
                     </tr>
                     <tr>
                         <td id="td"><img src="../image/candidat.png" alt=""></td>
@@ -210,11 +210,11 @@ include_once('app/controller/controllerOffre_emploi.php');
                         <input type="text" name="poste" id="poste">
                     </div>
                     <div class="box">
-                        <label for="mission">Decriver les missions et responsbiliter</label>
+                        <label for="mission">Décrivez les missions et responsabilités</label>
                         <textarea name="mission" id="mission" cols="30" rows="10"></textarea>
                     </div>
                     <div class="box">
-                        <label for="profil">Decriver le profil rechercher (caliter et competance)</label>
+                        <label for="profil">Décrivez le profil rechercher (qualités et competence)</label>
                         <textarea name="profil" id="profil" cols="30" rows="10"></textarea>
                     </div>
                     <div class="box">
@@ -279,7 +279,7 @@ include_once('app/controller/controllerOffre_emploi.php');
                             <span><?= $countOffre ?></span>
                         </div>
 
-                        <a class="suprimer" href="?offre_id=<?= $offres['offre_id']; ?>"> Suprimer</a>
+                        <a class="suprimer" href="?offre_id=<?= $offres['offre_id']; ?>"> Supprimer</a>
 
                         <img src="../upload/<?= $offres['images'] ?> " alt="">
                         <div class="p">

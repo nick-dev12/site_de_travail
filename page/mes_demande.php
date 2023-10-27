@@ -91,7 +91,7 @@ include_once('../controller/controller_postulation.php');
                         <p>localiter</p>
                         <?php if ($postulationUsers['statut'] == 'recaler'): ?>
                         <a class="cursor" href="../entreprise/voir_offre.php?id=<?= $postulationUsers['offre_id']; ?>"><img
-                                src="../image/vue3.png" alt=""> Desactiver
+                                src="../image/vue3.png" alt=""> Désactiver
                             </a>
                             <?php else: ?>
                                 <a  href="../entreprise/voir_offre.php?id=<?= $postulationUsers['offre_id']; ?>"><img

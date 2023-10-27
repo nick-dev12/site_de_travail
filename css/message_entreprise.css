@@ -443,3 +443,6 @@ body{
     font-weight: 500;
     font-size: 14px;
 }
+.container_profil .box2 .info .div p span{
+    color: #000000;
+}

@@ -166,7 +166,7 @@ include_once('../controller/controller_competence_users.php');
         <article class="articles owl-carousel carousel2">
             <?php if (empty($UsersDesign)): ?>
 
-                <h1 class="message">Aucun profil disponible pour cette categorie</h1>
+                <h1 class="message">Aucun profil disponible pour cette catégorie</h1>
 
             <?php else: ?>
 
@@ -231,7 +231,7 @@ include_once('../controller/controller_competence_users.php');
         <article class="articles owl-carousel carousel3">
             <?php if (empty($UsersRédaction)): ?>
 
-                <h1 class="message">Aucun profil disponible pour cette categorie</h1>
+                <h1 class="message">Aucun profil disponible pour cette catégorie</h1>
 
             <?php else: ?>
 
@@ -293,7 +293,7 @@ include_once('../controller/controller_competence_users.php');
         <article class="articles owl-carousel carousel4">
             <?php if (empty($Usersmarketing)): ?>
 
-                <h1 class="message">Aucun profil disponible pour cette categorie</h1>
+                <h1 class="message">Aucun profil disponible pour cette catégorie</h1>
 
             <?php else: ?>
 
@@ -354,7 +354,7 @@ include_once('../controller/controller_competence_users.php');
         <article class="articles owl-carousel carousel5">
             <?php if (empty($Usersbusiness)): ?>
 
-                <h1 class="message">Aucun profil disponible pour cette categorie</h1>
+                <h1 class="message">Aucun profil disponible pour cette catégorie</h1>
 
             <?php else: ?>
 
@@ -417,7 +417,7 @@ include_once('../controller/controller_competence_users.php');
         <article class="articles owl-carousel carousel6">
             <?php if (empty($UsersJuridique)): ?>
 
-                <h1 class="message">Aucun profil disponible pour cette categorie</h1>
+                <h1 class="message">Aucun profil disponible pour cette catégorie</h1>
 
             <?php else: ?>
 

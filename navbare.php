@@ -62,7 +62,7 @@ if (isset($_SESSION['users_id'])) {
                 </p>
                 <img class="affiche" src="/upload/<?= $users['images']; ?>" alt="">
             </div>
-            <a class="liens" href="../conn/dconn_users.php">Deconnection</a>
+            <a class="liens" href="../conn/dconn_users.php">Déconnexion</a>
         </div>
     <?php else: ?>
 
@@ -75,7 +75,7 @@ if (isset($_SESSION['users_id'])) {
                     </p>
                     <img class="affiche" src="/upload/<?= $entreprise['images']; ?>" alt="">
                 </div>
-                <a class="liens" href="../conn/dconn_entreprise.php">Deconnection</a>
+                <a class="liens" href="../conn/dconn_entreprise.php">Déconnexion</a>
             </div>
         <?php else: ?>
 
@@ -107,7 +107,7 @@ if (isset($_SESSION['users_id'])) {
                 </td>
             </tr>
             <tr>
-                <th>Telephonne</th>
+                <th>Téléphone</th>
                 <td>
                     <?php echo $users['phone']; ?>
                 </td>
@@ -145,7 +145,7 @@ if (isset($_SESSION['users_id'])) {
                     <td><?php echo $entreprise['mail']; ?></td>
                 </tr>
                 <tr>
-                    <th>Telephonne</th>
+                    <th>Téléphone</th>
                     <td><?php echo $entreprise['phone']; ?></td>
                 </tr>
                 <tr>

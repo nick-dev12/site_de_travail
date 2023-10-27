@@ -77,7 +77,7 @@ if (isset($_POST['valider'])) {
 
     // Vérification de la ville
     if (empty($_POST['categorie'])) {
-        $erreurs = "La catergorie est obligatoire";
+        $erreurs = "La catégorie est obligatoire";
     } else {
         $categorie = htmlspecialchars($_POST['categorie']);
     }
@@ -101,7 +101,7 @@ if (isset($_POST['valider'])) {
 
     // Vérification de la ville
     if (empty($_FILES['images'])) {
-        $erreurs = "Choisisser une photo de profil";
+        $erreurs = "Choisissez une photo de profil";
     } else {
         // Récupérer les données du formulaire
         $images = $_FILES['images'];
@@ -213,7 +213,7 @@ if (isset($_POST['valider'])) {
 
                     <div class="container">
                         <div class="box1">
-                            <label for="nom">Nom et Prenom</label>
+                            <label for="nom">Nom et Prénom</label>
                             <input type="text" name="nom" id="nom">
                         </div>
 
@@ -223,7 +223,7 @@ if (isset($_POST['valider'])) {
                         </div>
 
                         <div class="box1">
-                            <label for="mail">adress-mail</label>
+                            <label for="mail">address-mail</label>
                             <input type="text" name="mail" id="mail">
                         </div>
 
@@ -292,7 +292,7 @@ if (isset($_POST['valider'])) {
                             <input type="password" name="passe" id="passe">
                         </div>
                         <div class="box1">
-                            <label for="cpasse">mot de passe</label>
+                            <label for="cpasse">Confirmer mot de passe</label>
                             <input type="password" name="cpasse" id="cpasse">
                             <div class="view">
                                 <p>Afficher le mot de passe</p>

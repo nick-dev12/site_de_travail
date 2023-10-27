@@ -80,7 +80,10 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                     <div class="carousel">
                         <img src="../upload/<?php echo $ingenieurs['images'] ?>" alt="">
                         <p class="p">
-                            <?php echo $ingenieurs['entreprise']; ?>
+                            <strong>
+                                 <?php echo $ingenieurs['entreprise']; ?>
+                            </strong>
+                           
                             <img src="../image/coeurs.png" alt="">
                         </p>
 
@@ -88,11 +91,9 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <div class="vendu">
 
                                 <p>
-                                    <?php echo ($ingenieurse['poste']); ?>
+                                <strong>Nous recherchons un(une)</strong>  <?php echo ($ingenieurse['poste']); ?>
                                 </p>
-                                <span>
-                                    <?php echo ($ingenieurse['poste']); ?>
-                                </span>
+                               
                             </div>
 
                         </div>
@@ -145,7 +146,10 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                     <div class="carousel">
                         <img src="../upload/<?php echo $Designs['images'] ?>" alt="">
                         <p class="p">
-                            <?php echo $Designs['entreprise']; ?>
+                            <strong>
+                                <?php echo $Designs['entreprise']; ?>
+                            </strong>
+                            
                             <img src="../image/coeurs.png" alt="">
                         </p>
 
@@ -153,7 +157,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <div class="vendu">
 
                                 <p>
-                                    <?php echo ($Designs['poste']); ?>
+                                <strong>Nous recherchons un(une)</strong>   <?php echo ($Designs['poste']); ?>
                                 </p>
                             </div>
 
@@ -215,7 +219,10 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                     <div class="carousel">
                         <img src="../upload/<?php echo $Redaction['images'] ?>" alt="">
                         <p class="p">
-                            <?php echo $Redaction['entreprise']; ?>
+                        <strong>
+                                 <?php echo $Redaction['entreprise']; ?>
+                                </strong>
+                           
                             <img src="../image/coeurs.png" alt="">
                         </p>
 
@@ -223,7 +230,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <div class="vendu">
 
                                 <p>
-                                    <?php echo ($Redactione['poste']); ?>
+                                <strong>Nous recherchons un(une)</strong>  <?php echo ($Redactione['poste']); ?>
                                 </p>
                             </div>
 
@@ -281,15 +288,17 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                     <div class="carousel">
                         <img src="../upload/<?php echo $marketing['images'] ?>" alt="">
                         <p class="p">
-                            <?php echo $marketing['entreprise']; ?>
+                        <strong>
+                                 <?php echo $marketing['entreprise']; ?>
+                                </strong>
+                           
                             <img src="../image/coeurs.png" alt="">
                         </p>
 
                         <div class="box_vendu">
                             <div class="vendu">
                                 <p>
-                                    Nous recherchons un(une),
-                                    <?php echo ($marketing['poste']); ?>
+                                <strong>Nous recherchons un(une)</strong>  <?php echo ($marketing['poste']); ?>
                                 </p>
                             </div>
 
@@ -348,14 +357,17 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                     <div class="carousel">
                         <img src="../upload/<?php echo $business['images'] ?>" alt="">
                         <p class="p">
-                            <?php echo $business['entreprise']; ?>
+                        <strong>
+                                 <?php echo $business['entreprise']; ?>
+                                </strong>
+                           
                             <img src="../image/coeurs.png" alt="">
                         </p>
 
                         <div class="box_vendu">
                             <div class="vendu">
                                 <p>
-                                    <?php echo ($business['poste']); ?>
+                                <strong>Nous recherchons un(une)</strong>  <?php echo ($business['poste']); ?>
                                 </p>
 
                             </div>
@@ -415,14 +427,17 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                     <div class="carousel">
                         <img src="../upload/<?php echo $Juridique['images'] ?>" alt="">
                         <p class="p">
-                            <?php echo $Juridique['entreprise']; ?>
+                        <strong>
+                                  <?php echo $Juridique['entreprise']; ?>
+                                </strong>
+                          
                             <img src="../image/coeurs.png" alt="">
                         </p>
 
                         <div class="box_vendu">
                             <div class="vendu">
                                 <p>
-                                    <?php echo ($Juridique['poste']); ?>
+                                <strong>Nous recherchons un(une)</strong> <?php echo ($Juridique['poste']); ?>
                                 </p>
                             </div>
                         </div>
@@ -481,19 +496,24 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                     <div class="carousel">
                         <img src="../upload/<?php echo $Informatique['images'] ?>" alt="">
                         <p class="p">
-                            <?php echo $Informatique['competences']; ?>
+                            <strong>
+                            <?php echo $Informatique['entreprise']; ?>
+                            </strong>
+                           
                             <img src="../image/coeurs.png" alt="">
                         </p>
                         <div class="box_vendu">
                             <div class="vendu">
                                 <p>
-                                    <?php echo ($Informatique['poste']); ?>
+                                   <strong>Nous recherchons un(une)</strong>  <?php echo ($Informatique['poste']); ?>
                                 </p>
                             </div>
 
                         </div>
 
-                        <p id="nom">Nom:
+                        <p class="contrat"><?php echo $Informatique['contrat']; ?></p>
+
+                        <p id="nom">
                             <?php echo $Informatique['date']; ?>
                         </p>
 

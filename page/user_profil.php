@@ -203,11 +203,11 @@ if (isset($_GET['id'])) {
 
                     <tr>
                         <td id="td"><img src="../image/exp.png" alt=""></td>
-                        <td>mon experience</td>
+                        <td>Mon experience</td>
                     </tr>
                     <tr>
                         <td id="td"><img src="../image/mpc.png" alt=""></td>
-                        <td>mon parcour</td>
+                        <td>Mon parcours</td>
                     </tr>
                     <tr>
                         <td id="td"><img src="../image/mct.png" alt=""></td>
@@ -215,7 +215,7 @@ if (isset($_GET['id'])) {
                     </tr>
                     <tr>
                         <td id="td"> <a href="../page/mes_demande.php"><img src="../image/mdep.png" alt=""></a></td>
-                        <td><a href="../page/mes_demande.php">Mes demandes d'emploit</a></td>
+                        <td><a href="../page/mes_demande.php">Mes demandes d’emploies</a></td>
                     </tr>
                     <tr>
                         <td id="td"><a href="message.php"><img src="../image/modifier.png" alt=""></a></td>
@@ -233,7 +233,7 @@ if (isset($_GET['id'])) {
 
             <form action="" class="form_appel">
                 <img class="fermer" src="../image/croix.png" alt="">
-                <label for="message">Ecriver votre message ici</label>
+                <label for="message">Écrivez votre message ici</label>
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
                 <input type="submit" name="envoie" value="Envoyer">
             </form>
@@ -307,7 +307,7 @@ if (isset($_GET['id'])) {
         <?php if (empty($competencesUtilisateur)) : ?>
             <?php if (isset($_SESSION['users_id'])) : ?>
                 <div class="container_box0">
-                    <h1> <span>Alerte :</span> <strong>veuiller ajouter au moins une competence pour etre visible par les
+                    <h1> <span>Alerte :</span> <strong>veuillez ajouter au moins une competence pour être visible par les
                             recruteur</strong></h1>
                 </div>
             <?php else : ?>
@@ -473,7 +473,7 @@ if (isset($_GET['id'])) {
 
                 <form class="form" action="" method="post">
                     <div class="boxmetier">
-                        <label for="metier">Nom de l'experience professionel</label>
+                        <label for="metier">Nom de l'experience professionnel</label>
                         <input type="text" name="metier" id="metier">
                     </div>
 
@@ -516,7 +516,7 @@ if (isset($_GET['id'])) {
                     </div>
 
                     <div class="boxmetier">
-                        <label for="metier">ajouter une description : se n'est pas obligatoir</label>
+                        <label for="metier">ajouter une description : se n'est pas obligatoire</label>
                         <textarea name="Metierdescription" id="description" cols="30" rows="10">
                     </textarea>
                     </div>
@@ -603,10 +603,10 @@ if (isset($_GET['id'])) {
                             Date
                         </th>
                         <th>
-                            filiere
+                            filière
                         </th>
                         <th>
-                            etablissement
+                            établissement
                         </th>
 
                         <th class="grade">Grade</th>
@@ -663,13 +663,13 @@ if (isset($_GET['id'])) {
                     <div class="container_box">
 
                         <div class="box1">
-                            <label for="annee">Annee du debut </label>
+                            <label for="annee">Année du debut </label>
                             <div class="input-group date">
                                 <input id="date1" name="annee" type="text" class="form-control" value="12-02-2012" width 200>
                             </div>
                         </div>
                         <div class="box1">
-                            <label for="annees">Annee de la fin </label>
+                            <label for="annees">Année de la fin </label>
                             <div class="input-group date">
                                 <input id="date2" name="annees" type="text" class="form-control" value="12-02-2012" width 200>
                             </div>
@@ -677,11 +677,11 @@ if (isset($_GET['id'])) {
                     </div>
                     <div class="container_box">
                         <div class="box1">
-                            <label for="Filiere">Filiere/classe</label>
+                            <label for="Filiere">Filière/classe</label>
                             <input type="text" name="Filiere" id="Filiere">
                         </div>
                         <div class="box1">
-                            <label for="etablissement">Etablissement</label>
+                            <label for="etablissement">Établissement</label>
                             <input type="text" name="etablissement" id="etablissement">
                         </div>
                     </div>
@@ -780,7 +780,7 @@ if (isset($_GET['id'])) {
 
             <div class="box2">
                 <?php if (isset($_SESSION['users_id'])) : ?>
-                    <button class="btn btn1"> ajouter un Diplome</button>
+                    <button class="btn btn1"> ajouter un Diplôme</button>
                     <button class="btn btn2"> ajouter un certificat</button>
                 <?php else : ?>
                 <?php endif; ?>
@@ -832,9 +832,9 @@ if (isset($_GET['id'])) {
         <div class="container_box7" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
 
             <div class="box1">
-                <h1>Projets et realisations</h1>
+                <h1>Projets et réalisations</h1>
                 <?php if (isset($_SESSION['users_id'])) : ?>
-                    <button class="ajout">Ajouter un projet/realisation</button>
+                    <button class="ajout">Ajouter un projet/réalisation</button>
                 <?php else : ?>
                 <?php endif; ?>
 
@@ -928,7 +928,7 @@ if (isset($_GET['id'])) {
 
         <div class="container_box5" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
             <div class="box1">
-                <h1>maitrise des outils informatiques</h1>
+                <h1>maîtrise des outils informatiques</h1>
             </div>
 
             <div class="box2">
@@ -966,9 +966,9 @@ if (isset($_GET['id'])) {
                         <label for="niveau">Ajouter un niveau</label>
                         <select name="niveau" id="niveau">
                             <option value="Debutant">Debutant</option>
-                            <option value="Intermediaire">Intermediaire</option>
-                            <option value="professionel">Professionel</option>
-                            <option value="Avencer">Avencer</option>
+                            <option value="Intermediaire">Intermédiaire</option>
+                            <option value="professionel">Professionnel</option>
+                            <option value="Avencer">Avancer</option>
                         </select>
                         <input type="submit" value="ajouter" name="ajouts" id="ajout">
                     </div>
@@ -1035,9 +1035,9 @@ if (isset($_GET['id'])) {
                         <label for="niveau">Ajouter un niveau</label>
                         <select name="niveau" id="niveau">
                             <option value="Debutant">Debutant</option>
-                            <option value="Intermediaire">Intermediaire</option>
-                            <option value="professionel">Professionel</option>
-                            <option value="Avencer">Avencer</option>
+                            <option value="Intermediaire">Intermédiaire</option>
+                            <option value="professionel">Professionnel</option>
+                            <option value="Avencer">Avancer</option>
                         </select>
                         <input type="submit" value="ajouter" name="ajoutss" id="ajout">
                     </div>

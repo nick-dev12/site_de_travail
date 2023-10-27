@@ -71,13 +71,13 @@ if (isset($_POST['valider'])) {
     }
     // Vérification du nom de boutique
     if (empty($_POST['competences'])) {
-        $erreurs = "ce champ ne dois pas etre vide";
+        $erreurs = "ce champ ne dois pas être vide";
     } else {
         $competences = htmlspecialchars($_POST['competences']);
     }
 
     if (empty($_POST['profession'])) {
-        $erreurs = "Veuiller selectionner un profession!!";
+        $erreurs = "Veiller sélectionner un profession!!";
     } else {
         $profession = htmlspecialchars($_POST['profession']);
     }
@@ -93,7 +93,7 @@ if (isset($_POST['valider'])) {
 
     // Vérification de la ville
     if (empty($_FILES['images'])) {
-        $erreurs = "Choisisser une photo de profil";
+        $erreurs = "Choisissez une photo de profil";
     } else {
         // Récupérer les données du formulaire
         $images = $_FILES['images'];
@@ -209,12 +209,12 @@ if (isset($_POST['valider'])) {
                 <div class="container_form">
                     <div class="container">
                         <div class="box1">
-                            <label for="nom">Nom et Prenom</label>
+                            <label for="nom">Nom et Prénom</label>
                             <input type="text" name="nom" id="nom">
                         </div>
 
                         <div class="box1">
-                            <label for="mail">adress-mail</label>
+                            <label for="mail">Address-mail</label>
                             <input type="email" name="mail" id="mail">
                         </div>
 
@@ -263,14 +263,14 @@ if (isset($_POST['valider'])) {
                     <div class="container">
 
                         <div class="box1">
-                            <label for="competences">Dommaine de compétences</label>
+                            <label for="competences">Domaine de compétences</label>
                             <input type="text" name="competences" id="competences">
                         </div>
 
                         <div class="box1">
                             <label for="profession">Profession</label>
                             <select name="profession" id="profession">
-                                <option value="Etudiant">Etudiant</option>
+                                <option value="Etudiant">Étudiant</option>
                                 <option value="Professionnel">Professionnel</option>
                             </select>
                         </div>

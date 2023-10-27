@@ -80,18 +80,18 @@ $Offres =getOffres($db, $offre_id );
     <section class="section3">
         <?php if($Offres): ?>
         <div class="box1">
-            <h1>detaille de l'offre</h1>
+            <h1>détaille de l'offre</h1>
             <h2>poste disponible : <span><?= $Offres['poste'] ?></span></h2>
 
-            <h3>Mission et responsabiliter</h3>
+            <h3>Mission et responsabilités</h3>
 
             <?= $Offres['mission'] ?>
 
-            <h3>profil rechercher (caliter et competance) </h3>
+            <h3>profil rechercher (qualités et competence) </h3>
 
             <?= $Offres['profil'] ?>
 
-            <h1 class="suplement">Info suplementaire</h1>
+            <h1 class="suplement">Info supplémentaire</h1>
 
 
             <table>
@@ -140,11 +140,11 @@ $Offres =getOffres($db, $offre_id );
                         <input type="text" name="poste" id="poste" value="<?= $Offres['poste'] ?>" >
                     </div>
                     <div class="box">
-                        <label for="mission">decriver les missions et responsbiliter</label>
+                        <label for="mission">décrivez les missions et responsabilités</label>
                         <textarea name="mission" id="mission" cols="30" rows="10"><?= htmlentities($Offres['mission']) ?></textarea>
                     </div>
                     <div class="box">
-                        <label for="profil">decriver le profil rechercher (caliter et competance)</label>
+                        <label for="profil">décrivez le profil rechercher (qualités et competence)</label>
                         <textarea name="profil" id="profil" cols="30" rows="10"><?= $Offres['profil'] ?></textarea>
                     </div>
                     <div class="box">

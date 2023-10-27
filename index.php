@@ -36,10 +36,10 @@ session_start();
         <div class="slider-item">
             <img src="/image/HR-technology-fotolia.jpg" alt="">
             <div class="box">
-                <h1 data-aos="fade-up"> <span>Work</span><span>Flexers</span> une platforme de mise en relation </h1>
+                <h1 data-aos="fade-up"> <span>Work</span><span>Flexer</span> une platform de mise en relation </h1>
                 <p data-aos="fade-up">La plateforme de professionnalisation qui relie entreprise , entrepreneur ,
                     travailleur et
-                    etudiant
+                    étudiant
                     dans tous les Domaines confondu.
                 </p>
 
@@ -82,7 +82,7 @@ session_start();
             <div class="box">
                 <h1>Gagnez plus en flexibilité</h1>
                 <p>
-                    devenez une source de productivité et augmenter vos benefices grace a notre referencement
+                    devenez une source de productivité et augmenter vos benefices grace a notre référencement
                 </p>
                 <a href="/inscription.html">Commencer</a>
             </div>
@@ -265,7 +265,7 @@ session_start();
 
 <section class="explore">
     <div class="t1" >
-        <h1>explorer les profiles qui vous conviennent</h1>
+        <h1>Explorer les profiles qui vous conviennent</h1>
     </div>
 
     <div class="profil" >

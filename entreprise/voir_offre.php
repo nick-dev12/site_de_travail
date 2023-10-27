@@ -145,9 +145,9 @@ $afficheDescriptionentreprise=getDescriptionEntreprise ($db,$entreprise_id);
                 <input type="hidden" name="images_users" id="" value="<?= $getInfo['images'] ?>">
 
                 <?php if(isset($getPostulation['offre_id'])): ?>
-                    vous avez deja envoyer votre candidature merci de pacienter une reponse favorable.
+                    <p>Vous avez deja envoyer votre candidature merci de patienter une réponse favorable.</p>
                 <?php else: ?>
-                <button type="submit" name="postuler" >postuler ici</button>
+                <button type="submit" name="postuler" >postuler pour cette offre</button>
                 <?php endif; ?>
             </form>
                 <?php endif; ?>

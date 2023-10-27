@@ -39,14 +39,14 @@ if (isset($_SESSION['users_id']) && $_SESSION['users_id']) {
         <div class="box">
             <div>
                 <a href="/entreprise/connexion.php">
-                    <button>compte d'entreprise</button>
+                    <button>Compte d'entreprise</button>
                     <img src="/image/entreprise.jpg" alt="">
                 </a>
             </div>
 
             <div>
                 <a href="/connexion.php">
-                    <button> compte de travailleur</button>
+                    <button> Compte de travailleur</button>
                     <img src="/image/travail.png" alt="">
                 </a>
             </div>

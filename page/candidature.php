@@ -95,7 +95,7 @@ include_once('../controller/controller_accepte_candidats.php');
                         <li>
                             <?= $postulant['mail'] ?>
                         </li>
-                        <li class="dc" >Domaine de competance</li>
+                        <li class="dc" >Domaine de competence</li>
                         <li class="comp" ><?= $postulant['competences'] ?></li>
                         
                     </ul>

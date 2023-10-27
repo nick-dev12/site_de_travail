@@ -161,7 +161,7 @@ body{
     text-transform: capitalize;
     cursor: pointer;
 }
-.section3 .box1 .btn2{
+.section3 form button{
     display: block;
     width: 200px;
     padding: 4px 10px;
@@ -175,8 +175,18 @@ body{
     transition: all 0.3s;
     cursor: pointer;
 }
-.section3 .box1 button:hover{
+.section3 form button:hover{
     background-color: #F39C12;
+}
+.section3 form p{
+    width: 70%;
+    text-align: center;
+    padding: 5px;
+    background-color: #e4144d;
+    color: #ffffff;
+    font-style: italic;
+    font-style: 16px;
+    
 }
 
 
