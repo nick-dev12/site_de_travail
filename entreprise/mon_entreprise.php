@@ -101,7 +101,7 @@ include_once('../controller/controller_appel_offre.php');
 <script>
     $(document).ready(function () {
         // Initialiser le carrousel 1 avec la portée appropriée
-        $('.slider').owlCarousel({
+        $('.slider1').owlCarousel({
             items: 1,
             loop: true,
             autoplay: true,

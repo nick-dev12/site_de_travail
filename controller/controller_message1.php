@@ -18,7 +18,7 @@ if (isset($_GET['entreprise_id'])) {
     }else{
       $statut = '';
     }
-    $messages = $_POST['messages'];
+    $messages = nl2br($_POST['messages']) ;
     $indicatif= 'recruteur';
   
     if (postMessage1($db,$entreprise_id,$users_id,$offre_id,$statut,$messages,$indicatif)) {
@@ -46,7 +46,7 @@ if (isset($_GET['users_id'])) {
     }else{
       $statut = '';
     }
-    $messages = $_POST['messages'];
+    $messages = nl2br($_POST['messages']) ;
     $indicatif= 'candidat';
   
     if (postMessage1($db,$entreprise_id,$users_id,$offre_id,$statut,$messages,$indicatif)) {
@@ -79,7 +79,7 @@ if (isset($_GET['offres_id'])) {
       }else{
         $statut = '';
       }
-      $messages = $_POST['messages'];
+      $messages = nl2br($_POST['messages']) ;
       $indicatif= 'recruteur';
     
       if (postMessage1($db,$entreprise_id,$users_id,$offre_id,$statut,$messages,$indicatif)) {
@@ -104,7 +104,7 @@ if(isset($_SESSION['users_id'])){
     }else{
       $statut = '';
     }
-     $messages = $_POST['messages'];
+    $messages = nl2br($_POST['messages']) ;
      $indicatif= 'candidat';
    
      if (postMessage1($db,$entreprise_id,$users_id,$offre_id,$statut,$messages,$indicatif)) {
@@ -123,20 +123,31 @@ if(isset($_GET['id'])){
     $offre_id = '';
     $users_id = $_GET['id'];
      $statut = '';
-    $messages = $_POST['message'];
+    $messages = nl2br($_POST['message']) ;
     $indicatif= 'recruteur';
   
     if (postMessage1($db,$entreprise_id,$users_id,$offre_id,$statut,$messages,$indicatif)) {
      
     }
 
-    if(postAppelOffre ($db,$entreprise_id,$users_id)){
+    $titre = $_POST['titre'];
+    if(postAppelOffre ($db,$entreprise_id,$users_id,$titre,$messages)){
       header('Location: ../entreprise/message.php');
       exit;
     }
      
   }
 }
+
+if (isset($_GET['suprime'])) {
+  $message_id = $_GET['suprime'];
+  if(deletMessage ( $db, $message_id)){
+
+header("Location: message.php" );
+exit();
+  }
+}
+
 
 $afficheAutreMessageEntreprise = getAutreMessageEntreprise($db,);
 

@@ -42,4 +42,17 @@ function getAutreMessageEntreprise($db){
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+/**
+ * Summary of deletMessage
+ * @param mixed $db
+ * @param mixed $message_id
+ * @return mixed
+ */
+function deletMessage ( $db, $message_id){
+$sql= "DELETE  FROM message1 WHERE message_id = :message_id";
+$stmt= $db->prepare($sql);
+$stmt->bindValue(':message_id',$message_id,PDO::PARAM_INT);
+return  $stmt->execute();
+}
+
 ?>

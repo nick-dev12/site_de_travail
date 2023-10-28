@@ -25,7 +25,7 @@ include_once('../controller/controller_appel_offre.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil</title>
+    <title> <?= $getEntreprise['entreprise']; ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -43,8 +43,8 @@ include_once('../controller/controller_appel_offre.php');
 
     <section class="section2">
         <div class="container">
-            <div class="box1">
-                <img src="/image/offre-emploi-quebec.jpg" alt="">
+        <div class="box1">
+                <img src="../upload/<?= $getEntreprise['images']; ?>" alt="">
                 <span></span>
                 <h2>
                     <?= $getEntreprise['nom']; ?>
@@ -52,7 +52,7 @@ include_once('../controller/controller_appel_offre.php');
             </div>
 
             <div class="box2">
-                <h3>Groupe Keren</h3>
+                <h3> <?= $getEntreprise['entreprise']; ?></h3>
             </div>
             <div class="box3">
                 <table>
@@ -78,7 +78,7 @@ include_once('../controller/controller_appel_offre.php');
                         <td id="td"><img src="../image/contacts-48.png" alt=""></td>
                         <td>contacte</td>
                     </tr>
-                    <tr>
+                    <tr class="me" >
                         <td id="td"><a href="message.php"><img src="../image/modifier.png" alt=""></a></td>
                         <td> <a href="message.php">Message</a></td>
                     </tr>

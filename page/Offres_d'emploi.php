@@ -230,7 +230,7 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php')
                             <div class="vendu">
 
                                 <p>
-                                <strong>Nous recherchons un(une)</strong>  <?php echo ($Redactione['poste']); ?>
+                                <strong>Nous recherchons un(une)</strong>  <?php echo ($Redaction['poste']); ?>
                                 </p>
                             </div>
 

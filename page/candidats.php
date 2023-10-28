@@ -5,32 +5,32 @@ include '../conn/conn.php';
 if (isset($_GET['id'])) {
     // Récupérez l'ID du commerçant à partir de la session
 // Récupérez l'ID de l'utilisateur depuis la variable de session
-$users_id = $_GET['id'];
+    $users_id = $_GET['id'];
 
-// Vous pouvez maintenant utiliser $commercant_id pour récupérer les informations de l'utilisateur depuis la base de données
+    // Vous pouvez maintenant utiliser $commercant_id pour récupérer les informations de l'utilisateur depuis la base de données
 // Écrivez votre requête SQL pour récupérer les informations nécessaires
-$conn = "SELECT * FROM users WHERE id = :users_id";
-$stmt = $db->prepare($conn);
-$stmt->bindParam(':users_id', $users_id);
-$stmt->execute();
-$users = $stmt->fetch(PDO::FETCH_ASSOC);
+    $conn = "SELECT * FROM users WHERE id = :users_id";
+    $stmt = $db->prepare($conn);
+    $stmt->bindParam(':users_id', $users_id);
+    $stmt->execute();
+    $users = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$erreurs = '';
+    $erreurs = '';
 
-$message = '';
+    $message = '';
 
 
-include_once('../controller/controller_description_users.php');
-include_once('../controller/controller_metier_users.php');
-include_once('../controller/controller_competence_users.php');
-include_once('../controller/controller_formation_users.php');
-include_once('../controller/controller_diplome_users.php');
-include_once('../controller/controller_certificat_users.php');
-include_once('../controller/controller_outil_users.php');
-include_once('../controller/controller_langue_users.php');
-include_once('../controller/controller_projet_users.php');
-include_once('../controller/controller_message1.php');
-include_once('../controller/controller_appel_offre.php');
+    include_once('../controller/controller_description_users.php');
+    include_once('../controller/controller_metier_users.php');
+    include_once('../controller/controller_competence_users.php');
+    include_once('../controller/controller_formation_users.php');
+    include_once('../controller/controller_diplome_users.php');
+    include_once('../controller/controller_certificat_users.php');
+    include_once('../controller/controller_outil_users.php');
+    include_once('../controller/controller_langue_users.php');
+    include_once('../controller/controller_projet_users.php');
+    include_once('../controller/controller_message1.php');
+    include_once('../controller/controller_appel_offre.php');
 }
 
 ?>
@@ -50,11 +50,12 @@ include_once('../controller/controller_appel_offre.php');
     <link rel="stylesheet" href="../style/font-awesome.6.4.0.min.css">
 
     <link href="../style/bootstrap.3.4.1.css" rel="stylesheet">
-    <script src="../script/jquery-3.6.0.min.js"></script>
+    <!-- <script src="../script/jquery-3.6.0.min.js"></script> -->
     <script src="../script/bootstrap3.4.1.js"></script>
 
-    <script src="../script/summernote@0.8.18.js"></script>
-    <link rel="stylesheet" href="../style/summernote@0.8.18.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
 
     <script src="../script/bootstrap-datepicker1.9.0.js"></script>
@@ -73,7 +74,7 @@ include_once('../controller/controller_appel_offre.php');
 
 
     <?php include('../navbare.php') ?>
-    
+
 
 
     <section class="section2">
@@ -95,19 +96,19 @@ include_once('../controller/controller_appel_offre.php');
                 <table>
 
                     <tr>
-                        <td id="td" ><img src="../image/MCV.png" alt=""></td>
+                        <td id="td"><img src="../image/MCV.png" alt=""></td>
                         <td> <a href="cv_users.php">Mon cv</a></td>
                     </tr>
 
                     <tr>
-                        <td  id="td"><img src="../image/exp.png" alt=""></td>
+                        <td id="td"><img src="../image/exp.png" alt=""></td>
                         <td>Mon experience</td>
                     </tr>
                     <tr>
-                        <td  id="td"><img src="../image/mpc.png" alt=""></td>
+                        <td id="td"><img src="../image/mpc.png" alt=""></td>
                         <td>Mon parcours</td>
                     </tr>
-                   
+
                 </table>
             </div>
         </div>
@@ -115,47 +116,77 @@ include_once('../controller/controller_appel_offre.php');
 
 
     <section class="section3">
-<?php if(isset($_SESSION['compte_entreprise'])): ?>
-    <?php if($getappelOffre): ?>
-        <button class="contacte"> <strong> Alerte!</strong> Ce candidat a deja ete contacter par votre entreprise</button>
-        <?php else: ?>
-    <button class="contacte">Contacter ce candidat</button>
-    
-    <form action="" method="post" class="form_appel" >
-        <img class="fermer" src="../image/croix.png" alt="">
-        <label for="message">Écrivez votre message ici</label>
-        <textarea name="message" id="message" cols="30" rows="10"></textarea>
-       <input type="submit" name="send" value="Envoyer">
-    </form>
+        <?php if (isset($_SESSION['compte_entreprise'])): ?>
+            <?php if ($getappelOffre): ?>
+                <button class="contactes"> <strong> Alerte!</strong> Ce candidat a deja ete contacter par votre
+                    entreprise</button>
+            <?php else: ?>
+                <button class="contacte">Contacter ce candidat</button>
 
-    <script>
-        let contacte = document.querySelector('.contacte');
-        let form_appel = document.querySelector('.form_appel');
-        let fermer =document.querySelector('.fermer')
+                <form action="" method="post" class="form_appel" enctype="multipart/form-data">
+                    <h1>Formulaire d'Appel d'Offres</h1>
+                    <img class="fermer" src="../image/croix.png" alt="">
+                    <div class="div" >
+                        <label for="titre">Titre de l'Appel d'Offres :</label>
+                        <input class="input1" type="text" name="titre" id="titre" required>
+                    </div>
+                    <div class="div" >
+                        <label for="message">Description de l'Appel d'Offres :</label>
+                        <textarea  name="message" id="summernote" cols="30" rows="10" required></textarea>
+                    </div>
 
-        contacte.addEventListener('click', () => {
-            if (form_appel.style.left ='160%') {
-                form_appel.style.left ='60%'
-            }else{
-                form_appel.style.left ='160%'
-            }
+                    <input class="input" type="submit" name="send" value="Envoyer">
+                </form>
 
-            contacte.style.opacity= '0';
-        })
-        fermer.addEventListener('click', () => {
-            if ( form_appel.style.left ='60%') {
-                form_appel.style.left ='160%'
-            }else{
-                form_appel.style.left ='60%'
-            }
+                <script>
+                    let contacte = document.querySelector('.contacte');
+                    let form_appel = document.querySelector('.form_appel');
+                    let fermer = document.querySelector('.fermer')
 
-            contacte.style.opacity= '1';
-        })
-    </script>
-<?php endif; ?>
-<?php endif; ?>
-        
-       
+                    
+
+                    contacte.addEventListener('click', () => {
+                        if (form_appel.style.left = '160%') {
+                            form_appel.style.left = '60%'
+                        } else {
+                            form_appel.style.left = '160%'
+                        }
+
+                        contacte.style.opacity = '0';
+                    })
+                    fermer.addEventListener('click', () => {
+                        if (form_appel.style.left = '60%') {
+                            form_appel.style.left = '160%'
+                        } else {
+                            form_appel.style.left = '60%'
+                        }
+
+                        contacte.style.opacity = '1';
+                    })
+
+                    
+                    $(document).ready(function () {
+            $('#summernote').summernote({
+                placeholder: 'ajoute une description!!',
+                tabsize: 6,
+                height: 120,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+              
+            });
+        });
+                </script>
+            <?php endif; ?>
+        <?php endif; ?>
+
+
 
         <div class="container_box1" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
             data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
@@ -174,7 +205,7 @@ include_once('../controller/controller_appel_offre.php');
                     <?php endif; ?>
 
                 </div>
-                
+
             </div>
         </div>
 
@@ -238,11 +269,11 @@ include_once('../controller/controller_appel_offre.php');
                 ?>
 
 
-                    </div>
+            </div>
 
 
 
-                    <div class="box3">
+            <div class="box3">
                 <h2>Compétences</h2>
                 <div class="container_comp">
 
@@ -260,11 +291,11 @@ include_once('../controller/controller_appel_offre.php');
 
             </div>
 
-                   
-            </div>
 
-            
-        
+        </div>
+
+
+
 
 
 
@@ -317,7 +348,7 @@ include_once('../controller/controller_appel_offre.php');
                             <td colspan="2" class="grade">
                                 <?php echo $formations['niveau']; ?>
                             </td>
-                           
+
                         </tr>
                     </table>
                 <?php endforeach; ?>
@@ -370,7 +401,7 @@ include_once('../controller/controller_appel_offre.php');
                     </div>
                 </div>
             </div>
-           
+
         </div>
 
 
@@ -380,10 +411,10 @@ include_once('../controller/controller_appel_offre.php');
 
             <div class="box1">
                 <h1>Projets et réalisations</h1>
-  
-                
+
+
             </div>
-           
+
             <div class="box2">
 
                 <?php foreach ($affichePojetUsers as $projets): ?>
@@ -432,10 +463,10 @@ include_once('../controller/controller_appel_offre.php');
                     <?php endforeach; ?>
                 </table>
 
-                
+
             </div>
 
-            
+
         </div>
 
 
@@ -465,17 +496,17 @@ include_once('../controller/controller_appel_offre.php');
                         </tr>
                     <?php endforeach; ?>
                 </table>
-               
+
             </div>
 
-           
+
         </div>
 
 
 
-        
 
-       
+
+
     </section>
 
 
@@ -511,22 +542,8 @@ include_once('../controller/controller_appel_offre.php');
 
     <script>
 
-        $(document).ready(function () {
-            $('#summernote').summernote({
-                placeholder: 'ajoute une description!!',
-                tabsize: 6,
-                height: 120,
-                toolbar: [
-                    ['style', ['style']],
-                    ['font', ['bold', 'underline', 'clear']],
-                    ['color', ['color']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['table', ['table']],
-                    ['insert', ['link', 'picture', 'video']],
-                    ['view', ['fullscreen', 'codeview', 'help']]
-                ]
-            });
-        });
+      
+
 
         $(document).ready(function () {
             $('#description').summernote({

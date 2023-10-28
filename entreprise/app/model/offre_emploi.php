@@ -21,15 +21,13 @@ function getOffres($db, $offre_id) {
 }
 
 
-function updatOffre($db,$poste,$mission,$profil,$metier,$contrat,$etudes,$experience,$localite,$langues, $offre_id ){
-    $sql = "UPDATE offre_emploi SET poste = :poste, mission = :mission, profil = :profil, metier = :metier, contrat = :contrat, etudes = :etudes, experience = :experience, localite = :localite, langues = :langues WHERE offre_id = :offre_id";
+function updatOffre($db,$poste,$mission,$profil,$contrat,$etudes,$experience,$localite,$langues, $offre_id ){
+    $sql = "UPDATE offre_emploi SET poste = :poste, mission = :mission, profil = :profil,  contrat = :contrat, etudes = :etudes, experience = :experience, localite = :localite, langues = :langues WHERE offre_id = :offre_id";
     $stmt = $db->prepare($sql);
-
     // Liez les valeurs aux paramètres de la requête
     $stmt->bindValue(':poste', $poste, PDO::PARAM_STR);
     $stmt->bindValue(':mission', $mission, PDO::PARAM_STR);
     $stmt->bindValue(':profil', $profil, PDO::PARAM_STR);
-    $stmt->bindValue(':metier', $metier, PDO::PARAM_STR);
     $stmt->bindValue(':contrat', $contrat, PDO::PARAM_STR);
     $stmt->bindValue(':etudes', $etudes, PDO::PARAM_STR);
     $stmt->bindValue(':experience', $experience, PDO::PARAM_STR);

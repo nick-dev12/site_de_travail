@@ -41,12 +41,7 @@ if (isset($_POST['publier'])) {
     } else {
         $profil = $_POST['profil'];
     }
-
-    if (empty($_POST['metier'])) {
-        $_SESSION['error_message'] = 'veuiller ajouter le metier !!!';
-    } else {
-        $metier = $_POST['metier'];
-    }
+    
 
     if (empty($_POST['contrat'])) {
         $_SESSION['error_message'] = 'veuiller ajouter le type de contrat  !!!';
@@ -79,14 +74,14 @@ if (isset($_POST['publier'])) {
         $langues = $_POST['langues'];
     }
 
-    $categorie = $getEntreprise['categorie'];
+    $categorie = $_POST['categorie'] ;
     if (empty($categorie)) {
-        $_SESSION['error_message'] = 'aucune categorie trouver !!!';
+        $_SESSION['error_message'] = 'veuiller sélectionner une catégorie !!!';
     }
     $date = date("j , F, Y, g:i a");
 
     if (empty($_SESSION['error_message'])) {
-        if (postOffres($db, $entreprise_id, $poste, $mission, $profil, $metier, $contrat, $etudes, $experience, $localite, $langues, $categorie, $date)) {
+        if (postOffres($db, $entreprise_id, $poste, $mission, $profil, $contrat, $etudes, $experience, $localite, $langues, $categorie, $date)) {
 
             // Créez l'instance PHPMailer
             $mail = new PHPMailer(true);
@@ -186,7 +181,10 @@ if (isset($_POST['publier'])) {
                 $candidates = AllUsers($db);
 
                 foreach ($candidates as $candidate) {
-                    $destinataire = $candidate['mail'];
+                    if ($candidate['categorie'] == $categorie) {
+                         $destinataire = $candidate['mail'];
+                    }
+                   
                     $mail->clearAddresses();
                     $mail->addAddress($destinataire);
                     $mail->send();

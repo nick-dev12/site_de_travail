@@ -278,6 +278,7 @@ if (isset($_POST['valider'])) {
                                 <option value="business">Conseil et gestion d'entreprise</option>
                                 <option value="Juridique">Juridique</option>
                                 <option value="Ingénierie">Ingénierie et architecture</option>
+                                <option value="autre">Autre</option>
                             </select>
                         </div>
 

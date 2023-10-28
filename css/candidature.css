@@ -11,8 +11,121 @@ background-position: center;
 background-attachment: fixed;
 }
 
-.section2{
-    
+
+.section2 {
+    position: fixed;
+    top: 120px;
+    height: 100vh;
+    width: 280px;
+    z-index: 10;
+    background-color: #002233;
+  }
+  
+  .section2 .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    border-right: 2px solid rgba(139, 139, 139, 0.379);
+  }
+  .section2 .box1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+    margin-top: -120px;
+  }
+  .section2 .box1 img {
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(139, 139, 139, 0.379);
+    box-shadow: 0px 0px 8px 1px #ffffff;
+  }
+  .section2 .box1 span {
+    height: 2px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.379);
+    display: block;
+    margin: 10px 0;
+  }
+  .section2 .box1 h2 {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-top: -2px;
+    color: #ffffff;
+  }
+  
+  .section2 .box3 {
+    width: 100%;
+    padding:0 15px;
+  } 
+  .section2 .box3 table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .section2 .box3 table td {
+    width: 40px;
+    padding: 10px 0;
+    color: #ffffff;
+    font-size: 18px;
+    border-bottom: 2px solid #ffffff50;
+    transition: all 0.3s;
+  }
+  .section2 .box3 table td:hover{
+    background-color: #ffffff;
+  
+  }
+  .section2 .box3 table #td {
+    width: 40px !important;
+    max-width: 40px;
+    padding:0  10px;
+  }
+  .section2 .box3 table #td img{
+    height: 35px;
+  }
+  .section2 .box3 table td a{
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .section2 .box2 h3 {
+    color: #f39c12;
+    margin-bottom: 20px;
+    z-index: 2;
+    font-size: 20px;
+    background-color: #ffffff;
+    display: block;
+    padding: 7px 17px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+
+  .section2 .box3 table tr:hover{
+    transition: all 0.4s ease;
+  }
+  .section2 .box3 table tr:hover{
+    background-color: #ffffff;
+    border-radius: 15px;
+  }
+  .section2 .box3 table tr:hover td a{
+    color: #000000;
+  }
+  .section2 .box3 table .me{
+    background-color: #ffffff;
+    border-radius: 15px;
+  }
+  .section2 .box3 table .me td a {
+      color: black;
+
+  }
+
+.div-section2{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +134,7 @@ background-attachment: fixed;
     padding: 20px;
     
 }
-.section2 p {
+.div-section2 p {
     text-align: center;
     padding: 5px 30px;
     background-color: #c7bd00;
@@ -31,7 +144,7 @@ background-attachment: fixed;
     display: inline;
 }
 
-.section2 h2{
+.div-section2 h2{
     font-weight: bolder;
     width: 50%;
     border-radius: 10px;
@@ -40,7 +153,7 @@ background-attachment: fixed;
     color: #ffffff;
     text-align: center;
 }
-.section2 h4{
+.div-section2 h4{
     font-weight: bolder;
     width: 40%;
     border-radius: 10px;
@@ -49,7 +162,7 @@ background-attachment: fixed;
     color: #ffffff;
     text-align: center;
 }
-.section2 .h4{
+.div-section2 .h4{
     font-weight: bolder;
     width: 40%;
     border-radius: 10px;
@@ -59,7 +172,7 @@ background-attachment: fixed;
     text-align: center;
 }
 
-.section2 .container{
+.div-section2 .container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,7 +180,7 @@ background-attachment: fixed;
     flex-wrap: wrap;
     margin-top: 20px;
 }
-.section2 .container .items{
+.div-section2 .container .items{
     width: 270px;
     padding: 5px 10px;
     border-radius: 7px;
@@ -81,7 +194,7 @@ background-attachment: fixed;
     position: relative;
     overflow: hidden;
 }
-.section2 .container .items::after{
+.div-section2 .container .items::after{
     content: "";
     position: absolute;
     top: 0;
@@ -95,27 +208,27 @@ background-attachment: fixed;
     z-index: -1;
 }
 
-.section2 .container .items:hover{
+.div-section2 .container .items:hover{
     transform: scale(1.03);
 }
 
-.section2 .container .items:hover::after{
+.div-section2 .container .items:hover::after{
 height: 100%;
 }
 
-.section2 .container .items h3 {
+.div-section2 .container .items h3 {
     color: #ffa200;
     font-weight: bolder;
     text-transform: uppercase;
     font-size: 15px;
     height: 40px;
 }
-.section2 .container .items h3 span{
+.div-section2 .container .items h3 span{
     color: #000000;
     text-decoration: underline;
     line-height: 20px;
     }
-.section2 .container .items img{
+.div-section2 .container .items img{
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -123,31 +236,31 @@ height: 100%;
     display: block;
     margin: 0 auto;
 }
-.section2 .container .items ul li{
+.div-section2 .container .items ul li{
     list-style: none;
     font-size: 12px;
     line-height: 20px;
     margin-left: -30px;
 }
-.section2 .container .items ul .dc{
+.div-section2 .container .items ul .dc{
     font-weight: bold;
     font-size: 15px;
 }
-.section2 .container .items ul .comp{
+.div-section2 .container .items ul .comp{
     font-weight: 600;
     color: #0066FF;
     font-size: 14px;
 }
-.section2 .container .items ul {
+.div-section2 .container .items ul {
     margin-top: 10px;
 }
-.section2 .container .items .container-box_btn{
+.div-section2 .container .items .container-box_btn{
     position: absolute;
     bottom: 15px;
     left: 50%;
     transform: translate(-50%);
 }
-.section2 .container .items .btn1{
+.div-section2 .container .items .btn1{
     margin: 0 auto;
     display: block;
     background-color: #002233;
@@ -159,41 +272,41 @@ height: 100%;
     align-items: center;
     justify-content: center;
 }
-.section2 .container .items .btn1 img{
+.div-section2 .container .items .btn1 img{
     height: 25px;
     width: 25px;
     margin-right: 5px;
 }
-.section2 .container .items .btn1:hover{
+.div-section2 .container .items .btn1:hover{
     background-color: #0066FF;
 }
-.section2 .container .items .btn1 a{
+.div-section2 .container .items .btn1 a{
     color: #ffffff;
 
 }
 
-.section2 .container .items .box-btn{
+.div-section2 .container .items .box-btn{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     margin-top: 10px ;
 }
-.section2 .container .items .box-btn a{
+.div-section2 .container .items .box-btn a{
     margin:0 5px;
     color: #ffffff;
     border-radius: 5px;
     border: none; 
     padding: 8px 15px;
 }
-.section2 .container .items .box-btn .btn2{
+.div-section2 .container .items .box-btn .btn2{
 background-color: #14c700;
 }
-.section2 .container .items .box-btn .btn3{
+.div-section2 .container .items .box-btn .btn3{
     background-color: #ff0000;
 }
 
-.section2 .container .items .h51{
+.div-section2 .container .items .h51{
     position: absolute;
     width: 400px;
     padding: 10px 30px;
@@ -207,7 +320,7 @@ background-color: #14c700;
     text-align: center;
    
   }
-  .section2 .container .items .h52{
+  .div-section2 .container .items .h52{
     position: absolute;
     width: 400px;
     padding: 10px 30px;
@@ -221,7 +334,7 @@ background-color: #14c700;
     text-align: center;
    
   }
-  .section2 .container .items .h53{
+  .div-section2 .container .items .h53{
     position: absolute;
     width: 400px;
     padding: 10px 30px;
@@ -239,21 +352,26 @@ background-color: #14c700;
 
 
 .section3{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 140px;
-    width: 100%;
-    flex-direction: column;
+        margin-left: 280px;
+        margin-top: 120px;
+       background: radial-gradient(circle, rgba(226,226,230,1) 0%, rgba(220,220,233,1) 35%, rgba(255,255,255,1) 100%);
+       background-position: center;
+       background-attachment: fixed;
+       position: relative;
+       height: 100vh;
+       padding-bottom: 150px;
+      
 }
 
 .section3 .box1{
   width: 80%;
-  height: 400px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 2px 7px 7px 2px rgb(136, 136, 136);
+  position: relative;
+  margin: 0 auto;
 }
 .section3 .box1 h1{
   width: 35%;
@@ -266,10 +384,12 @@ background-color: #14c700;
   text-align: center;
   color: #ffffff;
   text-shadow: 1px 1px 4px 10px #d1d1d1;
+  font-size: 25px;
+  padding: 0 20px;
 }
 .section3 .box1 .container_slider{
   width: 65%;
-  height: 400px !important;
+  height: 300px !important;
   border: none;
   overflow: hidden;
   margin-top: 10px;
@@ -277,7 +397,7 @@ background-color: #14c700;
 }
 .section3 .box1 .container_slider img{
   width: 100%;
-  height:400px;
+  height:300px;
   object-fit: cover;
 }
 

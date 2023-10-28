@@ -83,7 +83,7 @@ body{
     transition: all 0.3s;
   }
   .section2 .box3 table td:hover{
-    background-color: #002233;
+    background-color: #ffffff;
   
   }
   .section2 .box3 table #td {
@@ -111,6 +111,24 @@ body{
     font-weight: 600;
   }
 
+  .section2 .box3 table tr:hover{
+    transition: all 0.4s ease;
+  }
+  .section2 .box3 table tr:hover{
+    background-color: #ffffff;
+    border-radius: 15px;
+  }
+  .section2 .box3 table tr:hover td a{
+    color: #000000;
+  }
+  .section2 .box3 table .me{
+    background-color: #ffffff;
+    border-radius: 15px;
+  }
+  .section2 .box3 table .me td a {
+      color: black;
+
+  }
 
 
 

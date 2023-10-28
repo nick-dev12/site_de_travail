@@ -147,10 +147,7 @@ $Offres =getOffres($db, $offre_id );
                         <label for="profil">décrivez le profil rechercher (qualités et competence)</label>
                         <textarea name="profil" id="profil" cols="30" rows="10"><?= $Offres['profil'] ?></textarea>
                     </div>
-                    <div class="box">
-                        <label for="metier">metier de l'offre</label>
-                        <input type="text" name="metier" id="metier" value="<?= $Offres['metier'] ?>" >
-                    </div>
+                   
                     <div class="box">
                         <label for="contrat">Type de contrat</label>
                         <input type="text" name="contrat" id="contrat" value="<?= $Offres['contrat'] ?>" >

@@ -83,7 +83,7 @@ body{
     transition: all 0.3s;
   }
   .section2 .box3 table td:hover{
-    background-color: #002233;
+    background-color: #ffffff;
   
   }
   .section2 .box3 table #td {
@@ -110,7 +110,24 @@ body{
     border-radius: 10px;
     font-weight: 600;
   }
+  .section2 .box3 table tr:hover{
+    transition: all 0.4s ease;
+  }
+  .section2 .box3 table tr:hover{
+    background-color: #ffffff;
+    border-radius: 15px;
+  }
+  .section2 .box3 table tr:hover td a{
+    color: #000000;
+  }
+  .section2 .box3 table .me{
+    background-color: #ffffff;
+    border-radius: 15px;
+  }
+  .section2 .box3 table .me td a {
+      color: black;
 
+  }
 
 
 
@@ -132,6 +149,54 @@ body{
    background-position: center;
    background-attachment: fixed;
    position: relative;
+}
+
+.section2-div{
+    height: 400px;
+    position: relative;
+    width: 100%;
+}
+
+.section2-div .slider{
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.section2-div .slider1 img{
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+}
+.section2-div  .box1{
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(10, 10, 10, 0.315);
+    top: 0;
+    z-index: 5;
+    flex-direction: column;
+}
+.section2-div  .box1 h1{
+    color: #FFFFFF;
+    font-size: 40px;
+    width: 70%;
+    padding: 20px;
+    text-align: center;
+}
+.section2-div  .box1 p{
+    color: #FFFFFF;
+    font-size: 17px;
+    width: 50%;
+    padding: 20px;
+    width: 100%;
+    font-style: italic;
+}
+.section2-div  .box1 p span{
+    display: block;
+    width: 60%;
+    margin: 0 auto ;
 }
 
 .section3 .success{
@@ -269,6 +334,19 @@ body{
     border:2px solid #0000004d;
     outline: none;
     transition: all 0.3s;
+}
+.section3 .container_box1 .form_off form .box select{
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 17px;
+    border:2px solid #0000004d;
+    outline: none;
+}
+
+.section3 .container_box1 .form_off form .box select:hover{
+    background-color: #cae7ed2a;
+    border:2px solid #2b3cff94;
+    box-shadow: 0 0 2px 2px #9da5ff94;
 }
 .section3 .container_box1 .form_off form .box input:hover{
     background-color: #cae7ed2a;

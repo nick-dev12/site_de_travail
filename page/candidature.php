@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+include_once('../entreprise/app/controller/controllerEntreprise.php');
+include_once('../entreprise/app/controller/controllerDescription.php');
+include_once('../entreprise/app/controller/controllerOffre_emploi.php');
 include_once('../controller/controller_postulation.php');
 include_once('../controller/controller_accepte_candidats.php');
 ?>
@@ -31,6 +33,53 @@ include_once('../controller/controller_accepte_candidats.php');
     include('../navbare.php')
         ?>
 
+<section class="section2">
+        <div class="container">
+            <div class="box1">
+                <img src="../upload/<?= $getEntreprise['images']; ?>" alt="">
+                <span></span>
+                <h2>
+                    <?= $getEntreprise['nom']; ?>
+                </h2>
+            </div>
+
+            <div class="box2">
+                <h3>Groupe Keren</h3>
+            </div>
+            <div class="box3">
+                <table>
+
+                    <tr>
+                        <td id="td"><img src="../image/modifier.png" alt=""></td>
+                        <td> <a href="cv_users.php">Modifier</a></td>
+                    </tr>
+
+                    <tr >
+                        <td id="td"><a href="../entreprise/entreprise_profil.php"><img src="../image/entreprise_ic.png" alt=""></a></td>
+                        <td><a href="../entreprise/entreprise_profil.php">Mon entreprise</a></td>
+                    </tr>
+                    <tr class="me" >
+                        <td id="td"><img src="../image/candidat.png" alt=""></td>
+                        <td><a href="../page/candidature.php">Candidats</a></td>
+                    </tr>
+                    <tr>
+                        <td id="td"><img src="../image/stat.png" alt=""></td>
+                        <td>statistique</td>
+                    </tr>
+                    <tr>
+                        <td id="td"><img src="../image/contacts-48.png" alt=""></td>
+                        <td>contacte</td>
+                    </tr>
+                    <tr>
+                        <td id="td"><a href="../entreprise/message.php"><img src="../image/modifier.png" alt=""></a></td>
+                        <td> <a href="../entreprise/message.php">Message</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
 <section class="section3">
         <div class="box1">
             <h1>Bienvenu au centre de gestion des offres postuler !</h1>
@@ -52,13 +101,9 @@ include_once('../controller/controller_accepte_candidats.php');
                 aux profils des personnes qui ont répondu à vos offres, explorez leurs compétences et expériences.
             </p>
         </div>
-    </section>
 
 
-
-
-
-    <section class="section2">
+        <div class="div-section2">
         <h2>Liste des candidatures</h2>
 <p><span>!</span>  ici vous retrouverez les candidats qui ont postuler a vos offres publier   </p>
         <div class="container">
@@ -128,10 +173,10 @@ include_once('../controller/controller_accepte_candidats.php');
               
             <?php endforeach; ?>
         </div>
-    </section>
+    </div>
 
 
-    <section class="section2">
+    <div class="div-section2">
         <h2>Candidatures traiter </h2>
 
         <h4>Candidatures accepter</h4>
@@ -180,9 +225,9 @@ include_once('../controller/controller_accepte_candidats.php');
             <?php endforeach; ?>
           
         </div>
-    </section>
+    </div>
 
-    <section class="section2">
+    <div class="div-section2">
 
         <h4  class="h4" >Candidatures recaler</h4>
         <div class="container">
@@ -230,7 +275,15 @@ include_once('../controller/controller_accepte_candidats.php');
             <?php endforeach; ?>
           
         </div>
+    </div>
+
     </section>
+
+
+
+
+
+
 
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
