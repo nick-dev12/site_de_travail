@@ -7,25 +7,224 @@
     font-family: 'Nunito', sans-serif;
     overflow-x: hidden;
 }
-
-.section2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 140px;
-    width: 100%;
-    flex-direction: column;
+.section2 {
+  position: fixed;
+  top: 120px;
+  height: 100vh;
+  width: 280px;
+  z-index: 10;
+  background-color: #002233;
 }
 
-.section2 .box1{
+.section2 .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  border-right: 2px solid rgba(139, 139, 139, 0.379);
+}
+.section2 .box1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+  margin-top: -120px;
+  position: relative;
+}
+.section2 .box1 .statut{
+  padding: 5px 20px;
+  border-radius: 7px;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 700;
+  font-style: italic;
+  position: absolute;
+font-size: 15px;
+box-shadow:  0 0 5px 2px ;
+}
+
+.section2 .box1 .div_statut{
+  padding: 10px 20px ;
+  border-radius: 10px;
+  background-color: #ffffff;
+  position: absolute;
+font-size: 15px;
+top: 10px;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.4s ease;
+left: -200%;
+}
+.section2 .box1 .div_statut .occ{
+  padding: 5px 10px;
+  border-radius: 7px;
+  background-color: #40ff00;
+  color: #ffffff;
+  font-weight: 700;
+  font-style: italic;
+font-size: 15px;
+box-shadow:  0 0 2px 2px #000000 ;
+margin-left: 10px;
+}
+.section2 .box1 .div_statut .disp{
+  padding: 5px 10px;
+  border-radius: 7px;
+  background-color: #020202;
+  color: #ffffff;
+  font-weight: 700;
+  font-style: italic;
+font-size: 15px;
+box-shadow:  0 0 2px 2px #000000 ;
+margin-right: 10px;
+}
+
+.section2 .box1 img {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(139, 139, 139, 0.379);
+  box-shadow: 0px 0px 8px 1px #ffffff;
+}
+.section2 .box1 span {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.379);
+  display: block;
+  margin: 10px 0;
+}
+.section2 .box1 h2 {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  margin-top: -2px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.section2 .box3 {
+  width: 100%;
+  padding:10px 15px;
+} 
+.section2 .box3 table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.section2 .box3 table td {
+  width: 40px;
+  padding: 10px 0;
+  color: #ffffff;
+  font-size: 18px;
+  border-bottom: 2px solid #ffffff50;
+  transition: all 0.3s;
+}
+.section2 .box3 table td:hover{
+  background-color: #002233;
+
+}
+.section2 .box3 table #td {
+  width: 40px !important;
+  max-width: 40px;
+  padding:0  10px;
+}
+.section2 .box3 table #td img{
+  height: 35px;
+}
+.section2 .box3 table td a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.section2 .box2 h3 {
+  color: #f39c12;
+  margin-bottom: 10px;
+  z-index: 2;
+  font-size: 20px;
+  background-color: #ffffff;
+  display: block;
+  padding: 7px 17px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-top: -5px;
+}
+
+.section2 .box3 table tr:hover{
+  transition: all 0.4s ease;
+}
+.section2 .box3 table tr:hover{
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+.section2 .box3 table tr:hover td{
+  background-color: #ffffff;
+  color: #ffffff;
+}
+.section2 .box3 table tr:hover td a{
+  color: #000000;
+}
+.section2 .box3 table .me{
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+.section2 .box3 table .me td a {
+    color: black;
+
+}
+.section2 .box3 table .tr{
+  background-color: #ffffff;
+}
+.section2 .box3 table .tr td a{
+  color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section3{
+  margin-left: 280px;
+  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background: url(../image/bg_bggenerator_com.jpg); */
+  background: radial-gradient(circle, rgba(226,226,230,1) 0%, rgba(220,220,233,1) 35%, rgba(255,255,255,1) 100%);
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 50px 0;
+}
+
+.section3 .box1{
   width: 80%;
-  height: 400px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 2px 7px 7px 2px rgb(136, 136, 136);
 }
-.section2 .box1 h1{
+.section3 .box1 h1{
   width: 35%;
   height: 100%;
   font-weight: bolder;
@@ -36,30 +235,33 @@
   text-align: center;
   color: #ffffff;
   text-shadow: 1px 1px 4px 10px #d1d1d1;
+  font-size: 25px;
+  padding: 0 20px;
 }
-.section2 .box1 .container_slider{
+.section3 .box1 .container_slider{
   width: 65%;
-  height: 400px !important;
+  height: 300px !important;
   border: none;
   overflow: hidden;
   margin-top: 10px;
 
 }
-.section2 .box1 .container_slider img{
+.section3 .box1 .container_slider img{
   width: 100%;
-  height:400px;
+  height:300px;
   object-fit: cover;
 }
 
-.section2 .box2{
+.section3 .box2{
   width: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 20px;
+  background-color: #ffffff;
 }
-.section2 .box2 p{
+.section3 .box2 p{
   font-size: 16px;
   color: #002233cb;
   border-left: 4px solid orange;
@@ -67,7 +269,7 @@
   display: flex;
   align-items: center;
 }
-.section2 .box2 p span{
+.section3 .box2 p span{
   height: 50px;
   width: 50px;
   display: flex;
@@ -87,15 +289,16 @@
 
 
 
-.section3{
+
+.section3 .div-section3{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 50px;
-  background-color: #e0e0e0;
+  width: 100%;
 }
-.section3 .box1{
+.section3 .div-section3 .box6{
   width: 90%;
   display: flex;
   align-items: center;
@@ -103,8 +306,8 @@
   flex-direction: column;
 }
 
-.section3 .box1 h2{
-  background-color: #0ba800ef;
+.section3 .div-section3 .box6 h2{
+  background-color: #002233;
   color: #ffffff;
   font-weight: 500;
   padding: 10px 20px; 
@@ -113,16 +316,17 @@
   border-radius: 7px;
 
 }
-.section3 .box1 .container_accept{
+.section3 .div-section3 .box6 .container_accept{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   flex-wrap: wrap;
   padding: 20px;
 }
-.section3 .box1 .accept{
-  width: 300px;
+.section3 .div-section3 .box6 .accept{
+  width: 250px;
+  height: 380px;
   border: 1px solid #00223390;
   border-radius: 7px;
   overflow: hidden;
@@ -130,41 +334,42 @@
   position: relative;
   padding-bottom: 10px;
   margin: 20px 0;
+  margin: 20px;
 }
-.section3 .box1 .accept img{
+.section3 .div-section3 .box6 .accept img{
   width: 100%;
-  height: 230px;
+  height:180px;
   object-fit: cover;
   border-top-right-radius: 7px;
   border-top-left-radius: 7px;
 }
 
-.section3 .box1 .accept .cursor{
+.section3 .div-section3 .box6 .accept .cursor{
   pointer-events: none;
   cursor: not-allowed;
   color: red;
 }
 
-.section3 .box1 .accept h3 span{
+.section3 .div-section3 .box6 .accept h3 span{
   color: black;
 }
 
-.section3 .box1 .accept h3{
+.section3 .div-section3 .box6 .accept h3{
   width: 100%;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: bolder;
   margin-left: 10px;
   color: #0066FF;
 }
 
-.section3 .box1 .accept p{
+.section3 .div-section3 .box6 .accept p{
   width: 700px;
   margin-left: 15px;
   overflow: hidden;
   height: 20px;
   position: relative;
 }
-.section3 .box1 .accept p span{
+.section3 .div-section3 .box6 .accept p span{
   position: absolute;
   height: 100%;
   width: 20px;
@@ -175,11 +380,11 @@
   top: -5px;padding-left: 2px;
 }
 
-.section3 .box1 .accept a {
+.section3 .div-section3 .box6 .accept a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3px 7px;
+  padding: 1px 7px;
   border-radius: 7px;
   background-color: #002233;
   color: #ffffff;
@@ -189,55 +394,60 @@
   font-weight: 500;
   letter-spacing: 1px;
   transition: all 0.4s ease;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
 }
-.section3 .box1 .accept a img{
+.section3 .div-section3 .box6 .accept a:hover{
+  background-color: #0066FF;
+}
+.section3 .div-section3 .box6 .accept a img{
   height: 30px;
   width: 30px;
   border: none;
   margin-right: 5px;
   transition: all 0.4s ease;
 }
-.section3 .box1 .accept a:hover{
-  background-color: #0066FF;
-  
-}
-.section3 .box1 .accept a:hover img{
+
+.section3 .div-section3 .box6 .accept a:hover img{
   transform: scale(1.2);
 }
 
 
-.section3 .box1 .accept .h51{
+.section3 .div-section3 .box6 .accept .h51{
   position: absolute;
   width: 400px;
-  padding: 10px 30px;
-  font-size: 20px;
+  padding: 7px 30px;
+  font-size:18px;
   background-color: rgb(0, 210, 0);
   color: #ffffff;
   font-weight: 600;
- top: 40px;
+ top: 30px;
+ left: -20px;
  text-transform: uppercase;
   transform:rotate(45deg);
   text-align: center;
 }
-.section3 .box1 .accept .h52{
+.section3 .div-section3 .box6 .accept .h52{
   position: absolute;
   width: 400px;
-  padding: 10px 30px;
-  font-size: 20px;
+  padding: 7px 30px;
+  font-size: 18px;
   background-color: rgb(210, 21, 0);
   color: #ffffff;
   font-weight: 600;
- top: 40px;
+ top: 30px;
  text-transform: uppercase;
   transform:rotate(45deg);
   text-align: center;
  
 }
-.section3 .box1 .accept .h53{
+.section3 .div-section3 .box6 .accept .h53{
   position: absolute;
   width: 400px;
   padding: 10px 30px;
-  font-size: 20px;
+  font-size: 16px;
   background-color: #002233;
   color: #ffffff;
   font-weight: 600;

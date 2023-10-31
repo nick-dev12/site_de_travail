@@ -29,8 +29,17 @@ include_once('../controller/controller_projet_users.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style/font-awesome.6.4.0.min.css">
-    <script src="../script/jquery-3.6.0.min.js"></script>
-    <script src="../script/bootstrap3.4.1.js"></script>
+
+<link href="../style/bootstrap.3.4.1.css" rel="stylesheet">
+<script src="../script/jquery-3.6.0.min.js"></script>
+<script src="../script/bootstrap3.4.1.js"></script>
+
+<script src="../script/summernote@0.8.18.js"></script>
+<link rel="stylesheet" href="../style/summernote@0.8.18.css">
+
+
+<script src="../script/bootstrap-datepicker1.9.0.js"></script>
+<link rel="stylesheet" href="../style/bootstrap-datepicker1.9.0.css">
     <link rel="stylesheet" href="../css/navbare.css">
     <link rel="stylesheet" href="../css/model1.css">
 </head>
@@ -40,27 +49,50 @@ include_once('../controller/controller_projet_users.php');
 
 
     <?php include('../navbare.php') ?>
-    <section class="section1">
-        <div>
-            <span>1</span>
-            <p>Trouver rapidement les meilleurs talents qui correspondent à vos besoins</p>
-        </div>
-        <div>
-            <span>2</span>
-            <p>Un processus de recrutement freelance facile et sans prise de tête</p>
-        </div>
-        <div>
-            <span>3</span>
-            <p>Des profils hautement qualifiés et adaptables à vos projets</p>
-        </div>
-    </section>
 
 
 
     <section class="section2">
-        <div class="container_box1">
-        <div class="container">
+    <div class="container">
             <div class="box1">
+                <?php if ($users['statut'] == 'Disponible'):?>
+                <button class="statut occ"><?= $users['statut'] ?></button>
+                <?php else: ?>
+                    <?php if ($users['statut'] == 'Occuper'):?>
+                <button class="statut disp"><?= $users['statut'] ?></button>
+                <?php else: ?>
+                    <button class="statut occ">Statut</button>
+                <?php endif; ?>
+                <?php endif; ?>
+                <div class="div_statut">
+                    <a class="disp" href="?occuper=<?= $users['id'] ?>">Occuper</a>
+                    <a class=" occ" href="?disponible=<?= $users['id'] ?>">Disponible</a>
+                </div>
+
+                <script>
+                    let statut = document.querySelector('.statut')
+                    let div_statut = document.querySelector('.div_statut')
+
+                    statut.addEventListener('click', () => {
+                        if (div_statut.style.left === '-200%') {
+                            div_statut.style.left = '0'
+                        } else {
+                            div_statut.style.left = '-200%'
+                        }
+
+                    })
+
+                    // Ajouter un gestionnaire au clic n'importe où sur la page
+                    document.addEventListener('click', (e) => {
+                        // Vérifier que le clic ne vient pas du bouton
+                        if (e.target !== statut) {
+                            // Masquer la div
+                            div_statut.style.left = '-200%'
+                        }
+                    });
+                </script>
+
+
                 <img class="affiche" src="/upload/<?= $users['images'] ?>" alt="">
                 <span></span>
                 <h2>
@@ -75,30 +107,49 @@ include_once('../controller/controller_projet_users.php');
             </div>
             <div class="box3">
                 <table>
-                   
-                        <tr>
-                            <td><i class="fa-solid fa-briefcase"></i></td>
-                            <td> <a href="cv_users.php">mon cv</a></td>
-                        </tr>
-                    
-                    <tr>
-                        <td><i class="fa-solid fa-clipboard"></i></td>
-                        <td>mon experience</td>
+
+                    <tr class="tr">
+                        <td id="td"><img src="../image/MCV.png" alt=""></td>
+                        <td> <a href="/model_cv/model1.php">mon cv</a></td>
+                    </tr>
+
+                    <tr >
+                        <td id="td"><img src="../image/exp.png" alt=""></td>
+                        <td><a href="/page/user_profil.php">Mon experience</a></td>
+                    </tr>
+                    <tr >
+                        <td id="td"><img src="../image/mpc.png" alt=""></td>
+                        <td><a href="/page/user_profil.php">Mon parcours</a></td>
                     </tr>
                     <tr>
-                        <td><i class="fa-solid fa-school"></i></td>
-                        <td>mon parcour</td>
+                        <td id="td"><img src="../image/mct.png" alt=""></td>
+                        <td><a href="">Contacte</a></td>
                     </tr>
                     <tr>
-                        <td><i class="fa-solid fa-phone"></i></td>
-                        <td>contacte</td>
+                        <td id="td"> <a href="../page/mes_demande.php"><img src="../image/mdep.png" alt=""></a></td>
+                        <td><a href="../page/mes_demande.php">Mes demandes d’emploies</a></td>
+                    </tr>
+                    <tr>
+                        <td id="td"><a href="message.php"><img src="../image/modifier.png" alt=""></a></td>
+                        <td> <a href="message_users.php">Message</a></td>
                     </tr>
                 </table>
             </div>
         </div>
-        </div>
+    </section>
 
-        <div class="container_box2">
+
+
+
+
+
+
+
+
+
+
+    <section class="section3">
+    <div class="container_box2">
             <div class="box1">
                 <h1>Mon Cv</h1>
             </div>

@@ -13,7 +13,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bienvenu</title>
+    <title>Bienvenu</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -36,14 +36,14 @@ session_start();
         <div class="slider-item">
             <img src="/image/HR-technology-fotolia.jpg" alt="">
             <div class="box">
-                <h1 data-aos="fade-up"> <span>Work</span><span>Flexer</span> une platform de mise en relation </h1>
+                <h1 data-aos="fade-up"> <span>Work</span><span>-Flexer</span> une platform de mise en relation </h1>
                 <p data-aos="fade-up">La plateforme de professionnalisation qui relie entreprise , entrepreneur ,
                     travailleur et
                     étudiant
                     dans tous les Domaines confondu.
                 </p>
 
-                <a data-aos="fade-up" href="/inscription.html">Commencer</a>
+                <a data-aos="fade-up" href="/inscription.php">Commencer</a>
             </div>
         </div>
         <div class="slider-item">
@@ -62,9 +62,9 @@ session_start();
             <div class="box">
                 <h1>Domaines d'expertise </h1>
                 <p>
-                    informatique, marketing, finance, ressources humaines...
+                    Informatique, Marketing, Finance, Ressources humaines, Droit, Ingénierie,...
                 </p>
-                <a href="/inscription.html">Commencer</a>
+                <a href="/inscription.php">Commencer</a>
             </div>
         </div>
         <div class="slider-item">
@@ -74,7 +74,7 @@ session_start();
                 <p>
                     freelance court terme, long terme, temps plein...
                 </p>
-                <a href="/inscription.html">Commencer</a>
+                <a href="/inscription.php">Commencer</a>
             </div>
         </div>
         <div class="slider-item">
@@ -84,7 +84,7 @@ session_start();
                 <p>
                     devenez une source de productivité et augmenter vos benefices grace a notre référencement
                 </p>
-                <a href="/inscription.html">Commencer</a>
+                <a href="/inscription.php">Commencer</a>
             </div>
         </div>
     </div>
@@ -125,7 +125,7 @@ session_start();
                     Boostez votre productivité avec les freelances qu'il vous faut
                 </h2>
                 <p>
-                    Grâce à notre plateforme, accédez rapidement aux meilleurs profils de freelances correspondant à vos
+                    Grâce à Work-Flexer, accédez rapidement aux meilleurs profils de freelances correspondant à vos
                     besoins spécifiques.
 
                     Que vous ayez besoin d'un développeur logiciel, d'un designer UI/UX ou d'un spécialiste en
@@ -155,23 +155,10 @@ session_start();
                     Recrutez en Toute Confiance avec Notre Plateforme de Recrutement
                 </h2>
                 <p>
-                    <!-- Recruter des freelances de qualité peut être chronophage. Heureusement, notre plateforme est là pour
-                    vous faciliter la tâche !
-
-                    Avec un large vivier de profils soigneusement sélectionnés, trouvez rapidement le talent adapté à
-                    votre besoin.
-
-                    Notre processus de recrutement optimisé vous fait gagner un temps précieux. Plus besoin de trier des
-                    centaines de CV!
-
-                    Bénéficiez également d'un suivi personnalisé pour dénicher les perles rares qui correspondent
-                    parfaitement à vos attentes.
-
-                    Grâce à notre expertise du recrutement freelance, vous recrutez avec efficacité les meilleurs
-                    profils indépendants pour vos projets. -->
+                   
                     Work-Flexer simplifie le processus de recrutement pour les entreprises
                     en leur permettant de publier des offres d'emploi en quelques clics. Découvrez
-                    un vivier de candidats qualifiés et adaptez votre entreprise aux besoins
+                    un vivier de candidats qualifiés et adaptez a votre entreprise et aux besoins
                     du marché en trouvant les meilleurs talents rapidement et
                     efficacement. La recherche de candidats exceptionnels n'a jamais été aussi facile.
                 </p>
@@ -196,7 +183,7 @@ session_start();
                     Vous cherchez de nouvelles opportunités ? Donnez un coup de pouce à votre carrière
                     en créant un profil professionnel sur notre plateforme. Que vous soyez un
                     étudiant cherchant un stage, un professionnel en quête de nouvelles opportunités
-                    ou un expert dans votre domaine, notre site vous offre la visibilité dont vous avez
+                    ou un expert dans votre domaine, Work-Flexer vous offre la visibilité dont vous avez
                     besoin. Connectez-vous avec des recruteurs, développez votre réseau, et explorez un
                     monde d'opportunités professionnelles.
                 </p>
@@ -217,14 +204,7 @@ session_start();
         </div>
     </section>
 
-
-    <!-- <section class="bouste">
-        <div>
-            <img src="/image/bouste.jpeg" alt="">
-            <h1></h1>
-            <p></p>
-        </div>
-    </section> -->
+    
 
     <section class="slider">
 

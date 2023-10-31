@@ -149,16 +149,16 @@ include_once('../controller/controller_projet_users.php');
 
                     <tr>
                         <td id="td" ><img src="../image/MCV.png" alt=""></td>
-                        <td> <a href="cv_users.php">mon cv</a></td>
+                        <td> <a href="/model_cv/model1.php">mon cv</a></td>
                     </tr>
 
-                    <tr>
-                        <td  id="td"><img src="../image/exp.png" alt=""></td>
-                        <td>mon experience</td>
+                    <tr >
+                        <td id="td"><img src="../image/exp.png" alt=""></td>
+                        <td><a href="/page/user_profil.php">Mon experience</a></td>
                     </tr>
-                    <tr>
-                        <td  id="td"><img src="../image/mpc.png" alt=""></td>
-                        <td>mon parcours</td>
+                    <tr >
+                        <td id="td"><img src="../image/mpc.png" alt=""></td>
+                        <td><a href="/page/user_profil.php">Mon parcours</a></td>
                     </tr>
                     <tr>
                         <td  id="td"><img src="../image/mct.png" alt=""></td>
@@ -168,7 +168,7 @@ include_once('../controller/controller_projet_users.php');
                         <td  id="td"> <a href="../page/mes_demande.php"><img src="../image/mdep.png" alt=""></a></td>
                         <td><a href="../page/mes_demande.php">Mes demandes d'emploit</a></td>
                     </tr>
-                    <tr>
+                    <tr class="tr" >
                         <td id="td"><a href="message.php"><img src="../image/modifier.png" alt=""></a></td>
                         <td> <a href="message_users.php">Message</a></td>
                     </tr>

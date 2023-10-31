@@ -95,28 +95,37 @@ if (isset($_POST['publier'])) {
                 $mail->Password = 'Ludvanne12'; // Remplacez par le mot de passe de votre compte e-mail
                 $mail->SMTPSecure = 'ssl';
                 $mail->Port = 465;
-
-                // Contenu de l'e-mail
-                $sujet = 'Nouvelle offre d\'emploi correspondant à vos critères';
-                $message = "<!DOCTYPE html>
-<html lang='en'>
-<head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Document</title>
-                <style>
-                *{
-                  padding: 0;
-                  margin: 0%;
-                }
               
-                .container{
-                  width: 100%;
-                  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                  flex-direction: column;
-                }
-                .container .box1{
-                    width: 60%;
+
+
+                // Obtenez la liste des candidats (remplacez le champ 'mail' par le champ approprié dans votre base de données)
+                $candidates = AllUsers($db);
+
+                foreach ($candidates as $candidate) {
+                    if ($candidate['categorie'] == $categorie) {
+                         $destinataire = $candidate['mail'];
+                         $nom =  $candidate['nom'];
+                    }
+                    
+                      // Contenu de l'e-mail
+                $sujet = 'Nouvelle offre d\'emploi correspondant à vos critères';
+                $message = "
+                <!DOCTYPE html>
+                <html>
+                <head><meta charset='utf-8'>
+                 <style>
+                 *{
+                    padding: 0;
+                    margin: 0%;
+                  font-family: Verdana, Geneva, Tahoma, sans-serif;
+                  }
+                
+                  .container{
+                    width: 100%;
+                    flex-direction: column;
+                  }
+                  .container .box1{
+                    width: 240px;
                     margin: 20px auto;
                     position: relative;
                     height: 240px;
@@ -127,63 +136,83 @@ if (isset($_POST['publier'])) {
                     border-radius: 7px;
                 
                   }
-                .container .box2 h1{
-                  margin: 0 auto;
-                  width: 90%;
-                  background-color: black;
-                  color: #ffffff;
+                
+                  
+                  .container .box2 h1{
+                    margin: 0 auto;
+                    width: 70%;
+                    background-color: black;
+                    color: #ffffff;
+                    text-align: center;
+                    padding: 5px 30px;
+                    border-radius: 20px;
+                  }
+                  .container .box2{
+                    margin: 0 auto;
+                   
+                  }
+                  .container .box2 h2{
                   text-align: center;
-                }
-                .container .box2{
-                  margin: 0 auto;
-                  padding:20px 40px;
-                }
-                .container .box2 h2{
-                text-align: start;
-                padding:20px 40px;
-                  color: blue;
-                  text-transform: uppercase;
-                  width: 50%;
-                  margin: 0 auto;
-                }
-                .container .box2 P{
-                text-align: start;
-                  padding: 20px;
-                  width: 70%;
-                  margin: 0 auto;
-                }
-               </style>
+                  padding:5px 40px;
+                    color: blue;
+                    text-transform: uppercase;
+                    width: 50%;
+                    margin: 20px auto;
+                    font-size: 20px;
+                    border-radius: 20px;
+                    background-color: red;
+                  }
+                  .container .box2 P{
+                  text-align: start;
+                    padding: 5px 19px;
+                    width: 60%;
+                    margin: 0 auto;
+                    font-size: 17px;
+                    color: black;
+                  }
+                  .container .box2 h3{
+                  text-align: start;
+                    padding: 20px;
+                    width: 40%;
+                    margin: 0 auto;
+                    font-size: 20px;
+                  }
+                  .container .box2 a{
+                  padding: 5px 15px;
+                  border-radius: 7px;
+                  background-color: rgb(23, 0, 201);
+                  color: #ffffff;
+                  text-decoration: none;
+                  font-size: 15px;
+                  }
+                  .container .box2 P strong {
+                    background-color: yellow;
+                  }
+                 </style>
                 </head>
                 <body>
                 
                 <div class='container'>
                   <div class='box1'>
-                    <img src='/image/WF__2_.png' alt=''>
                   </div>
                 
                   <div class='box2'>
-                    <h1>helo nick </h1>
-                    <h2>nouvel offre d’emplois</h2>
-                    <p>un nouvel offre d’emplois est disponible pour toi connecte toi vite discute avec les recuteur postule a l'offre et tante ta chance de pouvoir obtenir le job.</p>
+                    <h1>helo ! $nom </h1>
+                    <h2>nouvel offre d’emploi</h2>
+                    <h3><strong>Poste :</strong> $poste </h3>
+                    <p>Une nouvelle offre d’emploi est disponible pour toi connecte toi vite discute avec les recruteurs postule a l'offre et tante ta chance de pouvoir obtenir le job.</p>
+                    <p> Connecte toi vite affin de ne rien rater <a href='https://work-flexer.com'>https://work-flexer.com</a></p>
                   </div>
                 </div>
                 
                 </body>
-                </html>";
+                </html> " ;
 
                 $mail->setFrom('noreply-service@work-flexer.com', 'work-flexer');
                 $mail->isHTML(true);
                 $mail->Subject = $sujet;
                 $mail->Body = $message;
 
-
-                // Obtenez la liste des candidats (remplacez le champ 'mail' par le champ approprié dans votre base de données)
-                $candidates = AllUsers($db);
-
-                foreach ($candidates as $candidate) {
-                    if ($candidate['categorie'] == $categorie) {
-                         $destinataire = $candidate['mail'];
-                    }
                    
                     $mail->clearAddresses();
                     $mail->addAddress($destinataire);

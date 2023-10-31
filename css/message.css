@@ -121,6 +121,10 @@ body{
   .section2 .box3 table tr:hover td a{
     color: #000000;
   }
+  .section2 .box3 table tr:hover td {
+    background-color: #ffffff;
+    color: #000000;
+  }
   .section2 .box3 table .me{
     background-color: #ffffff;
     border-radius: 15px;
@@ -128,6 +132,12 @@ body{
   .section2 .box3 table .me td a {
       color: black;
 
+  }
+  .section2 .box3 table .tr{
+    background-color: #ffffff;
+  }
+  .section2 .box3 table .tr td a{
+    color: #000000;
   }
 
 

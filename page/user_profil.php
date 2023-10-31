@@ -29,6 +29,7 @@ if (isset($_GET['id'])) {
     include_once('../controller/controller_outil_users.php');
     include_once('../controller/controller_langue_users.php');
     include_once('../controller/controller_projet_users.php');
+    include_once('../controller/controller_centre_interet.php');
 } else {
 
     if (isset($_COOKIE['users_id'])) {
@@ -80,6 +81,7 @@ if (isset($_GET['id'])) {
     include_once('../controller/controller_langue_users.php');
     include_once('../controller/controller_projet_users.php');
     include_once('../controller/controller_users.php');
+    include_once('../controller/controller_centre_interet.php');
 }
 
 ?>
@@ -124,33 +126,21 @@ if (isset($_GET['id'])) {
     <?php include('../navbare.php') ?>
 
 
-    <section class="section1">
-        <div>
-            <span>1</span>
-            <p>Trouver rapidement les meilleurs talents qui correspondent à vos besoins</p>
-        </div>
-        <div>
-            <span>2</span>
-            <p>Un processus de recrutement freelance facile et sans prise de tête</p>
-        </div>
-        <div>
-            <span>3</span>
-            <p>Des profils hautement qualifiés et adaptables à vos projets</p>
-        </div>
-    </section>
-
-
     <section class="section2">
         <div class="container">
             <div class="box1">
-                <?php if ($users['statut'] == 'Disponible'):?>
-                <button class="statut occ"><?= $users['statut'] ?></button>
+                <?php if ($users['statut'] == 'Disponible'): ?>
+                    <button class="statut occ">
+                        <?= $users['statut'] ?>
+                    </button>
                 <?php else: ?>
-                    <?php if ($users['statut'] == 'Occuper'):?>
-                <button class="statut disp"><?= $users['statut'] ?></button>
-                <?php else: ?>
-                    <button class="statut occ">Statut</button>
-                <?php endif; ?>
+                    <?php if ($users['statut'] == 'Occuper'): ?>
+                        <button class="statut disp">
+                            <?= $users['statut'] ?>
+                        </button>
+                    <?php else: ?>
+                        <button class="statut occ">Statut</button>
+                    <?php endif; ?>
                 <?php endif; ?>
                 <div class="div_statut">
                     <a class="disp" href="?occuper=<?= $users['id'] ?>">Occuper</a>
@@ -198,20 +188,20 @@ if (isset($_GET['id'])) {
 
                     <tr>
                         <td id="td"><img src="../image/MCV.png" alt=""></td>
-                        <td> <a href="cv_users.php">mon cv</a></td>
+                        <td> <a href="/model_cv/model1.php">mon cv</a></td>
                     </tr>
 
-                    <tr>
+                    <tr class="tr">
                         <td id="td"><img src="../image/exp.png" alt=""></td>
                         <td>Mon experience</td>
                     </tr>
-                    <tr>
+                    <tr class="tr">
                         <td id="td"><img src="../image/mpc.png" alt=""></td>
                         <td>Mon parcours</td>
                     </tr>
                     <tr>
                         <td id="td"><img src="../image/mct.png" alt=""></td>
-                        <td>contacte</td>
+                        <td><a href="">Contacte</a></td>
                     </tr>
                     <tr>
                         <td id="td"> <a href="../page/mes_demande.php"><img src="../image/mdep.png" alt=""></a></td>
@@ -228,7 +218,7 @@ if (isset($_GET['id'])) {
 
 
     <section class="section3">
-        <?php if (isset($_SESSION['compte_entreprise'])) : ?>
+        <?php if (isset($_SESSION['compte_entreprise'])): ?>
             <button class="contacte">Contacter ce candidat</button>
 
             <form action="" class="form_appel">
@@ -265,13 +255,13 @@ if (isset($_GET['id'])) {
 
         <?php endif; ?>
 
-        <?php if (isset($_SESSION['success_message'])) : ?>
+        <?php if (isset($_SESSION['success_message'])): ?>
             <div class="message">
                 <?php echo $_SESSION['success_message']; ?><i class="fa-solid fa-check fa-2xl"></i>
                 <?php unset($_SESSION['success_message']); ?>
             </div>
-        <?php else : ?>
-            <?php if (isset($_SESSION['error_message'])) : ?>
+        <?php else: ?>
+            <?php if (isset($_SESSION['error_message'])): ?>
                 <div class="erreurs" id="messageErreur">
                     <?php echo $_SESSION['error_message']; ?>
                     <?php unset($_SESSION['error_message']); ?>
@@ -292,83 +282,84 @@ if (isset($_GET['id'])) {
             var messageErreur = document.getElementById('messageErreur');
 
             // Fonction pour afficher le message avec une transition de fondu
-            setTimeout(function() {
+            setTimeout(function () {
                 messageErreur.classList.add('visible');
             }, 200); // 1000 millisecondes équivalent à 1 seconde
 
             // Fonction pour masquer le message avec une transition de fondu
-            setTimeout(function() {
+            setTimeout(function () {
                 messageErreur.classList.remove('visible');
             }, 6000); // 6000 millisecondes équivalent à 6 secondes
         </script>
 
 
 
-        <?php if (empty($competencesUtilisateur)) : ?>
-            <?php if (isset($_SESSION['users_id'])) : ?>
-                <div class="container_box0">
-                    <h1> <span>Alerte :</span> <strong>veuillez ajouter au moins une competence pour être visible par les
-                            recruteur</strong></h1>
-                </div>
-            <?php else : ?>
+        <?php if (empty($competencesUtilisateur)): ?>
+            <?php if (isset($_SESSION['users_id'])): ?>
+                
+            <?php else: ?>
             <?php endif; ?>
 
         <?php endif; ?>
 
 
-        <div class="container_box1" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+        <div class="container_box1" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
+            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+            data-aos-anchor-placement="top-bottom">
             <div class="box1">
                 <h2>A propos de moi !</h2>
 
                 <div class="description">
                     <?php
                     // Vérifier si la description de l'utilisateur est vide
-                    if (empty($descriptions['description'])) :
+                    if (empty($descriptions['description'])):
 
-                    ?>
-                    <?php else : ?>
+                        ?>
+                    <?php else: ?>
                         <?php echo $descriptions['description']; ?>
                     <?php endif; ?>
 
                 </div>
                 <?php
                 // Vérifier si la description de l'utilisateur est vide
-                if (empty($descriptions['description'])) :
-                ?>
-                    <?php if (isset($_SESSION['users_id'])) : ?>
+                if (empty($descriptions['description'])):
+                    ?>
+                    <?php if (isset($_SESSION['users_id'])): ?>
                         <button class="buton">Ajouter une description</button>
-                    <?php else : ?>
+                    <?php else: ?>
                     <?php endif; ?>
 
 
                     <div class="form_box">
                         <form method="post" action="" enctype="multipart/form-data">
 
-                            <?php if (isset($erreurs)) : ?>
+                            <?php if (isset($erreurs)): ?>
                                 <div class="erreur">
                                     <?php echo $erreurs; ?>
                                 </div>
                             <?php endif; ?>
-                            <textarea name="description" id="summernote" cols="30" rows="10" placeholder="Ajoute une description ici"></textarea>
+                            <textarea name="description" id="summernote" cols="30" rows="10"
+                                placeholder="Ajoute une description ici"></textarea>
 
                             <input type="submit" value="ajouter" name="ajouter" id="ajoute">
 
                         </form>
                     </div>
 
-                <?php else : ?>
-                    <?php if (isset($_SESSION['users_id'])) : ?>
+                <?php else: ?>
+                    <?php if (isset($_SESSION['users_id'])): ?>
                         <button class="buton buttons">Modifier la description</button>
-                    <?php else : ?>
+                    <?php else: ?>
                     <?php endif; ?>
 
 
                     <div class="form_box texte">
                         <form method="post" action="" enctype="multipart/form-data">
 
-                            <textarea name="nouvelleDescription" id="summernote" cols="30" rows="10" placeholder="Ajoute une description ici">
-                                     <?php echo htmlspecialchars($descriptions['description'], ENT_QUOTES, 'UTF-8'); ?>  
-                                    </textarea>
+                            <textarea name="nouvelleDescription" id="summernote" cols="30" rows="10"
+                                placeholder="Ajoute une description ici">
+                                         <?php echo htmlspecialchars($descriptions['description'], ENT_QUOTES, 'UTF-8'); ?>  
+                                        </textarea>
                             <input type="submit" value="Modifier" name="Modifier" id="ajoute">
                         </form>
                     </div>
@@ -379,7 +370,7 @@ if (isset($_GET['id'])) {
                     let buton = document.querySelector('.buton')
                     let form_box = document.querySelector('.form_box')
 
-                    buton.addEventListener('click', function() {
+                    buton.addEventListener('click', function () {
                         if (form_box.style.display === 'none' || form_box.style.display === '') {
                             form_box.style.display = 'block';
                         } else {
@@ -390,7 +381,7 @@ if (isset($_GET['id'])) {
                     let button = document.querySelector('.buttons')
                     let texte = document.querySelector('.texte')
 
-                    button.addEventListener('click', function() {
+                    button.addEventListener('click', function () {
                         if (tetxe.style.display === 'none' || texte.style.display === '') {
                             texte.style.display = 'block';
                         } else {
@@ -405,17 +396,19 @@ if (isset($_GET['id'])) {
 
 
 
-        <div class="container_box2" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+        <div class="container_box2">
             <div class="box1">
                 <h1>Expertise et compétences</h1>
             </div>
             <div class="box2">
                 <h2>Experience professionnel</h2>
                 <?php
-                foreach ($afficheMetier as $metiers) :
+                foreach ($afficheMetier as $metiers):
 
-                ?>
-                    <div class="metier">
+                    ?>
+                    <div class="metier" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
+                        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                        data-aos-anchor-placement="top-bottom">
                         <table>
                             <tr>
                                 <th>
@@ -424,10 +417,11 @@ if (isset($_GET['id'])) {
                                     </p>
                                 </th>
                                 <td>
-                                    <?php if (isset($_SESSION['users_id'])) : ?>
+                                    <?php if (isset($_SESSION['users_id'])): ?>
                                         <!-- Ajouter un lien de suppression -->
-                                        <a class="delete" href="?supprimer=<?php echo $metiers['id']; ?>"><span class="span">x</span></a>
-                                    <?php else : ?>
+                                        <a class="delete" href="?supprimer=<?php echo $metiers['id']; ?>"><span
+                                                class="span">x</span></a>
+                                    <?php else: ?>
                                     <?php endif; ?>
 
                                 </td>
@@ -462,12 +456,12 @@ if (isset($_GET['id'])) {
                         </table>
 
                     </div>
-                <?php
+                    <?php
                 endforeach;
                 ?>
-                <?php if (isset($_SESSION['users_id'])) : ?>
+                <?php if (isset($_SESSION['users_id'])): ?>
                     <button class="affiche_form">Ajouter une experience</button>
-                <?php else : ?>
+                <?php else: ?>
                 <?php endif; ?>
 
 
@@ -481,18 +475,20 @@ if (isset($_GET['id'])) {
                         <div>
                             <label for="date1">date de debut</label>
                             <div class="input-group date">
-                                <input id="datee" name="date1" type="text" class="form-control" value="12-02-2012" width 200>
+                                <input id="datee" name="date1" type="text" class="form-control" value="12-02-2012" width
+                                    200>
                             </div>
                         </div>
                         <div>
                             <label for="date2">date de fin</label>
                             <div class="input-group date">
-                                <input id="datees" name="date2" type="text" class="form-control" value="12-02-2012" width 200>
+                                <input id="datees" name="date2" type="text" class="form-control" value="12-02-2012"
+                                    width 200>
                             </div>
                         </div>
 
                         <script>
-                            $(document).ready(function() {
+                            $(document).ready(function () {
                                 $('#datee').datepicker({
                                     format: 'dd/mm/yyyy', // Format de la date
                                     autoclose: true, // Fermer automatiquement le sélecteur après la sélection
@@ -502,7 +498,7 @@ if (isset($_GET['id'])) {
                                     language: 'fr' // Langue (français)
                                 });
                             });
-                            $(document).ready(function() {
+                            $(document).ready(function () {
                                 $('#datees').datepicker({
                                     format: 'dd/mm/yyyy', // Format de la date
                                     autoclose: true, // Fermer automatiquement le sélecteur après la sélection
@@ -527,7 +523,7 @@ if (isset($_GET['id'])) {
                     let affiche_form = document.querySelector('.affiche_form')
                     let form = document.querySelector('.form')
 
-                    affiche_form.addEventListener('click', function() {
+                    affiche_form.addEventListener('click', function () {
                         if (form.style.display === 'none' || form.style.display === '') {
                             form.style.display = 'block';
                         } else {
@@ -543,9 +539,10 @@ if (isset($_GET['id'])) {
 
 
                     <?php
-                    foreach ($competencesUtilisateur as $competence) :
-                    ?>
-                        <p>
+                    foreach ($competencesUtilisateur as $competence):
+                        ?>
+                        <p data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
+                            data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
                             <?php echo $competence['competence']; ?>
                             <a href="?supprime=<?php echo $competence['id']; ?>">x</a>
                         </p>
@@ -553,14 +550,14 @@ if (isset($_GET['id'])) {
 
 
 
-                    <?php
+                        <?php
                     endforeach;
                     ?>
                 </div>
 
-                <?php if (isset($_SESSION['users_id'])) : ?>
+                <?php if (isset($_SESSION['users_id'])): ?>
                     <button class="affiche_forms">Ajouter une compétences</button>
-                <?php else : ?>
+                <?php else: ?>
                 <?php endif; ?>
 
                 <form class="forms" action="" method="post">
@@ -572,7 +569,7 @@ if (isset($_GET['id'])) {
                     let affiche_forms = document.querySelector('.affiche_forms')
                     let forms = document.querySelector('.forms')
 
-                    affiche_forms.addEventListener('click', function() {
+                    affiche_forms.addEventListener('click', function () {
                         if (forms.style.display === 'none' || forms.style.display === '') {
                             forms.style.display = 'block';
                         } else {
@@ -590,7 +587,7 @@ if (isset($_GET['id'])) {
 
 
 
-        <div class="container_box3" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+        <div class="container_box3">
 
             <div class="box4">
                 <h1>formation</h1>
@@ -615,10 +612,11 @@ if (isset($_GET['id'])) {
 
                 </table>
 
-                <?php foreach ($formationUsers as $formations) : ?>
+                <?php foreach ($formationUsers as $formations): ?>
                     <table>
 
-                        <tr>
+                        <tr data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
+                            data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
                             <td class="pt">
                                 <?php echo $formations['annee']; ?><br>
                                 au <br>
@@ -638,9 +636,9 @@ if (isset($_GET['id'])) {
                                 <?php echo $formations['niveau']; ?>
                             </td>
                             <td class="supr">
-                                <?php if (isset($_SESSION['users_id'])) : ?>
+                                <?php if (isset($_SESSION['users_id'])): ?>
                                     <a href="?supprimes=<?php echo $formations['id']; ?>">x</a>
-                                <?php else : ?>
+                                <?php else: ?>
                                 <?php endif; ?>
 
                             </td>
@@ -650,9 +648,9 @@ if (isset($_GET['id'])) {
             </div>
 
             <div class="fa-formation">
-                <?php if (isset($_SESSION['users_id'])) : ?>
+                <?php if (isset($_SESSION['users_id'])): ?>
                     <button class="Ajouters">Ajouter une formation</button>
-                <?php else : ?>
+                <?php else: ?>
                 <?php endif; ?>
 
             </div>
@@ -665,13 +663,15 @@ if (isset($_GET['id'])) {
                         <div class="box1">
                             <label for="annee">Année du debut </label>
                             <div class="input-group date">
-                                <input id="date1" name="annee" type="text" class="form-control" value="12-02-2012" width 200>
+                                <input id="date1" name="annee" type="text" class="form-control" value="12-02-2012" width
+                                    200>
                             </div>
                         </div>
                         <div class="box1">
                             <label for="annees">Année de la fin </label>
                             <div class="input-group date">
-                                <input id="date2" name="annees" type="text" class="form-control" value="12-02-2012" width 200>
+                                <input id="date2" name="annees" type="text" class="form-control" value="12-02-2012"
+                                    width 200>
                             </div>
                         </div>
                     </div>
@@ -698,7 +698,7 @@ if (isset($_GET['id'])) {
                 </form>
             </div>
             <script>
-                $(document).ready(function() {
+                $(document).ready(function () {
                     $('#date1').datepicker({
                         format: 'dd/mm/yyyy', // Format de la date
                         autoclose: true, // Fermer automatiquement le sélecteur après la sélection
@@ -708,7 +708,7 @@ if (isset($_GET['id'])) {
                         language: 'fr' // Langue (français)
                     });
                 });
-                $(document).ready(function() {
+                $(document).ready(function () {
                     $('#date2').datepicker({
                         format: 'dd/mm/yyyy', // Format de la date
                         autoclose: true, // Fermer automatiquement le sélecteur après la sélection
@@ -724,7 +724,7 @@ if (isset($_GET['id'])) {
                 let Ajoutes = document.querySelector('.Ajouters')
                 let formee = document.querySelector('.containne')
 
-                Ajoutes.addEventListener('click', function() {
+                Ajoutes.addEventListener('click', function () {
                     if (formee.style.display === 'none' || formee.style.display === '') {
                         formee.style.display = 'block';
                     } else {
@@ -735,7 +735,7 @@ if (isset($_GET['id'])) {
         </div>
 
 
-        <div class="container_box4" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+        <div class="container_box4">
             <div class="box1">
                 <div class="div">
                     <table>
@@ -744,10 +744,12 @@ if (isset($_GET['id'])) {
                         </tr>
                     </table>
                     <div>
-                        <?php foreach ($afficheDiplome as $diplomes) : ?>
+                        <?php foreach ($afficheDiplome as $diplomes): ?>
 
                             <table>
-                                <tr>
+                                <tr data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
+                                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                                    data-aos-anchor-placement="top-bottom">
                                     <td>
                                         <?php echo $diplomes['diplome']; ?>
                                     </td>
@@ -765,9 +767,11 @@ if (isset($_GET['id'])) {
                         </tr>
                     </table>
                     <div>
-                        <?php foreach ($afficheCertificat as $certificats) : ?>
+                        <?php foreach ($afficheCertificat as $certificats): ?>
                             <table>
-                                <tr>
+                                <tr data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
+                                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                                    data-aos-anchor-placement="top-bottom">
                                     <td>
                                         <?php echo $certificats['certificat'] ?>
                                     </td>
@@ -779,10 +783,10 @@ if (isset($_GET['id'])) {
             </div>
 
             <div class="box2">
-                <?php if (isset($_SESSION['users_id'])) : ?>
+                <?php if (isset($_SESSION['users_id'])): ?>
                     <button class="btn btn1"> ajouter un Diplôme</button>
                     <button class="btn btn2"> ajouter un certificat</button>
-                <?php else : ?>
+                <?php else: ?>
                 <?php endif; ?>
 
             </div>
@@ -806,7 +810,7 @@ if (isset($_GET['id'])) {
                 let btn1 = document.querySelector('.btn1')
                 let box31 = document.querySelector('.box31')
 
-                btn1.addEventListener('click', function() {
+                btn1.addEventListener('click', function () {
                     if (box31.style.display === 'none' || box31.style.display === '') {
                         box31.style.display = 'block';
                     } else {
@@ -817,7 +821,7 @@ if (isset($_GET['id'])) {
                 let btn2 = document.querySelector('.btn2')
                 let box32 = document.querySelector('.box32')
 
-                btn2.addEventListener('click', function() {
+                btn2.addEventListener('click', function () {
                     if (box32.style.display === 'none' || box32.style.display === '') {
                         box32.style.display = 'block';
                     } else {
@@ -829,13 +833,13 @@ if (isset($_GET['id'])) {
         </div>
 
 
-        <div class="container_box7" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+        <div class="container_box7">
 
             <div class="box1">
                 <h1>Projets et réalisations</h1>
-                <?php if (isset($_SESSION['users_id'])) : ?>
+                <?php if (isset($_SESSION['users_id'])): ?>
                     <button class="ajout">Ajouter un projet/réalisation</button>
-                <?php else : ?>
+                <?php else: ?>
                 <?php endif; ?>
 
             </div>
@@ -892,7 +896,7 @@ if (isset($_GET['id'])) {
                 let ajout = document.querySelector('.ajout')
                 let form_projet = document.querySelector('.form_projet')
 
-                ajout.addEventListener('click', function() {
+                ajout.addEventListener('click', function () {
                     if (form_projet.style.display === 'none' || form_projet.style.display === '') {
                         form_projet.style.display = 'block';
                     } else {
@@ -902,9 +906,11 @@ if (isset($_GET['id'])) {
             </script>
             <div class="box2">
 
-                <?php foreach ($affichePojetUsers as $projets) : ?>
+                <?php foreach ($affichePojetUsers as $projets): ?>
 
-                    <div class="info_projet">
+                    <div class="info_projet" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
+                        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                        data-aos-anchor-placement="top-bottom">
                         <h2>
                             <?php echo $projets['titre'] ?>
                         </h2>
@@ -926,7 +932,7 @@ if (isset($_GET['id'])) {
 
 
 
-        <div class="container_box5" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+        <div class="container_box5">
             <div class="box1">
                 <h1>maîtrise des outils informatiques</h1>
             </div>
@@ -934,8 +940,9 @@ if (isset($_GET['id'])) {
             <div class="box2">
 
                 <table>
-                    <?php foreach ($afficheOutil as $outils) : ?>
-                        <tr>
+                    <?php foreach ($afficheOutil as $outils): ?>
+                        <tr data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
+                            data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
                             <td>
                                 <?php echo $outils['outil'] ?>
                             </td>
@@ -947,9 +954,9 @@ if (isset($_GET['id'])) {
                 </table>
 
                 <div class="outil">
-                    <?php if (isset($_SESSION['users_id'])) : ?>
+                    <?php if (isset($_SESSION['users_id'])): ?>
                         <button class="btn3"> Ajouter un outil</button>
-                    <?php else : ?>
+                    <?php else: ?>
                     <?php endif; ?>
 
                 </div>
@@ -980,7 +987,7 @@ if (isset($_GET['id'])) {
                 let btn3 = document.querySelector('.btn3')
                 let box34 = document.querySelector('.box34')
 
-                btn3.addEventListener('click', function() {
+                btn3.addEventListener('click', function () {
                     if (box34.style.display === 'none' || box34.style.display === '') {
                         box34.style.display = 'block';
                     } else {
@@ -997,15 +1004,16 @@ if (isset($_GET['id'])) {
 
 
 
-        <div class="container_box5" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+        <div class="container_box5">
             <div class="box1">
                 <h1>maitrise des langues</h1>
             </div>
 
             <div class="box2">
                 <table>
-                    <?php foreach ($afficheLangue as $langues) : ?>
-                        <tr>
+                    <?php foreach ($afficheLangue as $langues): ?>
+                        <tr data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
+                            data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
                             <td>
                                 <?php echo $langues['langue']; ?>
                             </td>
@@ -1016,9 +1024,9 @@ if (isset($_GET['id'])) {
                     <?php endforeach; ?>
                 </table>
                 <div class="outil">
-                    <?php if (isset($_SESSION['users_id'])) : ?>
+                    <?php if (isset($_SESSION['users_id'])): ?>
                         <button class="btn4"> Ajouter une langue</button>
-                    <?php else : ?>
+                    <?php else: ?>
                     <?php endif; ?>
 
                 </div>
@@ -1049,7 +1057,7 @@ if (isset($_GET['id'])) {
                 let btn4 = document.querySelector('.btn4')
                 let box35 = document.querySelector('.box35')
 
-                btn4.addEventListener('click', function() {
+                btn4.addEventListener('click', function () {
                     if (box35.style.display === 'none' || box35.style.display === '') {
                         box35.style.display = 'block';
                     } else {
@@ -1060,9 +1068,53 @@ if (isset($_GET['id'])) {
         </div>
 
 
+        <div class="container_box8">
+            <div class="box1">
+                <h1>Centre d’intérêt</h1>
+            </div>
 
-        <?php if (isset($_SESSION['users_id'])) : ?>
-            <div class="container_box6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+            <div class="box2">
+                
+                <button class="btn_eteret">Ajouter un centre d’intérêt</button>
+
+                <form class="form_btn" method="post" action="">
+                    <?php if (isset($erreurs)):?>
+                    <div><?php echo $erreurs ?></div>
+                    <?php endif ;?>
+                    <input type="text" name="interet" id="interet">
+                    <input type="submit" name="ajouter_interet" value="Ajouter" id="ajouter">
+                </form>
+
+                <ul>
+                    <?php foreach($afficheCentreInteret as $centreInteret): ?>
+                    <li>
+                        <?= $centreInteret['interet'] ?>
+                    </li>
+                    <?php endforeach ; ?>
+                </ul>
+
+                <script>
+                    let btn_i = document.querySelector('.btn_eteret');
+                    let form_btn =  document.querySelector('.form_btn');
+
+                    btn_i.addEventListener('click', ()=>{
+                        if(form_btn.style.display == 'none'){
+                            form_btn.style.display = 'block'
+                        }else{
+                            form_btn.style.display = 'none'
+                        }
+                    })
+                </script>
+            </div>
+
+
+
+        </div>
+
+
+
+        <?php if (isset($_SESSION['users_id'])): ?>
+            <div class="container_box6">
                 <div class="box1">
                     <h1>Laisser moi un message</h1>
                 </div>
@@ -1074,7 +1126,7 @@ if (isset($_GET['id'])) {
                     </form>
                 </div>
             </div>
-        <?php else : ?>
+        <?php else: ?>
         <?php endif; ?>
 
 
@@ -1112,7 +1164,7 @@ if (isset($_GET['id'])) {
     </script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#summernote').summernote({
                 placeholder: 'ajoute une description!!',
                 tabsize: 6,
@@ -1129,7 +1181,7 @@ if (isset($_GET['id'])) {
             });
         });
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#description').summernote({
                 placeholder: 'ajoute une description!!',
                 tabsize: 6,
@@ -1146,7 +1198,7 @@ if (isset($_GET['id'])) {
             });
         });
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#projetdescription').summernote({
                 placeholder: 'ajoute une description!!',
                 tabsize: 6,

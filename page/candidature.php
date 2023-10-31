@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include_once('../entreprise/app/controller/controllerEntreprise.php');
 include_once('../entreprise/app/controller/controllerDescription.php');
 include_once('../entreprise/app/controller/controllerOffre_emploi.php');
@@ -151,15 +152,11 @@ include_once('../controller/controller_accepte_candidats.php');
                         <div class="box-btn">
                            
                                
-                                <a class="btn2" href="?accepter=<?= $postulant['poste_id'] ?>">Accepter</a>
+                                <a class="btn2" href="?accepter=<?= $postulant['poste_id'] ?>&offrees_id=<?= $postulant['offre_id'] ?> "> Accepter</a>
                            
-                            
-                            <form action="" method="post"> 
-                                <input type="hidden" name="entreprise_id">
-                                <input type="hidden" name="offre_id">
-                                <input type="hidden" name="users_id">
-                                <a class="btn3" href="?recaler=<?= $postulant['poste_id'] ?>">Recaler</a>
-                            </form>
+                          
+                                <a class="btn3" href="?recaler=<?= $postulant['poste_id']?>&offrees_id=<?= $postulant['offre_id']?>">Recaler</a>
+                           
 
                         </div>
                     </div>
@@ -208,15 +205,11 @@ include_once('../controller/controller_accepte_candidats.php');
                         <div class="box-btn">
                            
                                
-                                <a class="btn2" href="?accepter=<?= $postulant['poste_id'] ?>">Accepter</a>
+                                <a class="btn2" href="?accepter=<?= $postulant['poste_id']?>&offrees_id=<?=$postulant['offre_id']?>">Accepter</a>
                            
                             
-                            <form action="" method="post"> 
-                                <input type="hidden" name="entreprise_id">
-                                <input type="hidden" name="offre_id">
-                                <input type="hidden" name="users_id">
-                                <a class="btn3" href="?recaler=<?= $postulant['poste_id'] ?>">Recaler</a>
-                            </form>
+                            
+                                <a class="btn3" href="?recaler=<?=$postulant['poste_id']?>&offrees_id=<?=$postulant['offre_id']?>">Recaler</a>
 
                         </div>
                     </div>
@@ -258,15 +251,11 @@ include_once('../controller/controller_accepte_candidats.php');
                         <div class="box-btn">
                            
                                
-                                <a class="btn2" href="?accepter=<?= $postulant['poste_id'] ?>">Accepter</a>
+                                <a class="btn2" href="?accepter=<?= $postulant['poste_id']?>&offrees_id=<?=$postulant['offre_id']?>">Accepter</a>
                            
                             
-                            <form action="" method="post"> 
-                                <input type="hidden" name="entreprise_id">
-                                <input type="hidden" name="offre_id">
-                                <input type="hidden" name="users_id">
-                                <a class="btn3" href="?recaler=<?= $postulant['poste_id'] ?>">Recaler</a>
-                            </form>
+                           
+                                <a class="btn3" href="?recaler=<?= $postulant['poste_id'] ?>&offrees_id=<?=$postulant['offre_id']?>">Recaler</a>
 
                         </div>
                     </div>
