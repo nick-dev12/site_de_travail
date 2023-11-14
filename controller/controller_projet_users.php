@@ -49,4 +49,15 @@ if (isset($_GET['id'])) {
         $affichePojetUsers = getProjetUsers($db, $_SESSION['users_id']);
      }
 
+
+     if (isset($_GET['projets'])) {
+
+        $id = $_GET['projets'];
+    
+        if (deleteProjets($db, $id)) {
+            $_SESSION['success_message'] = 'Opération réussie ';
+            header('Location: user_profil.php');
+            exit;
+        }
+    }
 ?>

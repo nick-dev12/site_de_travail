@@ -587,6 +587,35 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   flex-direction: column;
   margin-bottom: 20px;
 }
+
+.section3 .container_box2 .box2 form .boxmetier .date{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 30px;
+}
+.section3 .container_box2 .box2 form .boxmetier .date .mois{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.section3 .container_box2 .box2 form .boxmetier .date .annee{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.section3 .container_box2 .box2 form .boxmetier .date select{
+  padding:5px 10px;
+  height: 40px;
+  width: 100px;
+  border: 2px solid #011c295b;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+
+.section3 .container_box2 .box2 form .boxmetier .date select option{
+  font-size: 16px;
+}
 .section3 .container_box2 form #dat{
   display: flex;
   flex-direction: row;
@@ -632,6 +661,10 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   padding:0 20px ;
   
 }
+.section3 .container_box2 .box2 .metier table td img{
+  height: 20px;
+  width: 20px;
+}
 .section3 .container_box2 .box2 .metier table td {
   transition: all 0.5s;
   transform: rotate(90deg);
@@ -655,18 +688,6 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
 
 
 
-.section3 .container_box2 .box2 .metier .delete {
-  color: #ffffff;
-  background-color: #f39c12;
-  padding:0 8px;
-  border-radius: none;
-  font-size: 18px;
-  font-weight: bold;
-  transition: all 0.5s ;
-}
-.section3 .container_box2 .box2 .affiche_form:hover{
-  background-color: #f39c12;
-}
 
 .section3 .container_box2 .box3 {
   margin-bottom: 20px;
@@ -742,14 +763,9 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   margin-right: 10px;
 }
 
-.section3 .container_box2 .box3 .container_comp p a {
-  padding: 0 4px;
-  border-radius: 1px;
-  font-size: 13px;
-  background-color: #f39c12;
-  color: #ffffff;
-  transition: all 0.3s ease-out;
-  margin-left: 10px;
+.section3 .container_box2 .box3 .container_comp p img {
+  height: 16px;
+  width: 16px;
 }
 .section3 .container_box2 .box3 a:hover {
   /* background-color: #002233; */
@@ -789,6 +805,21 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
 }
 .section3 .container_box3 .containne form .container_box {
   margin-right: 60px;
+}
+.section3 .container_box3 .containne form .container_box .date{
+  display: flex;
+  align-items: center;
+}
+.section3 .container_box3 .containne form .container_box .date select{
+  padding:5px 10px;
+  height: 40px;
+  width: 100px;
+  border: 2px solid #011c295b;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+.section3 .container_box3 .containne form .container_box .date select option{
+  font-size: 15px;
 }
 .section3 .container_box3 .containne form .box1 {
   width: 100%;
@@ -876,15 +907,17 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   max-width: 250px;
 }
 .section3 .container_box3 .box5 table .pt {
-  font-weight: 600;
+  font-weight: bold;
   font-size: 15px;
   letter-spacing: 1px;
   color: #3451c6;
+  font-style: italic;
+
 }
 
 .section3 .container_box3 .box5 table .grade {
   color: #000000;
-  background-color: #0066FF;
+  background-color: rgba(230, 85, 13, 0.784);
   color: #ffffff;
 }
 .section3 .container_box3 .box5 table .supr{
@@ -893,14 +926,9 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   max-width: 60px;
   padding: 5px 5px;
 }
-.section3 .container_box3 .box5 table td a {
-  padding: 0 8px;
-  border-radius: 1px;
-  font-size: 15px;
-  background-color: #f39c12;
-  color: #ffffff;
-  transition: all 0.3s ease-out;
-  margin-left: 10px;
+.section3 .container_box3 .box5 table td img {
+  height: 20px;
+  width: 20px;
 }
 .section3 .container_box3 .fa-formation {
   margin-top: 10px;
@@ -962,7 +990,7 @@ backdrop-filter: blur(3px);
   max-width: 250px;
   height: 60px;
   border: 1px solid rgba(165, 165, 165, 0.337);
-  background-color: #0066FF;
+  background-color: rgba(230, 85, 13, 0.784);
   color: #ffffff;
   padding: 5px 10px;
   transition: all 0.3s ease-out;
@@ -981,6 +1009,12 @@ backdrop-filter: blur(3px);
   word-wrap: break-word;
   font-size: 17px;
 }
+
+.section3 .container_box4 .box1 table td img{
+  height: 20px;
+  width: 20px;
+}
+
 .section3 .container_box4 .box2 {
   margin-top: 20px;
 }
@@ -1079,6 +1113,16 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   padding: 5px 10px;
   font-weight: 600;
   font-size: 17px;
+}
+
+.section3 .container_box5 .box2 table td img{
+  height: 20px;
+  width: 20px;
+  transition: all 0.4s ease;
+}
+.section3 .container_box5 .box2 table td img:hover{
+  transform: scale(1.1);
+  transform:  rotate(90deg);
 }
 .section3 .container_box5 .box2 table .niveau {
   font-style: italic;
@@ -1305,6 +1349,15 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   margin: 20px;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.section3 .container_box7 .info_projet .supp{
+position: absolute;
+top: 10px;
+right:15px ;
+height: 20px;
+width: 20px;
+
 }
 .section3 .container_box7 .info_projet h2{
   font-size: 25px;
@@ -1417,4 +1470,194 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
 
 .section3 .container_box8 .box2 ul{
   margin: 20px 30px;
+}
+
+.section3 .container_box8 .box2 ul li img{
+  height: 18px;
+  width: 18px;
+  margin-left: 40px;
+}
+
+
+
+
+
+.section3 .container_box10{
+  border: 1px solid rgba(165, 165, 165, 0.337);
+  width: 90%;
+  padding: 30px 10px;
+  margin-top: 50px;
+  background-color: #ffffffd2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color=#000000)";/*IE 8*/
+-moz-box-shadow: 18px 18px 4px -11px rgba(0,0,0,0.1);/*FF 3.5+*/
+-webkit-box-shadow: 18px 18px 4px -11px rgba(0,0,0,0.1);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+box-shadow: 18px 18px 4px -11px rgba(0,0,0,0.1);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color=#000000); /*IE 5.5-7*/
+   -ms-backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  -moz-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+.section3 .container_box10 .slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section3 .container_box10 .slider .carousel{
+  height: 400px;
+  width: 240px;
+  background-color: rgba(247, 247, 247, 0.499);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(105, 103, 103, 0.257);
+  box-shadow: 7px 6px 10px -5px #00000093;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  margin: 0 10px;
+  background-color: #ffffff;
+}
+
+
+.section3 .container_box10 .slider .carousel:hover{
+  transform: scale(1.05);
+}
+
+.section3 .container_box10 .slider .message{
+ font-size: 25px;
+ width: 40%;
+ text-align: center;
+ padding: 20px 30px;
+ border: 1px solid #2c3e501e;
+}
+.section3 .container_box10 .slider .carousel img{
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(148, 146, 146, 0.499);
+}
+.section3 .container_box10 .slider .carousel .p{
+  padding-left: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+}
+.section3 .container_box10 .slider .carousel .p strong{
+ text-transform: uppercase;
+ font-size: 14.5px;
+}
+.section3 .container_box10 .slider .carousel .p img{
+ height: 35px;
+ width: 35px;
+ border: none;
+ cursor: pointer;
+}
+.section3 .container_box10 .slider .carousel #nom{
+  font-weight: 400;
+  margin-left: 8px !important;
+  overflow: hidden;
+  font-size: 13px;
+  margin-top: 8px;
+  max-height: 20px;
+  width: 100%;
+  color: #3451c6;
+}
+.section3 .container_box10 .slider .carousel p span{
+  color: #F39C12;
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.section3 .container_box10 .slider .carousel .box_vendu{
+ display: flex;
+ width: 100%;
+ align-items: center;
+}
+
+.section3 .container_box10 .slider .carousel .vendu{
+  display: flex !important; 
+  margin-left: 12px;
+  font-size: 15px;
+  width: 100%;
+  max-height: 57px !important;
+}
+
+.section3 .container_box10 .slider .carousel .vendu p{
+ font-size: 15px;
+}
+
+.section3 .container_box10 .slider .carousel .contrat{
+margin-left: 20px;
+font-style: italic;
+font-size: 15px;
+}
+.section3 .container_box10 .slider .carousel .vendu span{
+ padding: 5px 8px;
+ margin-right: 6px;
+ background-color: #297fb928;
+ border-radius: 10px;
+ margin-bottom: 4px;
+}
+
+.section3 .container_box10 .slider .carousel a{
+ background-color: #3451c6;
+  width: 100%;
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+
+  display: block;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 5px;
+  
+}
+
+.section3 .container_box10 .slider .carousel a :nth-child(1){
+ margin-right: 7px;
+}
+.section3 .container_box10 .slider .carousel a:hover{
+  background-color: #2C3E50;
+}
+
+.section3 .container_box10 .box2{
+  width: 70%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.section3 .container_box10 .box2 span{
+  height: 40px;
+  width: 50px;
+  background-color: #2C3E50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  transition: all 0.5s ease-in-out;
+}
+.section3 .container_box10 .box2 span:hover{
+  transform: scale(1.1);
+  background-color: #e4144d;
+}
+.section3 .container_box10 .box2 span{
+  color: white;
+  font-size: 25px;
 }

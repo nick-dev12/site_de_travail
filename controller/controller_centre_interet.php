@@ -24,8 +24,20 @@ $erreurs = '' ;
 }
 
 
+
 if (isset($_SESSION['users_id'])){
     $afficheCentreInteret = getAllCentreInteretUsers ($db,$_SESSION['users_id']);
 } 
 
+
+if (isset($_GET['centreinteret'])) {
+
+    $id = $_GET['centreinteret'];
+
+    if (deleteInteret($db, $id)) {
+        $_SESSION['success_message'] = 'Opération réussie ';
+        header('Location: user_profil.php');
+        exit;
+    }
+}
 ?>

@@ -34,4 +34,16 @@ if (isset($_GET['id'])) {
         $afficheDiplome = getDiplomes($db, $_SESSION['users_id']);
     }
 
+
+    if (isset($_GET['diplomes'])) {
+
+        $id = $_GET['diplomes'];
+    
+        if ( deleteDiplome ( $db, $id)) {
+            $_SESSION['success_message'] = 'Opération réussie ';
+            header('Location: user_profil.php');
+            exit;
+        }
+    }
+
 ?>

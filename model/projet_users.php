@@ -35,4 +35,12 @@ function getProjetUsers($db,$users_id){
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+
+function deleteProjets ( $db, $id){
+    $sql = "DELETE FROM projet_users WHERE id = :id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    return $stmt->execute();
+}
+
 ?>

@@ -134,11 +134,11 @@ include_once('../entreprise/app/controller/controllerOffre_emploi.php');
                     </tr>
 
                     <tr >
-                        <td id="td"><img src="../image/exp.png" alt=""></td>
+                        <td id="td"> <a href="/page/user_profil.php"><img src="../image/exp.png" alt=""></a></td>
                         <td><a href="/page/user_profil.php">Mon experience</a></td>
                     </tr>
                     <tr >
-                        <td id="td"><img src="../image/mpc.png" alt=""></td>
+                        <td id="td"><a href="/page/user_profil.php"><img src="../image/mpc.png" alt=""></a> </td>
                         <td><a href="/page/user_profil.php">Mon parcours</a></td>
                     </tr>
                     <tr>

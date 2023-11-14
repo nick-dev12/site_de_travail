@@ -19,6 +19,14 @@ function getOffres($db, $offre_id) {
         
     
 }
+function getAllOffres($db){
+    $sql = "SELECT * FROM offre_emploi LIMIT 10";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+    
+}
 
 
 function updatOffre($db,$poste,$mission,$profil,$contrat,$etudes,$experience,$localite,$langues, $offre_id ){

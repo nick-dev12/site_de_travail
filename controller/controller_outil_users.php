@@ -37,4 +37,16 @@ if (isset($_GET['id'])) {
      }else{
         $afficheOutil = getOutil($db,$_SESSION['users_id']);
      }
+
+
+     if (isset($_GET['suprimerOutils'])) {
+
+        $id = $_GET['suprimerOutils'];
+    
+        if (deleteOutils($db, $id)) {
+            $_SESSION['success_message'] = 'Opération réussie ';
+            header('Location: user_profil.php');
+            exit;
+        }
+    }
 ?>

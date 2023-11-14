@@ -9,18 +9,20 @@ include('../conn/conn.php');
   * @param mixed $description
  * @return void
  */
-function insertMetier($db, $users_id, $metier,$date1,$date2, $description)
+function insertMetier($db, $users_id, $metier, $moisDebut, $anneeDebut, $moisFin, $anneeFin, $description)
 {
     // Préparation de la requête SQL
-    $sql = "INSERT INTO metier_users (users_id, metier,date1,date2, description ) 
-     VALUES (:users_id, :metier,:date1,:date2, :description)";
+    $sql = "INSERT INTO metier_users (users_id, metier,moisDebut, anneeDebut, moisFin,anneeFin, description ) 
+     VALUES (:users_id, :metier,:moisDebut, :anneeDebut, :moisFin, :anneeFin, :description)";
     // Préparation de la requête 
     $stmt = $db->prepare($sql);
     // Association des paramètres
     $stmt->bindParam(':users_id', $users_id);
     $stmt->bindParam(':metier', $metier);
-    $stmt->bindParam(':date1', $date1);
-    $stmt->bindParam(':date2', $date2);
+    $stmt->bindParam(':moisDebut', $moisDebut);
+    $stmt->bindParam(':anneeDebut', $anneeDebut);
+    $stmt->bindParam(':moisFin', $moisFin);
+    $stmt->bindParam(':anneeFin', $anneeFin);
     $stmt->bindParam(':description', $description);
     // Exécution de la requête
     return $stmt->execute();

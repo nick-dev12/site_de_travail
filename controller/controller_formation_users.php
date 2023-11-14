@@ -8,42 +8,54 @@ if (isset($_POST['ajouter2'])) {
     $erreurs = '';
     $users_id = $_SESSION['users_id'];
 
-    // Vérification de l'annee
-    if (empty($_POST['annee'])) {
-        $erreurs = "Veiller entrer une date";
+
+    if (empty($_POST['moisDebut'])) {
+        $_SESSION['error_message'] = "Veiller entrer un mois";
     } else {
-        // Récupérer la date complète 
-        $annee = $_POST['annee'];
+        $moisDebut = $_POST['moisDebut'];
     }
-    // Vérification de l'annee
-    if (empty($_POST['annees'])) {
-        $erreurs = "Veiller entrer une date";
+
+    if (empty($_POST['moisFin'])) {
+        $_SESSION['error_message'] = "Veiller entrer un mois";
     } else {
-        $annees = $_POST['annees']; // Échapper les caractères spéciaux
-        
+        $moisFin = $_POST['moisFin'];
     }
+   
+    if (empty($_POST['anneeDebut'])) {
+        $_SESSION['error_message'] = "Veiller entrer une date";
+    } else {
+        $anneeDebut = $_POST['anneeDebut'];
+    }
+
+    
+     if (empty($_POST['anneeFin'])) {
+        $_SESSION['error_message'] = "Veiller entrer une date";
+    } else {
+        $anneeFin = $_POST['anneeFin'];
+    }
+    
     // Vérification de la filiere
     if (empty($_POST['Filiere'])) {
-        $erreurs = "Veiller ajouter une filiere";
+         $_SESSION['error_message'] = "Veiller ajouter une filière";
     } else {
         $Filiere = $_POST['Filiere']; // Échapper les caractères spéciaux
     }
     // Vérification de l'etablissement
     if (empty($_POST['etablissement'])) {
-        $erreurs = "Veiller entrer un etablissement";
+         $_SESSION['error_message'] = "Veiller entrer un etablissement";
     } else {
         $etablissement = $_POST['etablissement']; // Échapper les caractères spéciaux
     }
     // Vérification du niveau
     if (empty($_POST['niveau'])) {
-        $erreurs = "Veiller entrer un niveau";
+         $_SESSION['error_message'] = "Veiller entrer un niveau";
     } else {
         $niveau = $_POST['niveau']; // Échapper les caractères spéciaux
     }
 
     // Si aucune erreur n'est détectée, procédez à l'insertion
-    if (empty($erreurs)) {
-        if (insertFormation($db, $users_id, $annee, $annees, $Filiere, $etablissement, $niveau)) {
+    if (empty( $_SESSION['error_message'])) {
+        if (insertFormation($db, $users_id, $moisDebut, $anneeDebut, $moisFin, $anneeFin, $Filiere, $etablissement, $niveau) ) {
             // Redirection vers une page de confirmation
             header('Location: user_profil.php');
             exit;

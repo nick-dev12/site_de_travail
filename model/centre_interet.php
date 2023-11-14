@@ -24,4 +24,12 @@ function getAllCentreInteretUsers ($db,$users_id){
      return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+
+function deleteInteret ( $db, $id){
+    $sql = "DELETE FROM centre_interet WHERE interet_id = :id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    return $stmt->execute();
+}
+
 ?>

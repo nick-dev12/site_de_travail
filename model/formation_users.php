@@ -15,18 +15,20 @@ include('../conn/conn.php');
  * @param mixed $niveau
  * @return mixed
  */
-function insertFormation($db, $users_id, $annee, $annees, $Filiere, $etablissement, $niveau) {
+function insertFormation($db, $users_id, $moisDebut, $anneeDebut, $moisFin, $anneeFin, $Filiere, $etablissement, $niveau) {
     // Préparation de la requête SQL
-    $sql = "INSERT INTO formation_users (users_id, annee, annees, Filiere, etablissement, niveau ) 
-            VALUES (:users_id, :annee, :annees, :Filiere, :etablissement, :niveau)";
+    $sql = "INSERT INTO formation_users (users_id,moisDebut,anneeDebut,moisFin,anneeFin, Filiere, etablissement, niveau ) 
+            VALUES (:users_id, :moisDebut, :anneeDebut, :moisFin, :anneeFin, :Filiere, :etablissement, :niveau)";
 
     // Préparation de la requête 
     $stmt = $db->prepare($sql);
 
     // Association des paramètres
     $stmt->bindParam(':users_id', $users_id);
-    $stmt->bindParam(':annee', $annee);
-    $stmt->bindParam(':annees', $annees);
+    $stmt->bindParam(':moisDebut', $moisDebut);
+    $stmt->bindParam(':anneeDebut', $anneeDebut);
+    $stmt->bindParam(':moisFin', $moisFin);
+    $stmt->bindParam(':anneeFin', $anneeFin);
     $stmt->bindParam(':Filiere', $Filiere);
     $stmt->bindParam(':etablissement', $etablissement);
     $stmt->bindParam(':niveau', $niveau);

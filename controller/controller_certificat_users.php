@@ -32,4 +32,15 @@ if (isset($_GET['id'])) {
 }
 
 
+if (isset($_GET['certificats'])) {
+
+    $id = $_GET['certificats'];
+
+    if ( deleteCertificats ( $db, $id)) {
+        $_SESSION['success_message'] = 'Opération réussie ';
+        header('Location: user_profil.php');
+        exit;
+    }
+}
+
 ?>

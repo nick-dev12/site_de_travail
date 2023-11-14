@@ -82,6 +82,8 @@ if (isset($_GET['id'])) {
     include_once('../controller/controller_projet_users.php');
     include_once('../controller/controller_users.php');
     include_once('../controller/controller_centre_interet.php');
+    include_once('../entreprise/app/controller/controllerOffre_emploi.php');
+    include_once('../entreprise/app/controller/controllerEntreprise.php');
 }
 
 ?>
@@ -117,6 +119,9 @@ if (isset($_GET['id'])) {
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
 
 </head>
 
@@ -296,7 +301,7 @@ if (isset($_GET['id'])) {
 
         <?php if (empty($competencesUtilisateur)): ?>
             <?php if (isset($_SESSION['users_id'])): ?>
-                
+
             <?php else: ?>
             <?php endif; ?>
 
@@ -358,8 +363,8 @@ if (isset($_GET['id'])) {
 
                             <textarea name="nouvelleDescription" id="summernote" cols="30" rows="10"
                                 placeholder="Ajoute une description ici">
-                                         <?php echo htmlspecialchars($descriptions['description'], ENT_QUOTES, 'UTF-8'); ?>  
-                                        </textarea>
+                                             <?php echo htmlspecialchars($descriptions['description'], ENT_QUOTES, 'UTF-8'); ?>  
+                                            </textarea>
                             <input type="submit" value="Modifier" name="Modifier" id="ajoute">
                         </form>
                     </div>
@@ -419,8 +424,8 @@ if (isset($_GET['id'])) {
                                 <td>
                                     <?php if (isset($_SESSION['users_id'])): ?>
                                         <!-- Ajouter un lien de suppression -->
-                                        <a class="delete" href="?supprimer=<?php echo $metiers['id']; ?>"><span
-                                                class="span">x</span></a>
+                                        <a class="delete" href="?supprimer=<?php echo $metiers['id']; ?>"><img
+                                                src="../image/croix.png" alt=""></a>
                                     <?php else: ?>
                                     <?php endif; ?>
 
@@ -431,13 +436,13 @@ if (isset($_GET['id'])) {
                             <tr>
                                 <td class="date">
                                     <em>
-                                        <?php echo $metiers['date1']; ?>
+                                        <?php echo $metiers['moisDebut']; ?>/<?php echo $metiers['anneeDebut']; ?>
                                     </em>
                                 </td>
 
                                 <td class="date">
                                     <em>
-                                        <?php echo $metiers['date2']; ?>
+                                    <?php echo $metiers['moisFin']; ?>/<?php echo $metiers['anneeFin']; ?>
                                     </em>
                                 </td>
 
@@ -473,17 +478,70 @@ if (isset($_GET['id'])) {
 
                     <div class="boxmetier" id="dat">
                         <div>
+                            <div class=" date">
                             <label for="date1">date de debut</label>
-                            <div class="input-group date">
-                                <input id="datee" name="date1" type="text" class="form-control" value="12-02-2012" width
-                                    200>
+                            <div class="mois">
+                                    <span for="mois">Mois :</span>
+                                    <select id="mois" name="moisDebut">
+                                        <option value="janvier">Janvier</option>
+                                        <option value="février">Février</option>
+                                        <option value="mars">Mars</option>
+                                        <option value="avril">Avril</option>
+                                        <option value="mai">Mai</option>
+                                        <option value="juin">Juin</option>
+                                        <option value="juillet">Juillet</option>
+                                        <option value="août">Août</option>
+                                        <option value="septembre">Septembre</option>
+                                        <option value="octobre">Octobre</option>
+                                        <option value="novembre">Novembre</option>
+                                        <option value="décembre">Décembre</option>
+                                    </select>
+                                </div>
+
+                                <div class="annee">
+                                    <span>Annees</span>
+                                    <select id="annee" name="anneeDebut">
+                                        <?php
+                                        for ($annee = 1980; $annee <= 2030; $annee++) {
+                                            echo "<option value='$annee'>$annee</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div>
-                            <label for="date2">date de fin</label>
-                            <div class="input-group date">
-                                <input id="datees" name="date2" type="text" class="form-control" value="12-02-2012"
-                                    width 200>
+                           
+                            <div class=" date">
+                                 <label for="date2">date de fin</label>
+                            <div class="mois">
+                                    <span for="mois">Mois :</span>
+                                    <select id="mois" name="moisFin">
+                                        <option value="janvier">Janvier</option>
+                                        <option value="février">Février</option>
+                                        <option value="mars">Mars</option>
+                                        <option value="avril">Avril</option>
+                                        <option value="mai">Mai</option>
+                                        <option value="juin">Juin</option>
+                                        <option value="juillet">Juillet</option>
+                                        <option value="août">Août</option>
+                                        <option value="septembre">Septembre</option>
+                                        <option value="octobre">Octobre</option>
+                                        <option value="novembre">Novembre</option>
+                                        <option value="décembre">Décembre</option>
+                                    </select>
+                                </div>
+
+                                <div class="annee">
+                                    <span>Annees</span>
+                                    <select id="annee" name="anneeFin">
+                                        <?php
+                                        for ($annee = 1980; $annee <= 2030; $annee++) {
+                                            echo "<option value='$annee'>$annee</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
@@ -544,7 +602,7 @@ if (isset($_GET['id'])) {
                         <p data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
                             data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
                             <?php echo $competence['competence']; ?>
-                            <a href="?supprime=<?php echo $competence['id']; ?>">x</a>
+                            <a href="?supprime=<?php echo $competence['id']; ?>"><img src="../image/croix.png" alt=""></a>
                         </p>
 
 
@@ -600,13 +658,13 @@ if (isset($_GET['id'])) {
                             Date
                         </th>
                         <th>
-                            filière
+                            Filière / Classe
                         </th>
                         <th>
-                            établissement
+                            Établissement
                         </th>
 
-                        <th class="grade">Grade</th>
+                        <th class="grade">Niveau</th>
                         <th class="supr">supr</th>
                     </tr>
 
@@ -618,9 +676,9 @@ if (isset($_GET['id'])) {
                         <tr data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
                             data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
                             <td class="pt">
-                                <?php echo $formations['annee']; ?><br>
-                                au <br>
-                                <?php echo $formations['annees']; ?>
+                                <?php echo $formations['moisDebut']; ?>/<?php echo $formations['anneeDebut']; ?><br>
+                                à <br>
+                                <?php echo $formations['moisFin']; ?>/<?php echo $formations['anneeFin']; ?>
 
                             </td>
 
@@ -637,7 +695,8 @@ if (isset($_GET['id'])) {
                             </td>
                             <td class="supr">
                                 <?php if (isset($_SESSION['users_id'])): ?>
-                                    <a href="?supprimes=<?php echo $formations['id']; ?>">x</a>
+                                    <a href="?supprimes=<?php echo $formations['id']; ?>"><img src="../image/croix.png"
+                                            alt=""></a>
                                 <?php else: ?>
                                 <?php endif; ?>
 
@@ -662,16 +721,69 @@ if (isset($_GET['id'])) {
 
                         <div class="box1">
                             <label for="annee">Année du debut </label>
-                            <div class="input-group date">
-                                <input id="date1" name="annee" type="text" class="form-control" value="12-02-2012" width
-                                    200>
+                            <div class="date">
+                                <div class="mois">
+                                    <span for="mois">Mois :</span>
+                                    <select id="mois" name="moisDebut">
+                                        <option value="janvier">Janvier</option>
+                                        <option value="février">Février</option>
+                                        <option value="mars">Mars</option>
+                                        <option value="avril">Avril</option>
+                                        <option value="mai">Mai</option>
+                                        <option value="juin">Juin</option>
+                                        <option value="juillet">Juillet</option>
+                                        <option value="août">Août</option>
+                                        <option value="septembre">Septembre</option>
+                                        <option value="octobre">Octobre</option>
+                                        <option value="novembre">Novembre</option>
+                                        <option value="décembre">Décembre</option>
+                                    </select>
+                                </div>
+
+                                <div class="annee">
+                                    <span>Annees</span>
+                                    <select id="annee" name="anneeDebut">
+                                        <?php
+                                        for ($annee = 1980; $annee <= 2030; $annee++) {
+                                            echo "<option value='$annee'>$annee</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="box1">
                             <label for="annees">Année de la fin </label>
-                            <div class="input-group date">
-                                <input id="date2" name="annees" type="text" class="form-control" value="12-02-2012"
-                                    width 200>
+                            <div class="date">
+                                
+                            <div class="mois">
+                                    <span for="mois">Mois :</span>
+                                    <select id="mois" name="moisFin">
+                                        <option value="janvier">Janvier</option>
+                                        <option value="février">Février</option>
+                                        <option value="mars">Mars</option>
+                                        <option value="avril">Avril</option>
+                                        <option value="mai">Mai</option>
+                                        <option value="juin">Juin</option>
+                                        <option value="juillet">Juillet</option>
+                                        <option value="août">Août</option>
+                                        <option value="septembre">Septembre</option>
+                                        <option value="octobre">Octobre</option>
+                                        <option value="novembre">Novembre</option>
+                                        <option value="décembre">Décembre</option>
+                                    </select>
+                                </div>
+
+                                <div class="annee">
+                                    <span>Annees</span>
+                                    <select id="annee" name="anneeFin">
+                                        <?php
+                                        for ($annee = 1980; $annee <= 2030; $annee++) {
+                                            echo "<option value='$annee'>$annee</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -752,6 +864,8 @@ if (isset($_GET['id'])) {
                                     data-aos-anchor-placement="top-bottom">
                                     <td>
                                         <?php echo $diplomes['diplome']; ?>
+                                        <a href="?diplomes=<?= $diplomes['id']; ?>"><img src="../image/croix.png"
+                                                alt=""></a>
                                     </td>
                                 </tr>
                             </table>
@@ -774,6 +888,8 @@ if (isset($_GET['id'])) {
                                     data-aos-anchor-placement="top-bottom">
                                     <td>
                                         <?php echo $certificats['certificat'] ?>
+                                        <a href="?certificats=<?= $certificats['id']; ?>"><img src="../image/croix.png"
+                                                alt=""></a>
                                     </td>
                                 </tr>
                             </table>
@@ -911,6 +1027,9 @@ if (isset($_GET['id'])) {
                     <div class="info_projet" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
                         data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
                         data-aos-anchor-placement="top-bottom">
+
+                        <a href="?projets=<?php echo $projets['id'] ?>"><img class="supp" src="../image/croix.png"
+                                alt=""></a>
                         <h2>
                             <?php echo $projets['titre'] ?>
                         </h2>
@@ -918,7 +1037,9 @@ if (isset($_GET['id'])) {
                             <?php echo $projets['projetdescription'] ?>
                         </p>
 
-                        <a href="<?php echo $projets['liens'] ?>">Click sur ce lien</a>
+                        <a href="<?php echo $projets['liens'] ?>">Click sur ce lien :
+                            <?php echo $projets['liens'] ?>
+                        </a>
 
                         <img src="../upload/<?php echo $projets['images'] ?>" alt="">
                     </div>
@@ -948,6 +1069,9 @@ if (isset($_GET['id'])) {
                             </td>
                             <td class="niveau">
                                 <?php echo $outils['niveau'] ?>
+                            </td>
+                            <td class="sup">
+                                <a href="?suprimerOutils=<?= $outils['id'] ?>"> <img src="../image/croix.png" alt=""></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -1020,6 +1144,9 @@ if (isset($_GET['id'])) {
                             <td class="niveau">
                                 <?php echo $langues['niveau']; ?>
                             </td>
+                            <td class="sup">
+                                <a href="?suprimer=<?= $langues['id'] ?>"> <img src="../image/croix.png" alt=""></a>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </table>
@@ -1074,33 +1201,37 @@ if (isset($_GET['id'])) {
             </div>
 
             <div class="box2">
-                
+
                 <button class="btn_eteret">Ajouter un centre d’intérêt</button>
 
                 <form class="form_btn" method="post" action="">
-                    <?php if (isset($erreurs)):?>
-                    <div><?php echo $erreurs ?></div>
-                    <?php endif ;?>
+                    <?php if (isset($erreurs)): ?>
+                        <div>
+                            <?php echo $erreurs ?>
+                        </div>
+                    <?php endif; ?>
                     <input type="text" name="interet" id="interet">
                     <input type="submit" name="ajouter_interet" value="Ajouter" id="ajouter">
                 </form>
 
                 <ul>
-                    <?php foreach($afficheCentreInteret as $centreInteret): ?>
-                    <li>
-                        <?= $centreInteret['interet'] ?>
-                    </li>
-                    <?php endforeach ; ?>
+                    <?php foreach ($afficheCentreInteret as $centreInteret): ?>
+                        <li>
+                            <?= $centreInteret['interet'] ?> <a
+                                href="?centreinteret=<?= $centreInteret['interet_id'] ?>"><img src="../image/croix.png"
+                                    alt=""></a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
 
                 <script>
                     let btn_i = document.querySelector('.btn_eteret');
-                    let form_btn =  document.querySelector('.form_btn');
+                    let form_btn = document.querySelector('.form_btn');
 
-                    btn_i.addEventListener('click', ()=>{
-                        if(form_btn.style.display == 'none'){
+                    btn_i.addEventListener('click', () => {
+                        if (form_btn.style.display == 'none') {
                             form_btn.style.display = 'block'
-                        }else{
+                        } else {
                             form_btn.style.display = 'none'
                         }
                     })
@@ -1130,8 +1261,68 @@ if (isset($_GET['id'])) {
         <?php endif; ?>
 
 
+
+
+
+
+        <div class="container_box10">
+            <h2>Offres qui correspondes a votre profil </h2>
+
+            <div class="box2">
+                <span class="owl-prev"><i class="fa-solid fa-chevron-left"></i></span>
+                <span class="owl-next"><i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+            <div class="slider owl-carousel carousel3">
+                <?php foreach ($afficheAllOffre as $affiches): ?>
+
+                    <?php if ($affiches['categorie'] == $users['categorie']): ?>
+
+                        <?php $info_entreprise = getEntreprise($db, $affiches['entreprise_id']) ?>
+                        <div class="carousel">
+                            <img src="../upload/<?php echo $info_entreprise['images'] ?>" alt="">
+                            <p class="p">
+                                <strong>
+                                    <?php echo $info_entreprise['entreprise']; ?>
+                                </strong>
+
+                                <img src="../image/coeurs.png" alt="">
+                            </p>
+
+                            <div class="box_vendu">
+                                <div class="vendu">
+
+                                    <p>
+                                        <strong>Nous recherchons un(une)</strong>
+                                        <?php echo ($affiches['poste']); ?>
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <p id="nom">
+                                <?php echo $affiches['date']; ?>
+                            </p>
+                            <a
+                                href="../entreprise/voir_offre.php?id=<?= $affiches['offre_id']; ?>&entreprise_id=<?= $affiches['entreprise_id']; ?>">
+                                <i class="fa-solid fa-eye"></i>Voir l'offre
+                            </a>
+                        </div>
+
+                    <?php endif; ?>
+                <?php endforeach ?>
+            </div>
+        </div>
+
+
     </section>
 
+
+
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/owl.carousel.js"></script>
+    <script src="/js/owl.animate.js"></script>
+    <script src="/js/owl.autoplay.js"></script>
 
     <script>
         // ..
@@ -1213,6 +1404,51 @@ if (isset($_GET['id'])) {
                     ['view', ['fullscreen', 'codeview', 'help']]
                 ]
             });
+        });
+
+
+
+        $(document).ready(function () {
+            // Carrousel 3  
+            var carousel3 = $('.carousel3');
+            var numItems2 = carousel3.find('.carousel').length;
+
+            if (numItems2 > 3) {
+
+                // Initialiser Owl carousel3 si il y a plus de 4 éléments
+                carousel3.owlCarousel({
+                    items: 4, // Limitez le nombre d'éléments à afficher à 5
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 6000,
+                    animateOut: 'slideOutDown',
+                    animateIn: 'flipInX',
+                    stagePadding: 30,
+                    smartSpeed: 450,
+                    margin: 20,
+                    nav: true,
+                    navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
+                });
+
+                var carousel3 = $('.carousel3').owlCarousel();
+                $('.owl-next').click(function () {
+                    carousel3.trigger('next.owl.carousel');
+                })
+                $('.owl-prev').click(function () {
+                    carousel3.trigger('prev.owl.carousel');
+                })
+
+
+
+            } else {
+
+                carousel3.trigger('destroy.owl.carousel');
+                carousel3.removeClass('owl-carousel owl-loaded');
+                carousel3.find('.owl-stage-outer').children().unwrap();
+
+            }
+
+
         });
     </script>
 

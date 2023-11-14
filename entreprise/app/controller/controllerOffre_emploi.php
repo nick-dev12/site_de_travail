@@ -1,14 +1,32 @@
 <?php
 
 require_once(__DIR__ . '/../model/offre_emploi.php');
-include('../model/users.php');
+if (isset($_SESSION['compte_entreprise'])) {
+    include('../model/users.php');
+}
+
+
+if (isset($_SESSION['users_id'])) {
+    if (isset($_GET['entreprise_id']) && isset($_GET['id'])) {
+    include('../model/users.php');
+}
+}
+
+if (isset($_SESSION['users_id'])) {
+
+    if (isset($_GET['entreprise_id']) && isset($_GET['users_id'])) {
+    include('../model/users.php');
+}
+
+}
+
 require('../model/vue_offre.php');
 
+
 if (isset($_get['id'])) {
-    
     $offre_id = $_GET['id'];
-    
 }
+
 
 if (isset($_POST['modifier'])) {
 
@@ -108,5 +126,6 @@ if (isset($_SESSION['compte_entreprise'])) {
 }
 
 
+$afficheAllOffre = getAllOffres($db)
 
 ?>
