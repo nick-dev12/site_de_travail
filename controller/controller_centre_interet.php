@@ -29,6 +29,10 @@ if (isset($_SESSION['users_id'])){
     $afficheCentreInteret = getAllCentreInteretUsers ($db,$_SESSION['users_id']);
 } 
 
+if (isset($_GET['id'])){
+    $afficheCentreInteret = getAllCentreInteretUsers ($db,$_GET['id']);
+} 
+
 
 if (isset($_GET['centreinteret'])) {
 

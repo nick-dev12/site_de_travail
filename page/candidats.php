@@ -31,6 +31,7 @@ if (isset($_GET['id'])) {
     include_once('../controller/controller_projet_users.php');
     include_once('../controller/controller_message1.php');
     include_once('../controller/controller_appel_offre.php');
+    include_once('../controller/controller_centre_interet.php');
 }
 
 ?>
@@ -80,7 +81,49 @@ if (isset($_GET['id'])) {
     <section class="section2">
         <div class="container">
             <div class="box1">
-                <img class="affiche" src="../upload/<?= $users['images'] ?>" alt="">
+                <?php if ($users['statut'] == 'Disponible'): ?>
+                    <button class="statut occ">
+                        <?= $users['statut'] ?>
+                    </button>
+                <?php else: ?>
+                    <?php if ($users['statut'] == 'Occuper'): ?>
+                        <button class="statut disp">
+                            <?= $users['statut'] ?>
+                        </button>
+                    <?php else: ?>
+                        <button class="statut occ">Statut</button>
+                    <?php endif; ?>
+                <?php endif; ?>
+                <div class="div_statut">
+                    <a class="disp" href="?occuper=<?= $users['id'] ?>">Occuper</a>
+                    <a class=" occ" href="?disponible=<?= $users['id'] ?>">Disponible</a>
+                </div>
+
+                <script>
+                    let statut = document.querySelector('.statut')
+                    let div_statut = document.querySelector('.div_statut')
+
+                    statut.addEventListener('click', () => {
+                        if (div_statut.style.left === '-200%') {
+                            div_statut.style.left = '0'
+                        } else {
+                            div_statut.style.left = '-200%'
+                        }
+
+                    })
+
+                    // Ajouter un gestionnaire au clic n'importe où sur la page
+                    document.addEventListener('click', (e) => {
+                        // Vérifier que le clic ne vient pas du bouton
+                        if (e.target !== statut) {
+                            // Masquer la div
+                            div_statut.style.left = '-200%'
+                        }
+                    });
+                </script>
+
+
+                <img class="affiche" src="/upload/<?= $users['images'] ?>" alt="">
                 <span></span>
                 <h2>
                     <?php echo $users['nom']; ?>
@@ -97,18 +140,22 @@ if (isset($_GET['id'])) {
 
                     <tr>
                         <td id="td"><img src="../image/MCV.png" alt=""></td>
-                        <td> <a href="cv_users.php">Mon cv</a></td>
+                        <td> <a href="/model_cv/model1.php">mon cv</a></td>
                     </tr>
 
-                    <tr>
+                    <!-- <tr class="tr">
                         <td id="td"><img src="../image/exp.png" alt=""></td>
                         <td>Mon experience</td>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <tr class="tr">
                         <td id="td"><img src="../image/mpc.png" alt=""></td>
                         <td>Mon parcours</td>
                     </tr>
-
+                    <tr>
+                        <td id="td"><img src="../image/mct.png" alt=""></td>
+                        <td><a href="">Contacte</a></td>
+                    </tr>
+                   
                 </table>
             </div>
         </div>
@@ -225,7 +272,9 @@ if (isset($_GET['id'])) {
                 foreach ($afficheMetier as $metiers):
 
                     ?>
-                    <div class="metier">
+                    <div class="metier" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
+                        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                        data-aos-anchor-placement="top-bottom">
                         <table>
                             <tr>
                                 <th>
@@ -233,19 +282,21 @@ if (isset($_GET['id'])) {
                                         <?php echo $metiers['metier']; ?>
                                     </p>
                                 </th>
+                               
                             </tr>
                         </table>
                         <table>
                             <tr>
                                 <td class="date">
                                     <em>
-                                        <?php echo $metiers['date1']; ?>
+                                        <?php echo $metiers['moisDebut']; ?>/<?php echo $metiers['anneeDebut']; ?>
                                     </em>
                                 </td>
 
                                 <td class="date">
                                     <em>
-                                        <?php echo $metiers['date2']; ?>
+                                        au
+                                    <?php echo $metiers['moisFin']; ?>/<?php echo $metiers['anneeFin']; ?>
                                     </em>
                                 </td>
 
@@ -329,11 +380,12 @@ if (isset($_GET['id'])) {
                 <?php foreach ($formationUsers as $formations): ?>
                     <table>
 
-                        <tr>
+                        <tr data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
+                            data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
                             <td class="pt">
-                                <?php echo $formations['annee']; ?><br>
-                                au <br>
-                                <?php echo $formations['annees']; ?>
+                                <?php echo $formations['moisDebut']; ?>/<?php echo $formations['anneeDebut']; ?><br>
+                                à <br>
+                                <?php echo $formations['moisFin']; ?>/<?php echo $formations['anneeFin']; ?>
 
                             </td>
 
@@ -348,7 +400,7 @@ if (isset($_GET['id'])) {
                             <td colspan="2" class="grade">
                                 <?php echo $formations['niveau']; ?>
                             </td>
-
+                           
                         </tr>
                     </table>
                 <?php endforeach; ?>
@@ -503,6 +555,29 @@ if (isset($_GET['id'])) {
         </div>
 
 
+
+
+        <div class="container_box8">
+            <div class="box1">
+                <h1>Centre d’intérêt</h1>
+            </div>
+
+            <div class="box2">
+
+               
+                <ul>
+                    <?php foreach ($afficheCentreInteret as $centreInteret): ?>
+                        <li>
+                            <?= $centreInteret['interet'] ?> 
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+               
+            </div>
+
+
+
+        </div>
 
 
 

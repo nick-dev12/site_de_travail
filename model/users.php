@@ -121,4 +121,71 @@ function Disponible($db,$statut,$id){
     return $stmt->execute();
 }
 
+
+
+function update11 ($db,$nom, $users_id){
+    $sql = " UPDATE users SET nom = :nom WHERE id = :users_id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':nom', $nom , PDO::PARAM_STR);
+    $stmt->bindParam(':users_id', $users_id, PDO::PARAM_STR);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
+
+        function update33 ($db,$mail, $users_id){
+            $sql = " UPDATE users SET mail = :mail WHERE id = :users_id";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':mail', $mail , PDO::PARAM_STR);
+            $stmt->bindParam(':users_id', $users_id, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+            }
+
+            function update44 ($db,$phone, $users_id){
+                $sql = " UPDATE users SET phone = :phone WHERE id = :users_id";
+                $stmt = $db->prepare($sql);
+                $stmt->bindParam(':phone', $phone , PDO::PARAM_STR);
+                $stmt->bindParam(':users_id', $users_id, PDO::PARAM_STR);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+                }
+
+                function update55 ($db,$competence, $users_id){
+                    $sql = " UPDATE users SET competences = :competences WHERE id = :users_id";
+                    $stmt = $db->prepare($sql);
+                    $stmt->bindParam(':competences', $competence , PDO::PARAM_STR);
+                    $stmt->bindParam(':users_id', $users_id, PDO::PARAM_STR);
+                    $stmt->execute();
+                    return $stmt->fetch(PDO::FETCH_ASSOC);
+                    }
+
+                    function update66 ($db,$ville, $users_id){
+                        $sql = " UPDATE users SET ville = :ville WHERE id = :users_id";
+                        $stmt = $db->prepare($sql);
+                        $stmt->bindParam(':ville', $ville , PDO::PARAM_STR);
+                        $stmt->bindParam(':users_id', $users_id, PDO::PARAM_STR);
+                        $stmt->execute();
+                        return $stmt->fetch(PDO::FETCH_ASSOC);
+                        }
+
+                        function update77 ($db,$profession, $users_id){
+                            $sql = " UPDATE users SET profession = :profession WHERE id = :users_id";
+                            $stmt = $db->prepare($sql);
+                            $stmt->bindParam(':profession', $profession , PDO::PARAM_STR);
+                            $stmt->bindParam(':users_id', $users_id, PDO::PARAM_STR);
+                            $stmt->execute();
+                            return $stmt->fetch(PDO::FETCH_ASSOC);
+                            }
+
+                            function update88 ($db,$categorie, $users_id){
+                                $sql = " UPDATE users SET categorie = :categorie WHERE id = :users_id";
+                                $stmt = $db->prepare($sql);
+                                $stmt->bindParam(':categorie', $categorie , PDO::PARAM_STR);
+                                $stmt->bindParam(':users_id', $users_id, PDO::PARAM_STR);
+                                $stmt->execute();
+                                return $stmt->fetch(PDO::FETCH_ASSOC);
+                                }
+
+
 ?>

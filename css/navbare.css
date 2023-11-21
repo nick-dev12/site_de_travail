@@ -151,6 +151,15 @@ nav  .box_info table{
     margin-top: 20px;
 }
 
+nav  .box_info .del{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
 nav  .box_info table th{
     padding: 10px 20px;
     text-align: left;

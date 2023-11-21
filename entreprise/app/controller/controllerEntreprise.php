@@ -41,7 +41,7 @@ if (isset($_POST['publier'])) {
     } else {
         $profil = $_POST['profil'];
     }
-    
+
 
     if (empty($_POST['contrat'])) {
         $_SESSION['error_message'] = 'veuiller ajouter le type de contrat  !!!';
@@ -74,7 +74,7 @@ if (isset($_POST['publier'])) {
         $langues = $_POST['langues'];
     }
 
-    $categorie = $_POST['categorie'] ;
+    $categorie = $_POST['categorie'];
     if (empty($categorie)) {
         $_SESSION['error_message'] = 'veuiller sélectionner une catégorie !!!';
     }
@@ -95,7 +95,7 @@ if (isset($_POST['publier'])) {
                 $mail->Password = 'Ludvanne12'; // Remplacez par le mot de passe de votre compte e-mail
                 $mail->SMTPSecure = 'ssl';
                 $mail->Port = 465;
-              
+
 
 
                 // Obtenez la liste des candidats (remplacez le champ 'mail' par le champ approprié dans votre base de données)
@@ -103,13 +103,13 @@ if (isset($_POST['publier'])) {
 
                 foreach ($candidates as $candidate) {
                     if ($candidate['categorie'] == $categorie) {
-                         $destinataire = $candidate['mail'];
-                         $nom =  $candidate['nom'];
+                        $destinataire = $candidate['mail'];
+                        $nom = $candidate['nom'];
                     }
-                    
-                      // Contenu de l'e-mail
-                $sujet = 'Nouvelle offre d\'emploi correspondant à vos critères';
-                $message = "
+
+                    // Contenu de l'e-mail
+                    $sujet = 'Nouvelle offre d\'emploi correspondant à vos critères';
+                    $message = "
                 <!DOCTYPE html>
                 <html>
                 <head><meta charset='utf-8'>
@@ -206,14 +206,14 @@ if (isset($_POST['publier'])) {
                 </div>
                 
                 </body>
-                </html> " ;
+                </html> ";
 
-                $mail->setFrom('noreply-service@work-flexer.com', 'work-flexer');
-                $mail->isHTML(true);
-                $mail->Subject = $sujet;
-                $mail->Body = $message;
+                    $mail->setFrom('noreply-service@work-flexer.com', 'work-flexer');
+                    $mail->isHTML(true);
+                    $mail->Subject = $sujet;
+                    $mail->Body = $message;
 
-                   
+
                     $mail->clearAddresses();
                     $mail->addAddress($destinataire);
                     $mail->send();
@@ -222,7 +222,7 @@ if (isset($_POST['publier'])) {
                 $_SESSION['success_message'] = 'Offre d\'emploi publiée avec succès';
                 header('Location: entreprise_profil.php');
                 exit();
-                
+
             } catch (Exception $e) {
                 header('Location: updat_offre.php');
                 exit();
@@ -232,7 +232,195 @@ if (isset($_POST['publier'])) {
 }
 
 
-if(isset($_SESSION['users_id'])){
+if (isset($_SESSION['users_id'])) {
 
 }
+
+
+
+
+if (isset($_POST['valide1'])) {
+    $entreprise_id = $_SESSION['compte_entreprise'];
+    $nom = '';
+    if (empty($_POST['nom'])) {
+        $_SESSION['error_message'] = 'nom obligatoire';
+    } else {
+        $nom = $_POST['nom'];
+    }
+    if (empty($_SESSION['error_message'])) {
+        if (update1($db, $nom, $entreprise_id)) {
+
+        }
+        $_SESSION['success_message'] = 'Modifier avec succès';
+        header('Location: modifier.php');
+        exit();
+    }
+}
+
+if (isset($_POST['valide2'])) {
+    $entreprise_id = $_SESSION['compte_entreprise'];
+    $entreprise = '';
+    if (empty($_POST['entreprise'])) {
+        $_SESSION['error_message'] = 'nom obligatoire';
+    } else {
+        $entreprise = $_POST['entreprise'];
+    }
+    if (empty($_SESSION['error_message'])) {
+        if (update2($db, $entreprise, $entreprise_id)) {
+            
+        }
+        $_SESSION['success_message'] = 'Modifier avec succès';
+        header('Location: modifier.php');
+        exit();
+    }
+}
+
+if (isset($_POST['valide3'])) {
+    $entreprise_id = $_SESSION['compte_entreprise'];
+    $mail = '';
+    if (empty($_POST['mail'])) {
+        $_SESSION['error_message'] = 'nom obligatoire';
+    } else {
+        $mail = $_POST['mail'];
+    }
+    if (empty($_SESSION['error_message'])) {
+        if (update3($db, $mail, $entreprise_id)) {
+            
+        }
+        $_SESSION['success_message'] = 'Modifier avec succès';
+        header('Location: modifier.php');
+        exit();
+    }
+}
+
+if (isset($_POST['valide4'])) {
+    $entreprise_id = $_SESSION['compte_entreprise'];
+    $phone = '';
+    if (empty($_POST['phone'])) {
+        $_SESSION['error_message'] = 'nom obligatoire';
+    } else {
+        $phone = $_POST['phone'];
+    }
+    if (empty($_SESSION['error_message'])) {
+        if (update4($db, $phone, $entreprise_id)) {
+            
+        }
+        $_SESSION['success_message'] = 'Modifier avec succès';
+        header('Location: modifier.php');
+        exit();
+    }
+}
+
+if (isset($_POST['valide5'])) {
+    $entreprise_id = $_SESSION['compte_entreprise'];
+    $types = '';
+    if (empty($_POST['types'])) {
+        $_SESSION['error_message'] = 'nom obligatoire';
+    } else {
+        $types = $_POST['types'];
+    }
+    if (empty($_SESSION['error_message'])) {
+        if (update5($db, $types, $entreprise_id)) {
+            
+        }
+        $_SESSION['success_message'] = 'Modifier avec succès';
+        header('Location: modifier.php');
+        exit();
+    }
+}
+
+if (isset($_POST['valide6'])) {
+    $entreprise_id = $_SESSION['compte_entreprise'];
+    $ville = '';
+    if (empty($_POST['ville'])) {
+        $_SESSION['error_message'] = 'nom obligatoire';
+    } else {
+        $ville = $_POST['ville'];
+    }
+    if (empty($_SESSION['error_message'])) {
+        if (update6($db, $ville, $entreprise_id)) {
+            
+        }
+        $_SESSION['success_message'] = 'Modifier avec succès';
+        header('Location: modifier.php');
+        exit();
+    }
+}
+
+if (isset($_POST['valide7'])) {
+    $entreprise_id = $_SESSION['compte_entreprise'];
+    $taille = '';
+    if (empty($_POST['taille'])) {
+        $_SESSION['error_message'] = 'nom obligatoire';
+    } else {
+        $taille = $_POST['taille'];
+    }
+    if (empty($_SESSION['error_message'])) {
+        if (update7($db, $taille, $entreprise_id)) {
+            
+        }
+        $_SESSION['success_message'] = 'Modifier avec succès';
+        header('Location: modifier.php');
+        exit();
+    }
+}
+
+if (isset($_POST['valide8'])) {
+    $entreprise_id = $_SESSION['compte_entreprise'];
+    $categorie = '';
+    if (empty($_POST['categorie'])) {
+        $_SESSION['error_message'] = 'nom obligatoire';
+    } else {
+        $categorie = $_POST['categorie'];
+    }
+    if (empty($_SESSION['error_message'])) {
+        if (update8($db, $categorie, $entreprise_id)) {
+            
+        }
+        $_SESSION['success_message'] = 'Modifier avec succès';
+        header('Location: modifier.php');
+        exit();
+    }
+}
+
+if(isset($_POST['valide0'])){
+
+    $entreprise_id = $_SESSION['compte_entreprise'];
+
+    $images = '';
+
+    // Vérification de la ville
+ if (empty($_FILES['images'])) {
+    $_SESSION['error_message'] = 'erreur choisissez une autre image .';
+} else {
+    // Récupérer les données du formulaire
+    $images = $_FILES['images'];
+    // Vérifier qu'un fichier est uploadé
+    if (empty( $_SESSION['error_message'])) {
+
+        // Récupérer le nom et le chemin temporaire
+        $fileName = $images['name'];
+        $tmpName = $images['tmp_name'];
+
+        // Ajouter l'identifiant unique au nom du fichier
+        $uniqueFileName = $id . '_' . $fileName;
+
+        // Déplacer le fichier dans le répertoire audio
+        $targetFile = '../upload/' . $uniqueFileName;
+        move_uploaded_file($tmpName, $targetFile);
+
+
+        if (update0 ($db,$uniqueFileName, $entreprise_id)) {
+        }
+    
+        $_SESSION['success_message'] = 'Modifier avec succès';
+        header('Location: modifier.php');
+        exit();
+    }
+
+
+   
+}
+}
+ 
 ?>

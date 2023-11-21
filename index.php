@@ -112,87 +112,87 @@ session_start();
 
 
     <div class="div-section">
-    <section class="section3">
-        <h1>Adoptez un ton affirmatif et confiant</h1>
-        <div class="box1">
-            <div class="p-style">
-                <span class="p1"></span>
-                <span class="p2">1</span>
-                <span class="p3"></span>
+        <section class="section3">
+            <h1>Adoptez un ton affirmatif et confiant</h1>
+            <div class="box1">
+                <div class="p-style">
+                    <span class="p1"></span>
+                    <span class="p2">1</span>
+                    <span class="p3"></span>
+                </div>
+                <div class="texte">
+                    <h2>
+                        Boostez votre productivité avec les freelances qu'il vous faut
+                    </h2>
+                    <p>
+                        Grâce à Work-Flexer, accédez rapidement aux meilleurs profils de freelances correspondant à vos
+                        besoins spécifiques.
+
+                        Que vous ayez besoin d'un développeur logiciel, d'un designer UI/UX ou d'un spécialiste en
+                        marketing, vous trouverez ici le talent adapté.
+
+                        Notre moteur de recherche intelligent et nos critères de sélection pointus vous permettent de
+                        filtrer les profils selon vos exigences.
+
+                        Boostez ainsi vos projets en recrutant simplement le freelance parfait, avec les compétences et
+                        l’expertise nécessaires pour vous accompagner.
+                    </p>
+                </div>
+                <img src="/image/SEO-1.png" alt="">
             </div>
-            <div class="texte">
-                <h2>
-                    Boostez votre productivité avec les freelances qu'il vous faut
-                </h2>
-                <p>
-                    Grâce à Work-Flexer, accédez rapidement aux meilleurs profils de freelances correspondant à vos
-                    besoins spécifiques.
+        </section>
 
-                    Que vous ayez besoin d'un développeur logiciel, d'un designer UI/UX ou d'un spécialiste en
-                    marketing, vous trouverez ici le talent adapté.
 
-                    Notre moteur de recherche intelligent et nos critères de sélection pointus vous permettent de
-                    filtrer les profils selon vos exigences.
+        <section class="section3">
+            <div class="box1">
+                <div class="p-style">
+                    <span class="p1"></span>
+                    <span class="p2">2</span>
+                    <span class="p3"></span>
+                </div>
+                <div class="texte">
+                    <h2>
+                        Recrutez en Toute Confiance avec Notre Plateforme de Recrutement
+                    </h2>
+                    <p>
 
-                    Boostez ainsi vos projets en recrutant simplement le freelance parfait, avec les compétences et
-                    l’expertise nécessaires pour vous accompagner.
-                </p>
+                        Work-Flexer simplifie le processus de recrutement pour les entreprises
+                        en leur permettant de publier des offres d'emploi en quelques clics. Découvrez
+                        un vivier de candidats qualifiés et adaptez a votre entreprise et aux besoins
+                        du marché en trouvant les meilleurs talents rapidement et
+                        efficacement. La recherche de candidats exceptionnels n'a jamais été aussi facile.
+                    </p>
+                </div>
+                <img src="/image/creation-site-1-600x511.png" alt="">
             </div>
-            <img src="/image/SEO-1.png" alt="">
-        </div>
-    </section>
+        </section>
 
 
-    <section class="section3">
-        <div class="box1">
-            <div class="p-style">
-                <span class="p1"></span>
-                <span class="p2">2</span>
-                <span class="p3"></span>
+        <section class="section3">
+            <div class="box1">
+                <div class="p-style">
+                    <span class="p1"></span>
+                    <span class="p2">3</span>
+                    <span class="p3"></span>
+                </div>
+                <div class="texte">
+                    <h2>
+                        Boostez Votre Carrière avec Notre Plateforme de Profils Professionnels
+                    </h2>
+                    <p>
+                        Vous cherchez de nouvelles opportunités ? Donnez un coup de pouce à votre carrière
+                        en créant un profil professionnel sur notre plateforme. Que vous soyez un
+                        étudiant cherchant un stage, un professionnel en quête de nouvelles opportunités
+                        ou un expert dans votre domaine, Work-Flexer vous offre la visibilité dont vous avez
+                        besoin. Connectez-vous avec des recruteurs, développez votre réseau, et explorez un
+                        monde d'opportunités professionnelles.
+                    </p>
+
+                    <a href="/inscription.php">Commencer</a>
+                </div>
+                <img src="/image/Performance-600x511.png" alt="">
             </div>
-            <div class="texte">
-                <h2>
-                    Recrutez en Toute Confiance avec Notre Plateforme de Recrutement
-                </h2>
-                <p>
-                   
-                    Work-Flexer simplifie le processus de recrutement pour les entreprises
-                    en leur permettant de publier des offres d'emploi en quelques clics. Découvrez
-                    un vivier de candidats qualifiés et adaptez a votre entreprise et aux besoins
-                    du marché en trouvant les meilleurs talents rapidement et
-                    efficacement. La recherche de candidats exceptionnels n'a jamais été aussi facile.
-                </p>
-            </div>
-            <img src="/image/creation-site-1-600x511.png" alt="">
-        </div>
-    </section>
-
-
-    <section class="section3">
-        <div class="box1">
-            <div class="p-style">
-                <span class="p1"></span>
-                <span class="p2">3</span>
-                <span class="p3"></span>
-            </div>
-            <div class="texte">
-                <h2>
-                    Boostez Votre Carrière avec Notre Plateforme de Profils Professionnels
-                </h2>
-                <p>
-                    Vous cherchez de nouvelles opportunités ? Donnez un coup de pouce à votre carrière
-                    en créant un profil professionnel sur notre plateforme. Que vous soyez un
-                    étudiant cherchant un stage, un professionnel en quête de nouvelles opportunités
-                    ou un expert dans votre domaine, Work-Flexer vous offre la visibilité dont vous avez
-                    besoin. Connectez-vous avec des recruteurs, développez votre réseau, et explorez un
-                    monde d'opportunités professionnelles.
-                </p>
-
-                <a href="/inscription.php">Commencer</a>
-            </div>
-            <img src="/image/Performance-600x511.png" alt="">
-        </div>
-    </section>
+        </section>
 
     </div>
 
@@ -204,7 +204,7 @@ session_start();
         </div>
     </section>
 
-    
+
 
     <section class="slider">
 
@@ -243,33 +243,33 @@ session_start();
 
     </script>
 
-<section class="explore">
-    <div class="t1" >
-        <h1>Explorer les profiles qui vous conviennent</h1>
-    </div>
+    <section class="explore">
+        <div class="t1">
+            <h1>Explorer les profiles qui vous conviennent</h1>
+        </div>
 
-    <div class="profil" >
-        <div class="owl-slider owl-carousel " >
-            <div class="item">
-                <img src="/image/entreprise.jpg" alt="">
-                <h3>nick jomas effe</h3>
-                <p> developper web</p>
-            </div>
+        <div class="profil">
+            <div class="owl-slider owl-carousel ">
+                <div class="item">
+                    <img src="/image/entreprise.jpg" alt="">
+                    <h3>nick jomas effe</h3>
+                    <p> developper web</p>
+                </div>
 
-            <div class="item">
-                <img src="/image/duré.jpg" alt="">
-                <h3>nick jomas effe</h3>
-                <p> developper web</p>
-            </div>
+                <div class="item">
+                    <img src="/image/duré.jpg" alt="">
+                    <h3>nick jomas effe</h3>
+                    <p> developper web</p>
+                </div>
 
-            <div class="item">
-                <img src="/image/bg_bggenerator_com.jpg" alt="">
-                <h3>nick jomas effe</h3>
-                <p> developper web</p>
+                <div class="item">
+                    <img src="/image/bg_bggenerator_com.jpg" alt="">
+                    <h3>nick jomas effe</h3>
+                    <p> developper web</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <?php include('footer.php') ?>
 

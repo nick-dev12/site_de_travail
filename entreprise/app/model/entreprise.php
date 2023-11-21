@@ -89,4 +89,85 @@ function AllUsers ($db){
 
 
 
+function update1 ($db,$nom, $entreprise_id){
+    $sql = " UPDATE compte_entreprise SET nom = :nom WHERE id = :entreprise_id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':nom', $nom , PDO::PARAM_STR);
+    $stmt->bindParam(':entreprise_id', $entreprise_id, PDO::PARAM_STR);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    function update2 ($db,$entreprise, $entreprise_id){
+        $sql = " UPDATE compte_entreprise SET entreprise = :entreprise WHERE id = :entreprise_id";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':entreprise', $entreprise , PDO::PARAM_STR);
+        $stmt->bindParam(':entreprise_id', $entreprise_id, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+        function update3 ($db,$mail, $entreprise_id){
+            $sql = " UPDATE compte_entreprise SET mail = :mail WHERE id = :entreprise_id";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':mail', $mail , PDO::PARAM_STR);
+            $stmt->bindParam(':entreprise_id', $entreprise_id, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+            }
+
+            function update4 ($db,$phone, $entreprise_id){
+                $sql = " UPDATE compte_entreprise SET phone = :phone WHERE id = :entreprise_id";
+                $stmt = $db->prepare($sql);
+                $stmt->bindParam(':phone', $phone , PDO::PARAM_STR);
+                $stmt->bindParam(':entreprise_id', $entreprise_id, PDO::PARAM_STR);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+                }
+
+                function update5 ($db,$types, $entreprise_id){
+                    $sql = " UPDATE compte_entreprise SET types = :types WHERE id = :entreprise_id";
+                    $stmt = $db->prepare($sql);
+                    $stmt->bindParam(':types', $types , PDO::PARAM_STR);
+                    $stmt->bindParam(':entreprise_id', $entreprise_id, PDO::PARAM_STR);
+                    $stmt->execute();
+                    return $stmt->fetch(PDO::FETCH_ASSOC);
+                    }
+
+                    function update6 ($db,$ville, $entreprise_id){
+                        $sql = " UPDATE compte_entreprise SET ville = :ville WHERE id = :entreprise_id";
+                        $stmt = $db->prepare($sql);
+                        $stmt->bindParam(':ville', $ville , PDO::PARAM_STR);
+                        $stmt->bindParam(':entreprise_id', $entreprise_id, PDO::PARAM_STR);
+                        $stmt->execute();
+                        return $stmt->fetch(PDO::FETCH_ASSOC);
+                        }
+
+                        function update7 ($db,$taille, $entreprise_id){
+                            $sql = " UPDATE compte_entreprise SET taille = :taille WHERE id = :entreprise_id";
+                            $stmt = $db->prepare($sql);
+                            $stmt->bindParam(':taille', $taille , PDO::PARAM_STR);
+                            $stmt->bindParam(':entreprise_id', $entreprise_id, PDO::PARAM_STR);
+                            $stmt->execute();
+                            return $stmt->fetch(PDO::FETCH_ASSOC);
+                            }
+
+                            function update8 ($db,$categorie, $entreprise_id){
+                                $sql = " UPDATE compte_entreprise SET categorie = :categorie WHERE id = :entreprise_id";
+                                $stmt = $db->prepare($sql);
+                                $stmt->bindParam(':categorie', $categorie , PDO::PARAM_STR);
+                                $stmt->bindParam(':entreprise_id', $entreprise_id, PDO::PARAM_STR);
+                                $stmt->execute();
+                                return $stmt->fetch(PDO::FETCH_ASSOC);
+                                }
+
+                                function update0 ($db,$images, $entreprise_id){
+                                    $sql = " UPDATE compte_entreprise SET images = :images WHERE id = :entreprise_id";
+                                    $stmt = $db->prepare($sql);
+                                    $stmt->bindParam(':images', $images , PDO::PARAM_STR);
+                                    $stmt->bindParam(':entreprise_id', $entreprise_id, PDO::PARAM_STR);
+                                    $stmt->execute();
+                                    return $stmt->fetch(PDO::FETCH_ASSOC);
+                                    }
+
 ?>

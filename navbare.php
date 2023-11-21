@@ -13,12 +13,12 @@ if (isset($_SESSION['users_id'])) {
     $stmt->bindParam(':users_id', $users_id);
     $stmt->execute();
     $users = $stmt->fetch(PDO::FETCH_ASSOC);
-}else{
+} else {
 
     if (isset($_SESSION['compte_entreprise'])) {
         // L'utilisateur est connecté, récupérez son ID
         $entreprise_id = $_SESSION['compte_entreprise'];
-    
+
         // Maintenant, vous pouvez utiliser $entreprise_id pour récupérer les informations de l'utilisateur depuis la base de données
         // Écrivez votre requête SQL pour récupérer les informations nécessaires
         $conn = "SELECT * FROM compte_entreprise WHERE id = :entreprise_id";
@@ -46,9 +46,9 @@ if (isset($_SESSION['users_id'])) {
     <div id="box2">
         <form action="post">
             <input type="search" name="search" id="search">
-            <div class="bo-" >
-            <label id="label" for="submit"><img src="/image/recherche-.png" alt=""></label>
-            <input type="submit" name="submit" id="submit" value="submit">
+            <div class="bo-">
+                <label id="label" for="submit"><img src="/image/recherche-.png" alt=""></label>
+                <input type="submit" name="submit" id="submit" value="submit">
             </div>
         </form>
     </div>
@@ -58,7 +58,7 @@ if (isset($_SESSION['users_id'])) {
         <div class="box4">
             <div class="infos_users">
                 <p class="affiche">
-                   Profil
+                    Profil
                 </p>
                 <img class="affiche" src="/upload/<?= $users['images']; ?>" alt="">
             </div>
@@ -71,7 +71,7 @@ if (isset($_SESSION['users_id'])) {
             <div class="box4">
                 <div class="infos_users">
                     <p class="affiche">
-                        <?php echo $entreprise['nom']; ?>
+                        Profil
                     </p>
                     <img class="affiche" src="/upload/<?= $entreprise['images']; ?>" alt="">
                 </div>
@@ -86,80 +86,88 @@ if (isset($_SESSION['users_id'])) {
 
         <?php endif ?>
 
-    
+
     <?php endif ?>
 
     <div class="box_info">
-    <?php if (isset($_SESSION['users_id'])): ?>
-        <img class="affiche" src="/upload/<?= $users['images'] ?>" alt="">
+        <?php if (isset($_SESSION['users_id'])): ?>
+            <img class="affiche" src="/upload/<?= $users['images'] ?>" alt="">
 
-        <table>
-            <tr>
-                <th>Nom</th>
-                <td>
-                    <?php echo $users['nom']; ?>
-                </td>
-            </tr>
-            <tr>
-                <th>E-mail</th>
-                <td>
-                    <?php echo $users['mail']; ?>
-                </td>
-            </tr>
-            <tr>
-                <th>Téléphone</th>
-                <td>
-                    <?php echo $users['phone']; ?>
-                </td>
-            </tr>
-            <tr>
-                <th>Ville</th>
-                <td>
-                    <?php echo $users['ville']; ?>
-                </td>
-            </tr>
-            <tr>
-                <th>domaine</th>
-                <td>
-                    <?php echo $users['competences']; ?>
-                </td>
-            </tr>
-        </table>
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <td>
+                        <?php echo $users['nom']; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th>E-mail</th>
+                    <td>
+                        <?php echo $users['mail']; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Téléphone</th>
+                    <td>
+                        <?php echo $users['phone']; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Ville</th>
+                    <td>
+                        <?php echo $users['ville']; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th>domaine</th>
+                    <td>
+                        <?php echo $users['competences']; ?>
+                    </td>
+                </tr>
+            </table>
 
-        <a href="../page/user_profil.php">Voir mon profil</a>
+            <a href="../page/user_profil.php">Voir mon profil</a>
 
         <?php else: ?>
 
             <?php if (isset($_SESSION['compte_entreprise'])): ?>
-            
 
+                <img class="del" src="/image/croix.png" alt="">
                 <img class="affiche" src="/upload/<?= $entreprise['images'] ?>" alt="">
-            
-            <table>
-                <tr>
-                    <th>Nom</th>
-                    <td> <?php echo $entreprise['nom']; ?></td>
-                </tr>
-                <tr>
-                    <th>E-mail</th>
-                    <td><?php echo $entreprise['mail']; ?></td>
-                </tr>
-                <tr>
-                    <th>Téléphone</th>
-                    <td><?php echo $entreprise['phone']; ?></td>
-                </tr>
-                <tr>
-                    <th>Ville</th>
-                    <td><?php echo $entreprise['ville']; ?></td>
-                </tr>
-                <!-- <tr>
+
+                <table>
+                    <tr>
+                        <th>Nom</th>
+                        <td>
+                            <?php echo $entreprise['nom']; ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>E-mail</th>
+                        <td>
+                            <?php echo $entreprise['mail']; ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Téléphone</th>
+                        <td>
+                            <?php echo $entreprise['phone']; ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Ville</th>
+                        <td>
+                            <?php echo $entreprise['ville']; ?>
+                        </td>
+                    </tr>
+                    <!-- <tr>
                     <th>domaine</th>
                     <td><?php echo $entreprise['competences']; ?></td>
                 </tr> -->
-            </table>
+                </table>
 
-            <a href="../entreprise/entreprise_profil.php">Voir mon profil</a>
-                <?php endif; ?>
+                <a href="../entreprise/entreprise_profil.php">Voir mon profil</a>
+            <?php endif; ?>
         <?php endif; ?>
     </div>
 
@@ -167,35 +175,31 @@ if (isset($_SESSION['users_id'])) {
     <script>
         let affiche = document.querySelector('.infos_users');
         let boxInfo = document.querySelector('.box_info');
-
-        let isOpen = false;
+        let del = document.querySelector('.del');
 
         affiche.addEventListener('click', () => {
-
-            if (!isOpen) {
                 boxInfo.style.right = '5%';
-                isOpen = true;
-            } else {
-                boxInfo.style.right = '-100%';
-                isOpen = false;
-            }
         });
 
-       
+        del.addEventListener('click', () => {
+                boxInfo.style.right = '-100%';
+        });
+
+
     </script>
 </nav>
 
 <section class="section1">
-        <div>
-            <span>1</span>
-            <p>Trouver rapidement les meilleurs talents qui correspondent à vos besoins</p>
-        </div>
-        <div>
-            <span>2</span>
-            <p>Un processus de recrutement freelance facile et sans prise de tête</p>
-        </div>
-        <div>
-            <span>3</span>
-            <p>Des profils hautement qualifiés et adaptables à vos projets</p>
-        </div>
-    </section>
+    <div>
+        <span>1</span>
+        <p>Trouver rapidement les meilleurs talents qui correspondent à vos besoins</p>
+    </div>
+    <div>
+        <span>2</span>
+        <p>Un processus de recrutement freelance facile et sans prise de tête</p>
+    </div>
+    <div>
+        <span>3</span>
+        <p>Des profils hautement qualifiés et adaptables à vos projets</p>
+    </div>
+</section>

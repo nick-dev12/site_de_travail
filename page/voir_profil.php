@@ -117,7 +117,7 @@ include_once('../controller/controller_competence_users.php');
 
                         <img src="../upload/<?php echo $ingenieurs['images'] ?>" alt="">
                         <h4>
-                            <?php echo $ingenieurs['competences']; ?><img src="../image/coeurs.png" alt="">
+                            <?php echo $ingenieurs['competences']; ?>
                         </h4>
 
                         <p id="nom"><strong>Nom :</strong>
@@ -132,6 +132,10 @@ include_once('../controller/controller_competence_users.php');
                                 </span>
                             <?php endforeach ?>
                         </div>
+
+                        <p id="nom"><strong>Ville :</strong>
+                             <?php echo $ingenieurs['ville']; ?>
+                        </p>
                         <a href="/page/candidats.php?id=<?php echo $ingenieurs['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
                         </a>
@@ -173,9 +177,19 @@ include_once('../controller/controller_competence_users.php');
                 <?php foreach ($UsersDesign as $Designs): ?>
 
                     <div class="carousel">
+                    <?php if($Designs['statut']=='Disponible') :?>
+                        <p class="statut" ><span></span><?= $Designs['statut'] ?></p>
+                        <?php else: ?>
+                            <?php if($Designs['statut']=='Occuper') :?>
+                        <p class="statut2" ><span></span><?= $Designs['statut'] ?></p>
+                        <?php else: ?>
+                            <p class="statut" ><span></span> Disponible</p>
+                        <?php endif; ?>
+                        <?php endif; ?>
+
                         <img src="../upload/<?php echo $Designs['images'] ?>" alt="">
                         <h4>
-                            <?php echo $Designs['competences']; ?><img src="../image/coeurs.png" alt="">
+                            <?php echo $Designs['competences']; ?>
                         </h4>
 
                         <p id="nom"><strong>Nom :</strong>
@@ -190,6 +204,10 @@ include_once('../controller/controller_competence_users.php');
                                 </span>
                             <?php endforeach ?>
                         </div>
+
+                        <p id="nom"><strong>Ville :</strong>
+                            <?php echo $Designs['ville']; ?>
+                        </p>
 
                         <a href="/page/candidats.php?id=<?php echo $Designs['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
@@ -238,6 +256,17 @@ include_once('../controller/controller_competence_users.php');
                 <?php foreach ($UsersRédaction as $Redaction): ?>
 
                     <div class="carousel">
+
+                    <?php if($Redaction['statut']=='Disponible') :?>
+                        <p class="statut" ><span></span><?= $Redaction['statut'] ?></p>
+                        <?php else: ?>
+                            <?php if($Redaction['statut']=='Occuper') :?>
+                        <p class="statut2" ><span></span><?= $Redaction['statut'] ?></p>
+                        <?php else: ?>
+                            <p class="statut" ><span></span> Disponible</p>
+                        <?php endif; ?>
+                        <?php endif; ?>
+
                         <img src="../upload/<?php echo $Redaction['images'] ?>" alt="">
                         <h4>
                             <?php echo $Redaction['competences']; ?><img src="../image/coeurs.png" alt="">
@@ -255,6 +284,10 @@ include_once('../controller/controller_competence_users.php');
                                 </span>
                             <?php endforeach ?>
                         </div>
+
+                        <p id="nom"><strong>Ville :</strong>
+                            <?php echo $Redaction['ville']; ?>
+                        </p>
 
                         <a href="/page/candidats.php?id=<?php echo $Redaction['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
@@ -300,9 +333,19 @@ include_once('../controller/controller_competence_users.php');
                 <?php foreach ($Usersmarketing as $marketing): ?>
 
                     <div class="carousel">
+                    <?php if($marketing['statut']=='Disponible') :?>
+                        <p class="statut" ><span></span><?= $marketing['statut'] ?></p>
+                        <?php else: ?>
+                            <?php if($marketing['statut']=='Occuper') :?>
+                        <p class="statut2" ><span></span><?= $marketing['statut'] ?></p>
+                        <?php else: ?>
+                            <p class="statut" ><span></span> Disponible</p>
+                        <?php endif; ?>
+                        <?php endif; ?>
+
                         <img src="../upload/<?php echo $marketing['images'] ?>" alt="">
                         <h4>
-                            <?php echo $marketing['competences']; ?><img src="../image/coeurs.png" alt="">
+                            <?php echo $marketing['competences']; ?>
                         </h4>
 
                         <p id="nom"><strong>Nom :</strong>
@@ -317,6 +360,10 @@ include_once('../controller/controller_competence_users.php');
                                 </span>
                             <?php endforeach ?>
                         </div>
+
+                        <p id="nom"><strong>Ville :</strong>
+                            <?php echo $marketing['ville']; ?>
+                        </p>
 
                         <a href="/page/candidats.php?id=<?php echo $marketing['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
@@ -361,9 +408,18 @@ include_once('../controller/controller_competence_users.php');
                 <?php foreach ($Usersbusiness as $business): ?>
 
                     <div class="carousel">
+                    <?php if($business['statut']=='Disponible') :?>
+                        <p class="statut" ><span></span><?= $business['statut'] ?></p>
+                        <?php else: ?>
+                            <?php if($business['statut']=='Occuper') :?>
+                        <p class="statut2" ><span></span><?= $business['statut'] ?></p>
+                        <?php else: ?>
+                            <p class="statut" ><span></span> Disponible</p>
+                        <?php endif; ?>
+                        <?php endif; ?>
                         <img src="../upload/<?php echo $business['images'] ?>" alt="">
                         <h4>
-                            <?php echo $business['competences']; ?><img src="../image/coeurs.png" alt="">
+                            <?php echo $business['competences']; ?>
                         </h4>
 
                         <p id="nom"><strong>Nom :</strong>
@@ -378,6 +434,10 @@ include_once('../controller/controller_competence_users.php');
                                 </span>
                             <?php endforeach ?>
                         </div>
+
+                        <p id="nom"><strong>Ville :</strong>
+                            <?php echo $business['ville']; ?>
+                        </p>
 
                         <a href="/page/candidats.php?id=<?php echo $business['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
@@ -424,9 +484,18 @@ include_once('../controller/controller_competence_users.php');
                 <?php foreach ($UsersJuridique as $Juridique): ?>
 
                     <div class="carousel">
+                    <?php if($Juridique['statut']=='Disponible') :?>
+                        <p class="statut" ><span></span><?= $Juridique['statut'] ?></p>
+                        <?php else: ?>
+                            <?php if($Juridique['statut']=='Occuper') :?>
+                        <p class="statut2" ><span></span><?= $Juridique['statut'] ?></p>
+                        <?php else: ?>
+                            <p class="statut" ><span></span> Disponible</p>
+                        <?php endif; ?>
+                        <?php endif; ?>
                         <img src="../upload/<?php echo $Juridique['images'] ?>" alt="">
                         <h4>
-                            <?php echo $Juridique['competences']; ?><img src="../image/coeurs.png" alt="">
+                            <?php echo $Juridique['competences']; ?>
                         </h4>
 
                         <p id="nom"><strong>Nom :</strong>
@@ -441,6 +510,10 @@ include_once('../controller/controller_competence_users.php');
                                 </span>
                             <?php endforeach ?>
                         </div>
+
+                        <p id="nom"><strong>Ville :</strong>
+                            <?php echo $Juridique['ville']; ?>
+                        </p>
 
                         <a href="/page/candidats.php?id=<?php echo $Juridique['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil
@@ -487,11 +560,19 @@ include_once('../controller/controller_competence_users.php');
                 <?php foreach ($UsersInformatique as $Informatique): ?>
 
                     <div class="carousel">
-
+                         <?php if($Informatique['statut']=='Disponible') :?>
+                        <p class="statut" ><span></span><?= $Informatique['statut'] ?></p>
+                        <?php else: ?>
+                            <?php if($Informatique['statut']=='Occuper') :?>
+                        <p class="statut2" ><span></span><?= $Informatique['statut'] ?></p>
+                        <?php else: ?>
+                            <p class="statut" ><span></span> Disponible</p>
+                        <?php endif; ?>
+                        <?php endif; ?>
 
                         <img src="../upload/<?php echo $Informatique['images'] ?>" alt="">
                         <h4>
-                            <?php echo $Informatique['competences']; ?><img src="../image/coeurs.png" alt="">
+                            <?php echo $Informatique['competences']; ?>
                         </h4>
 
 
@@ -512,6 +593,10 @@ include_once('../controller/controller_competence_users.php');
                                 </span>
                             <?php endforeach ?>
                         </div>
+
+                        <p id="nom"><strong>Ville :</strong>
+                            <?php echo $Informatique['ville']; ?>
+                        </p>
 
                         <a href="/page/candidats.php?id=<?php echo $Informatique['id']; ?>">
                             <i class="fa-solid fa-eye"></i>Profil

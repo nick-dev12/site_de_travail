@@ -178,18 +178,18 @@ margin-right: 10px;
   background-color: #ffffff;
   color: #000000;
 }
-.section2 .box3 table .me4{
+.section2 .box3 table .me1{
   background-color: #ffffff;
   border-radius: 15px;
 }
-.section2 .box3 table .me4 td a {
+.section2 .box3 table .me1 td a {
     color: black;
 
 }
-  .section2 .box3 table .tr2{
+  .section2 .box3 table .tr3{
     background-color: #ffffff;
   }
-  .section2 .box3 table .tr2 td a{
+  .section2 .box3 table .tr3 td a{
     color: #000000;
   }
 
@@ -237,7 +237,7 @@ margin-right: 10px;
 }
 .section3 .erreur{
   position: absolute;
-  top: 130px;
+  top: 50px;
   left: 50%;
   transform: translate(-50%);
   background-color: rgb(210, 4, 4);
@@ -256,7 +256,7 @@ margin-right: 10px;
 
 .section3 .delete{
   position: absolute;
-  top: 90px;
+  top: 50px;
   left: 50%;
   transform: translate(-50%);
   background-color: rgb(42, 4, 210);
@@ -458,23 +458,45 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   transform: translate(-50%);
   border-radius: 50%;
   box-shadow: 0 0 0 4px;
+  object-fit: cover;
+}
+
+.section3 .mdf_info .box-info .btn{
+  padding: 5px 15px;
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  transform: translate(-50%);
+  border: none;
+  background-color: #002233;
+  font-size: 17px;
+  border-radius: 7px;
+  color: #ffffff;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.section3 .mdf_info .box-info .btn:hover{
+  background-color: #dfdfdf;
+  color: #020202;
 }
 .section3 .mdf_info .box-info .box-ul{
   display: flex;
-  margin-top: 40px;
+  margin-top: 70px;
 }
 .section3 .mdf_info .box-info .box-ul ul{
   margin: 0 20px;
 }
 .section3 .mdf_info .box-info .box-ul .ul li{
   list-style: none;
-  padding: 7px 10px;
   font-weight: bold;
-  
 }
 .section3 .mdf_info .box-info .box-ul ul li{
   list-style: none;
   padding: 7px 10px;
+  /* background-color: #c1c1c1; */
+  margin: 10px 0;
+  height: 35px;
+  max-height: 40px;
 }
 .section3 .mdf_info .box-info .box-ul .modif li{
   color: #0066FF;
@@ -521,6 +543,16 @@ display: none;
   margin: 7px 0;
 }
 .section3 .mdf_info .box-info .box-form form div input{
+  height: 40px;
+  width: 100%;
+  border: 2px solid #00000067;
+  outline: none;
+  transition: all 0.4s;
+  border-radius: 7px;
+  font-size: 18px;
+  padding: 0 10px;
+}
+.section3 .mdf_info .box-info .box-form form div select{
   height: 40px;
   width: 100%;
   border: 2px solid #00000067;

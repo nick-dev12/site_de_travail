@@ -253,8 +253,8 @@ body{
      position: relative;
  }
  .produit_vedete .articles .carousel{
-     height: 400px;
-     width: 250px;
+     height: 390px;
+     width: 240px;
      background-color: rgba(247, 247, 247, 0.499);
      border-radius: 8px;
      overflow: hidden;
@@ -338,12 +338,10 @@ body{
      font-weight: 600;
      padding-left: 10px;
      margin-bottom: 7px;
-     font-size: 20px;
-     letter-spacing: 1px;
-     display: flex; 
-     align-items: center;
-     justify-content: space-between;
-
+     font-size: 18px;
+     letter-spacing: 0.5px;
+     color: #3451c6;
+     font-style: italic;
  }
  .produit_vedete .articles .carousel h4 img{
     height: 30px;
@@ -375,12 +373,12 @@ body{
      flex-wrap: wrap;
  }
  .produit_vedete .articles .carousel .vendu span{
-    padding: 5px 8px;
+    padding: 5px 5px;
     margin-right: 6px;
     background-color: #297fb928;
     border-radius: 10px;
     margin-bottom: 4px;
-    font-size: 14px;
+    font-size: 13px;
  }
  
  .produit_vedete .articles .carousel a{

@@ -84,6 +84,7 @@ include_once('../controller/controller_projet_users.php');
     include_once('../entreprise/app/controller/controllerOffre_emploi.php');
     include_once('../controller/controller_appel_offre.php');
     include('../controller/controller_message1.php'); 
+    include_once('../controller/controller_users.php');
 }
 
 ?>
@@ -129,53 +130,7 @@ include_once('../controller/controller_projet_users.php');
     
 
 
-    <section class="section2">
-        <div class="container">
-            <div class="box1">
-                <img class="affiche" src="/upload/<?= $users['images'] ?>" alt="">
-                <span></span>
-                <h2>
-                    <?php echo $users['nom']; ?>
-                </h2>
-            </div>
-
-            <div class="box2">
-                <h3>
-                    <?php echo $users['profession']; ?>
-                </h3>
-            </div>
-            <div class="box3">
-                <table>
-
-                    <tr>
-                        <td id="td" ><img src="../image/MCV.png" alt=""></td>
-                        <td> <a href="/model_cv/model1.php">mon cv</a></td>
-                    </tr>
-
-                    <tr >
-                        <td id="td"><a href="/page/user_profil.php"><img src="../image/exp.png" alt=""></a> </td>
-                        <td><a href="/page/user_profil.php">Mon experience</a></td>
-                    </tr>
-                    <tr >
-                        <td id="td"><a href="/page/user_profil.php"><img src="../image/mpc.png" alt=""></a> </td>
-                        <td><a href="/page/user_profil.php">Mon parcours</a></td>
-                    </tr>
-                    <tr>
-                        <td  id="td"><img src="../image/mct.png" alt=""></td>
-                        <td>contacte</td>
-                    </tr>
-                    <tr>
-                        <td  id="td"> <a href="../page/mes_demande.php"><img src="../image/mdep.png" alt=""></a></td>
-                        <td><a href="../page/mes_demande.php">Mes demandes d'emploit</a></td>
-                    </tr>
-                    <tr class="tr" >
-                        <td id="td"><a href="message.php"><img src="../image/modifier.png" alt=""></a></td>
-                        <td> <a href="message_users.php">Message</a></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </section>
+    <?php include('../include/header_users.php') ?>
 
 
     <section class="section3">
