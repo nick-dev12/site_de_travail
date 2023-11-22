@@ -16,167 +16,7 @@ body{
 
 /* section 2 et toute ces modification  */
 
-.section2 {
-  position: fixed;
-  top: 120px;
-  height: 100vh;
-  width: 280px;
-  z-index: 10;
-  background-color: #002233;
-}
 
-.section2 .container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-  border-right: 2px solid rgba(139, 139, 139, 0.379);
-}
-.section2 .box1 {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 1;
-  margin-top: -120px;
-  position: relative;
-}
-.section2 .box1 .statut{
-  padding: 5px 20px;
-  border-radius: 7px;
-  background-color: #000000;
-  color: #ffffff;
-  font-weight: 700;
-  font-style: italic;
-  position: absolute;
-font-size: 15px;
-box-shadow:  0 0 5px 2px ;
-}
-
-.section2 .box1 .div_statut{
-  padding: 10px 20px ;
-  border-radius: 10px;
-  background-color: #ffffff;
-  position: absolute;
-font-size: 15px;
-top: 10px;
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: all 0.4s ease;
-left: -200%;
-}
-.section2 .box1 .div_statut .occ{
-  padding: 5px 10px;
-  border-radius: 7px;
-  background-color: #40ff00;
-  color: #ffffff;
-  font-weight: 700;
-  font-style: italic;
-font-size: 15px;
-box-shadow:  0 0 2px 2px #000000 ;
-margin-left: 10px;
-}
-.section2 .box1 .div_statut .disp{
-  padding: 5px 10px;
-  border-radius: 7px;
-  background-color: #020202;
-  color: #ffffff;
-  font-weight: 700;
-  font-style: italic;
-font-size: 15px;
-box-shadow:  0 0 2px 2px #000000 ;
-margin-right: 10px;
-}
-
-.section2 .box1 img {
-  height: 170px;
-  width: 170px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(139, 139, 139, 0.379);
-  box-shadow: 0px 0px 8px 1px #ffffff;
-}
-.section2 .box1 span {
-  height: 2px;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.379);
-  display: block;
-  margin: 10px 0;
-}
-.section2 .box1 h2 {
-  font-size: 20px;
-  color: rgb(0, 0, 0);
-  margin-top: -2px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.section2 .box3 {
-  width: 100%;
-  padding:10px 15px;
-} 
-.section2 .box3 table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.section2 .box3 table td {
-  width: 40px;
-  padding: 10px 0;
-  color: #ffffff;
-  font-size: 18px;
-  border-bottom: 2px solid #ffffff50;
-  transition: all 0.3s;
-  color: #000000;
-}
-.section2 .box3 table td:hover{
-  background-color: #002233;
-
-}
-.section2 .box3 table #td {
-  width: 40px !important;
-  max-width: 40px;
-  padding:0  10px;
-}
-.section2 .box3 table #td img{
-  height: 35px;
-}
-.section2 .box3 table td a{
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.section2 .box2 h3 {
-  color: #f39c12;
-  margin-bottom: 10px;
-  z-index: 2;
-  font-size: 20px;
-  background-color: #ffffff;
-  display: block;
-  padding: 7px 17px;
-  border-radius: 10px;
-  font-weight: 600;
-  margin-top: -5px;
-}
-
-.section2 .box3 table tr:hover{
-  transition: all 0.4s ease;
-}
-.section2 .box3 table tr:hover{
-  background-color: #ffffff;
-  border-radius: 15px;
-}
-.section2 .box3 table tr:hover td a{
-  color: #000000;
-}
-.section2 .box3 table tr:hover td {
-  background-color: #ffffff;
-  color: #000000;
-}
 .section2 .box3 table .me{
   background-color: #ffffff;
   border-radius: 15px;
@@ -499,6 +339,12 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   margin-top: 20px;
   font-size: 17px;
 }
+
+.section3 .container_box1 .description .p{
+  color: #9b9b9b;
+  font-size: 14px;
+  }
+
 .section3 .container_box1 .description img {
   height: 100px;
   width: 120px;
@@ -550,6 +396,10 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   margin-bottom: 10px;
   font-size: 25px;
 }
+.section3 .container_box2 .box2 .p{
+  color: #9b9b9b;
+  font-size: 14px;
+  }
 .section3 .container_box2 .box2 p {
   font-size: 23px;
   color: #3451c6;
@@ -695,6 +545,11 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   padding: 20px;
   width: 100%;
 }
+.section3 .container_box2 .box3 .p{
+  color: #9b9b9b;
+  font-size: 14px;
+  background-color: none !important;
+  }
 .section3 .container_box2 .box3 .affiche_forms {
   padding: 7px 10px;
   border-radius: 5px;
@@ -771,6 +626,11 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   /* background-color: #002233; */
   background-color: #002233;
 }
+
+
+
+
+
 
 
 
@@ -869,14 +729,18 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   justify-content: left;
   flex-direction: column;
 }
+.section3 .container_box3 .box5 .p{
+  color: #9b9b9b;
+  font-size: 18px;
+  background-color: none !important;
+  margin-bottom: 10px;
+  }
 .section3 .container_box3 .box5 table {
   border-collapse: collapse;
   transition: all 0.3s ease-out;
   width: 100%;
 }
-.section3 .container_box3 .box5 table tr {
-  width: 90%;
-}
+
 .section3 .container_box3 .box5 table:hover {
   background-color: #139bf60e;
 }
@@ -884,8 +748,8 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   height: 50px;
   font-size: 18px;
   border: 1px solid rgba(165, 165, 165, 0.337);
-  width: 250px;
-  max-width: 250px;
+  width: 200px;
+  max-width: 200px;
   padding: 5px 20px;
   background-color: #002233;
   color: #ffffff;
@@ -897,14 +761,13 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   color: #000000;
 }
 .section3 .container_box3 .box5 table td {
-  height: 70px;
-  font-size: 20px;
+  height: 50px;
   border: 1px solid rgba(165, 165, 165, 0.337);
-  width: 250px;
+  width: 200px;
+  max-width: 200px;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   padding: 5px 10px;
-  max-width: 250px;
 }
 .section3 .container_box3 .box5 table .pt {
   font-weight: bold;
@@ -916,15 +779,13 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
 }
 
 .section3 .container_box3 .box5 table .grade {
-  color: #000000;
   background-color: rgba(230, 85, 13, 0.784);
   color: #ffffff;
 }
 .section3 .container_box3 .box5 table .supr{
   width: 60px;
-  min-width: 60px;
   max-width: 60px;
-  padding: 5px 5px;
+  min-width: 60px;
 }
 .section3 .container_box3 .box5 table td img {
   height: 20px;
@@ -1092,6 +953,13 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   align-items: center;
   justify-content: space-between;
 }
+
+.section3 .container_box5 .box2 .p{
+  color: #9b9b9b;
+  font-size: 16px;
+  background-color: none !important;
+  margin: 20px;
+  }
 .section3 .container_box5 .box2 .outil button {
   background-color: #002233;
   color: #ffffff;
@@ -1340,11 +1208,16 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   flex-wrap: wrap;
   width: 100%;
 }
-
+.section3 .container_box7 .box2 .p{
+  color: #9b9b9b;
+  font-size: 18px;
+  background-color: none !important;
+  margin: 20px;
+  }
 .section3 .container_box7 .info_projet{
   padding:20px 40px;
   border: 1px solid rgba(165, 165, 165, 0.337);
-  width: 330px;
+  width: 300px;
   border-radius: 7px;
   margin: 20px;
   display: flex;
@@ -1364,10 +1237,11 @@ width: 20px;
   color: #f39c12;
   border-bottom: 1px solid rgba(165, 165, 165, 0.337);
   padding-bottom: 7px;
+  margin-bottom: 10px;
 }
 
 .section3 .container_box7 .info_projet p{
-  font-size: 15px;
+  font-size: 16px;
 }
 .section3 .container_box7 .info_projet a{
   color: #3451c6;
@@ -1419,6 +1293,12 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
 .section3 .container_box8 .box2 {
   
 }
+.section3 .container_box8 .box2 .p{
+  color: #9b9b9b;
+  font-size: 18px;
+  background-color: none !important;
+  margin: 20px;
+  }
 .section3 .container_box8 .box2 button {
   background-color: #002233;
   color: #ffffff;
@@ -1426,6 +1306,8 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   border-radius: 5px;
   font-size: 15px;
   transition: all 0.3s ease-out;
+  margin-top: 20px;
+  display: inline-block;
 }
 .section3 .container_box8 .box2 button:hover {
   background-color: #f39c12;
@@ -1551,6 +1433,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   display: flex; 
   align-items: center;
   justify-content: space-between;
+  margin-top: 10px;
 }
 .section3 .container_box10 .slider .carousel .p strong{
  text-transform: uppercase;

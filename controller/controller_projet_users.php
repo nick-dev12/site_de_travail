@@ -17,7 +17,7 @@ if(isset($_POST['valider'])){
 
     $liens = $_POST['liens'];
 
-    $projetdescription = $_POST['projetdescription'];
+    $projetdescription = nl2br($_POST['projetdescription']) ;
 
     $images = $_FILES['images'];
 

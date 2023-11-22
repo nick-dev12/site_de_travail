@@ -102,10 +102,8 @@ include_once('../controller/controller_projet_users.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
     <link rel="stylesheet" href="../style/font-awesome.6.4.0.min.css">
-
-    <link href="../style/bootstrap.3.4.1.css" rel="stylesheet">
+   
     <script src="../script/jquery-3.6.0.min.js"></script>
-    <script src="../script/bootstrap3.4.1.js"></script>
 
     <script src="../script/summernote@0.8.18.js"></script>
     <link rel="stylesheet" href="../style/summernote@0.8.18.css">

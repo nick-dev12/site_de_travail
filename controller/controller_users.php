@@ -185,6 +185,46 @@ if (isset($_POST['valide8'])) {
         exit();
     }
 }
+
+if(isset($_POST['valide0'])){
+
+    $users_id = $_SESSION['users_id'];
+
+    $images = '';
+
+    // Vérification de la ville
+ if (empty($_FILES['images'])) {
+    $_SESSION['error_message'] = 'erreur choisissez une autre image .';
+} else {
+    // Récupérer les données du formulaire
+    $images = $_FILES['images'];
+    // Vérifier qu'un fichier est uploadé
+    if (empty( $_SESSION['error_message'])) {
+
+        // Récupérer le nom et le chemin temporaire
+        $fileName = $images['name'];
+        $tmpName = $images['tmp_name'];
+
+        // Ajouter l'identifiant unique au nom du fichier
+        $uniqueFileName = $id . '_' . $fileName;
+
+        // Déplacer le fichier dans le répertoire audio
+        $targetFile = '../upload/' . $uniqueFileName;
+        move_uploaded_file($tmpName, $targetFile);
+
+
+        if (update00 ($db,$uniqueFileName, $users_id)) {
+        }
+    
+        $_SESSION['success_message'] = 'Modifier avec succès';
+        header('Location: modifier.php');
+        exit();
+    }
+
+
+   
+}
+}
 ?>
 
 

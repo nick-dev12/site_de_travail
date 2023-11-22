@@ -37,6 +37,7 @@ $message = '';
 
 include_once('../entreprise/app/controller/controllerOffre_emploi.php');
 include_once('../controller/controller_users.php');
+include_once('../entreprise/app/controller/controllerEntreprise.php');
 ?>
 
 <!DOCTYPE html>
@@ -47,18 +48,12 @@ include_once('../controller/controller_users.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes demandes</title>
     <link rel="stylesheet" href="../style/font-awesome.6.4.0.min.css">
-
-    <link href="../style/bootstrap.3.4.1.css" rel="stylesheet">
+    
     <script src="../script/jquery-3.6.0.min.js"></script>
-    <script src="../script/bootstrap3.4.1.js"></script>
 
     <script src="../script/summernote@0.8.18.js"></script>
     <link rel="stylesheet" href="../style/summernote@0.8.18.css">
-
-
-    <script src="../script/bootstrap-datepicker1.9.0.js"></script>
-    <link rel="stylesheet" href="../style/bootstrap-datepicker1.9.0.css">
-
+   
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <link rel="stylesheet" href="../css/navbare.css">
@@ -111,7 +106,9 @@ include_once('../controller/controller_users.php');
             <div class="container_accept">
 
                 <?php foreach ($getPostulationUsers as $postulationUsers): ?>
-                    <?php $getOffreEmploie = getOffresEmploit($db,$postulationUsers['offre_id']) ?>
+                    <?php $getOffreEmploie = getOffresEmploit($db,$postulationUsers['offre_id']);
+                    $infoEntreprise = getEntreprise($db,$postulationUsers['entreprise_id'])
+                    ?>
 
                     <div class="accept">
                         <?php if ($postulationUsers['statut'] == 'accepter'): ?>
@@ -123,7 +120,7 @@ include_once('../controller/controller_users.php');
                                 <h5 class="h53">traitement en cours </h5>
                             <?php endif; ?>
                         <?php endif; ?>
-                        <img src="../image/Backgroudn-domaines-epita.jpg" alt="">
+                        <img src="../upload/<?= $infoEntreprise['images'] ?>" alt="">
                         <h3><span>Poste :</span> <?= $postulationUsers['poste'] ?></h3>
                         <p><strong>Contrat :</strong>  <?= $getOffreEmploie['contrat'] ?> <span>...</span></p>
                         <p><strong>Niveau :</strong> <?= $getOffreEmploie['etudes'] ?> <span>...</span></p>

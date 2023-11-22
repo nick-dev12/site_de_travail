@@ -187,5 +187,14 @@ function update11 ($db,$nom, $users_id){
                                 return $stmt->fetch(PDO::FETCH_ASSOC);
                                 }
 
+                                function update00 ($db,$images, $users_id){
+                                    $sql = " UPDATE users SET images = :images WHERE id = :users_id";
+                                    $stmt = $db->prepare($sql);
+                                    $stmt->bindParam(':images', $images , PDO::PARAM_STR);
+                                    $stmt->bindParam(':users_id', $users_id, PDO::PARAM_STR);
+                                    $stmt->execute();
+                                    return $stmt->fetch(PDO::FETCH_ASSOC);
+                                    }
+
 
 ?>

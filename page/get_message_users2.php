@@ -101,17 +101,11 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
     <link rel="stylesheet" href="../style/font-awesome.6.4.0.min.css">
-
-    <link href="../style/bootstrap.3.4.1.css" rel="stylesheet">
+    
     <script src="../script/jquery-3.6.0.min.js"></script>
-    <script src="../script/bootstrap3.4.1.js"></script>
-
+    
     <script src="../script/summernote@0.8.18.js"></script>
     <link rel="stylesheet" href="../style/summernote@0.8.18.css">
-
-
-    <script src="../script/bootstrap-datepicker1.9.0.js"></script>
-    <link rel="stylesheet" href="../style/bootstrap-datepicker1.9.0.css">
 
 
     <link rel="stylesheet" href="../css/message_entreprise.css">

@@ -143,7 +143,7 @@ if (isset($_GET['suprime'])) {
   $message_id = $_GET['suprime'];
   if(deletMessage ( $db, $message_id)){
 
-header("Location: message.php" );
+header("Location: ../page/message_users.php" );
 exit();
   }
 }

@@ -101,10 +101,8 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
     <link rel="stylesheet" href="../style/font-awesome.6.4.0.min.css">
-
-    <link href="../style/bootstrap.3.4.1.css" rel="stylesheet">
+    
     <script src="../script/jquery-3.6.0.min.js"></script>
-    <script src="../script/bootstrap3.4.1.js"></script>
 
     <script src="../script/summernote@0.8.18.js"></script>
     <link rel="stylesheet" href="../style/summernote@0.8.18.css">
@@ -230,8 +228,8 @@ if (isset($_GET['id'])) {
                     <?php
                     // Vérifier si la description de l'utilisateur est vide
                     if (empty($descriptions['description'])):
-
                         ?>
+                        <p class="p" >Aucune description pour ce profil veuillez Ajouté une description pour votre profil</p>
                     <?php else: ?>
                         <?php echo $descriptions['description']; ?>
                     <?php endif; ?>
@@ -319,7 +317,12 @@ if (isset($_GET['id'])) {
             </div>
             <div class="box2">
                 <h2>Experience professionnel</h2>
-                <?php
+
+                <?php if(empty($afficheMetier)) :?>
+                    <p class="p">Aucune experience professionnel enregistrer!</p>
+                    
+                    <?php else: ?>
+                          <?php
                 foreach ($afficheMetier as $metiers):
 
                     ?>
@@ -376,6 +379,9 @@ if (isset($_GET['id'])) {
                     <?php
                 endforeach;
                 ?>
+                <?php endif ;?>
+
+              
                 <?php if (isset($_SESSION['users_id'])): ?>
                     <button class="affiche_form">Ajouter une experience</button>
                 <?php else: ?>
@@ -507,8 +513,12 @@ if (isset($_GET['id'])) {
                 <h2>Compétences</h2>
                 <div class="container_comp">
 
-
-                    <?php
+                <?php if(empty($competencesUtilisateur)): ?>
+                    <p class="p">
+                        Aucune competence pour votre profil
+                    </p>
+                    <?php  else :?>
+                         <?php
                     foreach ($competencesUtilisateur as $competence):
                         ?>
                         <p data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
@@ -523,6 +533,8 @@ if (isset($_GET['id'])) {
                         <?php
                     endforeach;
                     ?>
+                        <?php endif; ?>
+                   
                 </div>
 
                 <?php if (isset($_SESSION['users_id'])): ?>
@@ -580,42 +592,49 @@ if (isset($_GET['id'])) {
                         <th class="supr">supr</th>
                     </tr>
 
+                    <?php if(empty($formationUsers)) : ?>
+                        <p class="p">Aucune formation enregistrer pour votre profil!</p>
+                    <?php else: ?>
+
+                        <?php endif ?>
+                    <?php foreach ($formationUsers as $formations): ?>
+                   
+
+                   <tr data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
+                       data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+                       <td class="pt">
+                           <?php echo $formations['moisDebut']; ?>/<?php echo $formations['anneeDebut']; ?><br>
+                           à <br>
+                           <?php echo $formations['moisFin']; ?>/<?php echo $formations['anneeFin']; ?>
+
+                       </td>
+
+                       <td>
+                           <?php echo $formations['Filiere']; ?>
+                       </td>
+
+                       <td>
+                           <?php echo $formations['etablissement']; ?>
+                       </td>
+
+                       <td class="grade">
+                           <?php echo $formations['niveau']; ?>
+                       </td>
+                       <td class="supr">
+                           <?php if (isset($_SESSION['users_id'])): ?>
+                               <a href="?supprimes=<?php echo $formations['id']; ?>"><img src="../image/croix.png"
+                                       alt=""></a>
+                           <?php else: ?>
+                           <?php endif; ?>
+
+                       </td>
+                   </tr>
+              
+           <?php endforeach; ?>
+
                 </table>
 
-                <?php foreach ($formationUsers as $formations): ?>
-                    <table>
-
-                        <tr data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
-                            data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
-                            <td class="pt">
-                                <?php echo $formations['moisDebut']; ?>/<?php echo $formations['anneeDebut']; ?><br>
-                                à <br>
-                                <?php echo $formations['moisFin']; ?>/<?php echo $formations['anneeFin']; ?>
-
-                            </td>
-
-                            <td>
-                                <?php echo $formations['Filiere']; ?>
-                            </td>
-
-                            <td>
-                                <?php echo $formations['etablissement']; ?>
-                            </td>
-
-                            <td colspan="2" class="grade">
-                                <?php echo $formations['niveau']; ?>
-                            </td>
-                            <td class="supr">
-                                <?php if (isset($_SESSION['users_id'])): ?>
-                                    <a href="?supprimes=<?php echo $formations['id']; ?>"><img src="../image/croix.png"
-                                            alt=""></a>
-                                <?php else: ?>
-                                <?php endif; ?>
-
-                            </td>
-                        </tr>
-                    </table>
-                <?php endforeach; ?>
+               
             </div>
 
             <div class="fa-formation">
@@ -934,6 +953,11 @@ if (isset($_GET['id'])) {
             </script>
             <div class="box2">
 
+            <?php if(empty($affichePojetUsers)): ?>
+                <p class="p"> Aucun projet ajouter pour votre profil !</p>
+                <?php else: ?>
+                    <?php  endif;?>
+
                 <?php foreach ($affichePojetUsers as $projets): ?>
 
                     <div class="info_projet" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"
@@ -972,6 +996,9 @@ if (isset($_GET['id'])) {
 
             <div class="box2">
 
+            <?php if(empty($afficheOutil)): ?>
+                <p class="p">Aucun outils informatique ajouter a votre profil</p>
+            <?php else: ?>
                 <table>
                     <?php foreach ($afficheOutil as $outils): ?>
                         <tr data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
@@ -988,6 +1015,9 @@ if (isset($_GET['id'])) {
                         </tr>
                     <?php endforeach; ?>
                 </table>
+            <?php endif; ?>
+
+                
 
                 <div class="outil">
                     <?php if (isset($_SESSION['users_id'])): ?>
@@ -1046,7 +1076,10 @@ if (isset($_GET['id'])) {
             </div>
 
             <div class="box2">
-                <table>
+            <?php if(empty($afficheLangue)): ?>
+                <p class="p">Aucune langue ajouter a votre profil</p>
+            <?php else: ?>
+                 <table>
                     <?php foreach ($afficheLangue as $langues): ?>
                         <tr data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out"
                             data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
@@ -1062,6 +1095,8 @@ if (isset($_GET['id'])) {
                         </tr>
                     <?php endforeach; ?>
                 </table>
+            <?php endif; ?>
+               
                 <div class="outil">
                     <?php if (isset($_SESSION['users_id'])): ?>
                         <button class="btn4"> Ajouter une langue</button>
@@ -1126,6 +1161,10 @@ if (isset($_GET['id'])) {
                     <input type="submit" name="ajouter_interet" value="Ajouter" id="ajouter">
                 </form>
 
+                <?php if(empty($afficheCentreInteret)): ?>
+                <p class="p">Aucun centre d’intérêt ajouter a votre profil</p>
+            <?php else: ?>
+
                 <ul>
                     <?php foreach ($afficheCentreInteret as $centreInteret): ?>
                         <li>
@@ -1135,7 +1174,7 @@ if (isset($_GET['id'])) {
                         </li>
                     <?php endforeach; ?>
                 </ul>
-
+                <?php endif; ?>
                 <script>
                     let btn_i = document.querySelector('.btn_eteret');
                     let form_btn = document.querySelector('.form_btn');

@@ -50,21 +50,15 @@ if (isset($_GET['id'])) {
     <title>Profil</title>
     <link rel="stylesheet" href="../style/font-awesome.6.4.0.min.css">
 
-    <link href="../style/bootstrap.3.4.1.css" rel="stylesheet">
-    <!-- <script src="../script/jquery-3.6.0.min.js"></script> -->
-    <script src="../script/bootstrap3.4.1.js"></script>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-
-
-    <script src="../script/bootstrap-datepicker1.9.0.js"></script>
-    <link rel="stylesheet" href="../style/bootstrap-datepicker1.9.0.css">
+   
 
 
     <link rel="stylesheet" href="/css/user_profil.css">
     <link rel="stylesheet" href="../css/navbare.css">
+    <link rel="stylesheet" href="../css/section2.css">
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -140,7 +134,7 @@ if (isset($_GET['id'])) {
 
                     <tr>
                         <td id="td"><img src="../image/MCV.png" alt=""></td>
-                        <td> <a href="/model_cv/model1.php">mon cv</a></td>
+                        <td class="td" > <a href="/model_cv/cv_users.php?id=<?php echo $users['id']; ?>">mon cv</a></td>
                     </tr>
 
                     <!-- <tr class="tr">
@@ -149,11 +143,11 @@ if (isset($_GET['id'])) {
                     </tr> -->
                     <tr class="tr">
                         <td id="td"><img src="../image/mpc.png" alt=""></td>
-                        <td>Mon parcours</td>
+                        <td class="td"><a href="../page/candidats.php?id=<?php echo $users['id'];  ?>">Mon parcours</a></td>
                     </tr>
                     <tr>
                         <td id="td"><img src="../image/mct.png" alt=""></td>
-                        <td><a href="">Contacte</a></td>
+                        <td class="td"><a href="">Contacte</a></td>
                     </tr>
                    
                 </table>

@@ -73,17 +73,39 @@ if (isset($_POST['modifier'])) {
 
 
 $offreInformatique = getOffreInformatique($db);
+shuffle($offreInformatique);
+
 $offreMarcketing = getOffremarketing($db);
+shuffle($offreMarcketing);
+
 $offreJuridique = getOffreJuridique($db);
+shuffle($offreJuridique);
+
 $offreBusiness = getOffrebusiness($db);
+shuffle($offreBusiness);
+
 $offreRedaction = getOffreRédaction($db);
+shuffle($offreRedaction);
+
 $offreDesing = getOffreDesign($db);
+shuffle($offreDesing);
+
 $offreIngenierie = getOffreIngenieur($db);
+shuffle($offreIngenierie);
+
+
+
+if (isset($_GET['entreprise_id'])) {
+
+    $afficheOffres = getOffresEmploit($db, $_GET['entreprise_id']);
+   
+}
+
+
 
 if (isset($_GET['id'])) {
 
     $afficheOffres = getOffresEmploit($db, $_GET['id']);
-  
 
     if (isset($_SESSION['users_id'])) {
 
@@ -126,6 +148,7 @@ if (isset($_SESSION['compte_entreprise'])) {
 }
 
 
-$afficheAllOffre = getAllOffres($db)
+$afficheAllOffre = getAllOffres($db);
+shuffle($afficheAllOffre);
 
 ?>

@@ -36,9 +36,7 @@ include('../conn/conn.php');
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+        <script src="../script/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
@@ -109,6 +107,14 @@ include('../conn/conn.php');
             <div class="box-info">
                 <div class="box-form1 box-form ">
                     <img class="croix1" src="../image/croix.png" alt="">
+
+                    <form class="form0" action="" method="post" enctype="multipart/form-data" >
+                        <div>
+                            <label for="photo">Photo de profil</label>
+                            <input type="file" name="images" id=""  >
+                        </div>
+                        <input id="modif" name="valide0" type="submit" value="Modifier">
+                    </form>
 
                     <form class="form1" action="" method="post">
                         <div>
@@ -182,7 +188,8 @@ include('../conn/conn.php');
 
                 </div>
                 <h2> Mon profil </h2>
-                <img class="img" src="../image/bg_bggenerator_com.jpg" alt="">
+                <img class="img" src="../upload/<?= $users['images']; ?>" alt="">
+                <button class="btn" >Modifier</button>
                 <div class="box-ul">
                     <ul class="ul">
                         <li>Nom :</li>
@@ -242,6 +249,9 @@ include('../conn/conn.php');
                 let mdf8 = document.querySelector('.mdf8')
                 let form8 = document.querySelector('.form8')
 
+                let btn =document.querySelector('.btn')
+                let form0 = document.querySelector('.form0')
+
                 croix1.addEventListener('click', () => {
                     box_form.style.display = 'none';
                     form1.style.display = 'none';
@@ -251,6 +261,7 @@ include('../conn/conn.php');
                     form6.style.display = 'none';
                     form7.style.display = 'none';
                     form8.style.display = 'none';
+                    form0.style.display = 'none';
                 })
 
                 mdf1.addEventListener('click', () => {
@@ -284,6 +295,10 @@ include('../conn/conn.php');
                     form8.style.display = 'block'
                 })
 
+                btn.addEventListener('click', () => {
+                    box_form.style.display = 'block';
+                    form0.style.display = 'block'
+                })
             </script>
         </div>
 

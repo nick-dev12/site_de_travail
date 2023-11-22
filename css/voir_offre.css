@@ -34,7 +34,7 @@ body{
     justify-content: center;
     width: 80%;
     margin: 130px auto;
-    
+    position: relative;
 }
 .section2 .box1{
     width: 70%;
@@ -45,6 +45,17 @@ body{
     flex-direction: column;
     background-color: #ffffff;
     box-shadow: 6px 6px 4px 2px rgba(200, 200, 200, 0.443);
+    position: relative;
+}
+
+.section2 .box1 img{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 .section2 .box1 h1{
     padding: 10px 0;
@@ -180,7 +191,21 @@ body{
 }
 .section3 form p{
    font-size: 17px;
-    
+    padding: 5px 20px;
+    font-style: italic;
+    color: #ffffff;
+    background-color: rgba(255, 0, 0, 0.469);
+    margin-top: 10px;
+}
+
+.section3 form button{
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #0066FF;
+    color: #ffffff;
+    margin-top: 30px;
+    transition: all 0.4s ease;
 }
 
 
@@ -288,157 +313,173 @@ body{
 
 
 
-
-.produit_vedete{
-    height: 600px;
-    width: 100%;
+ 
+.container_box10{
+    border: 1px solid rgba(165, 165, 165, 0.337);
+    width: 80%;
+    padding: 30px 10px;
+    margin-top: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 140px;
- }
- 
- .produit_vedete h1{
-     margin-bottom: 30px;
-     text-transform: uppercase;
- }
- 
- .produit_vedete .box1{
-     display: flex;
-     align-items: center;
-     justify-content: center;
- }
- .produit_vedete .box1 span{
-     height: 1px;
-     background-color: black;
-     width: 200px;
- }
- .produit_vedete .articles{
-     width: 80%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     position: relative;
- }
- 
- .produit_vedete .articles .carousel{
-     height: 400px;
-     width: 280px;
-     background-color: rgba(247, 247, 247, 0.499);
-     border-radius: 8px;
-     overflow: hidden;
-     border: 1px solid rgba(105, 103, 103, 0.257);
-     box-shadow: 7px 6px 10px -5px #00000093;
-     transition: all 0.5s ease-in-out;
-     margin:0 20px;
-     position: relative;
-     background-color: #ffffff;
-     box-shadow: 6px 6px 4px 2px rgba(200, 200, 200, 0.443);
- }
- 
- 
- .produit_vedete .articles .carousel:hover{
-     transform: scale(1.05);
- }
- 
- .produit_vedete .articles .carousel img{
-     height: 210px;
-     width: 100%;
-     object-fit: cover;
-     border-bottom: 1px solid rgba(148, 146, 146, 0.499);
- }
- .produit_vedete .articles .carousel p{
-     width: 100%;
-     max-height: 55px;
-     overflow: hidden;
-     font-weight: 600;
-     padding-left: 10px;
-     font-size: 20px;
-     letter-spacing: 1px;
-     display: flex; 
-     align-items: center;
-     justify-content: space-between;
-     margin-top: 5px;
- }
- .produit_vedete .articles .carousel #nom{
-     font-weight: 400;
-     margin-left: 8px !important;
-     overflow: hidden;
-     font-size: 15px;
-     margin-top: 3px;
- }
- .produit_vedete .articles .carousel p span{
-     color: #F39C12;
-     font-size: 13px;
-     margin-right: 5px;
- }
- .produit_vedete .articles .carousel .vendu{
-     display: flex;
-     font-size: 12px;
-     flex-wrap: wrap;
-     width: 100%;
-     overflow: hidden;
-     max-height: 57px;
- }
- .produit_vedete .articles .carousel .vendu p{
-   font-size: 14px;
-   font-weight: 300;
- }
- 
- .produit_vedete .articles .carousel a{
-     width: 40%;
-     padding-right: 120px;
-     padding-top: 6px;
-     padding-bottom: 6px;
-     padding-left: 60px;
-     background-color: #2C3E50;
-     color: white;
-     text-decoration: none;
-     font-size: 16px;
-     border-radius: 10px;
-     display: block;
-     transition: all 0.5s ease-in-out;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     position: absolute;
-     bottom: 5px;
-     right: -50px;
- }
-
- .produit_vedete .articles .carousel a :nth-child(1){
-    margin-right: 7px;
- }
- .produit_vedete .articles .carousel a:hover{
-     background-color: #2C3E50;
- }
- 
- 
- .produit_vedete .box2{
-     width: 70%;
-     height: 50px;
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     margin-bottom: 10px;
- }
- 
- .produit_vedete .box2 span{
-     height: 40px;
-     width: 50px;
-     background-color: #2C3E50;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     border-radius: 7px;
-     transition: all 0.5s ease-in-out;
- }
- .produit_vedete .box2 span:hover{
-     transform: scale(1.1);
-     background-color: #e4144d;
- }
- .produit_vedete .box2 span{
-     color: white;
-     font-size: 25px;
- }
+    margin:100px auto 100px;
+  }
+   
+  .container_box10 .slider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   
+  .container_box10 .slider .carousel{
+    height: 400px;
+    width: 240px;
+    background-color: rgba(247, 247, 247, 0.499);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(105, 103, 103, 0.257);
+    box-shadow: 7px 6px 10px -5px #00000093;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    margin: 0 10px;
+    background-color: #ffffff;
+  }
+  
+   
+  .container_box10 .slider .carousel:hover{
+    transform: scale(1.05);
+  }
+   
+  .container_box10 .slider .message{
+   font-size: 25px;
+   width: 40%;
+   text-align: center;
+   padding: 20px 30px;
+   border: 1px solid #2c3e501e;
+  }
+  .container_box10 .slider .carousel img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(148, 146, 146, 0.499);
+  }
+  .container_box10 .slider .carousel .p{
+    padding-left: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .container_box10 .slider .carousel .p strong{
+   text-transform: uppercase;
+   font-size: 14.5px;
+  }
+  .container_box10 .slider .carousel .p img{
+   height: 35px;
+   width: 35px;
+   border: none;
+   cursor: pointer;
+  }
+  .container_box10 .slider .carousel #nom{
+    font-weight: 400;
+    margin-left: 8px !important;
+    overflow: hidden;
+    font-size: 13px;
+    margin-top: 8px;
+    max-height: 20px;
+    width: 100%;
+    color: #3451c6;
+  }
+  .container_box10 .slider .carousel p span{
+    color: #F39C12;
+    font-size: 13px;
+    margin-right: 5px;
+  }
+   
+  .container_box10 .slider .carousel .box_vendu{
+   display: flex;
+   width: 100%;
+   align-items: center;
+  }
+   
+  .container_box10 .slider .carousel .vendu{
+    display: flex !important; 
+    margin-left: 12px;
+    font-size: 15px;
+    width: 100%;
+    max-height: 57px !important;
+  }
+   
+  .container_box10 .slider .carousel .vendu p{
+   font-size: 15px;
+  }
+   
+  .container_box10 .slider .carousel .contrat{
+  margin-left: 20px;
+  font-style: italic;
+  font-size: 15px;
+  }
+  .container_box10 .slider .carousel .vendu span{
+   padding: 5px 8px;
+   margin-right: 6px;
+   background-color: #297fb928;
+   border-radius: 10px;
+   margin-bottom: 4px;
+  }
+   
+  .container_box10 .slider .carousel a{
+   background-color: #3451c6;
+    width: 100%;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+  
+    display: block;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 5px;
+    
+  }
+   
+  .container_box10 .slider .carousel a :nth-child(1){
+   margin-right: 7px;
+  }
+  .container_box10 .slider .carousel a:hover{
+    background-color: #2C3E50;
+  }
+   
+  .container_box10 .box2{
+    width: 70%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+   
+  .container_box10 .box2 span{
+    height: 40px;
+    width: 50px;
+    background-color: #2C3E50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    transition: all 0.5s ease-in-out;
+  }
+  .container_box10 .box2 span:hover{
+    transform: scale(1.1);
+    background-color: #e4144d;
+  }
+  .container_box10 .box2 span{
+    color: white;
+    font-size: 25px;
+  }

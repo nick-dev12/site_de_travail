@@ -92,7 +92,7 @@ if (isset($_SESSION['users_id'])) {
     <div class="box_info">
         <?php if (isset($_SESSION['users_id'])): ?>
             <img class="affiche" src="/upload/<?= $users['images'] ?>" alt="">
-
+            <img class="del" src="/image/croix.png" alt="">
             <table>
                 <tr>
                     <th>Nom</th>

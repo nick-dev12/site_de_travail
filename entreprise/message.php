@@ -50,13 +50,14 @@ include_once('../controller/controller_appel_offre.php');
             <?php foreach ($getALLpostulation as $postulant): ?>
                 <?php if($postulant['statut']=='accepter'):?>
                     <?php $getoffre =getOffresEmploit($db,$postulant['offre_id']);?>
+                    <?php $infoUsers =getInfoUsers($db,$postulant['users_id']) ?>
                     <a href="message_entreprise.php?users_id=<?= $postulant['users_id']?>&offres_id=<?= $postulant['offre_id']?>&entreprise_id=<?= $postulant['entreprise_id']?>&statut=<?= $postulant['statut']?>">
            <div class="info" >
-                <img src="../upload/<?php echo $postulant['images']?>" alt="">
+                <img src="../upload/<?php echo $infoUsers['images']?>" alt="">
                 <div class="div" >
                     <h4><?= $postulant['nom']?></h4>
-                    <p> <strong>Competences:</strong> <?= $postulant['competences']?></p>
-                    <p><span class="span1" ><strong>Offre postuler:</strong> <?= $postulant['poste']?></span> <span class="span2" ><?= $getoffre['contrat']?></span></p>
+                    <p> <strong>Domaine de Competences: </strong> <?= $postulant['competences']?></p>
+                    <p><span class="span1" ><strong>Offre postuler :</strong> <?= $postulant['poste']?></span> <span class="span2" ><?= $getoffre['contrat']?></span></p>
                 </div>
             </div>
            </a>
@@ -73,8 +74,8 @@ include_once('../controller/controller_appel_offre.php');
             <img src="../upload/<?php echo $infoUsers['images']?>" alt="">
                 <div class="div" >
                 <h4><?= $infoUsers['nom']?></h4>
-                    <p> <strong>Competences:</strong> <?= $infoUsers['competences']?></p>
-                    <p><span class="span1" ><strong>Sujet:</strong> Appelle d'offre </span> </p>
+                    <p> <strong>Domaine de Competences:</strong> <?= $infoUsers['competences']?></p>
+                    <p><span class="span1" ><strong>Sujet : </strong> Appelle d'offre </span> </p>
                 </div>
             </div>
         </a>

@@ -62,9 +62,85 @@ include_once('../controller/controller_users.php');
 
     <?php include('../navbare.php') ?>
 
-<?php include('../include/header_users.php') ?>
 
 
+    <link rel="stylesheet" href="../css/section2.css">
+
+
+<section class="section2">
+        <div class="container">
+            <div class="box1">
+                <?php if ($users['statut'] == 'Disponible'): ?>
+                    <button class="statut occ">
+                        <?= $users['statut'] ?>
+                    </button>
+                <?php else: ?>
+                    <?php if ($users['statut'] == 'Occuper'): ?>
+                        <button class="statut disp">
+                            <?= $users['statut'] ?>
+                        </button>
+                    <?php else: ?>
+                        <button class="statut occ">Statut</button>
+                    <?php endif; ?>
+                <?php endif; ?>
+                <div class="div_statut">
+                    <a class="disp" href="?occuper=<?= $users['id'] ?>">Occuper</a>
+                    <a class=" occ" href="?disponible=<?= $users['id'] ?>">Disponible</a>
+                </div>
+
+                <script>
+                    let statut = document.querySelector('.statut')
+                    let div_statut = document.querySelector('.div_statut')
+
+                    statut.addEventListener('click', () => {
+                        if (div_statut.style.left === '-200%') {
+                            div_statut.style.left = '0'
+                        } else {
+                            div_statut.style.left = '-200%'
+                        }
+
+                    })
+
+                    // Ajouter un gestionnaire au clic n'importe où sur la page
+                    document.addEventListener('click', (e) => {
+                        // Vérifier que le clic ne vient pas du bouton
+                        if (e.target !== statut) {
+                            // Masquer la div
+                            div_statut.style.left = '-200%'
+                        }
+                    });
+                </script>
+
+
+                <img class="affiche" src="/upload/<?= $users['images'] ?>" alt="">
+                <span></span>
+                <h2>
+                    <?php echo $users['nom']; ?>
+                </h2>
+            </div>
+
+            <div class="box2">
+                <h3>
+                    <?php echo $users['competences']; ?>
+                </h3>
+            </div>
+            <div class="box3">
+                <table>
+
+                    <tr class="tr4" >
+                        <td id="td"><img src="../image/MCV.png" alt=""></td>
+                        <td class="td"> <a href="/model_cv/model1.php">Mon cv</a></td>
+                    </tr>
+                   
+                    <tr class="tr ">
+                        <td id="td"><a href="../page/user_profil.php"><img src="../image/mpc.png" alt=""></a></td>
+                        <td class="td"><a href="../page/candidats.php?id=<?php echo $users['id']; ?>">Mon parcours</a></td>
+                    </tr>
+                   
+                </table>
+            </div>
+        </div>
+    </section>
 
 
 

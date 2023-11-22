@@ -44,6 +44,8 @@ $afficheDescriptionentreprise=getDescriptionEntreprise ($db,$entreprise_id);
         <div class="box1">
             <h1>Info de l'Entreprise</h1>
 
+            <img src="../upload/<?= $getEntreprise['images'] ?>" alt="">
+
             <table>
                 <tr>
                     <th>NOM</th>
@@ -145,9 +147,9 @@ $afficheDescriptionentreprise=getDescriptionEntreprise ($db,$entreprise_id);
                 <input type="hidden" name="images_users" id="" value="<?= $getInfo['images'] ?>">
 
                 <?php if(isset($getPostulation['offre_id'])): ?>
-                    <p>Vous avez deja envoyer votre candidature merci de patienter une réponse favorable.</p>
+                    <p>Vous avez déjà envoyer votre candidature merci de patienter une réponse favorable.</p>
                 <?php else: ?>
-                <button type="submit" name="postuler" >postuler pour cette offre</button>
+                <button type="submit" name="postuler" >Postuler pour cette offre</button>
                 <?php endif; ?>
             </form>
                 <?php endif; ?>
@@ -160,102 +162,58 @@ $afficheDescriptionentreprise=getDescriptionEntreprise ($db,$entreprise_id);
 
    
 
-    <section class="produit_vedete">
-        <div class="box1">
-            <span></span>
-            <h1>voir plus d'offre de cette categorie</h1>
-            <span></span>
+
+    <div class="container_box10">
+            <h2>Offres qui correspondes a votre profil </h2>
+
+            <div class="box2">
+                <span class="owl-prev"><i class="fa-solid fa-chevron-left"></i></span>
+                <span class="owl-next"><i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+            <div class="slider owl-carousel carousel3">
+                <?php foreach ($afficheAllOffre as $affiches): ?>
+
+                    <?php if ($affiches['categorie'] == $Offres['categorie']): ?>
+
+                        <?php $info_entreprise = getEntreprise($db, $affiches['entreprise_id']) ?>
+                        <div class="carousel">
+                            <img src="../upload/<?php echo $info_entreprise['images'] ?>" alt="">
+                            <p class="p">
+                                <strong>
+                                    <?php echo $info_entreprise['entreprise']; ?>
+                                </strong>
+
+                                <img src="../image/coeurs.png" alt="">
+                            </p>
+
+                            <div class="box_vendu">
+                                <div class="vendu">
+
+                                    <p>
+                                        <strong>Nous recherchons un(une)</strong>
+                                        <?php echo ($affiches['poste']); ?>
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <p id="nom">
+                                <?php echo $affiches['date']; ?>
+                            </p>
+                            <a
+                                href="../entreprise/voir_offre.php?id=<?= $affiches['offre_id']; ?>&entreprise_id=<?= $affiches['entreprise_id']; ?>">
+                                <i class="fa-solid fa-eye"></i>Voir l'offre
+                            </a>
+                        </div>
+
+                    <?php endif; ?>
+                <?php endforeach ?>
+            </div>
         </div>
 
-        <div class="box2">
-            <span><i class="fa-solid fa-chevron-left"></i></span>
-            <span><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
 
-        <article class="articles owl-carousel carousel1">
-            <div class="carousel">
-                <img src="/profils/preview_B0eCXi7.jpeg" alt="">
-                <p>informaticien de getion des affaires applique <span>1</span></p>
-                <div class="vendu">
-                    <p>nous recherchons un personnels califier pour povoir nous aider dans </p>
-                </div>
-                <p id="nom">12 juillet 2023</p>
-                <a href="#"><i class="fa-solid fa-eye"></i></span>Profil</a>
-            </div>
-
-            <div class="carousel">
-                <img src="/profils/p1.jpeg" alt="">
-                <p>logistique<span>0</span></p>
-                <div class="vendu">
-                    <span>html</span>
-                    <span>css</span>
-                    <span>java script</span>
-                    <span>html</span>
-                    <span>css</span>
-                    <span>java script</span>
-                </div>
-                <p id="nom">t-shirt hummel</p>
-                <a href="#"><i class="fa-solid fa-eye"></i></span>Profil</a>
-            </div>
-
-            <div class="carousel">
-                <img src="/profils/p2.jpg" alt="">
-                <p>agronome<span>o</span></p>
-                <div class="vendu">
-                    <span>css</span>
-                    <span>java script</span>
-                    <span>html</span>
-                    <span>css</span>
-                    <span>java script</span>
-                </div>
-                <p id="nom">Nom: Sylivin</p>
-                <a href="#"><i class="fa-solid fa-eye"></i></span>Profil</a>
-            </div>
-
-            <div class="carousel">
-                <img src="/profils/p3.jpeg" alt="">
-                <p>proffesseur de mathematique<span>0</span></p>
-                <div class="vendu">
-                    <span>html</span>
-                    <span>css</span>
-                    <span>html</span>
-                    <span>css</span>
-                    <span>java script</span>
-                </div>
-                <p id="nom">Nom: pricil</p>
-                <a href="#"><i class="fa-solid fa-eye"></i></span>Profil</a>
-            </div>
-
-            <div class="carousel">
-                <img src="/profils/p4.jpeg" alt="">
-                <p>architecture<span>0</span></p>
-                <div class="vendu">
-                    <span>html</span>
-                    <span>css</span>
-                    <span>java script</span>
-                    <span>html</span>
-                </div>
-                <p id="nom">Nom: Sylivin</p>
-                <a href="#"><i class="fa-solid fa-eye"></i></span>Profil</a>
-            </div>
-
-            <div class="carousel">
-                <img src="/profils/p5.avif " alt="">
-                <p>disiner<span>0</span></p>
-                <div class="vendu">
-                    <span>html</span>
-                    <span>css</span>
-                    <span>java script</span>
-                    <span>html</span>
-                    <span>css</span>
-                    <span>java script</span>
-                </div>
-                <p id="nom">Nom: nike</p>
-                <a href="#"><i class="fa-solid fa-eye"></i></span>Profil</a>
-            </div>
-        </article>
-    </section>
-
+        <?php include('../footer.php') ?>
     
 
     <script src="../js/owl.carousel.min.js"></script>
@@ -302,6 +260,51 @@ $afficheDescriptionentreprise=getDescriptionEntreprise ($db,$entreprise_id);
     $('.owl-prev2').click(function() {
       carousel2.trigger('prev.owl.carousel');
     })
+
+
+        });
+
+
+
+        $(document).ready(function () {
+            // Carrousel 3  
+            var carousel3 = $('.carousel3');
+            var numItems2 = carousel3.find('.carousel').length;
+
+            if (numItems2 > 3) {
+
+                // Initialiser Owl carousel3 si il y a plus de 4 éléments
+                carousel3.owlCarousel({
+                    items: 4, // Limitez le nombre d'éléments à afficher à 5
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 6000,
+                    animateOut: 'slideOutDown',
+                    animateIn: 'flipInX',
+                    stagePadding: 30,
+                    smartSpeed: 450,
+                    margin: 20,
+                    nav: true,
+                    navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
+                });
+
+                var carousel3 = $('.carousel3').owlCarousel();
+                $('.owl-next').click(function () {
+                    carousel3.trigger('next.owl.carousel');
+                })
+                $('.owl-prev').click(function () {
+                    carousel3.trigger('prev.owl.carousel');
+                })
+
+
+
+            } else {
+
+                carousel3.trigger('destroy.owl.carousel');
+                carousel3.removeClass('owl-carousel owl-loaded');
+                carousel3.find('.owl-stage-outer').children().unwrap();
+
+            }
 
 
         });

@@ -1,173 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Nunito&display=swap');
+
+
+
 *{
     margin:0 ;
-    
+    text-decoration: none;
   }
   
   body{
     font-family: 'Nunito', sans-serif;
     overflow-x: hidden;
 }
-.section2 {
-  position: fixed;
-  top: 120px;
-  height: 100vh;
-  width: 280px;
-  z-index: 10;
-  background-color: #002233;
-}
 
-.section2 .container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-  border-right: 2px solid rgba(139, 139, 139, 0.379);
-}
-.section2 .box1 {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 1;
-  margin-top: -120px;
-  position: relative;
-}
-.section2 .box1 .statut{
-  padding: 5px 20px;
-  border-radius: 7px;
-  background-color: #000000;
-  color: #ffffff;
-  font-weight: 700;
-  font-style: italic;
-  position: absolute;
-font-size: 15px;
-box-shadow:  0 0 5px 2px ;
-}
-
-.section2 .box1 .div_statut{
-  padding: 10px 20px ;
-  border-radius: 10px;
-  background-color: #ffffff;
-  position: absolute;
-font-size: 15px;
-top: 10px;
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: all 0.4s ease;
-left: -200%;
-}
-.section2 .box1 .div_statut .occ{
-  padding: 5px 10px;
-  border-radius: 7px;
-  background-color: #40ff00;
-  color: #ffffff;
-  font-weight: 700;
-  font-style: italic;
-font-size: 15px;
-box-shadow:  0 0 2px 2px #000000 ;
-margin-left: 10px;
-}
-.section2 .box1 .div_statut .disp{
-  padding: 5px 10px;
-  border-radius: 7px;
-  background-color: #020202;
-  color: #ffffff;
-  font-weight: 700;
-  font-style: italic;
-font-size: 15px;
-box-shadow:  0 0 2px 2px #000000 ;
-margin-right: 10px;
-}
-
-.section2 .box1 img {
-  height: 170px;
-  width: 170px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(139, 139, 139, 0.379);
-  box-shadow: 0px 0px 8px 1px #ffffff;
-}
-.section2 .box1 span {
-  height: 2px;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.379);
-  display: block;
-  margin: 10px 0;
-}
-.section2 .box1 h2 {
-  font-size: 20px;
-  color: rgb(0, 0, 0);
-  margin-top: -2px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.section2 .box3 {
-  width: 100%;
-  padding:10px 15px;
-} 
-.section2 .box3 table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.section2 .box3 table td {
-  width: 40px;
-  padding: 10px 0;
-  color: #ffffff;
-  font-size: 18px;
-  border-bottom: 2px solid #ffffff50;
-  transition: all 0.3s;
-  color: #000000;
-}
-.section2 .box3 table td:hover{
-  background-color: #002233;
-
-}
-.section2 .box3 table #td {
-  width: 40px !important;
-  max-width: 40px;
-  padding:0  10px;
-}
-.section2 .box3 table #td img{
-  height: 35px;
-}
-.section2 .box3 table td a{
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.section2 .box2 h3 {
-  color: #f39c12;
-  margin-bottom: 10px;
-  z-index: 2;
-  font-size: 20px;
-  background-color: #ffffff;
-  display: block;
-  padding: 7px 17px;
-  border-radius: 10px;
-  font-weight: 600;
-  margin-top: -5px;
-}
-
-.section2 .box3 table tr:hover{
-  transition: all 0.4s ease;
-}
-.section2 .box3 table tr:hover{
-  background-color: #ffffff;
-  border-radius: 15px;
-}
-.section2 .box3 table tr:hover td a{
-  color: #000000;
-}
-.section2 .box3 table tr:hover td {
-  background-color: #ffffff;
-  color: #000000;
-}
 .section2 .box3 table .me{
   background-color: #ffffff;
   border-radius: 15px;
@@ -271,8 +117,10 @@ margin-right: 10px;
   align-items: center;
 }
 .section3 .box2 p span{
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
+  max-width: 40px;
+  min-width: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -326,9 +174,9 @@ margin-right: 10px;
   padding: 20px;
 }
 .section3 .div-section3 .box6 .accept{
-  width: 250px;
-  height: 380px;
-  border: 1px solid #00223390;
+  width: 240px;
+  height: 360px;
+  border: 2px solid #cbcbcb;
   border-radius: 7px;
   overflow: hidden;
   background-color: #ffffff;
@@ -336,6 +184,7 @@ margin-right: 10px;
   padding-bottom: 10px;
   margin: 20px 0;
   margin: 20px;
+  box-shadow: 7px 7px 7px 2px #0022336c;
 }
 .section3 .div-section3 .box6 .accept img{
   width: 100%;
@@ -361,6 +210,7 @@ margin-right: 10px;
   font-weight: bolder;
   margin-left: 10px;
   color: #0066FF;
+  padding: 5px 0;
 }
 
 .section3 .div-section3 .box6 .accept p{
@@ -369,6 +219,8 @@ margin-right: 10px;
   overflow: hidden;
   height: 20px;
   position: relative;
+  padding: 5px 10px;
+  font-size: 14px;
 }
 .section3 .div-section3 .box6 .accept p span{
   position: absolute;
@@ -418,27 +270,26 @@ margin-right: 10px;
 
 .section3 .div-section3 .box6 .accept .h51{
   position: absolute;
-  width: 400px;
-  padding: 7px 30px;
-  font-size:18px;
+  width: 300px;
+  padding: 5px 20px;
+  font-size:15px;
   background-color: rgb(0, 210, 0);
   color: #ffffff;
   font-weight: 600;
- top: 30px;
- left: -20px;
+ top: 20px;
  text-transform: uppercase;
   transform:rotate(45deg);
   text-align: center;
 }
 .section3 .div-section3 .box6 .accept .h52{
   position: absolute;
-  width: 400px;
-  padding: 7px 30px;
-  font-size: 18px;
+  width: 300px;
+  padding: 5px 20px;
+  font-size: 15px;
   background-color: rgb(210, 21, 0);
   color: #ffffff;
   font-weight: 600;
- top: 30px;
+ top: 20px;
  text-transform: uppercase;
   transform:rotate(45deg);
   text-align: center;
@@ -446,8 +297,8 @@ margin-right: 10px;
 }
 .section3 .div-section3 .box6 .accept .h53{
   position: absolute;
-  width: 400px;
-  padding: 10px 30px;
+  width: 300px;
+  padding: 5px 20px;
   font-size: 16px;
   background-color: #002233;
   color: #ffffff;

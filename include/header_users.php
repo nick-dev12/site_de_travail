@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="../css/section2.css">
+
+
 <section class="section2">
         <div class="container">
             <div class="box1">
@@ -60,27 +63,27 @@
 
                 <tr class="tr3" >
                         <td id="td"><img src="../image/modifier.png" alt=""></td>
-                        <td> <a href="../page/modifier.php">modifier</a></td>
+                        <td class="td"> <a href="../page/modifier.php">Modifier</a></td>
                     </tr>
 
                     <tr class="tr4" >
                         <td id="td"><img src="../image/MCV.png" alt=""></td>
-                        <td> <a href="/model_cv/model1.php">mon cv</a></td>
+                        <td class="td"> <a href="/model_cv/model1.php">Mon cv</a></td>
                     </tr>
 
                    
-                    <tr class="tr">
+                    <tr class="tr ">
                         <td id="td"><a href="../page/user_profil.php"><img src="../image/mpc.png" alt=""></a></td>
-                        <td><a href="../page/user_profil.php">Mon parcours</a></td>
+                        <td class="td"><a href="../page/user_profil.php">Mon parcours</a></td>
                     </tr>
                    
                     <tr class="tr1">
                         <td id="td"> <a href="../page/mes_demande.php"><img src="../image/mdep.png" alt=""></a></td>
-                        <td><a href="../page/mes_demande.php">Mes demandes d’emploies</a></td>
+                        <td class="td"><a href="../page/mes_demande.php">Mes demandes d’emploies</a></td>
                     </tr>
                     <tr class="tr2" >
                         <td id="td"><a href="message.php"><img src="../image/modifier.png" alt=""></a></td>
-                        <td> <a href="../page/message_users.php">Message</a></td>
+                        <td class="td"> <a href="../page/message_users.php">Message</a></td>
                     </tr>
                 </table>
             </div>
