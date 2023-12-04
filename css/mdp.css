@@ -76,7 +76,7 @@ body{
 }
 
 .section2 .formulaire1 form #valider {
-   width: 110px;
+   width: auto;
     height: 40px;
     background-color: #0066FF;
     border: none;
@@ -85,6 +85,12 @@ body{
     color: white;
     text-transform: capitalize;
     letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.section2 .formulaire1 form #valider:hover{
+    background-color: #ffffff;
+    color: #0066FF;
 }
 
 .section2 .formulaire1 form .erreur{

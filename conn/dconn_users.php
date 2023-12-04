@@ -9,6 +9,6 @@ session_unset();
 session_destroy();
 
 // Rediriger vers la page de connexion ou une autre page après la déconnexion
-header('location: ../connexion.php');
+header('location: ../connection_compte.php');
 exit();
 ?>

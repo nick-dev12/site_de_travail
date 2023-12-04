@@ -1,12 +1,11 @@
 <?php
-require_once('../model/users.php');
+require_once(__DIR__ .'/../model/users.php');
 
 if ($totalUsers = getTotalUsers($db)) {
-    $categorieUsers = $totalUsers['categorie'];
-    $afficheUsers = getUsers($db , $categorieUsers) ;
 
 }
 
+$totalUsers = getTotalUsers($db);
 
 
 // if (isset($totalUsers)){

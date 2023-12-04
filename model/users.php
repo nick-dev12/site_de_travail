@@ -1,5 +1,5 @@
 <?php 
-include ('../conn/conn.php');
+include (__DIR__ .'/../conn/conn.php');
 
 /**
  * Summary of getTotalUsers
@@ -10,7 +10,7 @@ function getTotalUsers($db){
 $sql = "SELECT * FROM users";
 $stmt = $db->prepare($sql);
 $stmt->execute();
-return $stmt->fetch(PDO::FETCH_ASSOC);
+return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 /**

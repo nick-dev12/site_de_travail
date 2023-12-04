@@ -4,6 +4,7 @@ session_start();
 // Récupérez l'ID du commerçant à partir de la session
 // Récupérez l'ID de l'utilisateur depuis la variable de session
 
+include_once('controller/controller_users.php');
 
 ?>
 
@@ -13,6 +14,15 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5JBWCPV7');</script>
+<!-- End Google Tag Manager -->
+
     <title>Bienvenu</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -27,6 +37,11 @@ session_start();
 </head>
 
 <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JBWCPV7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
     <?php include('navbare.php') ?>
 
@@ -106,6 +121,26 @@ session_start();
         <div class="box2">
             <img src="/image/rain_background.png" alt="" class="img1">
             <img src="/image/teste.png" alt="" class="img2">
+        </div>
+    </section>
+
+
+    <section class="partie-box1">
+        <div class="box1">
+            <h2>"Construisez votre histoire professionnelle avec un profil et un CV virtuels à la pointe de l'innovation."</h2>
+        </div>
+        <div class="box2">
+            <img src="/image/profile1.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="partie-box2">
+       
+        <div class="box2">
+            <img src="/image/profile1.jpg" alt="">
+        </div>
+         <div class="box1">
+            <h2>"Élargissez vos horizons professionnels avec Work-Flexer, une vision audacieuse qui redéfinit la flexibilité au travail."</h2>
         </div>
     </section>
 
@@ -250,23 +285,16 @@ session_start();
 
         <div class="profil">
             <div class="owl-slider owl-carousel ">
-                <div class="item">
-                    <img src="/image/entreprise.jpg" alt="">
-                    <h3>nick jomas effe</h3>
-                    <p> developper web</p>
+                <?php foreach($totalUsers as $user): ?>
+                    <div class="item">
+                    <a href="/page/candidats.php?id=<?= $user['id'] ?>">
+                    <img src="/upload/<?= $user['images']; ?>" alt="">
+                    <h3><?= $user['nom']; ?></h3>
+                    <p> <?= $user['competences']; ?> </p>
+                </a>
                 </div>
-
-                <div class="item">
-                    <img src="/image/duré.jpg" alt="">
-                    <h3>nick jomas effe</h3>
-                    <p> developper web</p>
-                </div>
-
-                <div class="item">
-                    <img src="/image/bg_bggenerator_com.jpg" alt="">
-                    <h3>nick jomas effe</h3>
-                    <p> developper web</p>
-                </div>
+                <?php endforeach; ?>
+                
             </div>
         </div>
     </section>
@@ -275,16 +303,7 @@ session_start();
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EaselPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/PixiPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    
 
     <!--
 ScrollSmoother.min.js, InertiaPlugin.min.js, ScrambleTextPlugin.min.js, and SplitText.min.js are Club GreenSock perks which are not available on a CDN. Download them from your GreenSock account and include them locally like this:
@@ -323,17 +342,7 @@ Sign up at https://greensock.com/club or try them for free on CodePen or CodeSan
             });
 
 
-            $('.owl-slider').owlCarousel({
-                items: 3,
-                loop: true,
-                autoplay: true,
-                animateOut: 'slideOutDown',
-                animateIn: 'flipInX',
-                autoplayTimeout: 5000,
-                stagePadding: 10,
-                smartSpeed: 600,
-                nav: true,
-            });
+           
 
             // Animation GSA
             // Initialiser le carrousel 1 avec la portée appropriée
@@ -356,7 +365,7 @@ Sign up at https://greensock.com/club or try them for free on CodePen or CodeSan
             })
             $('.owl-prev').click(function () {
                 carousel1.trigger('prev.owl.carousel');
-            })
+            });
 
 
             $('.slider-area').owlCarousel({
@@ -367,7 +376,7 @@ Sign up at https://greensock.com/club or try them for free on CodePen or CodeSan
                 autoplayTimeout: 6000,
                 animateOut: 'slideOutDown',
                 animateIn: 'flipInX',
-                smartSpeed: 600,
+                smartSpeed: 900,
                 stagePadding: 1,
                 nav: true,
                 navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
@@ -379,10 +388,58 @@ Sign up at https://greensock.com/club or try them for free on CodePen or CodeSan
             })
             $('.owl-prev2').click(function () {
                 carousel2.trigger('prev.owl.carousel');
-            })
+            });
 
 
         });
+
+
+
+        $(document).ready(function () {
+
+             // Carrousel 3  
+             var carousel5 = $('.owl-slider');
+            var numItems2 = carousel5.find('.carousel').length;
+
+            if (numItems2 > 2) {
+
+                // Initialiser Owl carousel5 si il y a plus de 4 éléments
+                carousel5.owlCarousel({
+                    items: 5, // Limitez le nombre d'éléments à afficher à 5
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 3000,
+                    animateOut: 'slideOutDown',
+                    animateIn: 'flipInX',
+                    stagePadding: 30,
+                    smartSpeed: 450,
+                    margin: 200,
+                    nav: true,
+                    navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
+                });
+
+                var carousel5 = $('.owl-slider').owlCarousel();
+                $('.owl-next').click(function() {
+                    carousel5.trigger('next.owl.carousel');
+                })
+                $('.owl-prev').click(function() {
+                    carousel5.trigger('prev.owl.carousel');
+                })
+
+
+
+            } else {
+
+                carousel5.trigger('destroy.owl.carousel');
+                carousel5.removeClass('owl-carousel owl-loaded');
+                carousel5.find('.owl-stage-outer').children().unwrap();
+
+            }
+
+
+
+        });
+            
     </script>
 
     <script>
