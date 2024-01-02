@@ -300,9 +300,28 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   display: none;
 }
 .section3 .container_box1 .form_box form {
-  width: 100%;
+  width: 90%;
   padding: 20px 20px;
+  border: 2px solid #b1b1b1;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 20px;
 }
+
+.section3 .container_box1 .form_box form img{
+height: 25px;
+width: 25px;
+position: absolute;
+top: 30px;
+right: 30px;
+cursor: pointer;
+transition: all 0.4s;
+z-index: 3;
+}
+.section3 .container_box1 .form_box form img:hover{
+  transform: scale(1.2);
+}
+
 .section3 .container_box1 .form_box form textarea {
   height: 300px;
   width: 100%;
@@ -428,9 +447,26 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 80%;
   display: none;
+  border: 2px solid #919191;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
 }
+.section3 .container_box2 .box2 form img{
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  transition: all 0.4s;
+  z-index: 3;
+  }
+  .section3 .container_box2 .box2 form img:hover{
+    transform: scale(1.2);
+  }
 
 .section3 .container_box2 .box2 form .boxmetier{
   display: flex;
@@ -570,10 +606,26 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 70%;
   display: none;
+  border: 2px solid #919191;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
 }
-
+.section3 .container_box2 .box3 form img{
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  transition: all 0.4s;
+  z-index: 3;
+  }
+  .section3 .container_box2 .box3 form img:hover{
+    transform: scale(1.2);
+  }
 .section3 .container_box2 .box3 form #Ajouter {
   padding: 7px 10px;
   border-radius: 5px;
@@ -588,12 +640,22 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
   background-color: #f39c12;
 }
 .section3 .container_box2 .box3 form #competence {
-  height: 40px;
-  width: 80%;
-  border: 1px solid #4444444a;
+  height:35px;
+  width: 50%;
   padding: 5px 20px;
   font-size: 20px;
   border-radius: 10px;
+  transition: all 0.4s ;
+  border: 1px solid #525252 ;
+  outline: none;
+}
+.section3 .container_box2 .box3 form #competence:hover{
+  box-shadow: 0 0 7px 4px #0004ff4f;
+  border: 1px solid #0004ff54 ;
+}
+.section3 .container_box2 .box3 form #competence:focus{
+  box-shadow: 0 0 7px 4px #0004ff4f;
+  border: 1px solid #0004ff54 ;
 }
 .section3 .container_box2 .box3 h2 {
   color: rgba(0, 0, 0, 0.54);

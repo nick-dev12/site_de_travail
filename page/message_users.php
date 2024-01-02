@@ -149,7 +149,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="container_profil">
 
 <div class="box3">
-        <h2>Candidats retenu</h2>
+        <h2>Candidatures retenues</h2>
+        <?php if( empty($getPostulationUsers)): ?>
+                    <p><strong>Info :</strong> aucune Candidatures trouver !!</p> 
+                    <?php else: ?>
         <?php foreach ($getPostulationUsers as $postulationUsers): ?>
             <?php if($postulationUsers['statut']=='accepter'):?>
                 <?php $infoEntreprise = getEntreprise($db,$postulationUsers['entreprise_id']) ?>
@@ -166,12 +169,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        </a>
         <?php endif;?>
         <?php endforeach; ?>
+        <?php endif; ?>
     </div>
 
     <div class="box2">
-            <h2>Appel d'offres</h2>
+            <h2>Appelles d'offres</h2> 
+            <?php if( empty($getAllAppel_offre)): ?>
+                    <p><strong>Info :</strong> aucun Appelle d'offres !!</p> 
+                    <?php else: ?>
             <?php foreach($getAllAppel_offre as $appel_offre): ?>
-                <?php $infoEntreprise =getEntreprise($db,$appel_offre['entreprise_id']) ?>
+               
+                   
+                        <?php $infoEntreprise =getEntreprise($db,$appel_offre['entreprise_id']) ?>
                 <a href="get_message_users2.php?users_id=<?= $appel_offre['users_id']?>&entreprise_id=<?=$appel_offre['entreprise_id']?>">
             <div class="info">
             <img src="../upload/<?php echo $infoEntreprise['images']?>" alt="">
@@ -182,7 +191,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </a>
-            <?php endforeach; ?>
+               
+            <?php endforeach; ?> 
+             <?php endif; ?>
         </div>
 </div>
 

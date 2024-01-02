@@ -89,6 +89,16 @@ background-attachment: fixed;
     flex-wrap: wrap;
     margin-top: 20px;
 }
+.div-section2 .container  .info{
+    color: #002233c9;
+    font-style: italic;
+}
+.div-section2 .container  .info strong{
+    color: #ffffff;
+    font-style: italic;
+    padding: 2px 5px;
+    background-color: rgba(255, 0, 0, 0.443);
+}
 .div-section2 .container .items{
     width: 270px;
     padding: 5px 10px;
@@ -148,7 +158,7 @@ height: 100%;
 .div-section2 .container .items ul li{
     list-style: none;
     font-size: 13px;
-    line-height: 20px;
+    line-height: 17px;
     margin-left: -30px;
     padding: 3px;
 }
@@ -212,9 +222,11 @@ height: 100%;
 }
 .div-section2 .container .items .box-btn .btn2{
 background-color: #14c700;
+text-transform: capitalize;
 }
 .div-section2 .container .items .box-btn .btn3{
     background-color: #ff0000;
+    text-transform: capitalize;
 }
 
 .div-section2 .container .items .h51{
@@ -226,7 +238,7 @@ background-color: #14c700;
     color: #ffffff;
     font-weight: 600;
    top: 40px;
-   text-transform: uppercase;
+   text-transform: capitalize;
     transform:rotate(45deg);
     text-align: center;
    
@@ -243,7 +255,7 @@ background-color: #14c700;
    text-transform: uppercase;
     transform:rotate(45deg);
     text-align: center;
-   
+    text-transform: capitalize;
   }
   .div-section2 .container .items .h53{
     position: absolute;
@@ -257,7 +269,7 @@ background-color: #14c700;
    text-transform: uppercase;
     transform:rotate(45deg);
     text-align: center;
-   
+    text-transform: capitalize;
   }
 
 

@@ -117,7 +117,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="box6">
             <h2>Suivi de candidatures</h2>
             <div class="container_accept">
-
+            <?php if( empty($getPostulationUsers)): ?>
+                    <p><strong>Info :</strong> aucune Candidatures trouver !!</p> 
+                    <?php else: ?>
                 <?php foreach ($getPostulationUsers as $postulationUsers): ?>
                     <?php $getOffreEmploie = getOffresEmploit($db,$postulationUsers['offre_id']);
                     $infoEntreprise = getEntreprise($db,$postulationUsers['entreprise_id'])
@@ -149,7 +151,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
-
+                <?php endif; ?>
             </div>
 
         </div>

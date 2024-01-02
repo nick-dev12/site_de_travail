@@ -113,13 +113,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     <script src="../script/jquery-3.6.0.min.js"></script>
 
-    <script src="../script/summernote@0.8.18.js"></script>
-    <link rel="stylesheet" href="../style/summernote@0.8.18.css">
+    <!-- <script src="../script/summernote@0.8.18.js"></script>
+    <link rel="stylesheet" href="../style/summernote@0.8.18.css"> -->
 
-
-    <script src="../script/bootstrap-datepicker1.9.0.js"></script>
-    <link rel="stylesheet" href="../style/bootstrap-datepicker1.9.0.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
     <link rel="stylesheet" href="/css/user_profil.css">
     <link rel="stylesheet" href="../css/navbare.css">
@@ -260,6 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form_box">
                         <form method="post" action="" enctype="multipart/form-data">
+                            <img class="imgs" src="../image/croix.png" alt="">
 
                             <?php if (isset($erreurs)): ?>
                                 <div class="erreur">
@@ -283,6 +282,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form_box texte">
                         <form method="post" action="" enctype="multipart/form-data">
+                        <img class="imgs" src="../image/croix.png" alt="">
 
                             <textarea name="nouvelleDescription" id="summernote" cols="30" rows="10"
                                 placeholder="Ajoute une description ici">
@@ -297,24 +297,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <script>
                     let buton = document.querySelector('.buton')
                     let form_box = document.querySelector('.form_box')
+                    let imgs = document.querySelector('.imgs')
 
                     buton.addEventListener('click', function () {
-                        if (form_box.style.display === 'none' || form_box.style.display === '') {
                             form_box.style.display = 'block';
-                        } else {
+                    });
+                    imgs.addEventListener('click', function () {
                             form_box.style.display = 'none';
-                        }
                     });
 
                     let button = document.querySelector('.buttons')
                     let texte = document.querySelector('.texte')
 
                     button.addEventListener('click', function () {
-                        if (tetxe.style.display === 'none' || texte.style.display === '') {
                             texte.style.display = 'block';
-                        } else {
+                    });
+                    imgs.addEventListener('click', function () {
                             texte.style.display = 'none';
-                        }
                     });
                 </script>
             </div>
@@ -402,6 +401,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
                 <form class="form" action="" method="post">
+                <img class="imgs1" src="../image/croix.png" alt="">
+
                     <div class="boxmetier">
                         <label for="metier">Nom de l'experience professionnel</label>
                         <input type="text" name="metier" id="metier">
@@ -556,6 +557,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <?php endif; ?>
 
                 <form class="forms" action="" method="post">
+                <img class="imgs1" src="../image/croix.png" alt="">
                     <input type="text" name="competence" id="competence">
                     <input type="submit" value="Ajouter" name="Ajouter1" id="Ajouter">
                 </form>

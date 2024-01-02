@@ -35,6 +35,8 @@ shuffle($UsersJuridique);
 $UsersInformatique = getUsersInformatique($db);
 shuffle($UsersInformatique);
 
+
+
 if(isset($_GET['disponible'])){
     $statut = 'Disponible';
     $id = $_SESSION['users_id'];

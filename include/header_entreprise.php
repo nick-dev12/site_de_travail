@@ -20,7 +20,7 @@
 
                 <tr class="me1">
                         <td id="td"><a href="modifier.php"><img src="../image/modifier.png" alt=""></a></td>
-                        <td class="td" > <a href="modifier.php">Modifier</a></td>
+                        <td class="td" > <a href="../entreprise/modifier.php">Modifier</a></td>
                     </tr>
 
                     <tr class="me2" >

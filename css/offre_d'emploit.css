@@ -12,8 +12,6 @@
 
 body{
     font-family: 'Nunito', sans-serif;
-    background-attachment: fixed;
-    background-color: #f2f1f1;
 }
 
 
@@ -200,15 +198,18 @@ body{
 
 
 .produit_vedete{
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: relative;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     margin-top: 100px;
-  
+    background: linear-gradient(180deg, #b5b5b5 0, #f7f7f7 53%);
+    padding: 100px 20px;
+    margin-left:auto ;
+    margin-right:auto ;
  }
  
  .produit_vedete h1{
@@ -228,7 +229,7 @@ body{
      align-items: center;
      justify-content: center;
      position: relative;
-     width: 100%;
+     width: 80%;
      margin-bottom: 50px;
  }
  .produit_vedete .box1 h1{
@@ -260,7 +261,7 @@ body{
      position: relative;
  }
  .produit_vedete .articles .carousel{
-     height: 400px;
+     height: 360px;
      width: 240px;
      background-color: rgba(247, 247, 247, 0.499);
      border-radius: 8px;
@@ -271,6 +272,7 @@ body{
      position: relative;
      margin: 0 10px;
      background-color: #ffffff;
+     
  }
  
  
@@ -286,7 +288,7 @@ body{
     border: 1px solid #2c3e501e;
  }
  .produit_vedete .articles .carousel img{
-     height: 200px;
+     height: 150px;
      width: 100%;
      object-fit: cover;
      border-bottom: 1px solid rgba(148, 146, 146, 0.499);
@@ -294,21 +296,18 @@ body{
  .produit_vedete .articles .carousel .p{
      padding-left: 10px;
      margin-bottom: 10px;
-     letter-spacing: 1px;
+     letter-spacing: 0.5px;
      display: flex; 
      align-items: center;
      justify-content: space-between;
+     margin: 7px;
  }
  .produit_vedete .articles .carousel .p strong{
     text-transform: uppercase;
     font-size: 14.5px;
+    font-style: italic;
 }
- .produit_vedete .articles .carousel .p img{
-    height: 35px;
-    width: 35px;
-    border: none;
-    cursor: pointer;
- }
+ 
  .produit_vedete .articles .carousel #nom{
      font-weight: 400;
      margin-left: 8px !important;
@@ -341,6 +340,11 @@ body{
 
  .produit_vedete .articles .carousel .vendu p{
     font-size: 15px;
+    
+}
+.produit_vedete .articles .carousel .vendu .ville{
+    font-size: 15px;
+    margin: 6px 0;
 }
 
  .produit_vedete .articles .carousel .contrat{

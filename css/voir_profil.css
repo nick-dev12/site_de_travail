@@ -200,26 +200,29 @@ body{
 
 
 .produit_vedete{
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: relative;
     margin-bottom: 100px;
-    margin-top: 50px;
-    
+    margin-top: 100px;
+    background: linear-gradient(180deg, #b5b5b5 0, #f7f7f7 53%);
+    padding: 100px 20px;
+    margin-left:auto ;
+    margin-right:auto ;
  }
  
  .produit_vedete h1{
+     margin-bottom: 30px;
      text-transform: uppercase;
      z-index: 2;
-     font-size: 30px;
+     font-size: 35px;
      padding: 10px 20px;
      background-color: #ffffffae;
      backdrop-filter: blur(3px);
      border-radius: 10px;
-
  }
 
  
@@ -228,16 +231,20 @@ body{
      align-items: center;
      justify-content: center;
      position: relative;
-     width: 100%;
-     margin-bottom: 10px;
-     overflow: hidden;
-     height: 200px;
+     width: 80%;
+     margin-bottom: 50px;
  }
- .produit_vedete .box1 span{
-     height: 1px;
-     background-color: black;
-     width: 200px;
+ .produit_vedete .box1 h1{
+    margin: auto 0;
+    font-size: 22px;
  }
+ .produit_vedete .box1 .affiche{
+    height: 100px;
+ }
+ .produit_vedete .box1 .affich img{
+    height: 100px;
+ }
+ 
  .produit_vedete .articles{
      width: 85%;
      display: flex;
@@ -245,6 +252,9 @@ body{
      align-items: center;
      position: relative;
  }
+ /* .produit_vedete .articles h1{
+    font-size: 25px;
+ } */
  .produit_vedete .carousel2{
     width: 85%;
      display: flex;
@@ -253,7 +263,7 @@ body{
      position: relative;
  }
  .produit_vedete .articles .carousel{
-     height: 390px;
+     height: 360px;
      width: 240px;
      background-color: rgba(247, 247, 247, 0.499);
      border-radius: 8px;
@@ -264,6 +274,7 @@ body{
      position: relative;
      margin: 0 10px;
      background-color: #ffffff;
+     
  }
  
  
@@ -272,126 +283,94 @@ body{
  }
  
  .produit_vedete .articles .message{
-    font-size: 25px;
+    font-size: 20px;
     width: 40%;
     text-align: center;
     padding: 20px 30px;
     border: 1px solid #2c3e501e;
  }
-
- .produit_vedete .articles .carousel .statut{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 120px;
-    font-size: 15px;
-    padding: 3px 7px;
-    border-radius: 20px;
-    background-color: #0808083c;
-    color: #ffffff;
-    font-style: italic;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
- .produit_vedete .articles .carousel .statut span{
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    background-color: #44ff00;
-    border: 2px solid #ffffff;
- }
- .produit_vedete .articles .carousel .statut2{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 120px;
-    font-size: 15px;
-    padding: 3px 7px;
-    border-radius: 20px;
-    background-color: #0808083c;
-    color: #ffffff;
-    font-style: italic;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
- .produit_vedete .articles .carousel .statut2 span{
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    background-color: #000000;
-    border: 2px solid #ffffff;
- }
  .produit_vedete .articles .carousel img{
-     height: 170px;
+     height: 150px;
      width: 100%;
      object-fit: cover;
      border-bottom: 1px solid rgba(148, 146, 146, 0.499);
  }
- .produit_vedete .articles .carousel h4{
-     width: 100%;
-     max-height: 55px;
-     overflow: hidden;
-     font-weight: 600;
+ .produit_vedete .articles .carousel .p{
      padding-left: 10px;
-     margin-bottom: 7px;
-     font-size: 18px;
+     margin-bottom: 10px;
      letter-spacing: 0.5px;
-     color: #3451c6;
-     font-style: italic;
+     display: flex; 
+     align-items: center;
+     justify-content: space-between;
+     margin: 7px;
  }
- .produit_vedete .articles .carousel h4 img{
-    height: 30px;
-    width: 30px;
-    border: none;
-    cursor: pointer;
- }
+ .produit_vedete .articles .carousel .p strong{
+    text-transform: uppercase;
+    font-size: 14.5px;
+    font-style: italic;
+}
+ 
  .produit_vedete .articles .carousel #nom{
      font-weight: 400;
-     margin-left: 10px !important;
+     margin-left: 8px !important;
      overflow: hidden;
-     font-size: 15px;
-     margin: 8px 0;
+     font-size: 13px;
+     margin-top: 4px;
      max-height: 20px;
-     width: 400px;
+     width: 100%;
+     color: #3451c6;
  }
  .produit_vedete .articles .carousel p span{
      color: #F39C12;
      font-size: 13px;
      margin-right: 5px;
  }
- 
+
+ .produit_vedete .articles .carousel .box_vendu{
+    display: flex;
+    width: 100%;
+    align-items: center;
+ }
 
  .produit_vedete .articles .carousel .vendu{
      display: flex !important; 
      margin-left: 12px;
-     font-size: 12px;
+     font-size: 15px;
      width: 100%;
-     flex-wrap: wrap;
+     max-height: 57px !important;
  }
+
+ .produit_vedete .articles .carousel .vendu p{
+    font-size: 15px;
+    
+}
+.produit_vedete .articles .carousel .vendu .ville{
+    font-size: 15px;
+    margin: 6px 0;
+}
+
+ .produit_vedete .articles .carousel .contrat{
+   margin-left: 20px;
+   font-style: italic;
+   font-size: 13px;
+   margin-top: 4px;
+}
  .produit_vedete .articles .carousel .vendu span{
-    padding: 5px 5px;
+    padding: 5px 8px;
     margin-right: 6px;
     background-color: #297fb928;
     border-radius: 10px;
     margin-bottom: 4px;
-    font-size: 13px;
  }
  
  .produit_vedete .articles .carousel a{
     background-color: #3451c6;
-     width: 40%;
-     padding-right: 60px;
-     padding-top: 5px;
-     padding-bottom: 5px;
-     padding-left: 120px;
+     width: 100%;
+     padding: 5px 10px;
      color: white;
      text-decoration: none;
      font-size: 15px;
-     border-radius: 10px;
+
      display: block;
      transition: all 0.5s ease-in-out;
      display: flex;
@@ -399,14 +378,14 @@ body{
      justify-content: center;
      position: absolute;
      bottom: 5px;
-     left: -50px;
+     
  }
 
  .produit_vedete .articles .carousel a :nth-child(1){
     margin-right: 7px;
  }
  .produit_vedete .articles .carousel a:hover{
-     background-color: #002233;
+     background-color: #2C3E50;
  }
  
  
@@ -416,13 +395,13 @@ body{
      display: flex;
      align-items: center;
      justify-content: space-between;
-     
+     margin-bottom: 10px;
  }
  
  .produit_vedete .box2 span{
      height: 40px;
      width: 50px;
-     background-color: #002233;
+     background-color: #2C3E50;
      display: flex;
      align-items: center;
      justify-content: center;

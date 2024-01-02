@@ -22,19 +22,24 @@ include_once('../controller/controller_competence_users.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5JBWCPV7');</script>
-<!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5JBWCPV7');</script>
+    <!-- End Google Tag Manager -->
 
     <title>bienvenu</title>
     <link rel="stylesheet" href="/css/slick.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/js/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/voir_profil.css">
     <link rel="stylesheet" href="/css/owl.theme.default.css">
     <link rel="stylesheet" href="/css/owl.theme.default.min.css">
@@ -48,10 +53,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JBWCPV7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JBWCPV7" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <?php include('../navbare.php') ?>
 
@@ -67,13 +72,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <img src="/image/profile2.jpg" alt="">
                 </div>
                 <div class="text">
-                    <h1 data-aos="fade-right" data-aos-delay="0" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-right">Exploré les
+                    <h1 data-aos="fade-right" data-aos-delay="0" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-right">Exploré les
                         profils qui conviennent à vos besoins</h1>
-                    <p data-aos="fade-left" data-aos-delay="0" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-right">
+                    <p data-aos="fade-left" data-aos-delay="0" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-right">
                         Un large éventail de profiles professionnels toute catégorie confondu pour satisfaire le
                         moindres de vos besoins en main d'œuvre et bien plus encore
                     </p>
-                    <form data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-right" action="" method="post">
+                    <form data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"
+                        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+                        data-aos-anchor-placement="top-right" action="" method="post">
                         <input type="search" name="" id="search">
                         <label for="recherche"><i class="fa-solid fa-magnifying-glass fa-xs"></i></label>
                         <input type="submit" value="recherche" id="recherche">
@@ -103,158 +112,81 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span><i class="fa-solid fa-chevron-right"></i></span>
         </div>
 
-        <article data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom" class="articles owl-carousel carousel1">
-            <?php if (empty($Usersingegneur)) : ?>
+        <article data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-easing="ease-in-out"
+            data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom"
+            class="articles owl-carousel carousel1">
+            <?php if (empty($Usersingegneur)): ?>
 
                 <h1 class="message">Aucun profil disponible pour cette categorie</h1>
 
-            <?php else : ?>
-                <?php foreach ($Usersingegneur as $ingenieurs) : ?>
-                    <div class="carousel">
+            <?php else: ?>
+                <?php foreach ($Usersingegneur as $ingenieurs): ?>
+                    <?php if ($ingenieur['statut'] == 'Occuper'): ?>
 
-                        <?php if ($ingenieurs['statut'] == 'Disponible') : ?>
-                            <p class="statut"><span></span>
-                                <?= $ingenieurs['statut'] ?>
-                            </p>
-                        <?php else : ?>
-                            <?php if ($ingenieurs['statut'] == 'Occuper') : ?>
-                                <p class="statut2"><span></span>
+                    <?php else: ?>
+                        <div class="carousel">
+
+                            <?php if ($ingenieurs['statut'] == 'Disponible'): ?>
+                                <p class="statut"><span></span>
                                     <?= $ingenieurs['statut'] ?>
                                 </p>
-                            <?php else : ?>
-                                <p class="statut"><span></span> Disponible</p>
+                            <?php else: ?>
+                                <?php if ($ingenieurs['statut'] == 'Occuper'): ?>
+                                    <p class="statut2"><span></span>
+                                        <?= $ingenieurs['statut'] ?>
+                                    </p>
+                                <?php else: ?>
+                                    <p class="statut"><span></span> Disponible</p>
+                                <?php endif; ?>
                             <?php endif; ?>
-                        <?php endif; ?>
 
-                        <img src="../upload/<?php echo $ingenieurs['images'] ?>" alt="">
-                        <h4>
-                            <?php echo $ingenieurs['competences']; ?>
-                        </h4>
-
-                        <p id="nom"><strong>Nom :</strong>
-                            <?php echo $ingenieurs['nom']; ?>
-                        </p>
-
-                        <div class="vendu">
-                            <?php $afficheCompetences = getCompetences($db, $ingenieurs['id']) ?>
-                            <?php
-                            $competencesAffichees = 0; // Initialiser le compteur de compétences affichées
-
-                            foreach ($afficheCompetences as $compe) :
-                                if ($competencesAffichees < 4) :
-                            ?>
-                                    <span>
-                                        <?= $compe['competence'] ?>
-                                    </span>
-                            <?php
-                                    $competencesAffichees++;
-                                endif;
-                            endforeach;
-                            ?>
-                        </div>
-
-                        <p id="nom"><strong>Ville :</strong>
-                            <?php echo $ingenieurs['ville']; ?>
-                        </p>
-                        <a href="/page/candidats.php?id=<?php echo $ingenieurs['id']; ?>">
-                            <i class="fa-solid fa-eye"></i>Profil
-                        </a>
-                    </div>
-
-
-                <?php endforeach ?>
-            <?php endif; ?>
-        </article>
-
-    </section>
+                            <img src="../upload/<?php echo $ingenieurs['images'] ?>" alt="">
+                            <h4>
+                                <?php echo $ingenieurs['competences']; ?>
+                            </h4>
 
 
 
-
-    <section class="produit_vedete">
-        <div class="box1">
-            <span></span>
-            <h1> Design et création</h1>
-            <span></span>
-            <div class="affiche">
-                <!-- <img src="/image/info.jpg" alt=""> -->
-                <img src="/image/webdesign.jpg" alt="">
-            </div>
-        </div>
-
-        <div class="box2">
-            <span><i class="fa-solid fa-chevron-left"></i></span>
-            <span><i class="fa-solid fa-chevron-right"></i></span>
-        </div>
-
-        <article class="articles owl-carousel carousel2">
-            <?php if (empty($UsersDesign)) : ?>
-
-                <h1 class="message">Aucun profil disponible pour cette catégorie</h1>
-
-            <?php else : ?>
-
-                <?php foreach ($UsersDesign as $Designs) : ?>
-
-                    <div class="carousel">
-                        <?php if ($Designs['statut'] == 'Disponible') : ?>
-                            <p class="statut"><span></span>
-                                <?= $Designs['statut'] ?>
+                            <div class="vendu">
+                                <?php $afficheCompetences = getCompetences($db, $ingenieurs['id']) ?>
+                                <?php if (empty($afficheCompetences)): ?>
+                                    <span>Competences indisponibles</span>
+                                <?php else: ?>
+                                    <?php
+                                    $competencesAffichees = 0; // Initialiser le compteur de compétences affichées
+                    
+                                    foreach ($afficheCompetences as $compe):
+                                        if ($competencesAffichees < 4):
+                                            ?>
+                                            <span>
+                                                <?= $compe['competence'] ?>
+                                            </span>
+                                            <?php
+                                            $competencesAffichees++;
+                                        endif;
+                                    endforeach;
+                                    ?>
+                                <?php endif; ?>
+                            </div>
+                            <p id="nom"><strong>Nom :</strong>
+                                <?php echo $ingenieurs['nom']; ?>
                             </p>
-                        <?php else : ?>
-                            <?php if ($Designs['statut'] == 'Occuper') : ?>
-                                <p class="statut2"><span></span>
-                                    <?= $Designs['statut'] ?>
-                                </p>
-                            <?php else : ?>
-                                <p class="statut"><span></span> Disponible</p>
-                            <?php endif; ?>
-                        <?php endif; ?>
 
-                        <img src="../upload/<?php echo $Designs['images'] ?>" alt="">
-                        <h4>
-                            <?php echo $Designs['competences']; ?>
-                        </h4>
-
-                        <p id="nom"><strong>Nom :</strong>
-                            <?php echo $Designs['nom']; ?>
-                        </p>
-
-                        <div class="vendu">
-                            <?php $afficheCompetences = getCompetences($db, $Designs['id']) ?>
-                            <?php
-                            $competencesAffichees = 0; // Initialiser le compteur de compétences affichées
-
-                            foreach ($afficheCompetences as $compe) :
-                                if ($competencesAffichees < 4) :
-                            ?>
-                                    <span>
-                                        <?= $compe['competence'] ?>
-                                    </span>
-                            <?php
-                                    $competencesAffichees++;
-                                endif;
-                            endforeach;
-                            ?>
+                            <p id="nom"><strong>Ville :</strong>
+                                <?php echo $ingenieurs['ville']; ?>
+                            </p>
+                            <a href="/page/candidats.php?id=<?php echo $ingenieurs['id']; ?>">
+                                <i class="fa-solid fa-eye"></i>Profil
+                            </a>
                         </div>
 
-                        <p id="nom"><strong>Ville :</strong>
-                            <?php echo $Designs['ville']; ?>
-                        </p>
-
-                        <a href="/page/candidats.php?id=<?php echo $Designs['id']; ?>">
-                            <i class="fa-solid fa-eye"></i>Profil
-                        </a>
-                    </div>
-
+                    <?php endif; ?>
                 <?php endforeach ?>
-
             <?php endif; ?>
         </article>
+
     </section>
-
-
-
+    
 
 
 
@@ -280,66 +212,76 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <article class="articles owl-carousel carousel3">
-            <?php if (empty($UsersRédaction)) : ?>
+            <?php if (empty($UsersRédaction)): ?>
 
                 <h1 class="message">Aucun profil disponible pour cette catégorie</h1>
 
-            <?php else : ?>
+            <?php else: ?>
 
-                <?php foreach ($UsersRédaction as $Redaction) : ?>
+                <?php foreach ($UsersRédaction as $Redaction): ?>
+                    <?php if ($Redaction['statut'] == 'Occuper'): ?>
 
-                    <div class="carousel">
+                    <?php else: ?>
+                        <div class="carousel">
 
-                        <?php if ($Redaction['statut'] == 'Disponible') : ?>
-                            <p class="statut"><span></span>
-                                <?= $Redaction['statut'] ?>
-                            </p>
-                        <?php else : ?>
-                            <?php if ($Redaction['statut'] == 'Occuper') : ?>
-                                <p class="statut2"><span></span>
+                            <?php if ($Redaction['statut'] == 'Disponible'): ?>
+                                <p class="statut"><span></span>
                                     <?= $Redaction['statut'] ?>
                                 </p>
-                            <?php else : ?>
-                                <p class="statut"><span></span> Disponible</p>
+                            <?php else: ?>
+                                <?php if ($Redaction['statut'] == 'Occuper'): ?>
+                                    <p class="statut2"><span></span>
+                                        <?= $Redaction['statut'] ?>
+                                    </p>
+                                <?php else: ?>
+                                    <p class="statut"><span></span> Disponible</p>
+                                <?php endif; ?>
                             <?php endif; ?>
-                        <?php endif; ?>
 
-                        <img src="../upload/<?php echo $Redaction['images'] ?>" alt="">
-                        <h4>
-                            <?php echo $Redaction['competences']; ?><img src="../image/coeurs.png" alt="">
-                        </h4>
+                            <img src="../upload/<?php echo $Redaction['images'] ?>" alt="">
+                            <h4>
+                                <?php echo $Redaction['competences']; ?>
+                            </h4>
 
-                        <p id="nom"><strong>Nom :</strong>
-                            <?php echo $Redaction['nom']; ?>
-                        </p>
 
-                        <div class="vendu">
-                            <?php $afficheCompetences = getCompetences($db, $Redaction['id']) ?>
-                            <?php
-                            $competencesAffichees = 0; // Initialiser le compteur de compétences affichées
+                            <div class="vendu">
+                                <?php $afficheCompetences = getCompetences($db, $Redaction['id']) ?>
+                                <?php if (empty($afficheCompetences)): ?>
+                                    <span>Competences indisponibles</span>
+                                <?php else: ?>
+                                    <?php
+                                    $competencesAffichees = 0; // Initialiser le compteur de compétences affichées
+                                    foreach ($afficheCompetences as $compe):
+                                        if ($competencesAffichees < 4):
+                                            ?>
+                                            <span>
+                                                <?= $compe['competence'] ?>
+                                            </span>
+                                            <?php
+                                            $competencesAffichees++;
+                                        endif;
+                                    endforeach;
+                                    ?>
+                                <?php endif; ?>
 
-                            foreach ($afficheCompetences as $compe) :
-                                if ($competencesAffichees < 4) :
-                            ?>
-                                    <span>
-                                        <?= $compe['competence'] ?>
-                                    </span>
-                            <?php
-                                    $competencesAffichees++;
-                                endif;
-                            endforeach;
-                            ?>
+                            </div>
+
+                            <p id="nom"><strong>Nom :</strong>
+                                <?php echo $Redaction['nom']; ?>
+                            </p>
+
+                            <p id="nom"><strong>Ville :</strong>
+                                <?php echo $Redaction['ville']; ?>
+                            </p>
+
+                            <a href="/page/candidats.php?id=<?php echo $Redaction['id']; ?>">
+                                <i class="fa-solid fa-eye"></i>Profil
+                            </a>
                         </div>
-
-                        <p id="nom"><strong>Ville :</strong>
-                            <?php echo $Redaction['ville']; ?>
-                        </p>
-
-                        <a href="/page/candidats.php?id=<?php echo $Redaction['id']; ?>">
-                            <i class="fa-solid fa-eye"></i>Profil
-                        </a>
-                    </div>
+                    <?php endif; ?>
                 <?php endforeach ?>
+
+
 
             <?php endif; ?>
         </article>
@@ -350,7 +292,96 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
+    <section class="produit_vedete">
+        <div class="box1">
+            <span></span>
+            <h1>Design et création</h1>
+            <span></span>
+            <div class="affiche">
+            <img src="/image/webdesign.jpg" alt="">
+            </div>
+        </div>
 
+        <div class="box2">
+            <span><i class="fa-solid fa-chevron-left"></i></span>
+            <span><i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+
+        <article class="articles owl-carousel carousel2">
+            <?php if (empty($UsersDesign)): ?>
+
+                <h1 class="message">Aucun profil disponible pour cette catégorie</h1>
+
+            <?php else: ?>
+
+                <?php foreach ($UsersDesign as $Designs): ?>
+                    <?php if ($Designs['statut'] == 'Occuper'): ?>
+
+                    <?php else: ?>
+                        <div class="carousel">
+
+                            <?php if ($Designs['statut'] == 'Disponible'): ?>
+                                <p class="statut"><span></span>
+                                    <?= $Designs['statut'] ?>
+                                </p>
+                            <?php else: ?>
+                                <?php if ($Designs['statut'] == 'Occuper'): ?>
+                                    <p class="statut2"><span></span>
+                                        <?= $Designs['statut'] ?>
+                                    </p>
+                                <?php else: ?>
+                                    <p class="statut"><span></span> Disponible</p>
+                                <?php endif; ?>
+                            <?php endif; ?>
+
+                            <img src="../upload/<?php echo $Designs['images'] ?>" alt="">
+                            <h4>
+                                <?php echo $Designs['competences']; ?>
+                            </h4>
+
+
+                            <div class="vendu">
+                                <?php $afficheCompetences = getCompetences($db, $Designs['id']) ?>
+                                <?php if (empty($afficheCompetences)): ?>
+                                    <span>Competences indisponibles</span>
+                                <?php else: ?>
+                                    <?php
+                                    $competencesAffichees = 0; // Initialiser le compteur de compétences affichées
+                                    foreach ($afficheCompetences as $compe):
+                                        if ($competencesAffichees < 4):
+                                            ?>
+                                            <span>
+                                                <?= $compe['competence'] ?>
+                                            </span>
+                                            <?php
+                                            $competencesAffichees++;
+                                        endif;
+                                    endforeach;
+                                    ?>
+                                <?php endif; ?>
+
+                            </div>
+
+                            <p id="nom"><strong>Nom :</strong>
+                                <?php echo $Designs['nom']; ?>
+                            </p>
+
+                            <p id="nom"><strong>Ville :</strong>
+                                <?php echo $Designs['ville']; ?>
+                            </p>
+
+                            <a href="/page/candidats.php?id=<?php echo $Designs['id']; ?>">
+                                <i class="fa-solid fa-eye"></i>Profil
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach ?>
+
+
+
+            <?php endif; ?>
+        </article>
+    </section>
 
 
 
@@ -370,65 +401,72 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <article class="articles owl-carousel carousel4">
-            <?php if (empty($Usersmarketing)) : ?>
+            <?php if (empty($Usersmarketing)): ?>
 
                 <h1 class="message">Aucun profil disponible pour cette catégorie</h1>
 
-            <?php else : ?>
+            <?php else: ?>
 
-                <?php foreach ($Usersmarketing as $marketing) : ?>
+                <?php foreach ($Usersmarketing as $marketing): ?>
+                    <?php if ($marketing['statut'] == 'Occuper'): ?>
 
-                    <div class="carousel">
-                        <?php if ($marketing['statut'] == 'Disponible') : ?>
-                            <p class="statut"><span></span>
-                                <?= $marketing['statut'] ?>
-                            </p>
-                        <?php else : ?>
-                            <?php if ($marketing['statut'] == 'Occuper') : ?>
-                                <p class="statut2"><span></span>
+                    <?php else: ?>
+
+                        <div class="carousel">
+                            <?php if ($marketing['statut'] == 'Disponible'): ?>
+                                <p class="statut"><span></span>
                                     <?= $marketing['statut'] ?>
                                 </p>
-                            <?php else : ?>
-                                <p class="statut"><span></span> Disponible</p>
+                            <?php else: ?>
+                                <?php if ($marketing['statut'] == 'Occuper'): ?>
+                                    <p class="statut2"><span></span>
+                                        <?= $marketing['statut'] ?>
+                                    </p>
+                                <?php else: ?>
+                                    <p class="statut"><span></span> Disponible</p>
+                                <?php endif; ?>
                             <?php endif; ?>
-                        <?php endif; ?>
 
-                        <img src="../upload/<?php echo $marketing['images'] ?>" alt="">
-                        <h4>
-                            <?php echo $marketing['competences']; ?>
-                        </h4>
+                            <img src="../upload/<?php echo $marketing['images'] ?>" alt="">
+                            <h4>
+                                <?php echo $marketing['competences']; ?>
+                            </h4>
 
-                        <p id="nom"><strong>Nom :</strong>
-                            <?php echo $marketing['nom']; ?>
-                        </p>
 
-                        <div class="vendu">
-                            <?php $afficheCompetences = getCompetences($db, $marketing['id']) ?>
-                            <?php
-                            $competencesAffichees = 0; // Initialiser le compteur de compétences affichées
+                            <div class="vendu">
+                                <?php $afficheCompetences = getCompetences($db, $marketing['id']) ?>
+                                <?php if (empty($afficheCompetences)): ?>
+                                    <span>Competences indisponibles</span>
+                                <?php else: ?>
+                                    <?php
+                                    $competencesAffichees = 0; // Initialiser le compteur de compétences affichées
+                    
+                                    foreach ($afficheCompetences as $compe):
+                                        if ($competencesAffichees < 4):
+                                            ?>
+                                            <span>
+                                                <?= $compe['competence'] ?>
+                                            </span>
+                                            <?php
+                                            $competencesAffichees++;
+                                        endif;
+                                    endforeach;
+                                    ?>
+                                <?php endif; ?>
+                            </div>
+                            <p id="nom"><strong>Nom :</strong>
+                                <?php echo $marketing['nom']; ?>
+                            </p>
 
-                            foreach ($afficheCompetences as $compe) :
-                                if ($competencesAffichees < 4) :
-                            ?>
-                                    <span>
-                                        <?= $compe['competence'] ?>
-                                    </span>
-                            <?php
-                                    $competencesAffichees++;
-                                endif;
-                            endforeach;
-                            ?>
+                            <p id="nom"><strong>Ville :</strong>
+                                <?php echo $marketing['ville']; ?>
+                            </p>
+
+                            <a href="/page/candidats.php?id=<?php echo $marketing['id']; ?>">
+                                <i class="fa-solid fa-eye"></i>Profil
+                            </a>
                         </div>
-
-                        <p id="nom"><strong>Ville :</strong>
-                            <?php echo $marketing['ville']; ?>
-                        </p>
-
-                        <a href="/page/candidats.php?id=<?php echo $marketing['id']; ?>">
-                            <i class="fa-solid fa-eye"></i>Profil
-                        </a>
-                    </div>
-
+                    <?php endif; ?>
                 <?php endforeach ?>
 
             <?php endif; ?>
@@ -458,64 +496,72 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <article class="articles owl-carousel carousel5">
-            <?php if (empty($Usersbusiness)) : ?>
+            <?php if (empty($Usersbusiness)): ?>
 
                 <h1 class="message">Aucun profil disponible pour cette catégorie</h1>
 
-            <?php else : ?>
+            <?php else: ?>
 
-                <?php foreach ($Usersbusiness as $business) : ?>
+                <?php foreach ($Usersbusiness as $business): ?>
+                    <?php if ($business['statut'] == 'Occuper'): ?>
 
-                    <div class="carousel">
-                        <?php if ($business['statut'] == 'Disponible') : ?>
-                            <p class="statut"><span></span>
-                                <?= $business['statut'] ?>
-                            </p>
-                        <?php else : ?>
-                            <?php if ($business['statut'] == 'Occuper') : ?>
-                                <p class="statut2"><span></span>
+                    <?php else: ?>
+
+                        <div class="carousel">
+                            <?php if ($business['statut'] == 'Disponible'): ?>
+                                <p class="statut"><span></span>
                                     <?= $business['statut'] ?>
                                 </p>
-                            <?php else : ?>
-                                <p class="statut"><span></span> Disponible</p>
+                            <?php else: ?>
+                                <?php if ($business['statut'] == 'Occuper'): ?>
+                                    <p class="statut2"><span></span>
+                                        <?= $business['statut'] ?>
+                                    </p>
+                                <?php else: ?>
+                                    <p class="statut"><span></span> Disponible</p>
+                                <?php endif; ?>
                             <?php endif; ?>
-                        <?php endif; ?>
-                        <img src="../upload/<?php echo $business['images'] ?>" alt="">
-                        <h4>
-                            <?php echo $business['competences']; ?>
-                        </h4>
+                            <img src="../upload/<?php echo $business['images'] ?>" alt="">
+                            <h4>
+                                <?php echo $business['competences']; ?>
+                            </h4>
 
-                        <p id="nom"><strong>Nom :</strong>
-                            <?php echo $business['nom']; ?>
-                        </p>
 
-                        <div class="vendu">
-                            <?php $afficheCompetences = getCompetences($db, $business['id']) ?>
-                            <?php
-                            $competencesAffichees = 0; // Initialiser le compteur de compétences affichées
 
-                            foreach ($afficheCompetences as $compe) :
-                                if ($competencesAffichees < 4) :
-                            ?>
-                                    <span>
-                                        <?= $compe['competence'] ?>
-                                    </span>
-                            <?php
-                                    $competencesAffichees++;
-                                endif;
-                            endforeach;
-                            ?>
+                            <div class="vendu">
+                                <?php $afficheCompetences = getCompetences($db, $business['id']) ?>
+                                <?php if (empty($afficheCompetences)): ?>
+                                    <span>Competences indisponibles</span>
+                                <?php else: ?>
+                                    <?php
+                                    $competencesAffichees = 0; // Initialiser le compteur de compétences affichées
+                    
+                                    foreach ($afficheCompetences as $compe):
+                                        if ($competencesAffichees < 4):
+                                            ?>
+                                            <span>
+                                                <?= $compe['competence'] ?>
+                                            </span>
+                                            <?php
+                                            $competencesAffichees++;
+                                        endif;
+                                    endforeach;
+                                    ?>
+                                <?php endif; ?>
+                            </div>
+                            <p id="nom"><strong>Nom :</strong>
+                                <?php echo $business['nom']; ?>
+                            </p>
+
+                            <p id="nom"><strong>Ville :</strong>
+                                <?php echo $business['ville']; ?>
+                            </p>
+
+                            <a href="/page/candidats.php?id=<?php echo $business['id']; ?>">
+                                <i class="fa-solid fa-eye"></i>Profil
+                            </a>
                         </div>
-
-                        <p id="nom"><strong>Ville :</strong>
-                            <?php echo $business['ville']; ?>
-                        </p>
-
-                        <a href="/page/candidats.php?id=<?php echo $business['id']; ?>">
-                            <i class="fa-solid fa-eye"></i>Profil
-                        </a>
-                    </div>
-
+                    <?php endif; ?>
                 <?php endforeach ?>
 
             <?php endif; ?>
@@ -547,63 +593,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <article class="articles owl-carousel carousel6">
-            <?php if (empty($UsersJuridique)) : ?>
+            <?php if (empty($UsersJuridique)): ?>
 
                 <h1 class="message">Aucun profil disponible pour cette catégorie</h1>
 
-            <?php else : ?>
+            <?php else: ?>
 
-                <?php foreach ($UsersJuridique as $Juridique) : ?>
+                <?php foreach ($UsersJuridique as $Juridique): ?>
+                    <?php if ($Juridique['statut'] == 'Occuper'): ?>
 
-                    <div class="carousel">
-                        <?php if ($Juridique['statut'] == 'Disponible') : ?>
-                            <p class="statut"><span></span>
-                                <?= $Juridique['statut'] ?>
-                            </p>
-                        <?php else : ?>
-                            <?php if ($Juridique['statut'] == 'Occuper') : ?>
-                                <p class="statut2"><span></span>
+                    <?php else: ?>
+
+                        <div class="carousel">
+                            <?php if ($Juridique['statut'] == 'Disponible'): ?>
+                                <p class="statut"><span></span>
                                     <?= $Juridique['statut'] ?>
                                 </p>
-                            <?php else : ?>
-                                <p class="statut"><span></span> Disponible</p>
+                            <?php else: ?>
+                                <?php if ($Juridique['statut'] == 'Occuper'): ?>
+                                    <p class="statut2"><span></span>
+                                        <?= $Juridique['statut'] ?>
+                                    </p>
+                                <?php else: ?>
+                                    <p class="statut"><span></span> Disponible</p>
+                                <?php endif; ?>
                             <?php endif; ?>
-                        <?php endif; ?>
-                        <img src="../upload/<?php echo $Juridique['images'] ?>" alt="">
-                        <h4>
-                            <?php echo $Juridique['competences']; ?>
-                        </h4>
+                            <img src="../upload/<?php echo $Juridique['images'] ?>" alt="">
+                            <h4>
+                                <?php echo $Juridique['competences']; ?>
+                            </h4>
 
-                        <p id="nom"><strong>Nom :</strong>
-                            <?php echo $Juridique['nom']; ?>
-                        </p>
 
-                        <div class="vendu">
-                            <?php $afficheCompetences = getCompetences($db, $Juridique['id']);
-                            $nombreCompetencesAffichees = 4;
-                            ?>
 
-                            <?php foreach ($afficheCompetences as $key => $compe) :
-                                if ($key < $nombreCompetencesAffichees) :
-                            ?>
-                                    <span>
-                                        <?= $compe['competence'] ?>
-                                    </span>
-                            <?php
-                                endif;
-                            endforeach;
-                            ?>
+                            <div class="vendu">
+                                <?php $afficheCompetences = getCompetences($db, $Juridique['id']);
+                                $nombreCompetencesAffichees = 4;
+                                ?>
+                                <?php if (empty($afficheCompetences)): ?>
+                                    <span>Competences indisponibles</span>
+                                <?php else: ?>
+                                    <?php foreach ($afficheCompetences as $key => $compe):
+                                        if ($key < $nombreCompetencesAffichees):
+                                            ?>
+                                            <span>
+                                                <?= $compe['competence'] ?>
+                                            </span>
+                                            <?php
+                                        endif;
+                                    endforeach;
+                                    ?>
+                                <?php endif; ?>
+                            </div>
+                            <p id="nom"><strong>Nom :</strong>
+                                <?php echo $Juridique['nom']; ?>
+                            </p>
+                            <p id="nom"><strong>Ville :</strong>
+                                <?php echo $Juridique['ville']; ?>
+                            </p>
+
+                            <a href="/page/candidats.php?id=<?php echo $Juridique['id']; ?>">
+                                <i class="fa-solid fa-eye"></i>Profil
+                            </a>
                         </div>
-
-                        <p id="nom"><strong>Ville :</strong>
-                            <?php echo $Juridique['ville']; ?>
-                        </p>
-
-                        <a href="/page/candidats.php?id=<?php echo $Juridique['id']; ?>">
-                            <i class="fa-solid fa-eye"></i>Profil
-                        </a>
-                    </div>
-
+                    <?php endif; ?>
                 <?php endforeach ?>
 
             <?php endif; ?>
@@ -635,71 +687,80 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <article class="articles owl-carousel carousel7">
-            <?php if (empty($UsersInformatique)) : ?>
+            <?php if (empty($UsersInformatique)): ?>
 
                 <h1 class="message">Aucun profil disponible pour cette catégorie</h1>
 
-            <?php else : ?>
+            <?php else: ?>
 
-                <?php foreach ($UsersInformatique as $Informatique) : ?>
+                <?php foreach ($UsersInformatique as $Informatique): ?>
+                    <?php if ($Informatique['statut'] == 'Occuper'): ?>
 
-                    <div class="carousel">
-                        <?php if ($Informatique['statut'] == 'Disponible') : ?>
-                            <p class="statut"><span></span>
-                                <?= $Informatique['statut'] ?>
-                            </p>
-                        <?php else : ?>
-                            <?php if ($Informatique['statut'] == 'Occuper') : ?>
-                                <p class="statut2"><span></span>
+                    <?php else: ?>
+
+                        <div class="carousel">
+                            <?php if ($Informatique['statut'] == 'Disponible'): ?>
+                                <p class="statut"><span></span>
                                     <?= $Informatique['statut'] ?>
                                 </p>
-                            <?php else : ?>
-                                <p class="statut"><span></span> Disponible</p>
+                            <?php else: ?>
+                                <?php if ($Informatique['statut'] == 'Occuper'): ?>
+                                    <p class="statut2"><span></span>
+                                        <?= $Informatique['statut'] ?>
+                                    </p>
+                                <?php else: ?>
+                                    <p class="statut"><span></span> Disponible</p>
+                                <?php endif; ?>
                             <?php endif; ?>
-                        <?php endif; ?>
 
-                        <img src="../upload/<?php echo $Informatique['images'] ?>" alt="">
-                        <h4>
-                            <?php echo $Informatique['competences']; ?>
-                        </h4>
+                            <img src="../upload/<?php echo $Informatique['images'] ?>" alt="">
+                            <h4>
+                                <?php echo $Informatique['competences']; ?>
+                            </h4>
 
 
-                        <p id="nom"><strong>Nom :</strong>
-                            <?php echo $Informatique['nom']; ?>
-                        </p>
 
-                        <div class="vendu">
-                            <?php
-                            $afficheCompetences = getCompetences($db, $Informatique['id']);
-                            // Garder seulement les 4 premières 
-                            $afficheCompetences = array_slice($afficheCompetences, 0, 4);
 
-                            ?>
-                            <?php
-                            $competencesAffichees = 0; // Initialiser le compteur de compétences affichées
+                            <div class="vendu">
+                                <?php
+                                $afficheCompetences = getCompetences($db, $Informatique['id']);
+                                // Garder seulement les 4 premières 
+                                $afficheCompetences = array_slice($afficheCompetences, 0, 4);
 
-                            foreach ($afficheCompetences as $compe) :
-                                if ($competencesAffichees < 4) :
-                            ?>
-                                    <span>
-                                        <?= $compe['competence'] ?>
-                                    </span>
-                            <?php
-                                    $competencesAffichees++;
-                                endif;
-                            endforeach;
-                            ?>
+                                ?>
+
+                                <?php if (empty($afficheCompetences)): ?>
+                                    <span>Competences indisponibles</span>
+                                <?php else: ?>
+                                    <?php
+                                    $competencesAffichees = 0; // Initialiser le compteur de compétences affichées
+                    
+                                    foreach ($afficheCompetences as $compe):
+                                        if ($competencesAffichees < 4):
+                                            ?>
+                                            <span>
+                                                <?= $compe['competence'] ?>
+                                            </span>
+                                            <?php
+                                            $competencesAffichees++;
+                                        endif;
+                                    endforeach;
+                                    ?>
+                                <?php endif; ?>
+                            </div>
+                            <p id="nom"><strong>Nom :</strong>
+                                <?php echo $Informatique['nom']; ?>
+                            </p>
+
+                            <p id="nom"><strong>Ville :</strong>
+                                <?php echo $Informatique['ville']; ?>
+                            </p>
+
+                            <a href="/page/candidats.php?id=<?php echo $Informatique['id']; ?>">
+                                <i class="fa-solid fa-eye"></i>Profil
+                            </a>
                         </div>
-
-                        <p id="nom"><strong>Ville :</strong>
-                            <?php echo $Informatique['ville']; ?>
-                        </p>
-
-                        <a href="/page/candidats.php?id=<?php echo $Informatique['id']; ?>">
-                            <i class="fa-solid fa-eye"></i>Profil
-                        </a>
-                    </div>
-
+                    <?php endif; ?>
                 <?php endforeach ?>
 
             <?php endif; ?>
@@ -756,81 +817,81 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
-                var carousel = $('.carousel1');
+            var carousel = $('.carousel1');
 
-                var numItems = carousel.find('.carousel').length;
+            var numItems = carousel.find('.carousel').length;
 
-                if (numItems > 4) {
+            if (numItems > 4) {
 
-                    // Initialiser Owl Carousel si il y a plus de 4 éléments
-                    carousel.owlCarousel({
-                        items: 5, // Limitez le nombre d'éléments à afficher à 5
-                        loop: true,
-                        loop: true,
-                        autoplay: true,
-                        autoplayTimeout: 6000,
-                        animateOut: 'slideOutDown',
-                        animateIn: 'flipInX',
-                        stagePadding: 30,
-                        smartSpeed: 450,
-                        margin: 20,
-                        nav: true,
-                        navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
-                    });
-
-                    var carousel1 = $('.carousel1').owlCarousel();
-                    $('.owl-next').click(function() {
-                        carousel1.trigger('next.owl.carousel');
-                    })
-                    $('.owl-prev').click(function() {
-                        carousel1.trigger('prev.owl.carousel');
-                    })
-
-
-
-                } else {
-
-                    // Empêcher l'initialisation de Owl Carousel
-                    carousel.trigger('destroy.owl.carousel');
-
-                    // Remettre styles par défaut
-                    carousel.removeClass('owl-carousel owl-loaded');
-                    carousel.find('.owl-stage-outer').children().unwrap();
-
-                }
-
-                $(document).ready(function() {
-
-
-                    $('.boot').owlCarousel({
-                        items: 1,
-                        loop: true,
-                        autoplay: true,
-                        autoplayTimeout: 6000,
-                        animateOut: 'slideOutDown',
-                        animateIn: 'flipInX',
-                        stagePadding: 1,
-                        smartSpeed: 450,
-                        margin: 0,
-                        nav: true,
-                        navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
-                    });
-                    var carousel2 = $('.carousel2').owlCarousel();
-                    $('.owl-next2').click(function() {
-                        carousel2.trigger('next.owl.carousel');
-                    })
-                    $('.owl-prev2').click(function() {
-                        carousel2.trigger('prev.owl.carousel');
-                    })
-
+                // Initialiser Owl Carousel si il y a plus de 4 éléments
+                carousel.owlCarousel({
+                    items: 5, // Limitez le nombre d'éléments à afficher à 5
+                    loop: true,
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 6000,
+                    animateOut: 'slideOutDown',
+                    animateIn: 'flipInX',
+                    stagePadding: 30,
+                    smartSpeed: 450,
+                    margin: 20,
+                    nav: true,
+                    navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
                 });
 
+                var carousel1 = $('.carousel1').owlCarousel();
+                $('.owl-next').click(function () {
+                    carousel1.trigger('next.owl.carousel');
+                })
+                $('.owl-prev').click(function () {
+                    carousel1.trigger('prev.owl.carousel');
+                })
 
-            }),
 
-            $(document).ready(function() {
+
+            } else {
+
+                // Empêcher l'initialisation de Owl Carousel
+                carousel.trigger('destroy.owl.carousel');
+
+                // Remettre styles par défaut
+                carousel.removeClass('owl-carousel owl-loaded');
+                carousel.find('.owl-stage-outer').children().unwrap();
+
+            }
+
+            $(document).ready(function () {
+
+
+                $('.boot').owlCarousel({
+                    items: 1,
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 6000,
+                    animateOut: 'slideOutDown',
+                    animateIn: 'flipInX',
+                    stagePadding: 1,
+                    smartSpeed: 450,
+                    margin: 0,
+                    nav: true,
+                    navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
+                });
+                var carousel2 = $('.carousel2').owlCarousel();
+                $('.owl-next2').click(function () {
+                    carousel2.trigger('next.owl.carousel');
+                })
+                $('.owl-prev2').click(function () {
+                    carousel2.trigger('prev.owl.carousel');
+                })
+
+            });
+
+
+        }),
+
+            $(document).ready(function () {
                 // Carrousel 3  
                 var carousel2 = $('.carousel2');
                 var numItems2 = carousel2.find('.carousel').length;
@@ -853,10 +914,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     });
 
                     var carousel2 = $('.carousel2').owlCarousel();
-                    $('.owl-next').click(function() {
+                    $('.owl-next').click(function () {
                         carousel2.trigger('next.owl.carousel');
                     })
-                    $('.owl-prev').click(function() {
+                    $('.owl-prev').click(function () {
                         carousel2.trigger('prev.owl.carousel');
                     })
 
@@ -884,7 +945,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Carrousel 3  
             var carousel3 = $('.carousel3');
             var numItems2 = carousel3.find('.carousel').length;
@@ -907,10 +968,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
 
                 var carousel3 = $('.carousel3').owlCarousel();
-                $('.owl-next').click(function() {
+                $('.owl-next').click(function () {
                     carousel3.trigger('next.owl.carousel');
                 })
-                $('.owl-prev').click(function() {
+                $('.owl-prev').click(function () {
                     carousel3.trigger('prev.owl.carousel');
                 })
 
@@ -930,7 +991,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Carrousel 3  
             var carousel4 = $('.carousel4');
             var numItems2 = carousel4.find('.carousel').length;
@@ -953,10 +1014,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
 
                 var carousel4 = $('.carousel4').owlCarousel();
-                $('.owl-next').click(function() {
+                $('.owl-next').click(function () {
                     carousel4.trigger('next.owl.carousel');
                 })
-                $('.owl-prev').click(function() {
+                $('.owl-prev').click(function () {
                     carousel4.trigger('prev.owl.carousel');
                 })
 
@@ -974,7 +1035,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
 
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Carrousel 3  
             var carousel5 = $('.carousel5');
             var numItems2 = carousel5.find('.carousel').length;
@@ -997,10 +1058,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
 
                 var carousel5 = $('.carousel5').owlCarousel();
-                $('.owl-next').click(function() {
+                $('.owl-next').click(function () {
                     carousel5.trigger('next.owl.carousel');
                 })
-                $('.owl-prev').click(function() {
+                $('.owl-prev').click(function () {
                     carousel5.trigger('prev.owl.carousel');
                 })
 
@@ -1019,7 +1080,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Carrousel 3  
             var carousel6 = $('.carousel6');
             var numItems2 = carousel6.find('.carousel').length;
@@ -1042,10 +1103,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
 
                 var carousel6 = $('.carousel6').owlCarousel();
-                $('.owl-next').click(function() {
+                $('.owl-next').click(function () {
                     carousel6.trigger('next.owl.carousel');
                 })
-                $('.owl-prev').click(function() {
+                $('.owl-prev').click(function () {
                     carousel6.trigger('prev.owl.carousel');
                 })
 
@@ -1064,7 +1125,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Carrousel 3  
             var carousel7 = $('.carousel7');
             var numItems2 = carousel7.find('.carousel').length;
@@ -1087,10 +1148,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
 
                 var carousel7 = $('.carousel7').owlCarousel();
-                $('.owl-next').click(function() {
+                $('.owl-next').click(function () {
                     carousel7.trigger('next.owl.carousel');
                 })
-                $('.owl-prev').click(function() {
+                $('.owl-prev').click(function () {
                     carousel7.trigger('prev.owl.carousel');
                 })
 

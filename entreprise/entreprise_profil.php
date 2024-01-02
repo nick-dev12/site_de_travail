@@ -267,11 +267,19 @@ include_once('app/controller/controllerOffre_emploi.php');
 
         <div class="container_box2">
             <div class="box1">
-                <h1>mes offres</h1>
+                <h1>Mes offres</h1>
             </div>
 
             <div class="box2">
-                <?php foreach ($afficheOffreEmplois as $offres): ?>
+            <?php
+                if(empty($afficheOffreEmplois)):
+                 ?>
+                 <p class="info" ><strong>Info!</strong> Aucune offre d’emplois publier ! veuillez ajouter une offre</p>
+                 <?php else: ?> 
+                    
+                <?php
+                 foreach ($afficheOffreEmplois as $offres): 
+                 ?>
 
                     <?php $countOffre = countOffre($db, $offres['entreprise_id'], $offres['offre_id']); ?>
                     <div class="carousel">
@@ -289,11 +297,10 @@ include_once('app/controller/controllerOffre_emploi.php');
                             <p>
                                 <?= $offres['entreprise'] ?>
                             </p>
-                            <img class="img" src="../image/coeurs.png" alt="">
                         </div>
 
                         <div class="vendu">
-                            <p>nous recherchons un
+                            <p><strong>Nous recherchons un(une)</strong>
                                 <?= $offres['poste'] ?>
                             </p>
                         </div>
@@ -305,7 +312,7 @@ include_once('app/controller/controllerOffre_emploi.php');
                     </div>
 
                 <?php endforeach; ?>
-
+                <?php endif ?>
 
             </div>
         </div>

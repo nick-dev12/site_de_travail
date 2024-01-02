@@ -133,6 +133,7 @@ body {
   justify-content: center;
   width: 100%;
   flex-wrap: wrap;
+  margin-bottom: 100px;
 }
 .partie-box .box2 {
   display: flex;
@@ -150,8 +151,8 @@ body {
   border-radius: 20px;
 }
 .partie-box .box2 .img2 {
-  width: 100%;
-  height: 450px;
+  width: 90%;
+  height: 400px;
   object-fit: cover;
   border-radius: 20px;
   margin-left: 60px;
@@ -167,13 +168,13 @@ body {
 .partie-box .box1 h1 {
   width: 400px;
   text-align: left;
-  font-size: 50px;
+  font-size: 40px;
   font-family: "Dela Gothic One", cursive;
 }
 .partie-box .box1 p {
   width: 90%;
   text-align: left;
-  font-size: 20px;
+  font-size: 18px;
   margin: 20px 0;
 }
 .partie-box .box1 a {
@@ -195,82 +196,83 @@ body {
 
 
 
-
-
-
-
+.box-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  padding: 40px 30px;
+  background: linear-gradient(180deg, #b0afb0 0, #faf9f9 53%);
+margin: 50px auto;
+}
 
 .partie-box1{
-  width: 100%;
+  width: 30%;
   display: flex;
   align-items: center;
   justify-content: left;
-  margin: 40px 0;
-}
-
-.partie-box1 .box1{
-  width: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 30px;
-}
-.partie-box1 .box1 h2{
+  border: 2px solid #b5b4b49d;
   padding: 20px;
-  text-align: center;
-  font-size: 30px;
+  flex-direction: column;
+  height: 400px;
+  margin: 0 20px;
+  box-shadow: 0 0 5px 5px rgba(181, 181, 181, 0.4);
 }
-
-.partie-box1 .box2{
-  width: 500px;
-  height: 600px;
-  margin: 0 30px;
-}
-.partie-box1 .box2 img{
-  width: 500px;
-  height: 600px;
-  object-fit: cover;
-}
-
-
-
-
-
-
-
-
-
-.partie-box2{
+.partie-box1 .box1{
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: right;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  
+  justify-content: center;
+  margin: 20px 0;
+
+}
+.partie-box1 .box1 h2{
+  text-align: center;
+  font-size: 16px;
+  width: 90%;
+}
+.partie-box1 .box2{
+  width: 90%;
+  height: 200px;
+}
+.partie-box1 .box2 img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
+
+.partie-box2{
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border: 2px solid #b5b4b49d;
+  padding: 20px;
+  flex-direction: column;
+  height: 400px;
+  margin: 0 20px;
+  box-shadow: 0 0 5px 5px rgba(181, 181, 181, 0.4);
+}
 .partie-box2 .box1{
-  width: 400px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 30px;
+  margin: 20px 0;
 }
 .partie-box2 .box1 h2{
-  padding: 20px;
   text-align: center;
-  font-size: 30px;
+  font-size: 16px;
+  width: 90%;
 }
-
 .partie-box2 .box2{
-  width: 500px;
-  height: 600px;
-  margin: 0 30px;
+  width: 90%;
+  height: 200px;
 }
 .partie-box2 .box2 img{
-  width: 500px;
-  height: 600px;
+  width: 100%;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -279,7 +281,46 @@ body {
 
 
 
+.box-section3{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 80px auto;
+}
 
+.box-section3 .box1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+  padding: 30px;
+  border: 2px solid #002233;
+  border-radius: 7px;
+  padding-bottom: 80px;
+}
+.box-section3 span{
+  height: 20px;
+  border-top: 3px solid #002233;
+  border-bottom: 3px solid #002233;
+  width: 150px;
+}
+.box-section3 .box1 h2{
+  width: 300px;
+  font-weight: bolder;
+  font-style: italic;
+  text-align: center;
+  padding: 5px 10px;
+  border: 2px dotted #002233;
+  margin-bottom: 30px;
+}
+.box-section3 .box1 p{
+  width: 100%;
+  text-align: justify;
+  height: 250px;
+  line-height: 26px;
+}
 
 
 
@@ -290,6 +331,7 @@ body {
     padding: 30px 0;
     margin: 80px 0;
 }
+
 .section3 {
   display: flex;
   align-items: center;
@@ -315,22 +357,23 @@ body {
   justify-content: center;
   width: 100%;
   margin: 30px 0;
-  flex-wrap: wrap-reverse;
+  flex-direction: column;
 }
 .section3 .box1 .p-style {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   padding: 0 20px;
 }
-.section3 .box1 .p1,
+.section3 .box1 .p-style  .p1,
 .p3 {
   height: 200px;
   width: 2px;
   border-radius: 10px;
   background-color: #f39c12;
+  transform: rotate(90deg);
   animation: eclat 2s linear infinite alternate;
+  margin: 0 60px;
 }
 @keyframes eclat{
     0%{
@@ -359,9 +402,17 @@ body {
   font-weight: bold;
   background-color: #ffffff;
   box-shadow: 0 0 5px 1px #ffff;
+  margin:0 50px;
 }
+
+.section3 .box1 .container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .section3 .box1 .texte {
-  width: 550px;
+  width: 400px;
   margin: 0 10px;
   display: flex;
   align-items: center;
@@ -369,18 +420,18 @@ body {
   flex-direction: column;
 }
 .section3 .box1 img {
-  height: 450px;
-  width: 500px;
+  height: 300px;
+  width: auto;
   padding: 20px;
   border-radius: 10px;
 }
-.section3 .box1 h2 {
+.section3 .box1 .texte h2 {
   margin-bottom: 20px;
   width: 70%;
   color: #f39c12;
 }
-.section3 .box1 p {
-  width: 500px;
+.section3 .box1 .texte p {
+  width: 380px;
   font-size: 16px;
   line-height: 30px;
   padding: 10px 0;
@@ -412,7 +463,7 @@ body {
 
 .temoin {
   width: 100%;
-  height: 300px;
+  padding: 120px 30px;
   background-color: #0066ff;
   display: flex;
   align-items: center;
@@ -424,20 +475,33 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 250px;
+  height: 400px;
+  padding: 0 20px;
+  background-color: #ffffff;
+  border-radius: 7px;
+  margin: 0 30px;
+  box-shadow: 0 0 8px 2px #000000;
 }
 .temoin .box p {
-  font-size: 25px;
-  width: 60%;
+  font-size: 20px;
   text-align: center;
-  padding: 20px 10px;
-  color: #ffff;
+  padding: 20px 0;
+  color: #000000;
 }
-.temoin .box img {
-  height: 100px;
-  width: 100px;
+.temoin .box .img {
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
-  border: 2px solid #002233;
+  border: 1px solid #000000;
   box-shadow: 0 0 2px 2px;
+  object-fit: cover;
+}
+.temoin .box span{
+  font-size: 100px;
+  margin-bottom: -80px;
+  font-weight: bold;
+  color: #f39c12;
 }
 
 

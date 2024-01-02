@@ -34,6 +34,37 @@ include_once('../controller/controller_projet_users.php');
 include_once('../controller/controller_users.php');
 }
 
+if (isset($_SESSION['users_id'])) {
+    include '../conn/conn.php';
+    // Récupérez l'ID du commerçant à partir de la session
+// Récupérez l'ID de l'utilisateur depuis la variable de session
+$users_id = $_SESSION['users_id'];
+
+// Vous pouvez maintenant utiliser $commercant_id pour récupérer les informations de l'utilisateur depuis la base de données
+// Écrivez votre requête SQL pour récupérer les informations nécessaires
+
+ // Vous pouvez maintenant utiliser $commercant_id pour récupérer les informations de l'utilisateur depuis la base de données
+    // Écrivez votre requête SQL pour récupérer les informations nécessaires
+    $conn = "SELECT * FROM users WHERE id = :users_id";
+    $stmt = $db->prepare($conn);
+    $stmt->bindParam(':users_id', $users_id);
+    $stmt->execute();
+    $users = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Récupérez l'ID du commerçant à partir de la session
+// Récupérez l'ID de l'utilisateur depuis la variable de session
+include_once('../controller/controller_description_users.php');
+include_once('../controller/controller_metier_users.php');
+include_once('../controller/controller_competence_users.php');
+include_once('../controller/controller_formation_users.php');
+include_once('../controller/controller_diplome_users.php');
+include_once('../controller/controller_certificat_users.php');
+include_once('../controller/controller_outil_users.php');
+include_once('../controller/controller_langue_users.php');
+include_once('../controller/controller_projet_users.php');
+include_once('../controller/controller_users.php');
+}
+
 ?>
 
 

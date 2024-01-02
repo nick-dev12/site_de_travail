@@ -254,6 +254,7 @@ overflow: hidden;
   width: 170px;
   height: 170px;
   border-radius: 50%;
+  object-fit: cover;
 }
 .section3 .container_box2 .box2 .parte1 .pte2{
   display: flex;

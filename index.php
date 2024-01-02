@@ -104,8 +104,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 
-
-
     <section class="partie-box">
         <div class="box1">
             <h1>
@@ -125,24 +123,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
 
+<section class="box-section" >
+
+
     <section class="partie-box1">
-        <div class="box1">
-            <h2>"Construisez votre histoire professionnelle avec un profil et un CV virtuels à la pointe de l'innovation."</h2>
-        </div>
         <div class="box2">
             <img src="/image/profile1.jpg" alt="">
         </div>
+        <div class="box1">
+            <h2>"Construisez votre histoire professionnelle avec un profil et un CV virtuels à la pointe de l'innovation."</h2>
+        </div>
+        
     </section>
 
     <section class="partie-box2">
        
         <div class="box2">
-            <img src="/image/profile1.jpg" alt="">
+            <img src="/image/bg_bggenerator_com.jpg" alt="">
         </div>
          <div class="box1">
             <h2>"Élargissez vos horizons professionnels avec Work-Flexer, une vision audacieuse qui redéfinit la flexibilité au travail."</h2>
         </div>
     </section>
+</section>
 
 
 
@@ -155,25 +158,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span class="p2">1</span>
                     <span class="p3"></span>
                 </div>
+                
+                <div class="container">
                 <div class="texte">
                     <h2>
                         Boostez votre productivité avec les freelances qu'il vous faut
                     </h2>
                     <p>
-                        Grâce à Work-Flexer, accédez rapidement aux meilleurs profils de freelances correspondant à vos
-                        besoins spécifiques.
-
-                        Que vous ayez besoin d'un développeur logiciel, d'un designer UI/UX ou d'un spécialiste en
-                        marketing, vous trouverez ici le talent adapté.
-
-                        Notre moteur de recherche intelligent et nos critères de sélection pointus vous permettent de
-                        filtrer les profils selon vos exigences.
-
-                        Boostez ainsi vos projets en recrutant simplement le freelance parfait, avec les compétences et
-                        l’expertise nécessaires pour vous accompagner.
+                    Découvrez les meilleurs freelances avec Work-Flexer ! 
+                    Trouvez rapidement le talent idéal pour vos projets, 
+                    que ce soit un développeur, un designer ou un expert en 
+                    marketing. Utilisez notre moteur de recherche intelligent pour des résultats précis. 
+                    Boostez vos projets en recrutant simplement le freelance parfait.
                     </p>
                 </div>
                 <img src="/image/SEO-1.png" alt="">
+                </div>
+               
             </div>
         </section>
 
@@ -185,20 +186,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span class="p2">2</span>
                     <span class="p3"></span>
                 </div>
+
+                <div class="container">
                 <div class="texte">
                     <h2>
                         Recrutez en Toute Confiance avec Notre Plateforme de Recrutement
                     </h2>
                     <p>
-
-                        Work-Flexer simplifie le processus de recrutement pour les entreprises
-                        en leur permettant de publier des offres d'emploi en quelques clics. Découvrez
-                        un vivier de candidats qualifiés et adaptez a votre entreprise et aux besoins
-                        du marché en trouvant les meilleurs talents rapidement et
-                        efficacement. La recherche de candidats exceptionnels n'a jamais été aussi facile.
+                    Simplifiez votre recrutement avec Work-Flexer ! Publiez vos offres 
+                    d'emploi en quelques clics, découvrez des candidats qualifiés qui 
+                    correspondent à votre entreprise et aux exigences du marché. Trouvez 
+                    les meilleurs talents rapidement et efficacement. 
+                    La recherche de candidats exceptionnels n'a jamais été aussi simple.
                     </p>
                 </div>
                 <img src="/image/creation-site-1-600x511.png" alt="">
+                </div>
+                
             </div>
         </section>
 
@@ -210,32 +214,79 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span class="p2">3</span>
                     <span class="p3"></span>
                 </div>
+
+                <div class="container">
                 <div class="texte">
                     <h2>
                         Boostez Votre Carrière avec Notre Plateforme de Profils Professionnels
                     </h2>
                     <p>
-                        Vous cherchez de nouvelles opportunités ? Donnez un coup de pouce à votre carrière
-                        en créant un profil professionnel sur notre plateforme. Que vous soyez un
-                        étudiant cherchant un stage, un professionnel en quête de nouvelles opportunités
-                        ou un expert dans votre domaine, Work-Flexer vous offre la visibilité dont vous avez
-                        besoin. Connectez-vous avec des recruteurs, développez votre réseau, et explorez un
-                        monde d'opportunités professionnelles.
+                    Élevez votre carrière avec Work-Flexer ! Créez votre profil pro, 
+                    connectez-vous avec des recruteurs, et explorez 
+                    un monde d'opportunités uniques. Transformez votre avenir dès maintenant !
                     </p>
 
                     <a href="/inscription.php">Commencer</a>
                 </div>
                 <img src="/image/Performance-600x511.png" alt="">
+                </div>
+                
             </div>
         </section>
 
     </div>
 
-    <section class="temoin">
+
+    <section class="box-section3">
+        <div class="box1">
+            <h2>Pour les Professionnels</h2>
+            <p>Découvrez Work-Flexer, la plateforme révolutionnaire qui élargit vos perspectives professionnelles 
+                en redéfinissant la flexibilité au travail. Notre vision audacieuse transcende les limites 
+                traditionnelles en offrant un espace où les professionnels peuvent non seulement rechercher 
+                des opportunités d'emploi, mais également créer des profils et des CV virtuels dynamiques qui 
+                racontent leur histoire de manière percutante.
+            </p>
+        </div>
+        <span>
+            
+        </span>
+        <div class="box1">
+            <h2>Pour les Recruteurs</h2>
+            <p>Bienvenue sur Work-Flexer, la plateforme qui réinvente le recrutement pour les professionnels 
+                visionnaires. Créez, publiez et gérez vos offres d'emploi de manière simple et efficace. Notre 
+                interface intuitive offre des outils puissants pour cibler les talents, gérer les candidatures 
+                en toute fluidité, et interagir sans effort avec les candidats.
+            </p>
+        </div>
+    </section>
+
+    <section class="temoin" >
         <div class="box">
-            <p>"Cette plateforme nous a aidé à trouver les candidats parfaits
-                pour nos offres d'emploi. Fortement recommandé aux recruteurs."</p>
-            <img src="/image/temoin.jpg" alt="">
+            <span>"</span>
+            <p>Cette plateforme nous a aidé à trouver les candidats parfaits
+                pour nos offres d'emploi. Fortement recommandé aux recruteurs.</p>
+            <img class="img" src="/image/temoin.jpg" alt="">
+        </div>
+
+        <div class="box">
+            <span>"</span>
+            <p>Cette plateforme nous a aidé à trouver les candidats parfaits
+                pour nos offres d'emploi. Fortement recommandé aux recruteurs.</p>
+            <img class="img" src="/image/temoin.jpg" alt="">
+        </div>
+
+        <div class="box">
+            <span>"</span>
+            <p>Cette plateforme nous a aidé à trouver les candidats parfaits
+                pour nos offres d'emploi. Fortement recommandé aux recruteurs.</p>
+            <img class="img" src="/image/temoin.jpg" alt="">
+        </div>
+
+        <div class="box">
+            <span>"</span>
+            <p>Cette plateforme nous a aidé à trouver les candidats parfaits
+                pour nos offres d'emploi. Fortement recommandé aux recruteurs.</p>
+            <img class="img" src="/image/temoin.jpg" alt="">
         </div>
     </section>
 
@@ -326,7 +377,9 @@ Sign up at https://greensock.com/club or try them for free on CodePen or CodeSan
 
     <div></div>
 
-
+<script>
+   
+</script>
     <script>
         $(document).ready(function () {
 
@@ -366,6 +419,54 @@ Sign up at https://greensock.com/club or try them for free on CodePen or CodeSan
             $('.owl-prev').click(function () {
                 carousel1.trigger('prev.owl.carousel');
             });
+
+            
+
+
+            // Sélectionnez la section avec la classe "temoin"
+
+            var sectionTemoin = document.querySelector('.temoin');
+
+// Vérifiez si la section existe
+if (sectionTemoin) {
+    // Obtenez la liste des éléments enfants de la section
+    var enfantsSection = sectionTemoin.children;
+
+    // Vérifiez la condition du nombre d'éléments enfants
+    if (enfantsSection.length > 3) {
+        // Code à exécuter si le nombre d'éléments enfants est supérieur à 3
+        $('.temoin').addClass('owl-carousel').owlCarousel({
+            items: 4,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 6000,
+            animateOut: 'slideOutDown',
+            animateIn: 'flipInX',
+            stagePadding: 10,
+            smartSpeed: 450,
+            margin: 10,
+            nav: true,
+            navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>']
+        });
+
+        // Code pour gérer la navigation du carousel
+        var carousel1 = $('.temoin').owlCarousel();
+        $('.owl-next').click(function () {
+            carousel1.trigger('next.owl.carousel');
+        })
+        $('.owl-prev').click(function () {
+            carousel1.trigger('prev.owl.carousel');
+        });
+    } else {
+        // Code à exécuter si le nombre d'éléments enfants est inférieur ou égal à 3
+        console.log("Le nombre d'éléments enfants est inférieur ou égal à 3. Ne faites rien.");
+    }
+} else {
+    console.error("La section avec la classe 'temoin' n'a pas été trouvée.");
+}
+
+
+           
 
 
             $('.slider-area').owlCarousel({
@@ -439,6 +540,10 @@ Sign up at https://greensock.com/club or try them for free on CodePen or CodeSan
 
 
         });
+
+
+
+        
             
     </script>
 

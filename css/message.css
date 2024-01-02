@@ -130,6 +130,19 @@ body{
     display: flex;
     flex-direction: column;
 }
+.container_profil .box3 p{
+  font-size: 14px;
+  font-style: italic;
+  color: rgb(0, 0, 0);
+}
+.container_profil .box3 p strong{
+  font-size: 20px;
+  font-style: italic;
+  color: rgb(255, 255, 255);
+  padding: 1px 5px;
+  font-size: 14px;
+  color: #000000;
+}
 .container_profil .box3 h2{
     width: 100%;
     padding: 3px 20px;
@@ -190,9 +203,25 @@ body{
 
 
 
-
+.container_profil .box2 {
+  margin-top: 30px;
+}
 .container_profil .box2 a{
     text-decoration: none;
+}
+
+.container_profil .box2 p{
+  font-size: 18px;
+  font-style: italic;
+  color: rgb(0, 0, 0);
+}
+.container_profil .box2 p strong{
+  font-size: 20px;
+  font-style: italic;
+  color: rgb(255, 255, 255);
+  padding: 1px 5px;
+  font-size: 15px;
+  color: #000000;
 }
 .container_profil .box2{
     width: 100%;

@@ -12,9 +12,9 @@ function postAppelOffre ($db,$entreprise_id,$users_id,$titre,$messages){
     $sql=" INSERT INTO appel_offre (entreprise_id,users_id,titre,messages) VALUES (:entreprise_id,:users_id,:titre,:messages)";
     $stmt= $db->prepare($sql);
     $stmt->bindParam(':entreprise_id', $entreprise_id);
-    $stmt->bindParam('users_id', $users_id);
-    $stmt->bindParam('titre', $titre);
-    $stmt->bindParam('messages', $messages);
+    $stmt->bindParam(':users_id', $users_id);
+    $stmt->bindParam(':titre', $titre);
+    $stmt->bindParam(':messages', $messages);
    return $stmt->execute();
 }
 

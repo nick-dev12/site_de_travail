@@ -76,8 +76,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="div-section2">
         <h2>Liste des candidatures</h2>
-<p><span>!</span>  ici vous retrouverez les candidats qui ont postuler a vos offres publier   </p>
+
         <div class="container">
+        <?php if(empty($getALLpostulation )): ?>
+            <p class="info" ><strong>Info!</strong> Aucune candidature a vos offres d'emplois pour le moment.</p>
+            <?php else: ?>
             <?php foreach ($getALLpostulation as $postulant): ?>
                 <?php if($postulant['statut']=='accepter'):?>
                     <?php else: ?>
@@ -143,6 +146,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <?php endif; ?>
               
             <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </div>
 
@@ -152,7 +156,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <h4>Candidatures accepter</h4>
         <div class="container">
+            
             <?php foreach ($getALLpostulation as $postulant): ?>
+               
+                    
+                   
                 <?php if($postulant['statut']=='accepter'):?>
                    
                                     <div class="items">
@@ -192,7 +200,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                 </div>
+               
                 <?php endif; ?>
+               
             <?php endforeach; ?>
           
         </div>
